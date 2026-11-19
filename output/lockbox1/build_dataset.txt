@@ -1,0 +1,5 @@
+đọc 774911 alert SIEMLAB từ 6 file (bỏ: {'same_log_line': 370, 'same_id': 154037}; trong đó 10691 alert của luật tương quan, giữ như sự kiện); 468 phiên, 0 phiên mồ côi
+dataset: 154025 dòng -> data/dataset_lockbox1.csv  (27.5s)
+loại alert: {'outside_batches': 620886}; phiên bị đánh dấu (coverage ngoài [0.98, 1.02] / failed / lag > 2.0s): 0
+coverage theo phiên: min=1.0 max=1.0
+số dòng theo split|nhãn: {'lockbox|0': 45772, 'lockbox|1': 107820, 'stress|0': 433}

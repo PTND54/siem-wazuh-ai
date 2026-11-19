@@ -1,0 +1,525 @@
+{
+ "format": "siem10-proposal-v1",
+ "proposal_id": "R110011-r401-N12-T120-20261022-163955",
+ "status": "removed",
+ "created_at": "2026-10-22T16:39:55+00:00",
+ "generated_by": "rule_proposer.py",
+ "kind": "frequency_rule",
+ "family": "r401",
+ "template": {
+  "name": "freq_same_srcip",
+  "version": 1
+ },
+ "params": {
+  "frequency": 12,
+  "timeframe": 120,
+  "parent": "<if_matched_sid>100011</if_matched_sid>",
+  "same_srcip": true
+ },
+ "fingerprint": "c2dd8b842e45bffb",
+ "xml_sha256": "5d307a73be11a834af8d26f77a358027fba30d625c7619933b930e161efebae2",
+ "data": {
+  "path": "data/dataset_full1.csv",
+  "sha256": "36c103e0a2390a472936dc499bf1b341610af33e1ede509a6231995c79fbb372",
+  "eval": [
+   "data/dataset_shift1.csv",
+   "data/dataset_tools2.csv"
+  ]
+ },
+ "selection": {
+  "split": "train+val",
+  "criterion": "dò chung: tối đa số phiên tấn công bắt được, cả bộ báo nhầm <= 9/192 phiên benign (train+val)",
+  "search": {
+   "combinations_evaluated": 458,
+   "ties_at_best": 1,
+   "best_key": [
+    139,
+    -9,
+    -3
+   ],
+   "candidate_points": {
+    "r401": 1,
+    "web_scan": 13,
+    "r3xx": 5,
+    "r5xx": 0,
+    "other": 0,
+    "any": 7
+   }
+  },
+  "set": [
+   "r401",
+   "web_scan",
+   "any"
+  ],
+  "info": {
+   "alone": {
+    "N": 12,
+    "T": 120
+   },
+   "detected": 70,
+   "false_alarm": 0,
+   "ttd_median_s": 24.44964849948883,
+   "feasible_points": 77,
+   "candidate_points": 1
+  }
+ },
+ "regression": {
+  "passed": true,
+  "summary": "train+val: bắt 70/168 (riêng 45), báo nhầm 0/192 (cả bộ 9/192; ngưỡng 9)",
+  "criteria": "train+val: cả bộ <= ngưỡng báo nhầm, luật bắt >= 1 phiên mà các luật khác không bắt; các tập khác chỉ tham khảo",
+  "decision_split": "train+val",
+  "splits": {
+   "SELECT": {
+    "rule": {
+     "attack_sessions": 168,
+     "benign_sessions": 192,
+     "detected": 70,
+     "false_alarm": 0,
+     "detect_rate": 0.4166666666666667,
+     "fp_rate": 0.0,
+     "ttd_median_s": 24.44964849948883,
+     "alerts_to_first_median": 16.5,
+     "fires_per_detected_session_median": 14.0,
+     "unique_detected": 45
+    },
+    "union": {
+     "attack_sessions": 168,
+     "benign_sessions": 192,
+     "detected": 139,
+     "false_alarm": 9,
+     "detect_rate": 0.8273809523809523,
+     "fp_rate": 0.046875
+    }
+   },
+   "val": {
+    "rule": {
+     "attack_sessions": 42,
+     "benign_sessions": 48,
+     "detected": 18,
+     "false_alarm": 0,
+     "detect_rate": 0.42857142857142855,
+     "fp_rate": 0.0,
+     "ttd_median_s": 25.279815912246704,
+     "alerts_to_first_median": 17.5,
+     "fires_per_detected_session_median": 16.0,
+     "unique_detected": 12
+    },
+    "union": {
+     "attack_sessions": 42,
+     "benign_sessions": 48,
+     "detected": 34,
+     "false_alarm": 1,
+     "detect_rate": 0.8095238095238095,
+     "fp_rate": 0.020833333333333332
+    }
+   },
+   "train": {
+    "rule": {
+     "attack_sessions": 126,
+     "benign_sessions": 144,
+     "detected": 52,
+     "false_alarm": 0,
+     "detect_rate": 0.4126984126984127,
+     "fp_rate": 0.0,
+     "ttd_median_s": 24.44964849948883,
+     "alerts_to_first_median": 15.5,
+     "fires_per_detected_session_median": 14.0,
+     "unique_detected": 33
+    },
+    "union": {
+     "attack_sessions": 126,
+     "benign_sessions": 144,
+     "detected": 105,
+     "false_alarm": 8,
+     "detect_rate": 0.8333333333333334,
+     "fp_rate": 0.05555555555555555
+    }
+   },
+   "test": {
+    "rule": {
+     "attack_sessions": 70,
+     "benign_sessions": 80,
+     "detected": 30,
+     "false_alarm": 0,
+     "detect_rate": 0.42857142857142855,
+     "fp_rate": 0.0,
+     "ttd_median_s": 20.07126498222351,
+     "alerts_to_first_median": 14.0,
+     "fires_per_detected_session_median": 9.0,
+     "unique_detected": 20
+    },
+    "union": {
+     "attack_sessions": 70,
+     "benign_sessions": 80,
+     "detected": 63,
+     "false_alarm": 3,
+     "detect_rate": 0.9,
+     "fp_rate": 0.0375
+    }
+   },
+   "stress": {
+    "rule": {
+     "attack_sessions": 0,
+     "benign_sessions": 12,
+     "detected": 0,
+     "false_alarm": 9,
+     "detect_rate": null,
+     "fp_rate": 0.75,
+     "ttd_median_s": null,
+     "alerts_to_first_median": null,
+     "fires_per_detected_session_median": null,
+     "unique_detected": 0
+    },
+    "union": {
+     "attack_sessions": 0,
+     "benign_sessions": 12,
+     "detected": 0,
+     "false_alarm": 9,
+     "detect_rate": null,
+     "fp_rate": 0.75
+    }
+   },
+   "shift1:shift": {
+    "rule": {
+     "attack_sessions": 56,
+     "benign_sessions": 64,
+     "detected": 23,
+     "false_alarm": 0,
+     "detect_rate": 0.4107142857142857,
+     "fp_rate": 0.0,
+     "ttd_median_s": 21.205518007278442,
+     "alerts_to_first_median": 14.0,
+     "fires_per_detected_session_median": 20.0,
+     "unique_detected": 14
+    },
+    "union": {
+     "attack_sessions": 56,
+     "benign_sessions": 64,
+     "detected": 42,
+     "false_alarm": 5,
+     "detect_rate": 0.75,
+     "fp_rate": 0.078125
+    }
+   },
+   "shift1:stress": {
+    "rule": {
+     "attack_sessions": 0,
+     "benign_sessions": 6,
+     "detected": 0,
+     "false_alarm": 5,
+     "detect_rate": null,
+     "fp_rate": 0.8333333333333334,
+     "ttd_median_s": null,
+     "alerts_to_first_median": null,
+     "fires_per_detected_session_median": null,
+     "unique_detected": 0
+    },
+    "union": {
+     "attack_sessions": 0,
+     "benign_sessions": 6,
+     "detected": 0,
+     "false_alarm": 5,
+     "detect_rate": null,
+     "fp_rate": 0.8333333333333334
+    }
+   },
+   "tools2:tools": {
+    "rule": {
+     "attack_sessions": 22,
+     "benign_sessions": 8,
+     "detected": 6,
+     "false_alarm": 0,
+     "detect_rate": 0.2727272727272727,
+     "fp_rate": 0.0,
+     "ttd_median_s": 0.29096341133117676,
+     "alerts_to_first_median": 12.0,
+     "fires_per_detected_session_median": 24.0,
+     "unique_detected": 4
+    },
+    "union": {
+     "attack_sessions": 22,
+     "benign_sessions": 8,
+     "detected": 22,
+     "false_alarm": 0,
+     "detect_rate": 1.0,
+     "fp_rate": 0.0
+    }
+   }
+  },
+  "by_scenario_select": [
+   {
+    "scenario": "api_client",
+    "label": 0,
+    "sessions": 24,
+    "fired": 0
+   },
+   {
+    "scenario": "broken_links",
+    "label": 0,
+    "sessions": 24,
+    "fired": 0
+   },
+   {
+    "scenario": "browse_human",
+    "label": 0,
+    "sessions": 24,
+    "fired": 0
+   },
+   {
+    "scenario": "crawler",
+    "label": 0,
+    "sessions": 24,
+    "fired": 0
+   },
+   {
+    "scenario": "forgot_pw",
+    "label": 0,
+    "sessions": 24,
+    "fired": 0
+   },
+   {
+    "scenario": "heavy_burst",
+    "label": 0,
+    "sessions": 24,
+    "fired": 0
+   },
+   {
+    "scenario": "monitor",
+    "label": 0,
+    "sessions": 24,
+    "fired": 0
+   },
+   {
+    "scenario": "typo_login",
+    "label": 0,
+    "sessions": 24,
+    "fired": 0
+   },
+   {
+    "scenario": "auth_fast",
+    "label": 1,
+    "sessions": 24,
+    "fired": 24
+   },
+   {
+    "scenario": "auth_slow",
+    "label": 1,
+    "sessions": 24,
+    "fired": 21
+   },
+   {
+    "scenario": "flood",
+    "label": 1,
+    "sessions": 24,
+    "fired": 0
+   },
+   {
+    "scenario": "recon_then_brute",
+    "label": 1,
+    "sessions": 24,
+    "fired": 24
+   },
+   {
+    "scenario": "scan_fast",
+    "label": 1,
+    "sessions": 24,
+    "fired": 1
+   },
+   {
+    "scenario": "scan_pulsed",
+    "label": 1,
+    "sessions": 24,
+    "fired": 0
+   },
+   {
+    "scenario": "scan_stealth",
+    "label": 1,
+    "sessions": 24,
+    "fired": 0
+   }
+  ]
+ },
+ "evidence": [
+  {
+   "session": "full1/train_auth_fast_000",
+   "scenario": "auth_fast",
+   "fires": 82
+  },
+  {
+   "session": "full1/train_auth_fast_001",
+   "scenario": "auth_fast",
+   "fires": 22
+  },
+  {
+   "session": "full1/train_auth_fast_002",
+   "scenario": "auth_fast",
+   "fires": 12
+  },
+  {
+   "session": "full1/train_auth_fast_003",
+   "scenario": "auth_fast",
+   "fires": 34
+  },
+  {
+   "session": "full1/train_auth_fast_004",
+   "scenario": "auth_fast",
+   "fires": 28
+  },
+  {
+   "session": "full1/train_auth_fast_005",
+   "scenario": "auth_fast",
+   "fires": 22
+  },
+  {
+   "session": "full1/train_auth_fast_006",
+   "scenario": "auth_fast",
+   "fires": 12
+  },
+  {
+   "session": "full1/train_auth_fast_007",
+   "scenario": "auth_fast",
+   "fires": 14
+  },
+  {
+   "session": "full1/train_auth_fast_008",
+   "scenario": "auth_fast",
+   "fires": 8
+  },
+  {
+   "session": "full1/train_auth_fast_009",
+   "scenario": "auth_fast",
+   "fires": 22
+  }
+ ],
+ "verify": {
+  "lines": [
+   "SIEMLAB 1792550062804932 172.30.90.143 \"GET /private/ HTTP/1.1\" 401 0",
+   "SIEMLAB 1792550062824258 172.30.90.143 \"GET /private/ HTTP/1.1\" 401 0",
+   "SIEMLAB 1792550062925962 172.30.90.143 \"GET /private/ HTTP/1.1\" 401 0",
+   "SIEMLAB 1792550062945363 172.30.90.143 \"GET /private/ HTTP/1.1\" 401 0",
+   "SIEMLAB 1792550062974771 172.30.90.143 \"GET /private/ HTTP/1.1\" 401 0",
+   "SIEMLAB 1792550063063498 172.30.90.143 \"GET /private/ HTTP/1.1\" 401 0",
+   "SIEMLAB 1792550063104899 172.30.90.143 \"GET /private/ HTTP/1.1\" 401 0",
+   "SIEMLAB 1792550063126582 172.30.90.143 \"GET /private/ HTTP/1.1\" 401 0",
+   "SIEMLAB 1792550063145378 172.30.90.143 \"GET /private/ HTTP/1.1\" 401 0",
+   "SIEMLAB 1792550063178461 172.30.90.143 \"GET /private/ HTTP/1.1\" 401 0",
+   "SIEMLAB 1792550063198941 172.30.90.143 \"GET /private/ HTTP/1.1\" 401 0",
+   "SIEMLAB 1792550063235105 172.30.90.143 \"GET /private/ HTTP/1.1\" 401 0",
+   "SIEMLAB 1792550063298166 172.30.90.143 \"GET /private/ HTTP/1.1\" 401 0"
+  ],
+  "expect_fire_at": [
+   12
+  ],
+  "source_session": "full1/train_auth_fast_000",
+  "note": "logtest đọc liền một mạch nên mọi dòng nằm trong T; kỳ vọng tính bằng wazuh_sim"
+ },
+ "limitations": [
+  "mô phỏng theo giờ Apache, Wazuh dùng giờ Manager (trễ thường < 1 s)",
+  "mỗi luật mô phỏng độc lập; tương tác khi nhiều luật cùng áp kiểm ở bước 2b"
+ ],
+ "history": [
+  {
+   "at": "2026-10-26T07:25:17+00:00",
+   "action": "apply",
+   "by": "thuan",
+   "ok": true,
+   "rule_ids": [
+    "110011"
+   ],
+   "timings": {
+    "backup_s": 1.11,
+    "write_s": 0.25,
+    "validate_s": 0.94,
+    "restart_s": 41.1,
+    "health_s": 4.1,
+    "functional_s": 0.93
+   },
+   "details": {
+    "backup": [
+     "wazuh/backups/ai_rules.20261026-182418.host.xml",
+     "wazuh/backups/ai_rules.20261026-182418.active.xml",
+     "/var/ossec/etc/siem10_backups/ai_rules.20261026-182418.xml"
+    ],
+    "validate": {
+     "ok": true,
+     "out": "",
+     "new_messages": []
+    },
+    "restart": {
+     "ok": true,
+     "out": "ead.\n  from starlette.testclient import TestClient\n2026/10/26 07:24:54 wazuh-integratord: INFO: Remote integrations not configured. Clean exit.\n2026/10/26 07:24:58 wazuh-modulesd:router: INFO: Loaded router module.\n2026/10/26 07:24:58 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.\n2026/10/26 07:24:58 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module."
+    },
+    "health": {
+     "ready_s": 4.1,
+     "canary_http": 404,
+     "canary_alert": true,
+     "canary_alert_s": 2.4,
+     "canary_enriched": 1,
+     "canary_enriched_s": 10.5,
+     "ai_rules_host_eq_active": true
+    },
+    "functional": {
+     "fired_at": [
+      12
+     ],
+     "expected": [
+      12
+     ]
+    },
+    "pre_health": {
+     "ready_s": 0.5,
+     "canary_http": 404,
+     "canary_alert": true,
+     "canary_alert_s": 2.5,
+     "canary_enriched": 1,
+     "canary_enriched_s": 8.6,
+     "ai_rules_host_eq_active": true
+    }
+   },
+   "no_regression_override": false
+  },
+  {
+   "at": "2026-10-28T15:02:49+00:00",
+   "action": "remove",
+   "by": "thuan",
+   "ok": true,
+   "timings": {
+    "backup_s": 0.9,
+    "write_s": 0.17,
+    "validate_s": 0.72,
+    "restart_s": 12.1,
+    "health_s": 0.4,
+    "functional_s": 0.92
+   },
+   "details": {
+    "backup": [
+     "wazuh/backups/ai_rules.20261029-020221.host.xml",
+     "wazuh/backups/ai_rules.20261029-020221.active.xml",
+     "/var/ossec/etc/siem10_backups/ai_rules.20261029-020221.xml"
+    ],
+    "validate": {
+     "ok": true,
+     "out": "",
+     "new_messages": []
+    },
+    "restart": {
+     "ok": true,
+     "out": "ead.\n  from starlette.testclient import TestClient\n2026/10/28 15:02:28 wazuh-integratord: INFO: Remote integrations not configured. Clean exit.\n2026/10/28 15:02:32 wazuh-modulesd:router: INFO: Loaded router module.\n2026/10/28 15:02:32 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.\n2026/10/28 15:02:32 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module."
+    },
+    "health": {
+     "ready_s": 0.4,
+     "canary_http": 404,
+     "canary_alert": true,
+     "canary_alert_s": 2.4,
+     "canary_enriched": 1,
+     "canary_enriched_s": 12.5,
+     "ai_rules_host_eq_active": true
+    },
+    "functional": {
+     "fired_at_after_remove": []
+    }
+   },
+   "reason": "thay bằng v4-AI (PREREG 9.1)"
+  }
+ ]
+}

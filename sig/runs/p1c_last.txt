@@ -1,0 +1,118 @@
+analysisd -t trước khi thăm dò: rc=0, cảnh báo: không
+
+===== PHA A: analysisd -t rc=0, cảnh báo MỚI: không
+
+-- A/syntax_g3 (33/33 khối)
+   pcre2 (?i), 404                          -> 119950 L8 [web-accesslog]  url='/x?q=SP_PCRE'
+   pcre2 (?i), 200 có ?                     -> 119950 L8 [web-accesslog]  url='/x?q=sp_pcre'
+   G3 L8 vs 31105 L6                        -> 119951 L8 [web-accesslog]  url='/x?q=sp_g3a%3Cscript'
+   G3 L7 vs 31103 L7                        -> 31103 L7 [web-accesslog]  url='/x?q=sp_g3b+union%20select'
+   G3 L6 vs 31105 L6                        -> 31105 L6 [web-accesslog]  url='/x?q=sp_g3c%3Cscript'
+   G3 L5 vs 31101 L5                        -> 31101 L5 [web-accesslog]  url='/x?q=sp_g3d'
+   G3 L5 vs 31105 L6                        -> 31105 L6 [web-accesslog]  url='/x?q=sp_g3d%3Cscript'
+   G2 if_sid 31100, 200 không ?             -> 31108 L0 (không alert) [web-accesslog]  url='/sp_g2a/index.html'
+   G2 if_sid 31100, 301 không ?             -> 31108 L0 (không alert) [web-accesslog]  url='/sp_g2a'
+   G2 if_sid 31100, 200 có ?                -> 119955 L8 [web-accesslog]  url='/sp_g2a?x=1'
+   G2 if_sid 31100, 200 %27 không ?         -> 31108 L0 (không alert) [web-accesslog]  url='/sp_g2a%27'
+   G2 if_sid 31100, 200 ../ không ?         -> 31108 L0 (không alert) [web-accesslog]  url='/sp_g2a/../index.html'
+   G2 if_sid 31100, 404 không ?             -> 119955 L8 [web-accesslog]  url='/sp_g2a'
+   G2 if_sid 31100+31108, 200 không ?       -> 119956 L8 [web-accesslog]  url='/sp_g2b/index.html'
+   G2 if_sid 31100+31108, 200 có ?          -> 119956 L8 [web-accesslog]  url='/sp_g2b?x=1'
+   \x3c khớp <                              -> 119957 L8 [web-accesslog]  url='/x?q=sp_hex<b'
+   \x3c với %3C (không mong khớp)           -> 31101 L5 [web-accesslog]  url='/x?q=sp_hex%3Cb'
+   \x26 khớp &                              -> 119958 L8 [web-accesslog]  url='/x?a=sp_amp&z=1'
+   2 thẻ url: chỉ m1                        -> 31101 L5 [web-accesslog]  url='/x?q=sp_m1'
+   2 thẻ url: chỉ m2                        -> 31101 L5 [web-accesslog]  url='/x?q=sp_m2'
+   2 thẻ url: m1 ... m2                     -> 31101 L5 [web-accesslog]  url='/x?q=sp_m1&r=sp_m2'
+   2 thẻ url: m1m2 liền                     -> 119959 L8 [web-accesslog]  url='/x?q=sp_m1sp_m2'
+   pcre2 không (?i), chữ thường             -> 119960 L8 [web-accesslog]  url='/x?q=sp_case'
+   pcre2 không (?i), chữ HOA                -> 31101 L5 [web-accesslog]  url='/x?q=SP_CASE'
+   <url> với marker chỉ ở UA                -> 31101 L5 [web-accesslog]  url='/x?q=1'
+   url có \\ (Apache thoát \)               -> 119962 L8 [web-accesslog]  url='/x?q=sp_bs\\\\x'
+   url có \" (Apache thoát ")               -> 31101 L5 [web-accesslog]  url='/x?q=a\\"b'
+   url có khoảng trắng thô                  -> (không decoder)  url=None
+   url %22 (dấu nháy mã hóa)                -> 31101 L5 [web-accesslog]  url='/x?q=a%22b'
+   không luật thăm dò: 404 thường           -> 31101 L5 [web-accesslog]  url='/khong_co'
+   không luật thăm dò: 200 thường           -> 31108 L0 (không alert) [web-accesslog]  url='/index.html'
+   không luật thăm dò: 500                  -> 31122 L5 [web-accesslog]  url='/x'
+   không luật thăm dò: Shellshock UA, 404   -> 31166 L6 [web-accesslog]  url='/cgi-bin/a.cgi'
+
+-- A/g1_siemlab_only_404 (30/30 khối)
+   rule xuất hiện: ['100012', '110020']
+   dòng khác luật cơ sở: [('SIEMLAB #15', '110020', 10), ('SIEMLAB #30', '110020', 10)]
+   số dòng có alert: 30/30
+
+-- A/g1_mix_404 (60/60 khối)
+   rule xuất hiện: ['100012', '110020', '31101']
+   dòng khác luật cơ sở: [('combined #14', '110020', 10), ('combined #28', '110020', 10)]
+   số dòng có alert: 60/60
+
+-- A/g1_mix_401 (60/60 khối)
+   rule xuất hiện: ['100011', '110011', '31101', '31151']
+   dòng khác luật cơ sở: [('SIEMLAB #12', '110011', 10), ('combined #14', '31151', 10), ('SIEMLAB #24', '110011', 10), ('combined #28', '31151', 10)]
+   số dòng có alert: 60/60
+
+-- A/combined_only_404 (30/30 khối)
+   rule xuất hiện: ['31101', '31151']
+   dòng khác luật cơ sở: [('combined #14', '31151', 10), ('combined #28', '31151', 10)]
+   số dòng có alert: 30/30
+
+===== PHA B: analysisd -t rc=0, cảnh báo MỚI: không
+
+-- B/overwrite_single (33/33 khối)
+   pcre2 (?i), 404                          -> 119950 L8 [web-accesslog]  url='/x?q=SP_PCRE'
+   pcre2 (?i), 200 có ?                     -> 119950 L8 [web-accesslog]  url='/x?q=sp_pcre'
+   G3 L8 vs 31105 L6                        -> 119951 L8 [web-accesslog]  url='/x?q=sp_g3a%3Cscript'
+   G3 L7 vs 31103 L7                        -> 31103 L7 [web-accesslog]  url='/x?q=sp_g3b+union%20select'
+   G3 L6 vs 31105 L6                        -> 31105 L6 [web-accesslog]  url='/x?q=sp_g3c%3Cscript'
+   G3 L5 vs 31101 L5                        -> 31101 L0 (không alert) [web-accesslog]  url='/x?q=sp_g3d'
+   G3 L5 vs 31105 L6                        -> 31105 L6 [web-accesslog]  url='/x?q=sp_g3d%3Cscript'
+   G2 if_sid 31100, 200 không ?             -> 31108 L0 (không alert) [web-accesslog]  url='/sp_g2a/index.html'
+   G2 if_sid 31100, 301 không ?             -> 31108 L0 (không alert) [web-accesslog]  url='/sp_g2a'
+   G2 if_sid 31100, 200 có ?                -> 119955 L8 [web-accesslog]  url='/sp_g2a?x=1'
+   G2 if_sid 31100, 200 %27 không ?         -> 31108 L0 (không alert) [web-accesslog]  url='/sp_g2a%27'
+   G2 if_sid 31100, 200 ../ không ?         -> 31108 L0 (không alert) [web-accesslog]  url='/sp_g2a/../index.html'
+   G2 if_sid 31100, 404 không ?             -> 119955 L8 [web-accesslog]  url='/sp_g2a'
+   G2 if_sid 31100+31108, 200 không ?       -> 119956 L8 [web-accesslog]  url='/sp_g2b/index.html'
+   G2 if_sid 31100+31108, 200 có ?          -> 119956 L8 [web-accesslog]  url='/sp_g2b?x=1'
+   \x3c khớp <                              -> 119957 L8 [web-accesslog]  url='/x?q=sp_hex<b'
+   \x3c với %3C (không mong khớp)           -> 31101 L0 (không alert) [web-accesslog]  url='/x?q=sp_hex%3Cb'
+   \x26 khớp &                              -> 119958 L8 [web-accesslog]  url='/x?a=sp_amp&z=1'
+   2 thẻ url: chỉ m1                        -> 31101 L0 (không alert) [web-accesslog]  url='/x?q=sp_m1'
+   2 thẻ url: chỉ m2                        -> 31101 L0 (không alert) [web-accesslog]  url='/x?q=sp_m2'
+   2 thẻ url: m1 ... m2                     -> 31101 L0 (không alert) [web-accesslog]  url='/x?q=sp_m1&r=sp_m2'
+   2 thẻ url: m1m2 liền                     -> 119959 L8 [web-accesslog]  url='/x?q=sp_m1sp_m2'
+   pcre2 không (?i), chữ thường             -> 119960 L8 [web-accesslog]  url='/x?q=sp_case'
+   pcre2 không (?i), chữ HOA                -> 31101 L0 (không alert) [web-accesslog]  url='/x?q=SP_CASE'
+   <url> với marker chỉ ở UA                -> 31101 L0 (không alert) [web-accesslog]  url='/x?q=1'
+   url có \\ (Apache thoát \)               -> 119962 L8 [web-accesslog]  url='/x?q=sp_bs\\\\x'
+   url có \" (Apache thoát ")               -> 31101 L0 (không alert) [web-accesslog]  url='/x?q=a\\"b'
+   url có khoảng trắng thô                  -> (không decoder)  url=None
+   url %22 (dấu nháy mã hóa)                -> 31101 L0 (không alert) [web-accesslog]  url='/x?q=a%22b'
+   không luật thăm dò: 404 thường           -> 31101 L0 (không alert) [web-accesslog]  url='/khong_co'
+   không luật thăm dò: 200 thường           -> 31108 L0 (không alert) [web-accesslog]  url='/index.html'
+   không luật thăm dò: 500                  -> 31122 L0 (không alert) [web-accesslog]  url='/x'
+   không luật thăm dò: Shellshock UA, 404   -> 31166 L6 [web-accesslog]  url='/cgi-bin/a.cgi'
+
+-- B/g1_mix_404 (60/60 khối)
+   rule xuất hiện: ['100012', '110020', '31101']
+   dòng khác luật cơ sở: [('SIEMLAB #15', '110020', 10), ('SIEMLAB #30', '110020', 10)]
+   số dòng có alert: 30/60
+
+-- B/g1_mix_401 (60/60 khối)
+   rule xuất hiện: ['100011', '110011', '31101']
+   dòng khác luật cơ sở: [('SIEMLAB #12', '110011', 10), ('SIEMLAB #24', '110011', 10)]
+   số dòng có alert: 30/60
+
+-- B/combined_only_404 (30/30 khối)
+   rule xuất hiện: ['31101']
+   dòng khác luật cơ sở: không có
+   số dòng có alert: 0/30
+
+-- B/combined_only_501 (20/20 khối)
+   rule xuất hiện: ['31121']
+   dòng khác luật cơ sở: không có
+   số dòng có alert: 0/20
+
+DỌN: file tạm đã xóa; analysisd -t rc=0; trở về đúng cảnh báo ban đầu
+-> /mnt/d/everything SIEM/A/siem-wazuh-ai/sig/runs/p1c_20261115-190925/result.json

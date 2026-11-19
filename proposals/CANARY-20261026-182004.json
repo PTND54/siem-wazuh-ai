@@ -1,0 +1,167 @@
+{
+ "format": "siem10-proposal-v1",
+ "proposal_id": "CANARY-20261026-182004",
+ "status": "removed",
+ "created_at": "2026-10-26T07:20:04+00:00",
+ "generated_by": "apply_rule.py make-canary",
+ "kind": "canary",
+ "template": {
+  "name": "canary_frequency",
+  "version": 1
+ },
+ "fingerprint": "47e88ea221ee0cea",
+ "xml_sha256": "47e88ea221ee0cea7c6eecb46efc90babe7a1b412ae0ca6c81c636bce944f5cd",
+ "regression": {
+  "passed": true,
+  "summary": "không áp dụng — luật thử chỉ khớp 192.0.2.0/24 (TEST-NET)",
+  "kind": "canary"
+ },
+ "verify": {
+  "lines": [
+   "SIEMLAB 1792999204652510 192.0.2.77 \"GET /canary0 HTTP/1.1\" 404 10",
+   "SIEMLAB 1792999204652511 192.0.2.77 \"GET /canary1 HTTP/1.1\" 404 10",
+   "SIEMLAB 1792999204652512 192.0.2.77 \"GET /canary2 HTTP/1.1\" 404 10",
+   "SIEMLAB 1792999204652513 192.0.2.77 \"GET /canary3 HTTP/1.1\" 404 10",
+   "SIEMLAB 1792999204652514 192.0.2.77 \"GET /canary4 HTTP/1.1\" 404 10",
+   "SIEMLAB 1792999204652515 192.0.2.77 \"GET /canary5 HTTP/1.1\" 404 10",
+   "SIEMLAB 1792999204652516 192.0.2.77 \"GET /canary6 HTTP/1.1\" 404 10"
+  ],
+  "expect_fire_at": [
+   3,
+   6
+  ]
+ },
+ "history": [
+  {
+   "at": "2026-10-26T07:20:53+00:00",
+   "action": "apply",
+   "by": "thuan",
+   "ok": true,
+   "rule_ids": [
+    "119830"
+   ],
+   "timings": {
+    "backup_s": 0.96,
+    "write_s": 0.21,
+    "validate_s": 0.86,
+    "restart_s": 19.8,
+    "health_s": 4.2,
+    "functional_s": 1.16
+   },
+   "details": {
+    "backup": [
+     "wazuh/backups/ai_rules.20261026-182015.host.xml",
+     "wazuh/backups/ai_rules.20261026-182015.active.xml",
+     "/var/ossec/etc/siem10_backups/ai_rules.20261026-182015.xml"
+    ],
+    "validate": {
+     "ok": true,
+     "out": "",
+     "new_messages": []
+    },
+    "restart": {
+     "ok": true,
+     "out": "ead.\n  from starlette.testclient import TestClient\n2026/10/26 07:20:29 wazuh-integratord: INFO: Remote integrations not configured. Clean exit.\n2026/10/26 07:20:34 wazuh-modulesd:router: INFO: Loaded router module.\n2026/10/26 07:20:34 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.\n2026/10/26 07:20:34 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module."
+    },
+    "health": {
+     "ready_s": 4.2,
+     "canary_http": 404,
+     "canary_alert": true,
+     "canary_alert_s": 2.5,
+     "canary_enriched": 1,
+     "canary_enriched_s": 10.6,
+     "ai_rules_host_eq_active": true
+    },
+    "functional": {
+     "fired_at": [
+      3,
+      6
+     ],
+     "expected": [
+      3,
+      6
+     ]
+    },
+    "pre_health": {
+     "ready_s": 0.6,
+     "canary_http": 404,
+     "canary_alert": true,
+     "canary_alert_s": 2.4,
+     "canary_enriched": 1,
+     "canary_enriched_s": 8.5,
+     "ai_rules_host_eq_active": true
+    }
+   },
+   "no_regression_override": false
+  },
+  {
+   "at": "2026-10-26T07:22:40+00:00",
+   "action": "verify",
+   "by": "thuan",
+   "ok": true,
+   "result": {
+    "fired_at": [
+     3,
+     6
+    ],
+    "expected": [
+     3,
+     6
+    ],
+    "match": true,
+    "rule_ids": [
+     "100012",
+     "100012",
+     "119830",
+     "100012",
+     "100012",
+     "119830",
+     "100012"
+    ]
+   }
+  },
+  {
+   "at": "2026-10-26T07:23:38+00:00",
+   "action": "remove",
+   "by": "thuan",
+   "ok": true,
+   "timings": {
+    "backup_s": 1.03,
+    "write_s": 0.21,
+    "validate_s": 0.8,
+    "restart_s": 39.7,
+    "health_s": 4.1,
+    "functional_s": 0.94
+   },
+   "details": {
+    "backup": [
+     "wazuh/backups/ai_rules.20261026-182240.host.xml",
+     "wazuh/backups/ai_rules.20261026-182240.active.xml",
+     "/var/ossec/etc/siem10_backups/ai_rules.20261026-182240.xml"
+    ],
+    "validate": {
+     "ok": true,
+     "out": "",
+     "new_messages": []
+    },
+    "restart": {
+     "ok": true,
+     "out": "ead.\n  from starlette.testclient import TestClient\n2026/10/26 07:23:16 wazuh-integratord: INFO: Remote integrations not configured. Clean exit.\n2026/10/26 07:23:19 wazuh-modulesd:router: INFO: Loaded router module.\n2026/10/26 07:23:19 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.\n2026/10/26 07:23:19 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module."
+    },
+    "health": {
+     "ready_s": 4.1,
+     "canary_http": 404,
+     "canary_alert": true,
+     "canary_alert_s": 2.4,
+     "canary_enriched": 1,
+     "canary_enriched_s": 10.6,
+     "ai_rules_host_eq_active": true
+    },
+    "functional": {
+     "fired_at_after_remove": []
+    }
+   },
+   "reason": null
+  }
+ ]
+}

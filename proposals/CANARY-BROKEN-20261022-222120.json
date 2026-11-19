@@ -1,0 +1,121 @@
+{
+ "format": "siem10-proposal-v1",
+ "proposal_id": "CANARY-BROKEN-20261022-222120",
+ "status": "removed",
+ "created_at": "2026-10-22T11:21:20+00:00",
+ "generated_by": "apply_rule.py make-canary",
+ "kind": "canary",
+ "template": {
+  "name": "canary_frequency",
+  "version": 1
+ },
+ "fingerprint": "f16b5195c2b9649b",
+ "xml_sha256": "f16b5195c2b9649b47735a7ea58afb257277878a9f833de8811e0c321fb72483",
+ "regression": {
+  "passed": true,
+  "summary": "không áp dụng — luật thử chỉ khớp 192.0.2.0/24 (TEST-NET)",
+  "kind": "canary"
+ },
+ "verify": {
+  "lines": [
+   "SIEMLAB 1792668080055355 192.0.2.77 \"GET /canary0 HTTP/1.1\" 404 10",
+   "SIEMLAB 1792668080055356 192.0.2.77 \"GET /canary1 HTTP/1.1\" 404 10",
+   "SIEMLAB 1792668080055357 192.0.2.77 \"GET /canary2 HTTP/1.1\" 404 10",
+   "SIEMLAB 1792668080055358 192.0.2.77 \"GET /canary3 HTTP/1.1\" 404 10",
+   "SIEMLAB 1792668080055359 192.0.2.77 \"GET /canary4 HTTP/1.1\" 404 10",
+   "SIEMLAB 1792668080055360 192.0.2.77 \"GET /canary5 HTTP/1.1\" 404 10",
+   "SIEMLAB 1792668080055361 192.0.2.77 \"GET /canary6 HTTP/1.1\" 404 10"
+  ],
+  "expect_fire_at": [
+   3,
+   6
+  ]
+ },
+ "history": [
+  {
+   "at": "2026-10-22T11:22:11+00:00",
+   "action": "apply",
+   "by": "thuan",
+   "ok": true,
+   "rule_ids": [
+    "119801"
+   ],
+   "timings": {
+    "backup_s": 0.35,
+    "write_s": 0.19,
+    "validate_s": 0.83,
+    "restart_s": 13.7,
+    "health_s": 0.5
+   },
+   "details": {
+    "backup": [
+     "wazuh/backups/local_rules.20261022-222143.host.xml",
+     "wazuh/backups/local_rules.20261022-222143.active.xml",
+     "/var/ossec/etc/rules/local_rules.xml.bak.20261022-222143"
+    ],
+    "validate": {
+     "ok": true,
+     "out": "2026/10/22 11:21:44 wazuh-analysisd: WARNING: (7620): Signature ID '999999' was not found. Invalid 'if_matched_sid'.Rule '119801' will be ignored."
+    },
+    "restart": {
+     "ok": true,
+     "out": "ead.\n  from starlette.testclient import TestClient\n2026/10/22 11:21:50 wazuh-integratord: INFO: Remote integrations not configured. Clean exit.\n2026/10/22 11:21:55 wazuh-modulesd:router: INFO: Loaded router module.\n2026/10/22 11:21:55 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.\n2026/10/22 11:21:55 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module."
+    },
+    "health": {
+     "ready_s": 0.5,
+     "canary_http": 404,
+     "canary_alert": true,
+     "canary_alert_s": 2.4,
+     "canary_enriched": 1,
+     "canary_enriched_s": 12.4
+    },
+    "pre_health": {
+     "ready_s": 0.5,
+     "canary_http": 404,
+     "canary_alert": true,
+     "canary_alert_s": 2.4,
+     "canary_enriched": 1,
+     "canary_enriched_s": 8.5
+    }
+   },
+   "no_regression_override": false
+  },
+  {
+   "at": "2026-10-22T11:23:14+00:00",
+   "action": "remove",
+   "by": "thuan",
+   "ok": true,
+   "timings": {
+    "backup_s": 0.17,
+    "write_s": 0.17,
+    "validate_s": 0.79,
+    "restart_s": 12.2,
+    "health_s": 0.4
+   },
+   "details": {
+    "backup": [
+     "wazuh/backups/local_rules.20261022-222254.host.xml",
+     "wazuh/backups/local_rules.20261022-222254.active.xml",
+     "/var/ossec/etc/rules/local_rules.xml.bak.20261022-222254"
+    ],
+    "validate": {
+     "ok": true,
+     "out": ""
+    },
+    "restart": {
+     "ok": true,
+     "out": "ead.\n  from starlette.testclient import TestClient\n2026/10/22 11:23:00 wazuh-integratord: INFO: Remote integrations not configured. Clean exit.\n2026/10/22 11:23:04 wazuh-modulesd:router: INFO: Loaded router module.\n2026/10/22 11:23:04 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.\n2026/10/22 11:23:04 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module."
+    },
+    "health": {
+     "ready_s": 0.4,
+     "canary_http": 404,
+     "canary_alert": true,
+     "canary_alert_s": 2.4,
+     "canary_enriched": 1,
+     "canary_enriched_s": 6.4
+    }
+   },
+   "reason": null
+  }
+ ]
+}

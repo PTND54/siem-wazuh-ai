@@ -1,0 +1,31 @@
+Sat Nov 14 16:03:52 UTC 2026
+max_map_count=1048576
+ Container siem10-wazuh.manager-1 Starting 
+ Container apache-target Starting 
+ Container redis Starting 
+ Container siem10-wazuh.indexer-1 Starting 
+ Container siem10-wazuh.manager-1 Started 
+ Container apache-target Started 
+ Container wazuh-agent Starting 
+ Container redis Started 
+ Container siem10-wazuh.indexer-1 Started 
+ Container siem10-wazuh.dashboard-1 Starting 
+ Container ai-service Starting 
+ Container wazuh-agent Started 
+ Container siem10-wazuh.dashboard-1 Started 
+ Container ai-service Started 
+start rc=0
+ai-service  running  Up About a minute
+apache-target  running  Up 2 minutes
+redis  running  Up 2 minutes
+wazuh.dashboard  running  Up 2 minutes
+wazuh.indexer  running  Up 2 minutes
+wazuh.manager  running  Up 2 minutes
+wazuh-agent  running  Up 2 minutes
+
+Wazuh agent_control. List of available agents:
+   ID: 000, Name: wazuh.manager (server), IP: 127.0.0.1, Active/Local
+   ID: 003, Name: apache-lab-agent, IP: any, Active
+
+List of agentless devices:
+

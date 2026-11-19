@@ -1,0 +1,79 @@
+TRÙNG bản kê đã chốt: digest 5e55b4673c269d5bb8b66d7ff30fffcfcfa6484a8517339cd1fe8b20bc90ede0 (394 file), applied ['AI-R110011-r401-N12-T120-20261028-150005', 'AI-R110020-web_scan-N15-T10-20261028-150005', 'AI-R110030-any-N500-T10-20261028-150005']
+file trên host: /home/thuan/siem-wazuh-ai/sig/rules/zy_siem10_sig_rules.xml sha256 c5a016d3d8b0ef58
+file trên Manager: /var/ossec/etc/rules/zy_siem10_sig_rules.xml sha256 1afb2f4a261c4b40
+  • sức khỏe trước: ĐẠT
+  • analysisd -t: OK
+  • wazuh-control (trong container): OK (15.4 s)
+  • sức khỏe sau: ĐẠT {'ready_s': 0.5, 'canary_http': 404, 'canary_alert': True, 'canary_alert_s': 2.4, 'canary_enriched': 1, 'canary_enriched_s': 8.4, 'ai_rules_host_eq_active': True}
+  • chức năng (logtest): ĐẠT {"sqli_200": {"rule": "100110", "level": 8, "alert": true, "ok": true}, "xss_404": {"rule": "100120", "level": 8, "alert": true, "ok": true}, "traversal_path_404": {"rule": "100130", "level": 8, "alert": true, "ok": true}, "cmdi_200": {"rule": "100131", "level": 8, "alert": true, "ok": true}, "plain_404_khong_alert": {"rule": "31101", "level": 0, "alert": false, "ok": true}, "plain_200_khong_alert": {"rule": "31108", "level": 0, "alert": false, "ok": true}, "cung_ip_6_dong": {"rules": ["100110", "100110", "100110", "100110", "100110", "100110"], "ok": true}, "g1_110020": {"fired_at": ["SIEMLAB #15", "SIEMLAB #30"], "khong_co_31151": true, "ok": true}}
+nhật ký -> sig/runs/rules_install_20261115-211210.json
+✓ install xong
+## TẬP GIỮ RIÊNG v2 — 2026-11-15T10:12:10Z
+ĐỐI CHIẾU: ĐẠT (phản hồi 360, access_log 360, siem.log 360)
+ĐỐI CHIẾU: ĐẠT (phản hồi 360, access_log 360, siem.log 360)
+ĐỐI CHIẾU: ĐẠT (phản hồi 360, access_log 360, siem.log 360)
+ĐỐI CHIẾU: ĐẠT (phản hồi 360, access_log 360, siem.log 360)
+ĐỐI CHIẾU: ĐẠT (phản hồi 120, access_log 120, siem.log 120)
+logcollector /var/log/apache-lab/access_log drops [0]
+logcollector /var/log/apache-lab/siem.log drops [0]
+analysisd -t với file vô hiệu hóa: rc=0, cảnh báo MỚI: không
+builtin(base) sqli {'lines': 360, 'skipped_non_ascii': 0, 'chunks_resent': 0, 'seconds': 2.4}
+builtin(base) xss {'lines': 360, 'skipped_non_ascii': 0, 'chunks_resent': 0, 'seconds': 2.2}
+builtin(base) traversal {'lines': 360, 'skipped_non_ascii': 0, 'chunks_resent': 0, 'seconds': 2.1}
+builtin(base) cmdi {'lines': 360, 'skipped_non_ascii': 0, 'chunks_resent': 0, 'seconds': 2.1}
+builtin(base) benign {'lines': 120, 'skipped_non_ascii': 0, 'chunks_resent': 0, 'seconds': 1.0}
+DỌN: đã xóa; analysisd -t rc=0; trở về đúng ban đầu
+{"session": "benign", "ip": "172.30.90.248", "n": 120, "alerts_ip_all_days": 126, "siemlab_alerts": 120, "siemlab_ok": true, "web_alerts": 6, "ai": {"total": 120, "flagged": 0}, "rate": 1.0, "start_utc": "2026-11-15T10:17:22.961798+00:00", "end_utc": "2026-11-15T10:19:27.972246+00:00"}
+{"session": "cmdi", "ip": "172.30.90.247", "n": 360, "alerts_ip_all_days": 530, "siemlab_alerts": 360, "siemlab_ok": true, "web_alerts": 170, "ai": {"total": 360, "flagged": 0}, "rate": 5.0, "start_utc": "2026-11-15T10:16:04.971378+00:00", "end_utc": "2026-11-15T10:17:22.021303+00:00"}
+{"session": "sqli", "ip": "172.30.90.244", "n": 360, "alerts_ip_all_days": 702, "siemlab_alerts": 360, "siemlab_ok": true, "web_alerts": 342, "ai": {"total": 360, "flagged": 0}, "rate": 5.0, "start_utc": "2026-11-15T10:12:11.335995+00:00", "end_utc": "2026-11-15T10:13:28.386831+00:00"}
+{"session": "traversal", "ip": "172.30.90.246", "n": 360, "alerts_ip_all_days": 603, "siemlab_alerts": 360, "siemlab_ok": true, "web_alerts": 243, "ai": {"total": 360, "flagged": 302}, "rate": 5.0, "start_utc": "2026-11-15T10:14:47.209399+00:00", "end_utc": "2026-11-15T10:16:04.260557+00:00"}
+{"session": "xss", "ip": "172.30.90.245", "n": 360, "alerts_ip_all_days": 690, "siemlab_alerts": 360, "siemlab_ok": true, "web_alerts": 330, "ai": {"total": 360, "flagged": 0}, "rate": 5.0, "start_utc": "2026-11-15T10:13:29.315792+00:00", "end_utc": "2026-11-15T10:14:46.362362+00:00"}
+
+== theo loại (đường thật)
+  benign2 / ctx1               nhóm    4/12    33.3%  hợp    4/12    33.3%  dựng sẵn    2/12    16.7%
+  benign2 / ctx1 / E1          nhóm    2/6     33.3%  hợp    2/6     33.3%  dựng sẵn    1/6     16.7%
+  benign2 / ctx1 / F           nhóm    2/6     33.3%  hợp    2/6     33.3%  dựng sẵn    1/6     16.7%
+  benign2 / ctx10              nhóm    0/12     0.0%  hợp    0/12     0.0%  dựng sẵn    0/12     0.0%
+  benign2 / ctx10 / E1         nhóm    0/6      0.0%  hợp    0/6      0.0%  dựng sẵn    0/6      0.0%
+  benign2 / ctx10 / F          nhóm    0/6      0.0%  hợp    0/6      0.0%  dựng sẵn    0/6      0.0%
+  benign2 / ctx2               nhóm    0/12     0.0%  hợp    0/12     0.0%  dựng sẵn    0/12     0.0%
+  benign2 / ctx2 / E1          nhóm    0/6      0.0%  hợp    0/6      0.0%  dựng sẵn    0/6      0.0%
+  benign2 / ctx2 / F           nhóm    0/6      0.0%  hợp    0/6      0.0%  dựng sẵn    0/6      0.0%
+  benign2 / ctx3               nhóm    0/12     0.0%  hợp    0/12     0.0%  dựng sẵn    0/12     0.0%
+  benign2 / ctx3 / E1          nhóm    0/6      0.0%  hợp    0/6      0.0%  dựng sẵn    0/6      0.0%
+  benign2 / ctx3 / F           nhóm    0/6      0.0%  hợp    0/6      0.0%  dựng sẵn    0/6      0.0%
+  benign2 / ctx4               nhóm    0/12     0.0%  hợp    0/12     0.0%  dựng sẵn    0/12     0.0%
+  benign2 / ctx4 / E1          nhóm    0/6      0.0%  hợp    0/6      0.0%  dựng sẵn    0/6      0.0%
+  benign2 / ctx4 / F           nhóm    0/6      0.0%  hợp    0/6      0.0%  dựng sẵn    0/6      0.0%
+  benign2 / ctx5               nhóm    0/12     0.0%  hợp    0/12     0.0%  dựng sẵn    0/12     0.0%
+  benign2 / ctx5 / E1          nhóm    0/6      0.0%  hợp    0/6      0.0%  dựng sẵn    0/6      0.0%
+  benign2 / ctx5 / F           nhóm    0/6      0.0%  hợp    0/6      0.0%  dựng sẵn    0/6      0.0%
+  benign2 / ctx6               nhóm    2/12    16.7%  hợp    2/12    16.7%  dựng sẵn    0/12     0.0%
+  benign2 / ctx6 / E1          nhóm    1/6     16.7%  hợp    1/6     16.7%  dựng sẵn    0/6      0.0%
+  benign2 / ctx6 / F           nhóm    1/6     16.7%  hợp    1/6     16.7%  dựng sẵn    0/6      0.0%
+  benign2 / ctx7               nhóm    0/12     0.0%  hợp    0/12     0.0%  dựng sẵn    0/12     0.0%
+  benign2 / ctx7 / E1          nhóm    0/6      0.0%  hợp    0/6      0.0%  dựng sẵn    0/6      0.0%
+  benign2 / ctx7 / F           nhóm    0/6      0.0%  hợp    0/6      0.0%  dựng sẵn    0/6      0.0%
+  benign2 / ctx8               nhóm    0/12     0.0%  hợp    0/12     0.0%  dựng sẵn    0/12     0.0%
+  benign2 / ctx8 / E1          nhóm    0/6      0.0%  hợp    0/6      0.0%  dựng sẵn    0/6      0.0%
+  benign2 / ctx8 / F           nhóm    0/6      0.0%  hợp    0/6      0.0%  dựng sẵn    0/6      0.0%
+  benign2 / ctx9               nhóm    0/12     0.0%  hợp    0/12     0.0%  dựng sẵn    0/12     0.0%
+  benign2 / ctx9 / E1          nhóm    0/6      0.0%  hợp    0/6      0.0%  dựng sẵn    0/6      0.0%
+  benign2 / ctx9 / F           nhóm    0/6      0.0%  hợp    0/6      0.0%  dựng sẵn    0/6      0.0%
+  test2 / cmdi                 nhóm  156/360   43.3%  hợp  170/360   47.2%  dựng sẵn   31/360    8.6%
+  test2 / cmdi / E1            nhóm   63/120   52.5%  hợp   75/120   62.5%  dựng sẵn   25/120   20.8%
+  test2 / cmdi / E2            nhóm   47/120   39.2%  hợp   49/120   40.8%  dựng sẵn    6/120    5.0%
+  test2 / cmdi / E3            nhóm   46/120   38.3%  hợp   46/120   38.3%  dựng sẵn    0/120    0.0%
+  test2 / sqli                 nhóm  336/360   93.3%  hợp  342/360   95.0%  dựng sẵn  210/360   58.3%
+  test2 / sqli / E1            nhóm  112/120   93.3%  hợp  115/120   95.8%  dựng sẵn  105/120   87.5%
+  test2 / sqli / E2            nhóm  112/120   93.3%  hợp  115/120   95.8%  dựng sẵn  104/120   86.7%
+  test2 / sqli / E3            nhóm  112/120   93.3%  hợp  112/120   93.3%  dựng sẵn    1/120    0.8%
+  test2 / traversal            nhóm  243/360   67.5%  hợp  243/360   67.5%  dựng sẵn   25/360    6.9%
+  test2 / traversal / E1       nhóm   81/120   67.5%  hợp   81/120   67.5%  dựng sẵn   25/120   20.8%
+  test2 / traversal / E2       nhóm   81/120   67.5%  hợp   81/120   67.5%  dựng sẵn    0/120    0.0%
+  test2 / traversal / E3       nhóm   81/120   67.5%  hợp   81/120   67.5%  dựng sẵn    0/120    0.0%
+  test2 / xss                  nhóm  327/360   90.8%  hợp  330/360   91.7%  dựng sẵn  162/360   45.0%
+  test2 / xss / E1             nhóm  111/120   92.5%  hợp  112/120   93.3%  dựng sẵn   86/120   71.7%
+  test2 / xss / E2             nhóm  108/120   90.0%  hợp  110/120   91.7%  dựng sẵn   76/120   63.3%
+  test2 / xss / E3             nhóm  108/120   90.0%  hợp  108/120   90.0%  dựng sẵn    0/120    0.0%
+-> sig/runs/p6_test2_measure.json

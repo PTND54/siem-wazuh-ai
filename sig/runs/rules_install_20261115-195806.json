@@ -1,0 +1,100 @@
+{
+ "cmd": "install",
+ "start_utc": "2026-11-15T08:57:02.931659+00:00",
+ "src_sha256": "1fad2434cfa19ea8d9d4ea9140f308603b4942632e80707b2cc457225e01b0a6",
+ "health_before": {
+  "ok": true,
+  "det": {
+   "ready_s": 0.6,
+   "canary_http": 404,
+   "canary_alert": true,
+   "canary_alert_s": 2.4,
+   "canary_enriched": 1,
+   "canary_enriched_s": 8.6,
+   "ai_rules_host_eq_active": true
+  }
+ },
+ "validate": {
+  "ok": true,
+  "new": []
+ },
+ "restart": {
+  "ok": true,
+  "s": 14.2
+ },
+ "health_after": {
+  "ok": true,
+  "det": {
+   "ready_s": 0.5,
+   "canary_http": 404,
+   "canary_alert": true,
+   "canary_alert_s": 2.4,
+   "canary_enriched": 1,
+   "canary_enriched_s": 8.5,
+   "ai_rules_host_eq_active": true
+  }
+ },
+ "functional": {
+  "ok": false,
+  "det": {
+   "sqli_200": {
+    "rule": "100110",
+    "level": 8,
+    "alert": true,
+    "ok": true
+   },
+   "xss_404": {
+    "rule": "100120",
+    "level": 8,
+    "alert": true,
+    "ok": true
+   },
+   "traversal_path_404": {
+    "rule": "100130",
+    "level": 8,
+    "alert": true,
+    "ok": true
+   },
+   "cmdi_200": {
+    "rule": "100131",
+    "level": 8,
+    "alert": true,
+    "ok": true
+   },
+   "plain_404_khong_alert": {
+    "rule": "31101",
+    "level": 0,
+    "alert": false,
+    "ok": true
+   },
+   "plain_200_khong_alert": {
+    "rule": "31108",
+    "level": 0,
+    "alert": false,
+    "ok": true
+   },
+   "tan_suat_sqli": {
+    "fired_at": [
+     3,
+     6
+    ],
+    "ok": false
+   },
+   "g1_110020": {
+    "fired_at": [
+     "SIEMLAB #15",
+     "SIEMLAB #30"
+    ],
+    "khong_co_31151": true,
+    "ok": true
+   }
+  }
+ },
+ "rollback": {
+  "why": "sức khỏe/chức năng không đạt",
+  "validate_ok": true,
+  "restart_ok": true,
+  "health_ok": true
+ },
+ "result": "rolled_back"
+}

@@ -1,0 +1,2 @@
+test2_fill cmdfill Commands-Linux.txt d793e6b06c2d2d8aee1dfc4e42d18b1d8bd84884a9d23e5fe0bc6b1a736e4765 571 https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/master/attack/os-cmd-execution/Commands-Linux.txt
+test2_fill cmdfill Commands-Windows.txt fdae52df7bb3dced1f532157543c537bd78bf005ef6e7660bc9b59fac783a6c4 158 https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/master/attack/os-cmd-execution/Commands-Windows.txt

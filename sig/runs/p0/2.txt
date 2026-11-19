@@ -1,0 +1,120 @@
+## B3 agent
+
+Wazuh agent_control. List of available agents:
+   ID: 000, Name: wazuh.manager (server), IP: 127.0.0.1, Active/Local
+   ID: 003, Name: apache-lab-agent, IP: any, Active
+
+List of agentless devices:
+
+## B4 sync
+bản host  (wazuh/ai_rules/zz_siem10_ai_rules.xml): ['AI-R110011-r401-N12-T120-20261028-150005', 'AI-R110020-web_scan-N15-T10-20261028-150005', 'AI-R110030-any-N500-T10-20261028-150005']
+đang chạy (/var/ossec/etc/rules/zz_siem10_ai_rules.xml): ['AI-R110011-r401-N12-T120-20261028-150005', 'AI-R110020-web_scan-N15-T10-20261028-150005', 'AI-R110030-any-N500-T10-20261028-150005']
+✓ trùng nhau
+## B5 drops
+"drops":
+## B6 ai-service
+16:04:48 thống kê: {"lines": 2, "ignored_non_siemlab": 2} buffer=0 srcip=170 outbox=0
+16:05:18 thống kê: {"lines": 2, "ignored_non_siemlab": 2} buffer=0 srcip=170 outbox=0
+16:05:48 thống kê: {"lines": 2, "ignored_non_siemlab": 2} buffer=0 srcip=170 outbox=0
+16:06:18 thống kê: {"lines": 2, "ignored_non_siemlab": 2} buffer=0 srcip=170 outbox=0
+16:06:48 thống kê: {"lines": 2, "ignored_non_siemlab": 2} buffer=0 srcip=170 outbox=0
+## B7 analysisd -t
+rc=0
+## C1 access_log
+total 162128
+drwxr-xr-x 2 root     root          4096 Nov 14 16:03 .
+drwxr-xr-x 1 www-data www-data      4096 Oct  6 01:18 ..
+-rw-r--r-- 1 root     root     101101939 Oct 28 16:09 access_log
+-rw-r--r-- 1 root     root             2 Nov 14 16:03 httpd.pid
+-rw-r--r-- 1 root     root      64889843 Oct 28 16:09 siem.log
+172.30.90.159 - root [28/Oct/2026:16:09:50 +0000] "GET /private/ HTTP/1.1" 401 421 "-" "okhttp/4.12.0"
+172.30.90.157 - user [28/Oct/2026:16:09:52 +0000] "GET /private/ HTTP/1.1" 401 421 "-" "curl/8.5.0"
+total 162128
+drwxr-xr-x 2 root root      4096 Nov 14 16:03 .
+drwxr-xr-x 1 root root      4096 Oct 28 14:58 ..
+-rw-r--r-- 1 root root 101101939 Oct 28 16:09 access_log
+-rw-r--r-- 1 root root         2 Nov 14 16:03 httpd.pid
+-rw-r--r-- 1 root root  64889843 Oct 28 16:09 siem.log
+## C2 luat web dung san
+-rw-r----- 1 root wazuh  14240 Jul 10 09:17 0245-web_rules.xml
+-rw-r----- 1 root wazuh  10115 Jul 10 09:17 0270-web_appsec_rules.xml
+/var/ossec/ruleset/decoders/0375-web-accesslog_decoders.xml
+/var/ossec/ruleset/decoders/0380-windows_decoders.xml
+252:    <decoder_dir>ruleset/decoders</decoder_dir>
+253:    <rule_dir>ruleset/rules</rule_dir>
+254:    <rule_exclude>0215-policy_rules.xml</rule_exclude>
+263:    <decoder_dir>etc/decoders</decoder_dir>
+264:    <rule_dir>etc/rules</rule_dir>
+/var/ossec/etc/decoders/:
+total 12
+drwxrwx--- 2 root  wazuh 4096 Oct 20 17:59 .
+drwxrwx--- 8 wazuh wazuh 4096 Nov  3 16:16 ..
+-rw-rw---- 1 wazuh wazuh  589 Oct 28 14:57 local_decoder.xml
+
+/var/ossec/etc/rules/:
+total 44
+drwxrwx--- 2 root  wazuh 4096 Oct 28 15:03 .
+drwxrwx--- 8 wazuh wazuh 4096 Nov  3 16:16 ..
+-rw-rw---- 1 wazuh wazuh 2442 Oct 28 14:57 local_rules.xml
+-rw-r----- 1 root  root  2442 Oct 22 11:19 local_rules.xml.bak.20261022-221951
+-rw-r----- 1 root  root  2875 Oct 22 11:20 local_rules.xml.bak.20261022-222044
+-rw-r----- 1 root  root  2442 Oct 22 11:21 local_rules.xml.bak.20261022-222143
+-rw-r----- 1 root  root  2889 Oct 22 11:22 local_rules.xml.bak.20261022-222254
+-rw-r----- 1 root  root  2442 Oct 22 11:27 local_rules.xml.bak.20261022-222721
+-rw-r----- 1 root  root  2442 Oct 22 11:27 local_rules.xml.bak.20261022-222746
+-rw-r----- 1 root  root  2875 Oct 22 11:28 local_rules.xml.bak.20261022-222825
+-rw-rw---- 1 wazuh wazuh 1556 Oct 28 15:04 zz_siem10_ai_rules.xml
+## C3 dai id 1001xx
+(het C3)
+## C4 nhom dang duoc dem
+     71 <if_group>sysmon_event1
+     20 <if_group>sysmon_event_11
+      6 <if_group>sysmon_event7
+      5 <if_group>sysmon_event3
+      5 <if_group>authentication_success
+      5 <if_group>audit
+      4 <if_group>sysmon_event8
+      4 <if_group>asl_api_operation
+      3 <if_group>sysmon_event_13
+      3 <if_group>sysmon_event_10
+      2 <if_matched_group>authentication_failed
+      2 <if_group>audit_watch_write
+      1 <if_matched_group>web_scan
+      1 <if_matched_group>virus
+      1 <if_matched_group>siemlab_observed
+      1 <if_matched_group>connection_attempt
+      1 <if_matched_group>authentication_failures
+      1 <if_matched_group>attacks
+      1 <if_group>sysmon_event_20
+      1 <if_group>adduser
+## C5 logtest
+	name: 'web-accesslog'
+	id: '200'
+	srcip: '192.0.2.10'
+	url: '/index.html?id=1%27%20union%20select%201,2--'
+	id: '31106'
+	level: '6'
+	description: 'A web attack returned code 200 (success).'
+	groups: '['web', 'accesslog', 'attack']'
+	mitre.id: '['T1190']'
+## C6 cong cu, mang
+/usr/local/bin/nikto
+/usr/bin/ffuf
+/usr/bin/curl
+Python 3.11.17
+HTTP/2 200 
+redis 172.30.90.4/24
+siem10-wazuh.manager-1 172.30.90.2/24
+siem10-wazuh.dashboard-1 172.30.90.7/24
+wazuh-agent 172.30.90.6/24
+apache-target 172.30.90.3/24
+siem10-wazuh.indexer-1 172.30.90.5/24
+ai-service 172.30.90.8/24
+
+## C7 agent
+31:  <!-- TÙY CHỌN (mặc định tắt): access_log chuẩn dạng combined cho bộ luật web có sẵn (nhóm 31xxx).
+35:    <location>/var/log/apache-lab/access_log</location>
+sh: line 1: cmp: command not found
+2026/11/02 14:25:55 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/log/apache-lab/siem.log'.
+2026/11/03 16:04:39 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/log/apache-lab/siem.log'.
+2026/11/14 16:03:56 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/log/apache-lab/siem.log'.

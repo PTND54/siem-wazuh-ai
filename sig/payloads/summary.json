@@ -1,0 +1,292 @@
+{
+ "seed": 20261115,
+ "n_attack_per_category": 120,
+ "maxlen": 400,
+ "sources": [
+  {
+   "set": "dev",
+   "category": "sqli",
+   "file": "Generic_Fuzz.txt",
+   "sha256": "57dc54806d681efb0e2c990a9688202dab5152a759eba8489f56a87029e403b8",
+   "kept": 12
+  },
+  {
+   "set": "dev",
+   "category": "sqli",
+   "file": "Generic_UnionSelect.txt",
+   "sha256": "97c0c29b5a7dd86522968f697aa945c99279a46bcfdc23abc91380b5843ddf10",
+   "kept": 424
+  },
+  {
+   "set": "dev",
+   "category": "sqli",
+   "file": "Generic_ErrorBased.txt",
+   "sha256": "0db851ce365ffa9042b0609f692abc5e06e39c1af175503f12a9ae58e2459b32",
+   "kept": 154
+  },
+  {
+   "set": "dev",
+   "category": "sqli",
+   "file": "Generic_TimeBased.txt",
+   "sha256": "5151d74486f125e2cea74c5a4883036680892f36df2bd9aaa40fa42ecacda810",
+   "kept": 105
+  },
+  {
+   "set": "dev",
+   "category": "sqli",
+   "file": "Auth_Bypass.txt",
+   "sha256": "37c699933b6985816b53235d21efbcd89a6c3fa7538abab913bc6796ca481d9e",
+   "kept": 78
+  },
+  {
+   "set": "dev",
+   "category": "xss",
+   "file": "IntrudersXSS.txt",
+   "sha256": "37df594154abd07a8d380e69bbae7444134837a6c229522f066e17b34fa59982",
+   "kept": 178
+  },
+  {
+   "set": "dev",
+   "category": "xss",
+   "file": "XSS_Polyglots.txt",
+   "sha256": "9f6c3b5e327827b24bd30f7786fd4e0834a13ea5d3ebceee401e0d63f4e754eb",
+   "kept": 16
+  },
+  {
+   "set": "dev",
+   "category": "xss",
+   "file": "RSNAKE_XSS.txt",
+   "sha256": "af3a62d97a170c4847343a653dd3bf0b5bd98671154327fde521fddff7818606",
+   "kept": 73
+  },
+  {
+   "set": "dev",
+   "category": "xss",
+   "file": "xss_alert.txt",
+   "sha256": "d8785ece7a960c98835378e9d8ef4d174f571c80a05d7dbf63e2cd99881eda34",
+   "kept": 665
+  },
+  {
+   "set": "dev",
+   "category": "traversal",
+   "file": "directory_traversal.txt",
+   "sha256": "9e97863bdb5ded069a1df215888aaa4feb2d000e067d2eefaafd1b37586fb204",
+   "kept": 140
+  },
+  {
+   "set": "dev",
+   "category": "traversal",
+   "file": "deep_traversal.txt",
+   "sha256": "b730e8b2e7fbf7bec7da7b34a2d3dd7e46fc4c199370f3e4fd766ff1419ce3d8",
+   "kept": 896
+  },
+  {
+   "set": "dev",
+   "category": "traversal",
+   "file": "traversals-8-deep-exotic-encoding.txt",
+   "sha256": "264bba03f964e6570087e6b3cfeea910bf751b968124c9018c6b1cb3661b5569",
+   "kept": 871
+  },
+  {
+   "set": "dev",
+   "category": "cmdi",
+   "file": "command-execution-unix.txt",
+   "sha256": "93d437305481bcf88f2adb742cba0de8c447a0e62377b9acb481e82c887aa5d4",
+   "kept": 83
+  },
+  {
+   "set": "dev",
+   "category": "cmdi",
+   "file": "command_exec.txt",
+   "sha256": "e67a624f363af20b3c35b0016445454a7a36cfe85f9e4ce996b91755e602cf33",
+   "kept": 444
+  },
+  {
+   "set": "test",
+   "category": "sqli",
+   "file": "Generic-SQLi.txt",
+   "sha256": "09e5930609e4ce0663505168432796881f493ec0e63643300166d36ed57d40ec",
+   "kept": 268
+  },
+  {
+   "set": "test",
+   "category": "sqli",
+   "file": "quick-SQLi.txt",
+   "sha256": "99301faba9413833c02cf9d74a5a32a06482aea5b373f8e843edbca3ca2b0b7e",
+   "kept": 77
+  },
+  {
+   "set": "test",
+   "category": "xss",
+   "file": "XSS-Cheat-Sheet-PortSwigger.txt",
+   "sha256": "9d8fe14f259eb51a652a85b4974e6e4f2479c43b537392afe670b158489001e2",
+   "kept": 6047
+  },
+  {
+   "set": "test",
+   "category": "traversal",
+   "file": "LFI-LFISuite-pathtotest.txt",
+   "sha256": "aa19c81e1048550749dadc4b6fee70816be9e33a84587eb5e9eea5d95b1a40e8",
+   "kept": 569
+  },
+  {
+   "set": "test",
+   "category": "traversal",
+   "file": "LFI-linux-and-windows_by-1N3_CrowdShield.txt",
+   "sha256": "38e9eb759bf08b675f18791e248b46f4940e838e38aea2d134d29d475b415da6",
+   "kept": 1156
+  },
+  {
+   "set": "test",
+   "category": "cmdi",
+   "file": "command-injection-commix.txt",
+   "sha256": "e8a3d8e9251ecea011d58994856fb7aae8c9ef9c074d97b3868afbe1240769af",
+   "kept": 8262
+  }
+ ],
+ "dropped": {
+  "dev/Generic_Fuzz.txt": {},
+  "dev/Generic_UnionSelect.txt": {},
+  "dev/Generic_ErrorBased.txt": {},
+  "dev/Generic_TimeBased.txt": {},
+  "dev/Auth_Bypass.txt": {},
+  "dev/IntrudersXSS.txt": {
+   "dài > 400": 2
+  },
+  "dev/XSS_Polyglots.txt": {},
+  "dev/RSNAKE_XSS.txt": {},
+  "dev/xss_alert.txt": {
+   "dài > 400": 2
+  },
+  "dev/directory_traversal.txt": {},
+  "dev/deep_traversal.txt": {
+   "thay {FILE} -> etc/passwd (vẫn giữ)": 896,
+   "dài > 400": 16
+  },
+  "dev/traversals-8-deep-exotic-encoding.txt": {
+   "thay {FILE} -> etc/passwd (vẫn giữ)": 871,
+   "dài > 400": 16
+  },
+  "dev/command-execution-unix.txt": {},
+  "dev/command_exec.txt": {
+   "dài > 400": 4
+  },
+  "test/Generic-SQLi.txt": {},
+  "test/quick-SQLi.txt": {},
+  "test/XSS-Cheat-Sheet-PortSwigger.txt": {},
+  "test/LFI-LFISuite-pathtotest.txt": {
+   "rỗng": 1
+  },
+  "test/LFI-linux-and-windows_by-1N3_CrowdShield.txt": {},
+  "test/command-injection-commix.txt": {}
+ },
+ "dev": {
+  "sqli": {
+   "unique": 770,
+   "removed_overlap_with_dev": 0,
+   "sampled": 120
+  },
+  "xss": {
+   "unique": 852,
+   "removed_overlap_with_dev": 0,
+   "sampled": 120
+  },
+  "traversal": {
+   "unique": 1430,
+   "removed_overlap_with_dev": 0,
+   "sampled": 120
+  },
+  "cmdi": {
+   "unique": 492,
+   "removed_overlap_with_dev": 0,
+   "sampled": 120
+  }
+ },
+ "test": {
+  "sqli": {
+   "unique": 251,
+   "removed_overlap_with_dev": 93,
+   "sampled": 120
+  },
+  "xss": {
+   "unique": 6041,
+   "removed_overlap_with_dev": 6,
+   "sampled": 120
+  },
+  "traversal": {
+   "unique": 1461,
+   "removed_overlap_with_dev": 15,
+   "sampled": 120
+  },
+  "cmdi": {
+   "unique": 8262,
+   "removed_overlap_with_dev": 0,
+   "sampled": 120
+  }
+ },
+ "benign": {
+  "dev_values": 53,
+  "test_values": 48,
+  "subtypes": {
+   "sql_words": 26,
+   "quote": 9,
+   "tech": 21,
+   "shell_words": 17,
+   "paths": 9,
+   "urls": 4,
+   "misc": 15
+  }
+ },
+ "files": {
+  "dev": {
+   "cases": 1440,
+   "sha256": "46e3621de3e32636ea368cc359346bef868057fb9a311293124d267951e67eed",
+   "max_url_len": 971,
+   "by_category": {
+    "sqli": 360,
+    "xss": 360,
+    "traversal": 360,
+    "cmdi": 360
+   }
+  },
+  "test": {
+   "cases": 1440,
+   "sha256": "d664ef855bf71732626e60caef6a19b737bd1f2dff8032bd90ad30ad4d2dee8f",
+   "max_url_len": 405,
+   "by_category": {
+    "sqli": 360,
+    "xss": 360,
+    "traversal": 360,
+    "cmdi": 360
+   }
+  },
+  "benign_dev": {
+   "cases": 106,
+   "sha256": "2cc3357a5dfa044fc1b1ae955615196c53011ffdb66c4990c713c34692fd81df",
+   "max_url_len": 64,
+   "by_category": {
+    "sql_words": 26,
+    "quote": 10,
+    "tech": 22,
+    "shell_words": 18,
+    "paths": 10,
+    "urls": 4,
+    "misc": 16
+   }
+  },
+  "benign_test": {
+   "cases": 96,
+   "sha256": "a1f9b2c863fcb7fd4eef8049a81b87a86a0c663cbc91841623495a55b106f631",
+   "max_url_len": 74,
+   "by_category": {
+    "sql_words": 26,
+    "quote": 8,
+    "tech": 20,
+    "shell_words": 16,
+    "paths": 8,
+    "urls": 4,
+    "misc": 14
+   }
+  }
+ }
+}

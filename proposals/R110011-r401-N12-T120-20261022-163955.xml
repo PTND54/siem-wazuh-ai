@@ -1,0 +1,8 @@
+<group name="ai_generated,">
+  <rule id="110011" level="10" frequency="12" timeframe="120">
+    <if_matched_sid>100011</if_matched_sid>
+    <same_srcip />
+    <description>siem10 de xuat [r401]: HTTP 401 (dang nhap sai) &gt;= 12 lan trong 120s tu cung nguon</description>
+    <group>siem10_r401,attack,ai_generated,</group>
+  </rule>
+</group>

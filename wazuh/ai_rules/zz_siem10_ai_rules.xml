@@ -1,0 +1,34 @@
+
+
+<!-- siem10-ai BEGIN AI-R110011-r401-N12-T120-20261028-150005 fp=65898687c44ff3b5 -->
+<group name="ai_generated,">
+  <rule id="110011" level="10" frequency="12" timeframe="120">
+    <if_matched_sid>100011</if_matched_sid>
+    <same_srcip />
+    <description>siem10 de xuat tu ket luan AI [r401]: HTTP 401 (dang nhap sai) &gt;= 12 lan trong 120s tu cung nguon</description>
+    <group>siem10_r401,attack,ai_generated,</group>
+  </rule>
+</group>
+<!-- siem10-ai END AI-R110011-r401-N12-T120-20261028-150005 -->
+
+<!-- siem10-ai BEGIN AI-R110020-web_scan-N15-T10-20261028-150005 fp=7b2764ec6b4071ee -->
+<group name="ai_generated,">
+  <rule id="110020" level="10" frequency="15" timeframe="10">
+    <if_matched_group>web_scan</if_matched_group>
+    <same_srcip />
+    <description>siem10 de xuat tu ket luan AI [web_scan]: HTTP 403/404 (do quet) &gt;= 15 lan trong 10s tu cung nguon</description>
+    <group>siem10_web_scan,attack,ai_generated,</group>
+  </rule>
+</group>
+<!-- siem10-ai END AI-R110020-web_scan-N15-T10-20261028-150005 -->
+
+<!-- siem10-ai BEGIN AI-R110030-any-N500-T10-20261028-150005 fp=4f6a3c01cbe4bd05 -->
+<group name="ai_generated,">
+  <rule id="110030" level="10" frequency="500" timeframe="10">
+    <if_matched_group>siemlab_observed</if_matched_group>
+    <same_srcip />
+    <description>siem10 de xuat tu ket luan AI [any]: moi ma HTTP (tan suat cao) &gt;= 500 lan trong 10s tu cung nguon</description>
+    <group>siem10_any,attack,ai_generated,</group>
+  </rule>
+</group>
+<!-- siem10-ai END AI-R110030-any-N500-T10-20261028-150005 -->

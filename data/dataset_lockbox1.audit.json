@@ -1,0 +1,9480 @@
+{
+ "created": "2026-10-28T16:45:00+0000",
+ "alert_files": [
+  "/wazuh-logs/alerts/2026/Oct/ossec-alerts-20.json",
+  "/wazuh-logs/alerts/2026/Oct/ossec-alerts-21.json",
+  "/wazuh-logs/alerts/2026/Oct/ossec-alerts-22.json",
+  "/wazuh-logs/alerts/2026/Oct/ossec-alerts-26.json",
+  "/wazuh-logs/alerts/2026/Oct/ossec-alerts-28.json",
+  "/wazuh-logs/alerts/alerts.json"
+ ],
+ "batches": [
+  "data/runs/lockbox1"
+ ],
+ "features_sha": "2f738e629753c3ba",
+ "feature_columns": [
+  "count_60s",
+  "count_10s",
+  "distinct_urls",
+  "distinct_status",
+  "max_url_share",
+  "mean_interval",
+  "interval_cv",
+  "r2xx",
+  "r3xx",
+  "r401",
+  "r403",
+  "r404",
+  "r5xx",
+  "fail_streak",
+  "succ_after_fail",
+  "url_length",
+  "url_entropy",
+  "path_depth"
+ ],
+ "n_alerts_read": 774911,
+ "dropped_on_read": {
+  "same_log_line": 370,
+  "same_id": 154037
+ },
+ "correlated_rule_events": 10691,
+ "n_rows": 154025,
+ "excluded": {
+  "outside_batches": 620886
+ },
+ "excluded_sessions": {},
+ "n_sessions_kept": 468,
+ "coverage_min": 1.0,
+ "coverage_max": 1.0,
+ "rows_by_split_label": {
+  "lockbox|0": 45772,
+  "lockbox|1": 107820,
+  "stress|0": 433
+ },
+ "unknown_in_range_alerts": [],
+ "sessions": [
+  {
+   "session_key": "lockbox1/lockbox_flood_001",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.40",
+   "alerts": 1238,
+   "responses": 1238,
+   "coverage": 1.0,
+   "max_lag": 0.014,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 84.616,
+    "dur": 14.5945,
+    "pool": 2
+   },
+   "duration": 14.583
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_013",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.42",
+   "alerts": 810,
+   "responses": 810,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 76.063,
+    "dur": 10.5941,
+    "pool": 3
+   },
+   "duration": 10.561
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_028",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.43",
+   "alerts": 1098,
+   "responses": 1098,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 75.63,
+    "dur": 14.5959,
+    "pool": 1
+   },
+   "duration": 14.585
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_009",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.33",
+   "alerts": 19,
+   "responses": 19,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 4,
+    "tail": 13
+   },
+   "duration": 73.335
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_004",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.35",
+   "alerts": 976,
+   "responses": 976,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 4.613,
+    "scan_dur": 32.7592,
+    "scan_ph": 0.0589,
+    "brute_rate": 18.396,
+    "brute_dur": 45.9445,
+    "brute_hit": false
+   },
+   "duration": 79.382
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_027",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.37",
+   "alerts": 20,
+   "responses": 20,
+   "coverage": 1.0,
+   "max_lag": 0.008,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 3,
+    "tail": 15
+   },
+   "duration": 82.278
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_028",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.44",
+   "alerts": 1687,
+   "responses": 1687,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 48.594,
+    "dur": 34.3461,
+    "ph": 0.0344
+   },
+   "duration": 34.258
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_007",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.38",
+   "alerts": 104,
+   "responses": 104,
+   "coverage": 1.0,
+   "max_lag": 0.01,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.171,
+    "dur": 87.8102,
+    "mix_valid": 0.6639
+   },
+   "duration": 87.235
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_011",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.46",
+   "alerts": 414,
+   "responses": 414,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 10.323,
+    "dur": 39.4314,
+    "reg": 0.5439,
+    "pool": 22
+   },
+   "duration": 39.319
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_017",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.49",
+   "alerts": 261,
+   "responses": 261,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 12.977,
+    "dur": 19.8198,
+    "hit": false
+   },
+   "duration": 19.669
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_008",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.45",
+   "alerts": 8,
+   "responses": 8,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 9.0672,
+    "dur": 81.274
+   },
+   "duration": 60.745
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_029",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.51",
+   "alerts": 1775,
+   "responses": 1775,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 51.99,
+    "dur": 34.2661,
+    "reg": 0.4468,
+    "pool": 44
+   },
+   "duration": 34.254
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_009",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.48",
+   "alerts": 561,
+   "responses": 561,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 12.409,
+    "dur": 44.4101,
+    "hit": false
+   },
+   "duration": 44.246
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_011",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.56",
+   "alerts": 190,
+   "responses": 190,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 4.776,
+    "dur": 40.5024,
+    "hit": false
+   },
+   "duration": 40.149
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_014",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.36",
+   "alerts": 342,
+   "responses": 342,
+   "coverage": 1.0,
+   "max_lag": 0.007,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.502,
+    "dur": 138.7089,
+    "p_broken": 0.5511
+   },
+   "duration": 138.265
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_002",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.59",
+   "alerts": 852,
+   "responses": 852,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 52.594,
+    "dur": 16.2684,
+    "pool": 3
+   },
+   "duration": 16.239
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_012",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.64",
+   "alerts": 70,
+   "responses": 70,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 3.79,
+    "dur": 18.5697,
+    "hit": false
+   },
+   "duration": 18.152
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_020",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.52",
+   "alerts": 10,
+   "responses": 10,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 8.9299,
+    "dur": 90.0578
+   },
+   "duration": 76.551
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_013",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.53",
+   "alerts": 62,
+   "responses": 62,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.787,
+    "dur": 79.9286,
+    "p_broken": 0.6216
+   },
+   "duration": 77.61
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_004",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.34",
+   "alerts": 54,
+   "responses": 54,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.282,
+    "dur": 176.2199,
+    "mix_valid": 0.2607
+   },
+   "duration": 165.567
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_005",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.39",
+   "alerts": 50,
+   "responses": 50,
+   "coverage": 1.0,
+   "max_lag": 0.014,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 3.4744,
+    "dur": 175.7857
+   },
+   "duration": 172.12
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_005",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.61",
+   "alerts": 1529,
+   "responses": 1529,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 37.285,
+    "dur": 42.0994,
+    "reg": 0.2591,
+    "pool": 22
+   },
+   "duration": 42.04
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_015",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.41",
+   "alerts": 141,
+   "responses": 141,
+   "coverage": 1.0,
+   "max_lag": 0.013,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 177.5075,
+    "think": 6.0
+   },
+   "duration": 176.987
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_000",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.66",
+   "alerts": 11,
+   "responses": 11,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 5.6207,
+    "dur": 63.5995
+   },
+   "duration": 58.473
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_016",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.68",
+   "alerts": 1431,
+   "responses": 1431,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 75.26,
+    "dur": 18.786,
+    "pool": 2
+   },
+   "duration": 18.772
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_000",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.58",
+   "alerts": 25,
+   "responses": 25,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 2,
+    "tail": 21
+   },
+   "duration": 115.581
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_003",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.57",
+   "alerts": 88,
+   "responses": 88,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.739,
+    "dur": 117.6788,
+    "mix_valid": 0.1171
+   },
+   "duration": 116.18
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_026",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.72",
+   "alerts": 115,
+   "responses": 115,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 8.829,
+    "dur": 12.868,
+    "hit": false
+   },
+   "duration": 12.67
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_027",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.54",
+   "alerts": 112,
+   "responses": 112,
+   "coverage": 1.0,
+   "max_lag": 0.009,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.811,
+    "dur": 139.7573,
+    "p_broken": 0.4736
+   },
+   "duration": 137.705
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_007",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.63",
+   "alerts": 21,
+   "responses": 21,
+   "coverage": 1.0,
+   "max_lag": 0.007,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 4,
+    "tail": 15
+   },
+   "duration": 81.764
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_024",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.70",
+   "alerts": 57,
+   "responses": 57,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 0.6832,
+    "p_404": 0.0987
+   },
+   "duration": 39.237
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_003",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.67",
+   "alerts": 22,
+   "responses": 22,
+   "coverage": 1.0,
+   "max_lag": 0.007,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 4,
+    "tail": 16
+   },
+   "duration": 94.501
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_027",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.65",
+   "alerts": 483,
+   "responses": 483,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 4.992,
+    "dur": 94.9379,
+    "p_5xx": 0.0583
+   },
+   "duration": 94.754
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_003",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.74",
+   "alerts": 313,
+   "responses": 313,
+   "coverage": 1.0,
+   "max_lag": 0.007,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 9.48,
+    "dur": 31.6046,
+    "hit": false
+   },
+   "duration": 31.46
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_008",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.50",
+   "alerts": 121,
+   "responses": 121,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 157.9492,
+    "think": 6.0
+   },
+   "duration": 154.11
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_007",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.32",
+   "alerts": 85,
+   "responses": 85,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 2.6656,
+    "p_404": 0.0591
+   },
+   "duration": 241.394
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_026",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.81",
+   "alerts": 790,
+   "responses": 790,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 41.241,
+    "dur": 18.8204,
+    "pool": 2
+   },
+   "duration": 18.8
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_010",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.47",
+   "alerts": 90,
+   "responses": 90,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 2.1597,
+    "p_404": 0.097
+   },
+   "duration": 198.758
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_006",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.80",
+   "alerts": 87,
+   "responses": 87,
+   "coverage": 1.0,
+   "max_lag": 0.014,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.034,
+    "dur": 44.4336,
+    "p_5xx": 0.0108
+   },
+   "duration": 43.922
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_001",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.79",
+   "alerts": 249,
+   "responses": 249,
+   "coverage": 1.0,
+   "max_lag": 0.013,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 5.258,
+    "dur": 47.9628,
+    "reg": 0.5237,
+    "pool": 36
+   },
+   "duration": 47.794
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_010",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.60",
+   "alerts": 34,
+   "responses": 34,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     14.169,
+     11.53,
+     7.207
+    ],
+    "bursts": 3
+   },
+   "duration": 135.942
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_008",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.91",
+   "alerts": 13,
+   "responses": 13,
+   "coverage": 1.0,
+   "max_lag": 0.012,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 8,
+    "tail": 3
+   },
+   "duration": 34.122
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_026",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.69",
+   "alerts": 464,
+   "responses": 464,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 5.642,
+    "dur": 82.4262,
+    "p_5xx": 0.0726
+   },
+   "duration": 82.109
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_021",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.82",
+   "alerts": 14,
+   "responses": 14,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 2,
+    "tail": 10
+   },
+   "duration": 56.47
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_026",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.84",
+   "alerts": 1800,
+   "responses": 1800,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 48.845,
+    "dur": 58.4394,
+    "reg": 0.4206,
+    "pool": 30
+   },
+   "duration": 38.176
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_019",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.75",
+   "alerts": 10,
+   "responses": 10,
+   "coverage": 1.0,
+   "max_lag": 0.008,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.109,
+    "dur": 91.2885,
+    "mix_valid": 0.3004
+   },
+   "duration": 79.807
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_016",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.93",
+   "alerts": 279,
+   "responses": 279,
+   "coverage": 1.0,
+   "max_lag": 0.013,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 5.985,
+    "dur": 46.2783,
+    "p_5xx": 0.065
+   },
+   "duration": 46.038
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_004",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.87",
+   "alerts": 13,
+   "responses": 13,
+   "coverage": 1.0,
+   "max_lag": 0.008,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 4,
+    "tail": 7
+   },
+   "duration": 48.526
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_015",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.90",
+   "alerts": 9,
+   "responses": 9,
+   "coverage": 1.0,
+   "max_lag": 0.01,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 6.579,
+    "dur": 61.5478
+   },
+   "duration": 53.65
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_017",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.62",
+   "alerts": 173,
+   "responses": 173,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.041,
+    "dur": 162.631,
+    "mix_valid": 0.2864
+   },
+   "duration": 160.44
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_018",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.85",
+   "alerts": 59,
+   "responses": 59,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 77.8422,
+    "think": 6.0
+   },
+   "duration": 58.734
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_014",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.89",
+   "alerts": 20,
+   "responses": 20,
+   "coverage": 1.0,
+   "max_lag": 0.009,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 7,
+    "tail": 11
+   },
+   "duration": 63.707
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_029",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.100",
+   "alerts": 292,
+   "responses": 292,
+   "coverage": 1.0,
+   "max_lag": 0.009,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 10.11,
+    "dur": 28.396,
+    "hit": false
+   },
+   "duration": 28.311
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_007",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.94",
+   "alerts": 703,
+   "responses": 703,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 12.78,
+    "dur": 56.9963,
+    "reg": 0.3575,
+    "pool": 6
+   },
+   "duration": 56.721
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_026",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.73",
+   "alerts": 97,
+   "responses": 97,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.839,
+    "dur": 118.0418,
+    "mix_valid": 0.1197
+   },
+   "duration": 116.322
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_002",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.55",
+   "alerts": 70,
+   "responses": 70,
+   "coverage": 1.0,
+   "max_lag": 0.009,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 2.9969,
+    "p_404": 0.1141
+   },
+   "duration": 242.056
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_010",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.71",
+   "alerts": 28,
+   "responses": 28,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 3,
+    "tail": 23
+   },
+   "duration": 132.622
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_006",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.95",
+   "alerts": 1425,
+   "responses": 1425,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 29.084,
+    "dur": 48.9783,
+    "ph": 0.0789
+   },
+   "duration": 48.942
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_003",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.102",
+   "alerts": 1365,
+   "responses": 1365,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 73.934,
+    "dur": 18.4512,
+    "pool": 3
+   },
+   "duration": 18.429
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_002",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.96",
+   "alerts": 19,
+   "responses": 19,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 4,
+    "tail": 13
+   },
+   "duration": 80.487
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_021",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.92",
+   "alerts": 117,
+   "responses": 117,
+   "coverage": 1.0,
+   "max_lag": 0.013,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 122.5837,
+    "think": 6.0
+   },
+   "duration": 122.072
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_010",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.101",
+   "alerts": 1210,
+   "responses": 1210,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 10.842,
+    "scan_dur": 43.1832,
+    "scan_ph": 0.0178,
+    "brute_rate": 35.612,
+    "brute_dur": 20.8934,
+    "brute_hit": true
+   },
+   "duration": 65.003
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_014",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.83",
+   "alerts": 18,
+   "responses": 18,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 8.9674,
+    "dur": 165.4115
+   },
+   "duration": 149.564
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_028",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.88",
+   "alerts": 122,
+   "responses": 122,
+   "coverage": 1.0,
+   "max_lag": 0.008,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.934,
+    "dur": 131.1013,
+    "mix_valid": 0.5208
+   },
+   "duration": 129.677
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_023",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.86",
+   "alerts": 41,
+   "responses": 41,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.308,
+    "dur": 135.5381,
+    "mix_valid": 0.4157
+   },
+   "duration": 129.939
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_014",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.97",
+   "alerts": 45,
+   "responses": 45,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     7.081,
+     6.958,
+     7.313
+    ],
+    "bursts": 3
+   },
+   "duration": 101.627
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_018",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.106",
+   "alerts": 1396,
+   "responses": 1396,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 58.589,
+    "dur": 23.9114,
+    "reg": 0.0831,
+    "pool": 54
+   },
+   "duration": 23.83
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_006",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.77",
+   "alerts": 204,
+   "responses": 204,
+   "coverage": 1.0,
+   "max_lag": 0.01,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.03,
+    "dur": 193.3174,
+    "mix_valid": 0.1536
+   },
+   "duration": 192.058
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_029",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.107",
+   "alerts": 101,
+   "responses": 101,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.557,
+    "dur": 39.0195,
+    "p_5xx": 0.0305
+   },
+   "duration": 38.342
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_021",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.113",
+   "alerts": 102,
+   "responses": 102,
+   "coverage": 1.0,
+   "max_lag": 0.009,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 6.323,
+    "dur": 16.2479,
+    "hit": false
+   },
+   "duration": 15.928
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_008",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.98",
+   "alerts": 98,
+   "responses": 98,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.582,
+    "dur": 163.7907,
+    "mix_valid": 0.1239
+   },
+   "duration": 161.375
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_000",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.76",
+   "alerts": 113,
+   "responses": 113,
+   "coverage": 1.0,
+   "max_lag": 0.009,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 2.0447,
+    "p_404": 0.0883
+   },
+   "duration": 240.334
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_006",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.78",
+   "alerts": 99,
+   "responses": 99,
+   "coverage": 1.0,
+   "max_lag": 0.011,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 2.2868,
+    "p_404": 0.1074
+   },
+   "duration": 240.58
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_025",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.108",
+   "alerts": 961,
+   "responses": 961,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 13.209,
+    "scan_dur": 34.8664,
+    "scan_ph": 0.0151,
+    "brute_rate": 37.644,
+    "brute_dur": 12.6957,
+    "brute_hit": true
+   },
+   "duration": 48.53
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_000",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.99",
+   "alerts": 23,
+   "responses": 23,
+   "coverage": 1.0,
+   "max_lag": 0.008,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.121,
+    "dur": 178.7356,
+    "mix_valid": 0.2223
+   },
+   "duration": 164.695
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_003",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.112",
+   "alerts": 8,
+   "responses": 8,
+   "coverage": 1.0,
+   "max_lag": 0.008,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 7.6099,
+    "dur": 61.096
+   },
+   "duration": 55.261
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_024",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.110",
+   "alerts": 995,
+   "responses": 995,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 17.045,
+    "dur": 57.0342,
+    "reg": 0.2161,
+    "pool": 50
+   },
+   "duration": 56.877
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_028",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.114",
+   "alerts": 8,
+   "responses": 8,
+   "coverage": 1.0,
+   "max_lag": 0.011,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 9.0695,
+    "dur": 81.324
+   },
+   "duration": 61.031
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_023",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.105",
+   "alerts": 19,
+   "responses": 19,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 7.1094,
+    "dur": 139.087
+   },
+   "duration": 123.279
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_027",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.115",
+   "alerts": 563,
+   "responses": 563,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 17.63,
+    "dur": 32.097,
+    "reg": 0.0864,
+    "pool": 32
+   },
+   "duration": 32.086
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_014",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.122",
+   "alerts": 726,
+   "responses": 726,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 63.474,
+    "dur": 11.3959,
+    "pool": 1
+   },
+   "duration": 11.37
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_012",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.109",
+   "alerts": 68,
+   "responses": 68,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     11.482,
+     7.37,
+     10.611,
+     14.774
+    ],
+    "bursts": 4
+   },
+   "duration": 107.913
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_020",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.126",
+   "alerts": 184,
+   "responses": 184,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 6.5,
+    "dur": 27.9322,
+    "reg": 0.6911,
+    "pool": 20
+   },
+   "duration": 27.794
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_014",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.118",
+   "alerts": 99,
+   "responses": 99,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.474,
+    "dur": 67.3706,
+    "mix_valid": 0.2837
+   },
+   "duration": 66.474
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_024",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.133",
+   "alerts": 858,
+   "responses": 858,
+   "coverage": 1.0,
+   "max_lag": 0.008,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 43.235,
+    "dur": 19.5253,
+    "pool": 3
+   },
+   "duration": 19.489
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_023",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.111",
+   "alerts": 33,
+   "responses": 33,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     8.493,
+     5.015,
+     10.068
+    ],
+    "bursts": 3
+   },
+   "duration": 124.136
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_022",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.117",
+   "alerts": 12,
+   "responses": 12,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 6.8197,
+    "dur": 85.922
+   },
+   "duration": 76.381
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_011",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.120",
+   "alerts": 20,
+   "responses": 20,
+   "coverage": 1.0,
+   "max_lag": 0.009,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 2,
+    "tail": 16
+   },
+   "duration": 76.446
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_018",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.123",
+   "alerts": 19,
+   "responses": 19,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.369,
+    "dur": 45.4224,
+    "p_broken": 0.5828
+   },
+   "duration": 45.012
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_017",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.134",
+   "alerts": 1135,
+   "responses": 1135,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 72.76,
+    "dur": 15.601,
+    "pool": 3
+   },
+   "duration": 15.578
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_009",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.130",
+   "alerts": 149,
+   "responses": 149,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.286,
+    "dur": 65.0281,
+    "p_5xx": 0.0334
+   },
+   "duration": 64.361
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_011",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.131",
+   "alerts": 51,
+   "responses": 51,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 66.772,
+    "think": 6.0
+   },
+   "duration": 65.859
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_003",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.135",
+   "alerts": 14,
+   "responses": 14,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 4,
+    "tail": 8
+   },
+   "duration": 44.696
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_024",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.129",
+   "alerts": 180,
+   "responses": 180,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.564,
+    "dur": 71.3101,
+    "p_5xx": 0.0302
+   },
+   "duration": 70.93
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_012",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.116",
+   "alerts": 130,
+   "responses": 130,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 0.8859,
+    "p_404": 0.045
+   },
+   "duration": 120.666
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_005",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.103",
+   "alerts": 103,
+   "responses": 103,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 2.0684,
+    "p_404": 0.0688
+   },
+   "duration": 241.452
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_007",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.139",
+   "alerts": 1662,
+   "responses": 1662,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 55.101,
+    "scan_dur": 21.3376,
+    "scan_ph": 0.0398,
+    "brute_rate": 21.828,
+    "brute_dur": 22.7045,
+    "brute_hit": false
+   },
+   "duration": 44.973
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_017",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.140",
+   "alerts": 158,
+   "responses": 158,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 6.447,
+    "dur": 24.0826,
+    "reg": 0.1649,
+    "pool": 4
+   },
+   "duration": 23.509
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_006",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.128",
+   "alerts": 26,
+   "responses": 26,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 4,
+    "tail": 20
+   },
+   "duration": 94.846
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_004",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.127",
+   "alerts": 27,
+   "responses": 27,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 4,
+    "tail": 21
+   },
+   "duration": 123.206
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_002",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.141",
+   "alerts": 233,
+   "responses": 233,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 11.14,
+    "dur": 21.2376,
+    "ph": 0.0468
+   },
+   "duration": 21.131
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_015",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.138",
+   "alerts": 15,
+   "responses": 15,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.105,
+    "dur": 96.3408,
+    "mix_valid": 0.3016
+   },
+   "duration": 82.628
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_008",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.142",
+   "alerts": 421,
+   "responses": 421,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 15.412,
+    "dur": 27.3848,
+    "reg": 0.3828,
+    "pool": 33
+   },
+   "duration": 27.18
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_025",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.136",
+   "alerts": 47,
+   "responses": 47,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.443,
+    "dur": 103.15,
+    "mix_valid": 0.2451
+   },
+   "duration": 97.649
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_021",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.119",
+   "alerts": 89,
+   "responses": 89,
+   "coverage": 1.0,
+   "max_lag": 0.007,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.529,
+    "dur": 179.1755,
+    "mix_valid": 0.4926
+   },
+   "duration": 175.008
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_009",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.121",
+   "alerts": 160,
+   "responses": 160,
+   "coverage": 1.0,
+   "max_lag": 0.01,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.866,
+    "dur": 177.1577,
+    "mix_valid": 0.6438
+   },
+   "duration": 175.623
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_024",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.132",
+   "alerts": 42,
+   "responses": 42,
+   "coverage": 1.0,
+   "max_lag": 0.007,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.31,
+    "dur": 138.2214,
+    "mix_valid": 0.4425
+   },
+   "duration": 133.013
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_021",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.147",
+   "alerts": 654,
+   "responses": 654,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 42.521,
+    "dur": 15.789,
+    "pool": 3
+   },
+   "duration": 15.748
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_020",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.124",
+   "alerts": 134,
+   "responses": 134,
+   "coverage": 1.0,
+   "max_lag": 0.007,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 170.1319,
+    "think": 6.0
+   },
+   "duration": 166.347
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_012",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.146",
+   "alerts": 18,
+   "responses": 18,
+   "coverage": 1.0,
+   "max_lag": 0.009,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 5,
+    "tail": 11
+   },
+   "duration": 66.085
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_024",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.104",
+   "alerts": 75,
+   "responses": 75,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     17.67,
+     15.356,
+     5.555,
+     12.436,
+     19.74
+    ],
+    "bursts": 5
+   },
+   "duration": 302.478
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_020",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.144",
+   "alerts": 22,
+   "responses": 22,
+   "coverage": 1.0,
+   "max_lag": 0.007,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 7,
+    "tail": 13
+   },
+   "duration": 70.966
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_002",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.143",
+   "alerts": 689,
+   "responses": 689,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 5.567,
+    "scan_dur": 58.935,
+    "scan_ph": 0.014,
+    "brute_rate": 30.091,
+    "brute_dur": 11.7512,
+    "brute_hit": false
+   },
+   "duration": 71.396
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_019",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.137",
+   "alerts": 110,
+   "responses": 110,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 137.6173,
+    "think": 6.0
+   },
+   "duration": 137.088
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_012",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.149",
+   "alerts": 1158,
+   "responses": 1158,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 51.346,
+    "dur": 21.7534,
+    "reg": 0.3817,
+    "pool": 55
+   },
+   "duration": 21.696
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_014",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.155",
+   "alerts": 202,
+   "responses": 202,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 14.59,
+    "dur": 14.4453,
+    "hit": false
+   },
+   "duration": 14.352
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_022",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.153",
+   "alerts": 198,
+   "responses": 198,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 4.333,
+    "dur": 45.0012,
+    "ph": 0.0403
+   },
+   "duration": 44.783
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_003",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.148",
+   "alerts": 999,
+   "responses": 999,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 5.056,
+    "scan_dur": 29.4273,
+    "scan_ph": 0.0571,
+    "brute_rate": 17.279,
+    "brute_dur": 49.5351,
+    "brute_hit": false
+   },
+   "duration": 79.582
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_018",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.125",
+   "alerts": 89,
+   "responses": 89,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 2.6117,
+    "p_404": 0.0665
+   },
+   "duration": 242.285
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_019",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.154",
+   "alerts": 886,
+   "responses": 886,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 19.818,
+    "dur": 44.6238,
+    "reg": 0.9144,
+    "pool": 29
+   },
+   "duration": 44.529
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_018",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.152",
+   "alerts": 1083,
+   "responses": 1083,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 21.603,
+    "scan_dur": 45.271,
+    "scan_ph": 0.0216,
+    "brute_rate": 3.553,
+    "brute_dur": 35.8525,
+    "brute_hit": false
+   },
+   "duration": 81.748
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_028",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.159",
+   "alerts": 453,
+   "responses": 453,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 11.301,
+    "scan_dur": 33.0537,
+    "scan_ph": 0.0526,
+    "brute_rate": 4.85,
+    "brute_dur": 16.9295,
+    "brute_hit": true
+   },
+   "duration": 50.979
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_003",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.161",
+   "alerts": 61,
+   "responses": 61,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.023,
+    "dur": 56.0449,
+    "p_broken": 0.7023
+   },
+   "duration": 54.602
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_011",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.145",
+   "alerts": 116,
+   "responses": 116,
+   "coverage": 1.0,
+   "max_lag": 0.008,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 1.3816,
+    "p_404": 0.0863
+   },
+   "duration": 180.981
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_019",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.162",
+   "alerts": 330,
+   "responses": 330,
+   "coverage": 1.0,
+   "max_lag": 0.132,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 7.0,
+    "dur": 51.4865,
+    "ph": 0.0794
+   },
+   "duration": 51.346
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_004",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.156",
+   "alerts": 15,
+   "responses": 15,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 6.9788,
+    "dur": 106.7825
+   },
+   "duration": 92.919
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_004",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.160",
+   "alerts": 77,
+   "responses": 77,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 79.1227,
+    "think": 6.0
+   },
+   "duration": 75.693
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_000",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.163",
+   "alerts": 1800,
+   "responses": 1800,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 44.679,
+    "dur": 52.6963,
+    "reg": 0.5766,
+    "pool": 33
+   },
+   "duration": 40.177
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_001",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.157",
+   "alerts": 157,
+   "responses": 157,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.133,
+    "dur": 120.7907,
+    "mix_valid": 0.3155
+   },
+   "duration": 119.628
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_000",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.164",
+   "alerts": 1771,
+   "responses": 1771,
+   "coverage": 1.0,
+   "max_lag": 0.0,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 91.798,
+    "dur": 19.5993,
+    "pool": 1
+   },
+   "duration": 19.578
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_012",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.158",
+   "alerts": 305,
+   "responses": 305,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.255,
+    "dur": 135.8349,
+    "p_broken": 0.6002
+   },
+   "duration": 134.332
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_022",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.151",
+   "alerts": 25,
+   "responses": 25,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.174,
+    "dur": 169.3871,
+    "mix_valid": 0.0753
+   },
+   "duration": 162.086
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_004",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.168",
+   "alerts": 713,
+   "responses": 713,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 42.88,
+    "dur": 16.4066,
+    "pool": 2
+   },
+   "duration": 16.373
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_005",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.178",
+   "alerts": 138,
+   "responses": 138,
+   "coverage": 1.0,
+   "max_lag": 0.007,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 8.594,
+    "dur": 16.1159,
+    "ph": 0.0347
+   },
+   "duration": 15.984
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_004",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.150",
+   "alerts": 59,
+   "responses": 59,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     11.855,
+     8.712,
+     16.422,
+     11.297
+    ],
+    "bursts": 4
+   },
+   "duration": 193.773
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_029",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.175",
+   "alerts": 11,
+   "responses": 11,
+   "coverage": 1.0,
+   "max_lag": 0.011,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 6,
+    "tail": 3
+   },
+   "duration": 22.144
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_023",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.165",
+   "alerts": 535,
+   "responses": 535,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 9.703,
+    "dur": 52.9701,
+    "reg": 0.0852,
+    "pool": 27
+   },
+   "duration": 52.782
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_010",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.182",
+   "alerts": 674,
+   "responses": 674,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 28.892,
+    "dur": 23.1043,
+    "reg": 0.6992,
+    "pool": 10
+   },
+   "duration": 23.054
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_013",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.167",
+   "alerts": 270,
+   "responses": 270,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 5.075,
+    "scan_dur": 28.3813,
+    "scan_ph": 0.0594,
+    "brute_rate": 3.202,
+    "brute_dur": 38.4293,
+    "brute_hit": true
+   },
+   "duration": 67.746
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_004",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.173",
+   "alerts": 929,
+   "responses": 929,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 19.142,
+    "dur": 48.8175,
+    "reg": 0.9403,
+    "pool": 60
+   },
+   "duration": 48.735
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_008",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.166",
+   "alerts": 1876,
+   "responses": 1876,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 28.486,
+    "scan_dur": 58.9584,
+    "scan_ph": 0.0374,
+    "brute_rate": 18.12,
+    "brute_dur": 10.389,
+    "brute_hit": true
+   },
+   "duration": 70.348
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_008",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.179",
+   "alerts": 13,
+   "responses": 13,
+   "coverage": 1.0,
+   "max_lag": 0.013,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 3,
+    "tail": 8
+   },
+   "duration": 58.627
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_027",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.174",
+   "alerts": 14,
+   "responses": 14,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 4.6885,
+    "dur": 66.086
+   },
+   "duration": 59.914
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_011",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.171",
+   "alerts": 33,
+   "responses": 33,
+   "coverage": 1.0,
+   "max_lag": 0.009,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     8.485,
+     15.434,
+     7.799
+    ],
+    "bursts": 3
+   },
+   "duration": 85.945
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_015",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.183",
+   "alerts": 484,
+   "responses": 484,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 27.308,
+    "dur": 17.2621,
+    "ph": 0.037
+   },
+   "duration": 17.225
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_025",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.190",
+   "alerts": 425,
+   "responses": 425,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 25.539,
+    "dur": 16.8104,
+    "hit": false
+   },
+   "duration": 16.713
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_000",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.187",
+   "alerts": 280,
+   "responses": 280,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 11.359,
+    "dur": 24.8496,
+    "hit": false
+   },
+   "duration": 24.772
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_018",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.181",
+   "alerts": 10,
+   "responses": 10,
+   "coverage": 1.0,
+   "max_lag": 0.015,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 8.6106,
+    "dur": 91.9748
+   },
+   "duration": 77.073
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_025",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.191",
+   "alerts": 440,
+   "responses": 440,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 46.92,
+    "dur": 9.5392,
+    "pool": 1
+   },
+   "duration": 9.519
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_002",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.198",
+   "alerts": 81,
+   "responses": 81,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 4.272,
+    "dur": 20.1133,
+    "hit": false
+   },
+   "duration": 19.841
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_027",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.197",
+   "alerts": 13,
+   "responses": 13,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 7,
+    "tail": 4
+   },
+   "duration": 32.733
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_015",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.172",
+   "alerts": 52,
+   "responses": 52,
+   "coverage": 1.0,
+   "max_lag": 0.01,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.433,
+    "dur": 132.2022,
+    "p_broken": 0.6477
+   },
+   "duration": 129.668
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_001",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.169",
+   "alerts": 40,
+   "responses": 40,
+   "coverage": 1.0,
+   "max_lag": 0.007,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 3.5484,
+    "dur": 144.4765
+   },
+   "duration": 133.485
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_018",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.42",
+   "alerts": 413,
+   "responses": 413,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 9.594,
+    "dur": 43.7347,
+    "ph": 0.0388
+   },
+   "duration": 43.556
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_001",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.192",
+   "alerts": 156,
+   "responses": 156,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.678,
+    "dur": 59.6288,
+    "p_broken": 0.4963
+   },
+   "duration": 59.11
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_020",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.189",
+   "alerts": 20,
+   "responses": 20,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 2,
+    "tail": 16
+   },
+   "duration": 80.216
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_026",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.200",
+   "alerts": 775,
+   "responses": 775,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 22.144,
+    "scan_dur": 16.8684,
+    "scan_ph": 0.0311,
+    "brute_rate": 10.715,
+    "brute_dur": 38.0608,
+    "brute_hit": false
+   },
+   "duration": 55.796
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_013",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.196",
+   "alerts": 469,
+   "responses": 469,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 7.265,
+    "dur": 63.4132,
+    "p_5xx": 0.0566
+   },
+   "duration": 63.266
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_009",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.37",
+   "alerts": 729,
+   "responses": 729,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 18.665,
+    "scan_dur": 33.2277,
+    "scan_ph": 0.0525,
+    "brute_rate": 8.594,
+    "brute_dur": 12.1738,
+    "brute_hit": false
+   },
+   "duration": 46.174
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_024",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.43",
+   "alerts": 18,
+   "responses": 18,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 5,
+    "tail": 11
+   },
+   "duration": 65.542
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_021",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.176",
+   "alerts": 39,
+   "responses": 39,
+   "coverage": 1.0,
+   "max_lag": 0.008,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.242,
+    "dur": 160.4296,
+    "mix_valid": 0.1038
+   },
+   "duration": 150.258
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_017",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.195",
+   "alerts": 12,
+   "responses": 12,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 7.6982,
+    "dur": 95.5865
+   },
+   "duration": 82.085
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_007",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.40",
+   "alerts": 244,
+   "responses": 244,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 3.459,
+    "dur": 71.1473,
+    "p_5xx": 0.0042
+   },
+   "duration": 70.792
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_025",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.46",
+   "alerts": 20,
+   "responses": 20,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 9,
+    "tail": 9
+   },
+   "duration": 58.966
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_010",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.44",
+   "alerts": 18,
+   "responses": 18,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 5,
+    "tail": 11
+   },
+   "duration": 63.417
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_022",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.180",
+   "alerts": 308,
+   "responses": 308,
+   "coverage": 1.0,
+   "max_lag": 0.015,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.846,
+    "dur": 166.0945,
+    "mix_valid": 0.6747
+   },
+   "duration": 165.562
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_029",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.188",
+   "alerts": 22,
+   "responses": 22,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 5.2974,
+    "dur": 120.6625
+   },
+   "duration": 116.619
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_000",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.35",
+   "alerts": 64,
+   "responses": 64,
+   "coverage": 1.0,
+   "max_lag": 0.008,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.662,
+    "dur": 92.6642,
+    "p_broken": 0.6916
+   },
+   "duration": 91.366
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_003",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.49",
+   "alerts": 283,
+   "responses": 283,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 5.284,
+    "dur": 50.5962,
+    "ph": 0.0154
+   },
+   "duration": 50.097
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_002",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.185",
+   "alerts": 79,
+   "responses": 79,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.615,
+    "dur": 133.717,
+    "mix_valid": 0.3311
+   },
+   "duration": 131.425
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_008",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.184",
+   "alerts": 36,
+   "responses": 36,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     8.115,
+     10.876,
+     12.762
+    ],
+    "bursts": 3
+   },
+   "duration": 133.031
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_015",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.48",
+   "alerts": 15,
+   "responses": 15,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 6,
+    "tail": 7
+   },
+   "duration": 57.457
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_021",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.45",
+   "alerts": 20,
+   "responses": 20,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 8,
+    "tail": 10
+   },
+   "duration": 61.188
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_009",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.64",
+   "alerts": 1800,
+   "responses": 1800,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 44.954,
+    "dur": 45.1132,
+    "reg": 0.1679,
+    "pool": 14
+   },
+   "duration": 40.774
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_019",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.193",
+   "alerts": 39,
+   "responses": 39,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 3.3597,
+    "dur": 132.5878
+   },
+   "duration": 126.204
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_000",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.51",
+   "alerts": 64,
+   "responses": 64,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 76.0716,
+    "think": 6.0
+   },
+   "duration": 72.284
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_002",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.186",
+   "alerts": 158,
+   "responses": 158,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 158.3108,
+    "think": 6.0
+   },
+   "duration": 154.967
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_011",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.36",
+   "alerts": 25,
+   "responses": 25,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 7,
+    "tail": 16
+   },
+   "duration": 74.465
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_025",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.34",
+   "alerts": 953,
+   "responses": 953,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 27.967,
+    "dur": 34.06,
+    "ph": 0.0697
+   },
+   "duration": 34.012
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_025",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.170",
+   "alerts": 84,
+   "responses": 84,
+   "coverage": 1.0,
+   "max_lag": 0.008,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 2.5929,
+    "p_404": 0.0446
+   },
+   "duration": 241.058
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_018",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.56",
+   "alerts": 88,
+   "responses": 88,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.923,
+    "dur": 95.4111,
+    "mix_valid": 0.1412
+   },
+   "duration": 93.482
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_006",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.39",
+   "alerts": 216,
+   "responses": 216,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 6.309,
+    "dur": 33.3187,
+    "reg": 0.5841,
+    "pool": 26
+   },
+   "duration": 33.125
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_006",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.33",
+   "alerts": 127,
+   "responses": 127,
+   "coverage": 1.0,
+   "max_lag": 0.009,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 160.8312,
+    "think": 6.0
+   },
+   "duration": 156.367
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_006",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.38",
+   "alerts": 117,
+   "responses": 117,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.805,
+    "dur": 145.2182,
+    "mix_valid": 0.2199
+   },
+   "duration": 142.8
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_007",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.194",
+   "alerts": 109,
+   "responses": 109,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 1.5632,
+    "dur": 170.5476
+   },
+   "duration": 171.952
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_020",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.177",
+   "alerts": 101,
+   "responses": 101,
+   "coverage": 1.0,
+   "max_lag": 0.009,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 2.2119,
+    "p_404": 0.0416
+   },
+   "duration": 242.525
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_020",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.41",
+   "alerts": 1449,
+   "responses": 1449,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 31.313,
+    "dur": 46.2618,
+    "ph": 0.0524
+   },
+   "duration": 46.217
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_006",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.68",
+   "alerts": 51,
+   "responses": 51,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.101,
+    "dur": 49.4654,
+    "p_broken": 0.7897
+   },
+   "duration": 47.898
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_010",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.58",
+   "alerts": 1800,
+   "responses": 1800,
+   "coverage": 1.0,
+   "max_lag": 0.0,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 99.266,
+    "dur": 19.4181,
+    "pool": 3
+   },
+   "duration": 18.923
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_027",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.59",
+   "alerts": 99,
+   "responses": 99,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.726,
+    "dur": 131.9313,
+    "mix_valid": 0.2687
+   },
+   "duration": 129.948
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_014",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.52",
+   "alerts": 31,
+   "responses": 31,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 2,
+    "tail": 27
+   },
+   "duration": 129.194
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_019",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.53",
+   "alerts": 200,
+   "responses": 200,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.584,
+    "dur": 128.9957,
+    "p_broken": 0.3415
+   },
+   "duration": 128.298
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_018",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.57",
+   "alerts": 585,
+   "responses": 585,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 14.04,
+    "dur": 41.8778,
+    "hit": false
+   },
+   "duration": 41.758
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_010",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.81",
+   "alerts": 594,
+   "responses": 594,
+   "coverage": 1.0,
+   "max_lag": 0.018,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 19.639,
+    "dur": 30.2638,
+    "ph": 0.0701
+   },
+   "duration": 30.197
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_022",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.50",
+   "alerts": 450,
+   "responses": 450,
+   "coverage": 1.0,
+   "max_lag": 0.016,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 9.644,
+    "dur": 46.1897,
+    "p_5xx": 0.0565
+   },
+   "duration": 46.12
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_019",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.199",
+   "alerts": 144,
+   "responses": 144,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 1.6168,
+    "p_404": 0.0864
+   },
+   "duration": 240.627
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_024",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.67",
+   "alerts": 14,
+   "responses": 14,
+   "coverage": 1.0,
+   "max_lag": 0.01,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 4,
+    "tail": 8
+   },
+   "duration": 49.021
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_029",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.82",
+   "alerts": 28,
+   "responses": 28,
+   "coverage": 1.0,
+   "max_lag": 0.028,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.524,
+    "dur": 61.5069,
+    "mix_valid": 0.4541
+   },
+   "duration": 57.518
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_026",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.93",
+   "alerts": 682,
+   "responses": 682,
+   "coverage": 1.0,
+   "max_lag": 0.031,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 12.065,
+    "dur": 58.0633,
+    "ph": 0.0173
+   },
+   "duration": 57.928
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_028",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.91",
+   "alerts": 18,
+   "responses": 18,
+   "coverage": 1.0,
+   "max_lag": 0.024,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 8,
+    "tail": 8
+   },
+   "duration": 61.191
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_018",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.62",
+   "alerts": 469,
+   "responses": 469,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 40.909,
+    "dur": 11.6408,
+    "pool": 1
+   },
+   "duration": 11.6
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_013",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.66",
+   "alerts": 39,
+   "responses": 39,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.265,
+    "dur": 143.309,
+    "mix_valid": 0.167
+   },
+   "duration": 137.315
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_023",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.54",
+   "alerts": 98,
+   "responses": 98,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.34,
+    "dur": 71.8077,
+    "mix_valid": 0.6325
+   },
+   "duration": 69.993
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_024",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.90",
+   "alerts": 636,
+   "responses": 636,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 20.318,
+    "scan_dur": 29.0364,
+    "scan_ph": 0.0789,
+    "brute_rate": 3.41,
+    "brute_dur": 18.6188,
+    "brute_hit": false
+   },
+   "duration": 48.51
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_000",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.60",
+   "alerts": 20,
+   "responses": 20,
+   "coverage": 1.0,
+   "max_lag": 0.023,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 6,
+    "tail": 12
+   },
+   "duration": 74.577
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_015",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.84",
+   "alerts": 247,
+   "responses": 247,
+   "coverage": 1.0,
+   "max_lag": 0.029,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 3.363,
+    "dur": 75.5777,
+    "p_5xx": 0.008
+   },
+   "duration": 74.699
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_024",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.69",
+   "alerts": 74,
+   "responses": 74,
+   "coverage": 1.0,
+   "max_lag": 0.026,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 81.8214,
+    "think": 6.0
+   },
+   "duration": 80.863
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_012",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.94",
+   "alerts": 321,
+   "responses": 321,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 13.966,
+    "dur": 22.6259,
+    "ph": 0.0427
+   },
+   "duration": 22.534
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_014",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.32",
+   "alerts": 27,
+   "responses": 27,
+   "coverage": 1.0,
+   "max_lag": 0.016,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.296,
+    "dur": 99.7411,
+    "mix_valid": 0.3473
+   },
+   "duration": 93.218
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_027",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.72",
+   "alerts": 38,
+   "responses": 38,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     9.252,
+     17.144,
+     6.211
+    ],
+    "bursts": 3
+   },
+   "duration": 93.605
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_019",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.87",
+   "alerts": 664,
+   "responses": 664,
+   "coverage": 1.0,
+   "max_lag": 0.032,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 7.375,
+    "scan_dur": 54.5754,
+    "scan_ph": 0.0547,
+    "brute_rate": 6.658,
+    "brute_dur": 39.0144,
+    "brute_hit": false
+   },
+   "duration": 94.414
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_017",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.79",
+   "alerts": 28,
+   "responses": 28,
+   "coverage": 1.0,
+   "max_lag": 0.022,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 4,
+    "tail": 22
+   },
+   "duration": 107.318
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_011",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.96",
+   "alerts": 729,
+   "responses": 729,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 40.558,
+    "dur": 18.206,
+    "pool": 3
+   },
+   "duration": 18.162
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_016",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.75",
+   "alerts": 55,
+   "responses": 55,
+   "coverage": 1.0,
+   "max_lag": 0.03,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.471,
+    "dur": 114.4713,
+    "mix_valid": 0.6278
+   },
+   "duration": 111.425
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_013",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.70",
+   "alerts": 16,
+   "responses": 16,
+   "coverage": 1.0,
+   "max_lag": 0.008,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 7.8426,
+    "dur": 129.5179
+   },
+   "duration": 113.143
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_017",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.71",
+   "alerts": 255,
+   "responses": 255,
+   "coverage": 1.0,
+   "max_lag": 0.008,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 5.474,
+    "dur": 47.2741,
+    "ph": 0.06
+   },
+   "duration": 46.538
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_016",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.100",
+   "alerts": 18,
+   "responses": 18,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 6,
+    "tail": 10
+   },
+   "duration": 62.399
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_009",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.80",
+   "alerts": 59,
+   "responses": 59,
+   "coverage": 1.0,
+   "max_lag": 0.02,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 2.2652,
+    "p_404": 0.0857
+   },
+   "duration": 134.842
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_025",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.95",
+   "alerts": 507,
+   "responses": 507,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 7.66,
+    "dur": 65.9885,
+    "p_5xx": 0.0765
+   },
+   "duration": 65.881
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_002",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.63",
+   "alerts": 72,
+   "responses": 72,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.481,
+    "dur": 146.3156,
+    "mix_valid": 0.4036
+   },
+   "duration": 143.929
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_028",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.88",
+   "alerts": 1127,
+   "responses": 1127,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 35.316,
+    "dur": 32.7736,
+    "reg": 0.3662,
+    "pool": 36
+   },
+   "duration": 32.756
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_010",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.65",
+   "alerts": 23,
+   "responses": 23,
+   "coverage": 1.0,
+   "max_lag": 0.012,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 7.0065,
+    "dur": 164.4384
+   },
+   "duration": 152.266
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_006",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.55",
+   "alerts": 15,
+   "responses": 15,
+   "coverage": 1.0,
+   "max_lag": 0.008,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 6.3912,
+    "dur": 97.5562
+   },
+   "duration": 89.149
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_015",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.47",
+   "alerts": 86,
+   "responses": 86,
+   "coverage": 1.0,
+   "max_lag": 0.019,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 1.833,
+    "p_404": 0.0887
+   },
+   "duration": 169.035
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_023",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.61",
+   "alerts": 125,
+   "responses": 125,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 1.819,
+    "p_404": 0.1199
+   },
+   "duration": 242.249
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_010",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.101",
+   "alerts": 169,
+   "responses": 169,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.041,
+    "dur": 81.0028,
+    "p_broken": 0.646
+   },
+   "duration": 79.666
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_027",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.77",
+   "alerts": 755,
+   "responses": 755,
+   "coverage": 1.0,
+   "max_lag": 0.089,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 27.307,
+    "scan_dur": 18.3567,
+    "scan_ph": 0.0476,
+    "brute_rate": 18.426,
+    "brute_dur": 13.8255,
+    "brute_hit": false
+   },
+   "duration": 33.108
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_002",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.83",
+   "alerts": 26,
+   "responses": 26,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 8,
+    "tail": 16
+   },
+   "duration": 90.7
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_011",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.99",
+   "alerts": 147,
+   "responses": 147,
+   "coverage": 1.0,
+   "max_lag": 0.011,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 3.625,
+    "dur": 41.2956,
+    "p_broken": 0.4156
+   },
+   "duration": 40.645
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_005",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.102",
+   "alerts": 134,
+   "responses": 134,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.996,
+    "dur": 131.5616,
+    "p_broken": 0.6054
+   },
+   "duration": 130.525
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_026",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.86",
+   "alerts": 14,
+   "responses": 14,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 7.5915,
+    "dur": 106.7617
+   },
+   "duration": 95.755
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_027",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.97",
+   "alerts": 102,
+   "responses": 102,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 117.3537,
+    "think": 6.0
+   },
+   "duration": 114.635
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_023",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.114",
+   "alerts": 562,
+   "responses": 562,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 11.468,
+    "dur": 49.3718,
+    "ph": 0.0318
+   },
+   "duration": 49.233
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_010",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.85",
+   "alerts": 125,
+   "responses": 125,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.708,
+    "dur": 170.8074,
+    "mix_valid": 0.4426
+   },
+   "duration": 169.495
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_003",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.78",
+   "alerts": 33,
+   "responses": 33,
+   "coverage": 1.0,
+   "max_lag": 0.01,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     12.073,
+     8.951,
+     5.31
+    ],
+    "bursts": 3
+   },
+   "duration": 83.062
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_018",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.73",
+   "alerts": 187,
+   "responses": 187,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.174,
+    "dur": 169.6671,
+    "mix_valid": 0.4669
+   },
+   "duration": 168.403
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_026",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.98",
+   "alerts": 26,
+   "responses": 26,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 9,
+    "tail": 15
+   },
+   "duration": 89.008
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_017",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.107",
+   "alerts": 410,
+   "responses": 410,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 4.224,
+    "scan_dur": 52.1098,
+    "scan_ph": 0.0188,
+    "brute_rate": 4.859,
+    "brute_dur": 38.9484,
+    "brute_hit": false
+   },
+   "duration": 91.759
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_014",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.74",
+   "alerts": 72,
+   "responses": 72,
+   "coverage": 1.0,
+   "max_lag": 0.015,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 2.8483,
+    "p_404": 0.1156
+   },
+   "duration": 241.523
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_010",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.123",
+   "alerts": 46,
+   "responses": 46,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 4.727,
+    "dur": 10.3283,
+    "hit": false
+   },
+   "duration": 9.862
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_008",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.110",
+   "alerts": 521,
+   "responses": 521,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 6.729,
+    "dur": 77.3949,
+    "p_5xx": 0.0603
+   },
+   "duration": 77.008
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_029",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.118",
+   "alerts": 10,
+   "responses": 10,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 2,
+    "tail": 6
+   },
+   "duration": 31.374
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_020",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.113",
+   "alerts": 156,
+   "responses": 156,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.231,
+    "dur": 122.2622,
+    "p_broken": 0.3291
+   },
+   "duration": 120.821
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_020",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.106",
+   "alerts": 73,
+   "responses": 73,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     13.598,
+     18.2,
+     7.974,
+     5.391
+    ],
+    "bursts": 4
+   },
+   "duration": 160.978
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_028",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.89",
+   "alerts": 68,
+   "responses": 68,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     12.768,
+     12.698,
+     10.06,
+     14.808,
+     13.778
+    ],
+    "bursts": 5
+   },
+   "duration": 211.409
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_007",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.76",
+   "alerts": 82,
+   "responses": 82,
+   "coverage": 1.0,
+   "max_lag": 0.01,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.605,
+    "dur": 135.3245,
+    "p_broken": 0.706
+   },
+   "duration": 133.503
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_009",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.126",
+   "alerts": 48,
+   "responses": 48,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.029,
+    "dur": 50.1312,
+    "p_broken": 0.672
+   },
+   "duration": 48.915
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_025",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.122",
+   "alerts": 1800,
+   "responses": 1800,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 34.189,
+    "dur": 57.0931,
+    "reg": 0.1794,
+    "pool": 21
+   },
+   "duration": 50.623
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_008",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.131",
+   "alerts": 64,
+   "responses": 64,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 6.226,
+    "dur": 10.5814,
+    "hit": false
+   },
+   "duration": 10.305
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_012",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.134",
+   "alerts": 688,
+   "responses": 688,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 42.197,
+    "dur": 16.2732,
+    "pool": 3
+   },
+   "duration": 16.247
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_022",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.109",
+   "alerts": 23,
+   "responses": 23,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.312,
+    "dur": 72.1556,
+    "p_broken": 0.575
+   },
+   "duration": 66.475
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_013",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.115",
+   "alerts": 29,
+   "responses": 29,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 1,
+    "tail": 26
+   },
+   "duration": 132.663
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_010",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.130",
+   "alerts": 70,
+   "responses": 70,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.141,
+    "dur": 34.1565,
+    "p_5xx": 0.0079
+   },
+   "duration": 33.517
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_022",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.103",
+   "alerts": 657,
+   "responses": 657,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 44.652,
+    "dur": 14.6797,
+    "pool": 3
+   },
+   "duration": 14.645
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_021",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.105",
+   "alerts": 20,
+   "responses": 20,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 7.3579,
+    "dur": 150.8895
+   },
+   "duration": 144.636
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_017",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.92",
+   "alerts": 127,
+   "responses": 127,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 1.8478,
+    "p_404": 0.0648
+   },
+   "duration": 241.23
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_006",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.117",
+   "alerts": 23,
+   "responses": 23,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 4,
+    "tail": 17
+   },
+   "duration": 102.321
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_005",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.138",
+   "alerts": 942,
+   "responses": 942,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 50.316,
+    "dur": 18.9482,
+    "pool": 3
+   },
+   "duration": 18.922
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_013",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.127",
+   "alerts": 324,
+   "responses": 324,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 11.116,
+    "dur": 28.7747,
+    "reg": 0.7837,
+    "pool": 49
+   },
+   "duration": 28.611
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_019",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.128",
+   "alerts": 342,
+   "responses": 342,
+   "coverage": 1.0,
+   "max_lag": 0.007,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 7.308,
+    "dur": 49.1479,
+    "p_5xx": 0.0752
+   },
+   "duration": 48.867
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_026",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.135",
+   "alerts": 65,
+   "responses": 65,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.967,
+    "dur": 67.2419,
+    "mix_valid": 0.2091
+   },
+   "duration": 65.133
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_005",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.112",
+   "alerts": 55,
+   "responses": 55,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     5.324,
+     9.945,
+     12.975,
+     8.274
+    ],
+    "bursts": 4
+   },
+   "duration": 178.585
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_019",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.133",
+   "alerts": 50,
+   "responses": 50,
+   "coverage": 1.0,
+   "max_lag": 0.007,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.402,
+    "dur": 127.0426,
+    "mix_valid": 0.2009
+   },
+   "duration": 122.347
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_019",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.136",
+   "alerts": 213,
+   "responses": 213,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 19.477,
+    "dur": 10.7156,
+    "hit": false
+   },
+   "duration": 10.663
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_024",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.120",
+   "alerts": 133,
+   "responses": 133,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.059,
+    "dur": 134.554,
+    "mix_valid": 0.3943
+   },
+   "duration": 133.71
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_016",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.147",
+   "alerts": 651,
+   "responses": 651,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 17.278,
+    "dur": 37.7665,
+    "reg": 0.8742,
+    "pool": 27
+   },
+   "duration": 37.71
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_007",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.132",
+   "alerts": 17,
+   "responses": 17,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 10,
+    "tail": 5
+   },
+   "duration": 54.23
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_026",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.141",
+   "alerts": 65,
+   "responses": 65,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.742,
+    "dur": 88.9849,
+    "p_broken": 0.5536
+   },
+   "duration": 87.634
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_008",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.140",
+   "alerts": 271,
+   "responses": 271,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.477,
+    "dur": 109.4291,
+    "p_broken": 0.7771
+   },
+   "duration": 108.898
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_029",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.143",
+   "alerts": 490,
+   "responses": 490,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 7.3,
+    "scan_dur": 38.0093,
+    "scan_ph": 0.0187,
+    "brute_rate": 5.849,
+    "brute_dur": 36.4448,
+    "brute_hit": true
+   },
+   "duration": 75.347
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_019",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.155",
+   "alerts": 20,
+   "responses": 20,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 6,
+    "tail": 12
+   },
+   "duration": 70.839
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_012",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.144",
+   "alerts": 14,
+   "responses": 14,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 6.4427,
+    "dur": 91.5965
+   },
+   "duration": 86.465
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_002",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.108",
+   "alerts": 87,
+   "responses": 87,
+   "coverage": 1.0,
+   "max_lag": 0.011,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     6.288,
+     15.888,
+     5.544,
+     15.357,
+     7.735,
+     12.834
+    ],
+    "bursts": 6
+   },
+   "duration": 303.119
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_010",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.124",
+   "alerts": 171,
+   "responses": 171,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.765,
+    "dur": 100.8726,
+    "mix_valid": 0.3275
+   },
+   "duration": 100.247
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_001",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.119",
+   "alerts": 104,
+   "responses": 104,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 125.6411,
+    "think": 6.0
+   },
+   "duration": 113.898
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_005",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.149",
+   "alerts": 525,
+   "responses": 525,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 6.027,
+    "dur": 89.9666,
+    "p_5xx": 0.0521
+   },
+   "duration": 89.69
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_014",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.153",
+   "alerts": 74,
+   "responses": 74,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 79.9618,
+    "think": 6.0
+   },
+   "duration": 75.451
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_027",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.125",
+   "alerts": 423,
+   "responses": 423,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 12.595,
+    "dur": 32.8252,
+    "hit": false
+   },
+   "duration": 32.783
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_016",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.111",
+   "alerts": 115,
+   "responses": 115,
+   "coverage": 1.0,
+   "max_lag": 0.008,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 1.9461,
+    "p_404": 0.047
+   },
+   "duration": 242.006
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_020",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.146",
+   "alerts": 71,
+   "responses": 71,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.445,
+    "dur": 143.9597,
+    "mix_valid": 0.2367
+   },
+   "duration": 137.525
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_005",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.121",
+   "alerts": 111,
+   "responses": 111,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 151.4735,
+    "think": 6.0
+   },
+   "duration": 149.384
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_001",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.159",
+   "alerts": 694,
+   "responses": 694,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 16.752,
+    "dur": 42.192,
+    "hit": true
+   },
+   "duration": 42.168
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_013",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.129",
+   "alerts": 58,
+   "responses": 58,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     13.961,
+     9.522,
+     6.1,
+     7.165,
+     6.108
+    ],
+    "bursts": 5
+   },
+   "duration": 224.81
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_004",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.161",
+   "alerts": 189,
+   "responses": 189,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 3.844,
+    "dur": 46.2408,
+    "p_5xx": 0.0369
+   },
+   "duration": 45.982
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_026",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.116",
+   "alerts": 169,
+   "responses": 169,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 1.3769,
+    "p_404": 0.0886
+   },
+   "duration": 241.688
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_011",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.137",
+   "alerts": 111,
+   "responses": 111,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.633,
+    "dur": 178.253,
+    "mix_valid": 0.2691
+   },
+   "duration": 175.806
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_026",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.142",
+   "alerts": 60,
+   "responses": 60,
+   "coverage": 1.0,
+   "max_lag": 0.0,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     12.956,
+     7.878,
+     5.818,
+     11.714
+    ],
+    "bursts": 4
+   },
+   "duration": 191.279
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_009",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.152",
+   "alerts": 13,
+   "responses": 13,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.118,
+    "dur": 94.4328,
+    "mix_valid": 0.2982
+   },
+   "duration": 87.127
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_001",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.104",
+   "alerts": 61,
+   "responses": 61,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     7.742,
+     6.81,
+     11.116,
+     7.634,
+     17.908
+    ],
+    "bursts": 5
+   },
+   "duration": 213.405
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_020",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.156",
+   "alerts": 1030,
+   "responses": 1030,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 20.23,
+    "scan_dur": 46.6885,
+    "scan_ph": 0.0112,
+    "brute_rate": 4.313,
+    "brute_dur": 15.2237,
+    "brute_hit": false
+   },
+   "duration": 62.818
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_023",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.150",
+   "alerts": 335,
+   "responses": 335,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 14.967,
+    "dur": 22.1091,
+    "hit": false
+   },
+   "duration": 22.021
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_004",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.178",
+   "alerts": 266,
+   "responses": 266,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 8.175,
+    "dur": 32.8198,
+    "hit": false
+   },
+   "duration": 32.651
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_029",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.154",
+   "alerts": 54,
+   "responses": 54,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     18.562,
+     5.524,
+     8.209,
+     6.464
+    ],
+    "bursts": 4
+   },
+   "duration": 157.646
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_017",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.145",
+   "alerts": 149,
+   "responses": 149,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.015,
+    "dur": 147.4341,
+    "p_broken": 0.4038
+   },
+   "duration": 146.052
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_009",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.139",
+   "alerts": 79,
+   "responses": 79,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     8.16,
+     17.556,
+     12.944,
+     6.301,
+     16.643,
+     6.004
+    ],
+    "bursts": 6
+   },
+   "duration": 318.981
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_018",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.158",
+   "alerts": 21,
+   "responses": 21,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 2,
+    "tail": 17
+   },
+   "duration": 83.121
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_008",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.165",
+   "alerts": 463,
+   "responses": 463,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 17.513,
+    "dur": 27.0362,
+    "ph": 0.0743
+   },
+   "duration": 26.891
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_022",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.148",
+   "alerts": 175,
+   "responses": 175,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 1.3519,
+    "p_404": 0.0548
+   },
+   "duration": 240.705
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_028",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.157",
+   "alerts": 117,
+   "responses": 117,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 118.4061,
+    "think": 6.0
+   },
+   "duration": 114.099
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_022",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.179",
+   "alerts": 11,
+   "responses": 11,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 2,
+    "tail": 7
+   },
+   "duration": 33.379
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_022",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.163",
+   "alerts": 152,
+   "responses": 152,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 158.6227,
+    "think": 6.0
+   },
+   "duration": 151.741
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_008",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.164",
+   "alerts": 531,
+   "responses": 531,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 3.802,
+    "dur": 135.7044,
+    "mix_valid": 0.6478
+   },
+   "duration": 135.132
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_007",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.151",
+   "alerts": 100,
+   "responses": 100,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 136.4737,
+    "think": 6.0
+   },
+   "duration": 129.899
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_026",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.167",
+   "alerts": 18,
+   "responses": 18,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 1,
+    "tail": 15
+   },
+   "duration": 65.017
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_023",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.173",
+   "alerts": 544,
+   "responses": 544,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 11.229,
+    "scan_dur": 39.9274,
+    "scan_ph": 0.0753,
+    "brute_rate": 10.559,
+    "brute_dur": 14.5475,
+    "brute_hit": false
+   },
+   "duration": 55.203
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_027",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.171",
+   "alerts": 645,
+   "responses": 645,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 48.254,
+    "dur": 13.5835,
+    "pool": 2
+   },
+   "duration": 13.542
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_011",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.168",
+   "alerts": 80,
+   "responses": 80,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.577,
+    "dur": 166.5763,
+    "mix_valid": 0.3723
+   },
+   "duration": 149.671
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_004",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.166",
+   "alerts": 44,
+   "responses": 44,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.499,
+    "dur": 72.9486,
+    "p_broken": 0.7246
+   },
+   "duration": 72.112
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_016",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.183",
+   "alerts": 8,
+   "responses": 8,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 1,
+    "tail": 5
+   },
+   "duration": 25.119
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_020",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.182",
+   "alerts": 415,
+   "responses": 415,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 4.516,
+    "dur": 91.8052,
+    "p_5xx": 0.0104
+   },
+   "duration": 91.555
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_005",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.197",
+   "alerts": 227,
+   "responses": 227,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 17.435,
+    "dur": 12.6733,
+    "hit": true
+   },
+   "duration": 12.67
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_021",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.191",
+   "alerts": 473,
+   "responses": 473,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 21.261,
+    "dur": 22.0251,
+    "ph": 0.051
+   },
+   "duration": 21.945
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_021",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.160",
+   "alerts": 46,
+   "responses": 46,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     15.731,
+     8.83,
+     6.338,
+     14.976
+    ],
+    "bursts": 4
+   },
+   "duration": 227.88
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_025",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.174",
+   "alerts": 19,
+   "responses": 19,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 6.8619,
+    "dur": 131.3993
+   },
+   "duration": 120.638
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_004",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.172",
+   "alerts": 1789,
+   "responses": 1789,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 37.26,
+    "dur": 48.4116,
+    "ph": 0.0426
+   },
+   "duration": 48.344
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_003",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.189",
+   "alerts": 77,
+   "responses": 77,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.038,
+    "dur": 41.0849,
+    "p_5xx": 0.0222
+   },
+   "duration": 39.66
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_029",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.190",
+   "alerts": 26,
+   "responses": 26,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.363,
+    "dur": 88.0402,
+    "p_broken": 0.6353
+   },
+   "duration": 86.14
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_016",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.162",
+   "alerts": 83,
+   "responses": 83,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     10.73,
+     10.271,
+     5.456,
+     19.641,
+     11.087,
+     13.872
+    ],
+    "bursts": 6
+   },
+   "duration": 289.421
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_005",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.192",
+   "alerts": 14,
+   "responses": 14,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 1,
+    "tail": 11
+   },
+   "duration": 55.71
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_019",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.181",
+   "alerts": 42,
+   "responses": 42,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     18.47,
+     19.574,
+     10.072
+    ],
+    "bursts": 3
+   },
+   "duration": 92.616
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_023",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.198",
+   "alerts": 243,
+   "responses": 243,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 3.137,
+    "dur": 84.9987,
+    "p_5xx": 0.0499
+   },
+   "duration": 84.769
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_015",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.187",
+   "alerts": 25,
+   "responses": 25,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 3,
+    "tail": 20
+   },
+   "duration": 113.466
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_028",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.176",
+   "alerts": 218,
+   "responses": 218,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 9.306,
+    "dur": 22.1651,
+    "hit": false
+   },
+   "duration": 22.072
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_002",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.169",
+   "alerts": 406,
+   "responses": 406,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 5.085,
+    "dur": 81.7768,
+    "p_5xx": 0.078
+   },
+   "duration": 81.488
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_015",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.175",
+   "alerts": 67,
+   "responses": 67,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     16.542,
+     18.91,
+     12.919,
+     6.15,
+     9.875,
+     13.405
+    ],
+    "bursts": 6
+   },
+   "duration": 234.722
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_028",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.200",
+   "alerts": 582,
+   "responses": 582,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 8.012,
+    "dur": 75.103,
+    "p_5xx": 0.0065
+   },
+   "duration": 74.924
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_005",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.37",
+   "alerts": 2180,
+   "responses": 2180,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 43.91,
+    "scan_dur": 36.9806,
+    "scan_ph": 0.0624,
+    "brute_rate": 15.306,
+    "brute_dur": 36.2029,
+    "brute_hit": false
+   },
+   "duration": 74.115
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_016",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.196",
+   "alerts": 121,
+   "responses": 121,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 107.0292,
+    "think": 6.0
+   },
+   "duration": 103.02
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_021",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.40",
+   "alerts": 144,
+   "responses": 144,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 3.264,
+    "dur": 43.8786,
+    "p_5xx": 0.021
+   },
+   "duration": 43.495
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_001",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.46",
+   "alerts": 331,
+   "responses": 331,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 7.62,
+    "dur": 43.0953,
+    "ph": 0.0387
+   },
+   "duration": 42.897
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_000",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.195",
+   "alerts": 1934,
+   "responses": 1934,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 47.334,
+    "scan_dur": 42.6685,
+    "scan_ph": 0.0712,
+    "brute_rate": 3.404,
+    "brute_dur": 37.2395,
+    "brute_hit": true
+   },
+   "duration": 77.109
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_009",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.180",
+   "alerts": 713,
+   "responses": 713,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 12.893,
+    "dur": 53.3222,
+    "ph": 0.0421
+   },
+   "duration": 53.093
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_006",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.184",
+   "alerts": 96,
+   "responses": 96,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 6.794,
+    "dur": 13.3721,
+    "hit": false
+   },
+   "duration": 13.199
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_027",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.48",
+   "alerts": 1331,
+   "responses": 1331,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 39.947,
+    "dur": 33.595,
+    "ph": 0.047
+   },
+   "duration": 33.553
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_028",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.42",
+   "alerts": 94,
+   "responses": 94,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 2.453,
+    "p_404": 0.1076
+   },
+   "duration": 240.43
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_015",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.188",
+   "alerts": 3348,
+   "responses": 3348,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 57.455,
+    "scan_dur": 54.9783,
+    "scan_ph": 0.0153,
+    "brute_rate": 36.083,
+    "brute_dur": 43.327,
+    "brute_hit": false
+   },
+   "duration": 75.113
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_013",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.35",
+   "alerts": 24,
+   "responses": 24,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 4,
+    "tail": 18
+   },
+   "duration": 78.133
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_029",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.185",
+   "alerts": 57,
+   "responses": 57,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.624,
+    "dur": 100.4949,
+    "mix_valid": 0.3227
+   },
+   "duration": 97.494
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_013",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.43",
+   "alerts": 80,
+   "responses": 80,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 2.9538,
+    "p_404": 0.0515
+   },
+   "duration": 241.242
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_005",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.44",
+   "alerts": 134,
+   "responses": 134,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.749,
+    "dur": 179.3719,
+    "mix_valid": 0.2712
+   },
+   "duration": 176.999
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_012",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.64",
+   "alerts": 1698,
+   "responses": 1698,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 6.08,
+    "scan_dur": 42.5558,
+    "scan_ph": 0.0738,
+    "brute_rate": 32.583,
+    "brute_dur": 44.8226,
+    "brute_hit": false
+   },
+   "duration": 88.021
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_008",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.51",
+   "alerts": 1800,
+   "responses": 1800,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 99.664,
+    "dur": 19.635,
+    "pool": 3
+   },
+   "duration": 18.111
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_013",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.193",
+   "alerts": 214,
+   "responses": 214,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.787,
+    "dur": 117.2803,
+    "mix_valid": 0.5726
+   },
+   "duration": 116.621
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_012",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.45",
+   "alerts": 113,
+   "responses": 113,
+   "coverage": 1.0,
+   "max_lag": 0.0,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 139.951,
+    "think": 6.0
+   },
+   "duration": 137.886
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_007",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.49",
+   "alerts": 51,
+   "responses": 51,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.292,
+    "dur": 173.3654,
+    "mix_valid": 0.3785
+   },
+   "duration": 165.368
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_002",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.34",
+   "alerts": 14,
+   "responses": 14,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 4.2268,
+    "dur": 61.1973
+   },
+   "duration": 56.076
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_001",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.186",
+   "alerts": 455,
+   "responses": 455,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 4.932,
+    "scan_dur": 19.8962,
+    "scan_ph": 0.031,
+    "brute_rate": 9.597,
+    "brute_dur": 36.6332,
+    "brute_hit": false
+   },
+   "duration": 57.049
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_006",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.194",
+   "alerts": 1568,
+   "responses": 1568,
+   "coverage": 1.0,
+   "max_lag": 0.01,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 48.881,
+    "scan_dur": 28.998,
+    "scan_ph": 0.0633,
+    "brute_rate": 9.35,
+    "brute_dur": 11.1021,
+    "brute_hit": false
+   },
+   "duration": 41.058
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_000",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.170",
+   "alerts": 258,
+   "responses": 258,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 5.424,
+    "dur": 47.819,
+    "p_5xx": 0.069
+   },
+   "duration": 47.487
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_009",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.39",
+   "alerts": 16,
+   "responses": 16,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 4,
+    "tail": 10
+   },
+   "duration": 50.548
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_000",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.56",
+   "alerts": 971,
+   "responses": 971,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 17.315,
+    "dur": 56.3263,
+    "ph": 0.0102
+   },
+   "duration": 56.283
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_013",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.199",
+   "alerts": 102,
+   "responses": 102,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 4.578,
+    "dur": 22.7581,
+    "ph": 0.0704
+   },
+   "duration": 22.398
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_011",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.177",
+   "alerts": 381,
+   "responses": 381,
+   "coverage": 1.0,
+   "max_lag": 0.011,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 5.824,
+    "dur": 67.902,
+    "p_5xx": 0.0127
+   },
+   "duration": 67.511
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_023",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.82",
+   "alerts": 926,
+   "responses": 926,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 51.942,
+    "dur": 18.2846,
+    "pool": 2
+   },
+   "duration": 18.256
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_005",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.38",
+   "alerts": 22,
+   "responses": 22,
+   "coverage": 1.0,
+   "max_lag": 0.009,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 5,
+    "tail": 15
+   },
+   "duration": 73.249
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_007",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.59",
+   "alerts": 150,
+   "responses": 150,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 4.011,
+    "dur": 35.8638,
+    "hit": false
+   },
+   "duration": 35.02
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_016",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.62",
+   "alerts": 120,
+   "responses": 120,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 6.977,
+    "dur": 17.2262,
+    "hit": false
+   },
+   "duration": 17.058
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_003",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.91",
+   "alerts": 515,
+   "responses": 515,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 20.292,
+    "dur": 25.3958,
+    "reg": 0.9809,
+    "pool": 28
+   },
+   "duration": 25.335
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_024",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.66",
+   "alerts": 760,
+   "responses": 760,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 29.324,
+    "dur": 25.9426,
+    "ph": 0.0636
+   },
+   "duration": 25.885
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_023",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.67",
+   "alerts": 20,
+   "responses": 20,
+   "coverage": 1.0,
+   "max_lag": 0.007,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 6,
+    "tail": 12
+   },
+   "duration": 60.303
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_026",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.36",
+   "alerts": 127,
+   "responses": 127,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 134.6403,
+    "think": 6.0
+   },
+   "duration": 132.129
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_011",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.50",
+   "alerts": 11,
+   "responses": 11,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 7.557,
+    "dur": 86.6398
+   },
+   "duration": 73.041
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_001",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.81",
+   "alerts": 20,
+   "responses": 20,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 2,
+    "tail": 16
+   },
+   "duration": 74.092
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_000",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.68",
+   "alerts": 271,
+   "responses": 271,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.294,
+    "dur": 125.8552,
+    "mix_valid": 0.2941
+   },
+   "duration": 124.754
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_001",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.53",
+   "alerts": 26,
+   "responses": 26,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 7,
+    "tail": 17
+   },
+   "duration": 93.437
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_005",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.41",
+   "alerts": 21,
+   "responses": 21,
+   "coverage": 1.0,
+   "max_lag": 0.0,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.158,
+    "dur": 137.2987,
+    "mix_valid": 0.1202
+   },
+   "duration": 125.329
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_011",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.54",
+   "alerts": 1800,
+   "responses": 1800,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 42.585,
+    "dur": 47.3351,
+    "ph": 0.0221
+   },
+   "duration": 41.12
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_024",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.84",
+   "alerts": 187,
+   "responses": 187,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 5.077,
+    "dur": 41.3506,
+    "hit": false
+   },
+   "duration": 41.154
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_017",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.52",
+   "alerts": 38,
+   "responses": 38,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.321,
+    "dur": 116.8328,
+    "mix_valid": 0.2489
+   },
+   "duration": 108.345
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_027",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.57",
+   "alerts": 253,
+   "responses": 253,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.155,
+    "dur": 116.9198,
+    "mix_valid": 0.3861
+   },
+   "duration": 116.32
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_002",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.60",
+   "alerts": 74,
+   "responses": 74,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.158,
+    "dur": 64.8425,
+    "p_broken": 0.7278
+   },
+   "duration": 63.677
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_023",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.69",
+   "alerts": 35,
+   "responses": 35,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 68.8627,
+    "think": 6.0
+   },
+   "duration": 67.295
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_029",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.72",
+   "alerts": 1695,
+   "responses": 1695,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 93.46,
+    "dur": 17.7074,
+    "pool": 1
+   },
+   "duration": 17.696
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_012",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.33",
+   "alerts": 25,
+   "responses": 25,
+   "coverage": 1.0,
+   "max_lag": 0.007,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.131,
+    "dur": 178.6718,
+    "mix_valid": 0.276
+   },
+   "duration": 169.895
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_017",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.94",
+   "alerts": 177,
+   "responses": 177,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.468,
+    "dur": 73.0078,
+    "p_5xx": 0.043
+   },
+   "duration": 72.336
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_009",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.32",
+   "alerts": 17,
+   "responses": 17,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 5.944,
+    "dur": 101.936
+   },
+   "duration": 90.633
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_001",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.58",
+   "alerts": 165,
+   "responses": 165,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 1.0898,
+    "p_404": 0.1019
+   },
+   "duration": 189.143
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_002",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.75",
+   "alerts": 555,
+   "responses": 555,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 21.337,
+    "dur": 26.3864,
+    "reg": 0.6991,
+    "pool": 58
+   },
+   "duration": 26.305
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_007",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.87",
+   "alerts": 1478,
+   "responses": 1478,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 48.072,
+    "dur": 30.6972,
+    "ph": 0.0676
+   },
+   "duration": 30.657
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_015",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.79",
+   "alerts": 582,
+   "responses": 582,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 16.797,
+    "dur": 34.3546,
+    "reg": 0.1693,
+    "pool": 8
+   },
+   "duration": 34.3
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_019",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.100",
+   "alerts": 1492,
+   "responses": 1492,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 91.27,
+    "dur": 16.3155,
+    "pool": 3
+   },
+   "duration": 16.297
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_003",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.70",
+   "alerts": 73,
+   "responses": 73,
+   "coverage": 1.0,
+   "max_lag": 0.008,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 63.7586,
+    "think": 6.0
+   },
+   "duration": 59.866
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_001",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.96",
+   "alerts": 137,
+   "responses": 137,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.183,
+    "dur": 63.9841,
+    "mix_valid": 0.685
+   },
+   "duration": 63.21
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_012",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.90",
+   "alerts": 33,
+   "responses": 33,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 4,
+    "tail": 27
+   },
+   "duration": 144.59
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_024",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.71",
+   "alerts": 34,
+   "responses": 34,
+   "coverage": 1.0,
+   "max_lag": 0.009,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.329,
+    "dur": 91.5347,
+    "p_broken": 0.6892
+   },
+   "duration": 88.734
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_025",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.88",
+   "alerts": 47,
+   "responses": 47,
+   "coverage": 1.0,
+   "max_lag": 0.007,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 71.1464,
+    "think": 6.0
+   },
+   "duration": 43.5
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_014",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.80",
+   "alerts": 2318,
+   "responses": 2318,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 51.551,
+    "scan_dur": 43.6428,
+    "scan_ph": 0.0616,
+    "brute_rate": 26.818,
+    "brute_dur": 20.3448,
+    "brute_hit": false
+   },
+   "duration": 56.044
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_015",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.55",
+   "alerts": 854,
+   "responses": 854,
+   "coverage": 1.0,
+   "max_lag": 0.0,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 81.023,
+    "dur": 10.3685,
+    "pool": 3
+   },
+   "duration": 10.347
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_016",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.63",
+   "alerts": 2355,
+   "responses": 2355,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 34.297,
+    "scan_dur": 40.1513,
+    "scan_ph": 0.066,
+    "brute_rate": 22.327,
+    "brute_dur": 43.6536,
+    "brute_hit": true
+   },
+   "duration": 84.805
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_016",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.95",
+   "alerts": 11,
+   "responses": 11,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 9.9989,
+    "dur": 110.8619
+   },
+   "duration": 99.116
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_016",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.65",
+   "alerts": 107,
+   "responses": 107,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.037,
+    "dur": 108.6036,
+    "p_broken": 0.7596
+   },
+   "duration": 106.192
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_029",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.77",
+   "alerts": 1581,
+   "responses": 1581,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 37.26,
+    "dur": 43.0967,
+    "ph": 0.0646
+   },
+   "duration": 43.07
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_006",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.83",
+   "alerts": 1190,
+   "responses": 1190,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 79.504,
+    "dur": 14.9898,
+    "pool": 3
+   },
+   "duration": 14.978
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_020",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.86",
+   "alerts": 1189,
+   "responses": 1189,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 65.099,
+    "dur": 18.2544,
+    "pool": 2
+   },
+   "duration": 18.229
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_020",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.47",
+   "alerts": 70,
+   "responses": 70,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.592,
+    "dur": 117.4052,
+    "mix_valid": 0.0419
+   },
+   "duration": 115.914
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_020",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.97",
+   "alerts": 974,
+   "responses": 974,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 39.209,
+    "dur": 24.7953,
+    "hit": false
+   },
+   "duration": 24.74
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_014",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.85",
+   "alerts": 144,
+   "responses": 144,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 4.205,
+    "dur": 33.8076,
+    "ph": 0.0568
+   },
+   "duration": 33.409
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_012",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.99",
+   "alerts": 408,
+   "responses": 408,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 5.217,
+    "dur": 80.6782,
+    "p_5xx": 0.0773
+   },
+   "duration": 80.246
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_007",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.93",
+   "alerts": 57,
+   "responses": 57,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     12.205,
+     5.947,
+     8.942,
+     11.349,
+     5.13,
+     13.278
+    ],
+    "bursts": 6
+   },
+   "duration": 364.583
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_022",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.98",
+   "alerts": 1547,
+   "responses": 1547,
+   "coverage": 1.0,
+   "max_lag": 0.009,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 30.683,
+    "scan_dur": 46.1372,
+    "scan_ph": 0.0551,
+    "brute_rate": 11.897,
+    "brute_dur": 12.0065,
+    "brute_hit": false
+   },
+   "duration": 59.069
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_021",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.73",
+   "alerts": 81,
+   "responses": 81,
+   "coverage": 1.0,
+   "max_lag": 0.008,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.607,
+    "dur": 60.6638,
+    "p_broken": 0.4728
+   },
+   "duration": 59.652
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_015",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.102",
+   "alerts": 74,
+   "responses": 74,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.553,
+    "dur": 129.3059,
+    "mix_valid": 0.3162
+   },
+   "duration": 127.324
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_017",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.78",
+   "alerts": 48,
+   "responses": 48,
+   "coverage": 1.0,
+   "max_lag": 0.007,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     16.544,
+     14.496,
+     9.389
+    ],
+    "bursts": 3
+   },
+   "duration": 89.407
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_009",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.107",
+   "alerts": 1721,
+   "responses": 1721,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 95.866,
+    "dur": 18.1011,
+    "pool": 2
+   },
+   "duration": 18.09
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_025",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.61",
+   "alerts": 64,
+   "responses": 64,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     18.399,
+     9.116,
+     9.533,
+     17.906,
+     5.096
+    ],
+    "bursts": 5
+   },
+   "duration": 214.169
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_014",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.76",
+   "alerts": 745,
+   "responses": 745,
+   "coverage": 1.0,
+   "max_lag": 0.014,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 28.87,
+    "dur": 26.08,
+    "reg": 0.4483,
+    "pool": 28
+   },
+   "duration": 26.061
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_017",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.131",
+   "alerts": 13,
+   "responses": 13,
+   "coverage": 1.0,
+   "max_lag": 0.018,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 5,
+    "tail": 6
+   },
+   "duration": 32.368
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_fast_016",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.130",
+   "alerts": 407,
+   "responses": 407,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 20.732,
+    "dur": 18.7763,
+    "ph": 0.012
+   },
+   "duration": 18.702
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_001",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.126",
+   "alerts": 202,
+   "responses": 202,
+   "coverage": 1.0,
+   "max_lag": 0.015,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 5.207,
+    "dur": 37.5182,
+    "p_5xx": 0.056
+   },
+   "duration": 37.307
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_008",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.101",
+   "alerts": 85,
+   "responses": 85,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 2.5605,
+    "p_404": 0.058
+   },
+   "duration": 240.992
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_028",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.113",
+   "alerts": 9,
+   "responses": 9,
+   "coverage": 1.0,
+   "max_lag": 0.016,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 1,
+    "tail": 6
+   },
+   "duration": 47.37
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_012",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.114",
+   "alerts": 350,
+   "responses": 350,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.024,
+    "dur": 164.658,
+    "mix_valid": 0.6728
+   },
+   "duration": 163.528
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_010",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.134",
+   "alerts": 45,
+   "responses": 45,
+   "coverage": 1.0,
+   "max_lag": 0.021,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 61.6424,
+    "think": 6.0
+   },
+   "duration": 54.05
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_022",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.109",
+   "alerts": 398,
+   "responses": 398,
+   "coverage": 1.0,
+   "max_lag": 0.02,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 7.419,
+    "dur": 57.4303,
+    "reg": 0.252,
+    "pool": 41
+   },
+   "duration": 57.377
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_013",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.74",
+   "alerts": 78,
+   "responses": 78,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 65.5487,
+    "think": 6.0
+   },
+   "duration": 61.412
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_003",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.115",
+   "alerts": 164,
+   "responses": 164,
+   "coverage": 1.0,
+   "max_lag": 0.02,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.237,
+    "dur": 71.6724,
+    "mix_valid": 0.5035
+   },
+   "duration": 71.088
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_028",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.89",
+   "alerts": 36,
+   "responses": 36,
+   "coverage": 1.0,
+   "max_lag": 0.012,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.381,
+    "dur": 90.6802,
+    "p_broken": 0.5962
+   },
+   "duration": 87.117
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_018",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.103",
+   "alerts": 261,
+   "responses": 261,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 3.704,
+    "dur": 71.4389,
+    "p_5xx": 0.0777
+   },
+   "duration": 71.015
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_011",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.105",
+   "alerts": 1912,
+   "responses": 1912,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 55.047,
+    "scan_dur": 44.8408,
+    "scan_ph": 0.0197,
+    "brute_rate": 3.47,
+    "brute_dur": 35.5786,
+    "brute_hit": false
+   },
+   "duration": 69.3
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_029",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.117",
+   "alerts": 68,
+   "responses": 68,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 79.7813,
+    "think": 6.0
+   },
+   "duration": 77.594
+  },
+  {
+   "session_key": "lockbox1/lockbox_flood_007",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.127",
+   "alerts": 1192,
+   "responses": 1192,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 85.167,
+    "dur": 13.9451,
+    "pool": 1
+   },
+   "duration": 13.925
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_016",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.118",
+   "alerts": 78,
+   "responses": 78,
+   "coverage": 1.0,
+   "max_lag": 0.008,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.475,
+    "dur": 164.1175,
+    "mix_valid": 0.36
+   },
+   "duration": 160.936
+  },
+  {
+   "session_key": "lockbox1/lockbox_recon_then_brute_021",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.135",
+   "alerts": 1039,
+   "responses": 1039,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 55.824,
+    "scan_dur": 16.9043,
+    "scan_ph": 0.0213,
+    "brute_rate": 4.574,
+    "brute_dur": 17.718,
+    "brute_hit": false
+   },
+   "duration": 35.498
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_028",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.110",
+   "alerts": 43,
+   "responses": 43,
+   "coverage": 1.0,
+   "max_lag": 0.007,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.241,
+    "dur": 182.5818,
+    "mix_valid": 0.3733
+   },
+   "duration": 174.224
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_022",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.132",
+   "alerts": 15,
+   "responses": 15,
+   "coverage": 1.0,
+   "max_lag": 0.013,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 8,
+    "tail": 5
+   },
+   "duration": 45.818
+  },
+  {
+   "session_key": "lockbox1/lockbox_forgot_pw_018",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.136",
+   "alerts": 16,
+   "responses": 16,
+   "coverage": 1.0,
+   "max_lag": 0.008,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 8,
+    "tail": 6
+   },
+   "duration": 48.585
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_022",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.147",
+   "alerts": 255,
+   "responses": 255,
+   "coverage": 1.0,
+   "max_lag": 0.011,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 5.159,
+    "dur": 49.7937,
+    "hit": false
+   },
+   "duration": 49.616
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_023",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.92",
+   "alerts": 166,
+   "responses": 166,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.191,
+    "dur": 140.4049,
+    "p_broken": 0.322
+   },
+   "duration": 138.852
+  },
+  {
+   "session_key": "lockbox1/lockbox_heavy_burst_021",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.141",
+   "alerts": 255,
+   "responses": 255,
+   "coverage": 1.0,
+   "max_lag": 0.0,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 15.994,
+    "dur": 16.2337,
+    "reg": 0.5834,
+    "pool": 40
+   },
+   "duration": 16.128
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_slow_025",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.138",
+   "alerts": 41,
+   "responses": 41,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.221,
+    "dur": 166.8219,
+    "mix_valid": 0.3124
+   },
+   "duration": 157.374
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_015",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.125",
+   "alerts": 152,
+   "responses": 152,
+   "coverage": 1.0,
+   "max_lag": 0.018,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 3.417,
+    "dur": 43.5307,
+    "hit": false
+   },
+   "duration": 43.036
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_000",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.123",
+   "alerts": 47,
+   "responses": 47,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     9.656,
+     16.663,
+     17.001,
+     5.662,
+     11.316
+    ],
+    "bursts": 5
+   },
+   "duration": 214.478
+  },
+  {
+   "session_key": "lockbox1/lockbox_auth_fast_013",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.111",
+   "alerts": 1209,
+   "responses": 1209,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 28.266,
+    "dur": 42.8276,
+    "hit": true
+   },
+   "duration": 42.811
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_018",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.133",
+   "alerts": 22,
+   "responses": 22,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     6.48,
+     9.856,
+     17.376
+    ],
+    "bursts": 3
+   },
+   "duration": 104.644
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_003",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.122",
+   "alerts": 82,
+   "responses": 82,
+   "coverage": 1.0,
+   "max_lag": 0.011,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 2.7029,
+    "p_404": 0.0688
+   },
+   "duration": 240.759
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_027",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.106",
+   "alerts": 79,
+   "responses": 79,
+   "coverage": 1.0,
+   "max_lag": 0.011,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 2.9598,
+    "p_404": 0.0421
+   },
+   "duration": 242.081
+  },
+  {
+   "session_key": "lockbox1/lockbox_api_client_014",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.144",
+   "alerts": 423,
+   "responses": 423,
+   "coverage": 1.0,
+   "max_lag": 0.009,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 5.373,
+    "dur": 78.2315,
+    "p_5xx": 0.0075
+   },
+   "duration": 78.039
+  },
+  {
+   "session_key": "lockbox1/stress_misconfig_monitor_006",
+   "scenario": "misconfig_monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "stress",
+   "srcip": "172.30.90.152",
+   "alerts": 7,
+   "responses": 7,
+   "coverage": 1.0,
+   "max_lag": 0.022,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 10.9632,
+    "dur": 83.003
+   },
+   "duration": 64.416
+  },
+  {
+   "session_key": "lockbox1/stress_misconfig_monitor_008",
+   "scenario": "misconfig_monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "stress",
+   "srcip": "172.30.90.142",
+   "alerts": 7,
+   "responses": 7,
+   "coverage": 1.0,
+   "max_lag": 0.019,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 12.5235,
+    "dur": 99.8811
+   },
+   "duration": 72.077
+  },
+  {
+   "session_key": "lockbox1/stress_misconfig_monitor_000",
+   "scenario": "misconfig_monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "stress",
+   "srcip": "172.30.90.150",
+   "alerts": 10,
+   "responses": 10,
+   "coverage": 1.0,
+   "max_lag": 0.026,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 8.7665,
+    "dur": 89.0463
+   },
+   "duration": 75.561
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_009",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.140",
+   "alerts": 88,
+   "responses": 88,
+   "coverage": 1.0,
+   "max_lag": 0.008,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 100.9766,
+    "think": 6.0
+   },
+   "duration": 94.863
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_stealth_004",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.143",
+   "alerts": 42,
+   "responses": 42,
+   "coverage": 1.0,
+   "max_lag": 0.007,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.433,
+    "dur": 101.0169,
+    "mix_valid": 0.3035
+   },
+   "duration": 96.967
+  },
+  {
+   "session_key": "lockbox1/lockbox_broken_links_025",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.121",
+   "alerts": 170,
+   "responses": 170,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.166,
+    "dur": 79.7066,
+    "p_broken": 0.703
+   },
+   "duration": 79.111
+  },
+  {
+   "session_key": "lockbox1/stress_misconfig_monitor_001",
+   "scenario": "misconfig_monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "stress",
+   "srcip": "172.30.90.156",
+   "alerts": 9,
+   "responses": 9,
+   "coverage": 1.0,
+   "max_lag": 0.025,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 10.6969,
+    "dur": 103.186
+   },
+   "duration": 84.585
+  },
+  {
+   "session_key": "lockbox1/lockbox_browse_human_017",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.155",
+   "alerts": 105,
+   "responses": 105,
+   "coverage": 1.0,
+   "max_lag": 0.01,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 108.6992,
+    "think": 6.0
+   },
+   "duration": 105.356
+  },
+  {
+   "session_key": "lockbox1/lockbox_monitor_024",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.146",
+   "alerts": 16,
+   "responses": 16,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 6.639,
+    "dur": 111.1857
+   },
+   "duration": 98.448
+  },
+  {
+   "session_key": "lockbox1/stress_misconfig_monitor_002",
+   "scenario": "misconfig_monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "stress",
+   "srcip": "172.30.90.165",
+   "alerts": 30,
+   "responses": 30,
+   "coverage": 1.0,
+   "max_lag": 0.06,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 3.5257,
+    "dur": 108.3524
+   },
+   "duration": 100.798
+  },
+  {
+   "session_key": "lockbox1/stress_misconfig_monitor_003",
+   "scenario": "misconfig_monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "stress",
+   "srcip": "172.30.90.116",
+   "alerts": 12,
+   "responses": 12,
+   "coverage": 1.0,
+   "max_lag": 0.016,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 9.7123,
+    "dur": 119.6466
+   },
+   "duration": 105.687
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_023",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.112",
+   "alerts": 35,
+   "responses": 35,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 4,
+    "tail": 29
+   },
+   "duration": 165.925
+  },
+  {
+   "session_key": "lockbox1/stress_misconfig_monitor_004",
+   "scenario": "misconfig_monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "stress",
+   "srcip": "172.30.90.104",
+   "alerts": 9,
+   "responses": 9,
+   "coverage": 1.0,
+   "max_lag": 0.023,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 14.5535,
+    "dur": 140.2727
+   },
+   "duration": 114.792
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_025",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.124",
+   "alerts": 31,
+   "responses": 31,
+   "coverage": 1.0,
+   "max_lag": 0.013,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 3,
+    "tail": 26
+   },
+   "duration": 133.958
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_021",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.108",
+   "alerts": 56,
+   "responses": 56,
+   "coverage": 1.0,
+   "max_lag": 0.012,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 2.4162,
+    "p_404": 0.0955
+   },
+   "duration": 138.729
+  },
+  {
+   "session_key": "lockbox1/lockbox_typo_login_019",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.149",
+   "alerts": 35,
+   "responses": 35,
+   "coverage": 1.0,
+   "max_lag": 0.015,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 4,
+    "tail": 29
+   },
+   "duration": 150.691
+  },
+  {
+   "session_key": "lockbox1/stress_misconfig_monitor_007",
+   "scenario": "misconfig_monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "stress",
+   "srcip": "172.30.90.139",
+   "alerts": 17,
+   "responses": 17,
+   "coverage": 1.0,
+   "max_lag": 0.059,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 9.1175,
+    "dur": 162.5869
+   },
+   "duration": 151.091
+  },
+  {
+   "session_key": "lockbox1/stress_misconfig_monitor_005",
+   "scenario": "misconfig_monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "stress",
+   "srcip": "172.30.90.145",
+   "alerts": 35,
+   "responses": 35,
+   "coverage": 1.0,
+   "max_lag": 0.03,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 5.1378,
+    "dur": 180.5939
+   },
+   "duration": 175.421
+  },
+  {
+   "session_key": "lockbox1/stress_sso_retry_storm_005",
+   "scenario": "sso_retry_storm",
+   "family": "benign",
+   "label": 0,
+   "split": "stress",
+   "srcip": "172.30.90.129",
+   "alerts": 30,
+   "responses": 30,
+   "coverage": 1.0,
+   "max_lag": 0.012,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0
+   },
+   "duration": 176.708
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_029",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.120",
+   "alerts": 172,
+   "responses": 172,
+   "coverage": 1.0,
+   "max_lag": 0.009,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 1.2848,
+    "p_404": 0.1089
+   },
+   "duration": 240.52
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_022",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.128",
+   "alerts": 74,
+   "responses": 74,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     18.466,
+     19.243,
+     7.199,
+     7.841,
+     11.606,
+     5.11
+    ],
+    "bursts": 6
+   },
+   "duration": 264.165
+  },
+  {
+   "session_key": "lockbox1/stress_sso_retry_storm_003",
+   "scenario": "sso_retry_storm",
+   "family": "benign",
+   "label": 0,
+   "split": "stress",
+   "srcip": "172.30.90.148",
+   "alerts": 27,
+   "responses": 27,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0
+   },
+   "duration": 186.738
+  },
+  {
+   "session_key": "lockbox1/lockbox_crawler_004",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "lockbox",
+   "srcip": "172.30.90.153",
+   "alerts": 220,
+   "responses": 220,
+   "coverage": 1.0,
+   "max_lag": 0.017,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 0.9867,
+    "p_404": 0.0619
+   },
+   "duration": 240.062
+  },
+  {
+   "session_key": "lockbox1/lockbox_scan_pulsed_006",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "lockbox",
+   "srcip": "172.30.90.119",
+   "alerts": 32,
+   "responses": 32,
+   "coverage": 1.0,
+   "max_lag": 0.014,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     9.656,
+     10.982,
+     8.808,
+     11.749
+    ],
+    "bursts": 4
+   },
+   "duration": 257.14
+  },
+  {
+   "session_key": "lockbox1/stress_sso_retry_storm_007",
+   "scenario": "sso_retry_storm",
+   "family": "benign",
+   "label": 0,
+   "split": "stress",
+   "srcip": "172.30.90.161",
+   "alerts": 37,
+   "responses": 37,
+   "coverage": 1.0,
+   "max_lag": 0.014,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0
+   },
+   "duration": 281.405
+  },
+  {
+   "session_key": "lockbox1/stress_sso_retry_storm_004",
+   "scenario": "sso_retry_storm",
+   "family": "benign",
+   "label": 0,
+   "split": "stress",
+   "srcip": "172.30.90.178",
+   "alerts": 44,
+   "responses": 44,
+   "coverage": 1.0,
+   "max_lag": 0.027,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0
+   },
+   "duration": 289.462
+  },
+  {
+   "session_key": "lockbox1/stress_sso_retry_storm_008",
+   "scenario": "sso_retry_storm",
+   "family": "benign",
+   "label": 0,
+   "split": "stress",
+   "srcip": "172.30.90.158",
+   "alerts": 29,
+   "responses": 29,
+   "coverage": 1.0,
+   "max_lag": 0.032,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0
+   },
+   "duration": 291.646
+  },
+  {
+   "session_key": "lockbox1/stress_sso_retry_storm_000",
+   "scenario": "sso_retry_storm",
+   "family": "benign",
+   "label": 0,
+   "split": "stress",
+   "srcip": "172.30.90.154",
+   "alerts": 33,
+   "responses": 33,
+   "coverage": 1.0,
+   "max_lag": 0.027,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0
+   },
+   "duration": 293.007
+  },
+  {
+   "session_key": "lockbox1/stress_sso_retry_storm_002",
+   "scenario": "sso_retry_storm",
+   "family": "benign",
+   "label": 0,
+   "split": "stress",
+   "srcip": "172.30.90.137",
+   "alerts": 37,
+   "responses": 37,
+   "coverage": 1.0,
+   "max_lag": 0.019,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0
+   },
+   "duration": 293.437
+  },
+  {
+   "session_key": "lockbox1/stress_sso_retry_storm_001",
+   "scenario": "sso_retry_storm",
+   "family": "benign",
+   "label": 0,
+   "split": "stress",
+   "srcip": "172.30.90.159",
+   "alerts": 29,
+   "responses": 29,
+   "coverage": 1.0,
+   "max_lag": 0.008,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0
+   },
+   "duration": 296.846
+  },
+  {
+   "session_key": "lockbox1/stress_sso_retry_storm_006",
+   "scenario": "sso_retry_storm",
+   "family": "benign",
+   "label": 0,
+   "split": "stress",
+   "srcip": "172.30.90.157",
+   "alerts": 31,
+   "responses": 31,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0
+   },
+   "duration": 285.493
+  }
+ ],
+ "orphans": []
+}

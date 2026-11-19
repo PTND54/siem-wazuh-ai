@@ -1,0 +1,1516 @@
+{
+ "created": "2026-10-28T16:46:08+0000",
+ "trial": false,
+ "data": "data/dataset_lockbox1.csv",
+ "data_sha256": "57b9bb6026dcc4436036a1babd45a2d2243b4d977b71611b129c88a4806541bf",
+ "validity": {
+  "created": "2026-10-28T16:45:19+0000",
+  "batch": "data/runs/lockbox1",
+  "data": "data/dataset_lockbox1.csv",
+  "data_sha256": "57b9bb6026dcc4436036a1babd45a2d2243b4d977b71611b129c88a4806541bf",
+  "audit": "data/dataset_lockbox1.audit.json",
+  "audit_sha256": "1bdda3ea68a9ff0dae8be54bb91dccdbe35e969dcd607716c020c95c6a9582ae",
+  "code_digest": [
+   "72db6b75c3791872"
+  ],
+  "n_planned": 468,
+  "checks": [
+   {
+    "check": "5.1 đủ phiên, 0 lỗi mạng, 0 phiên mồ côi",
+    "ok": true,
+    "detail": {
+     "phiên xong": 468,
+     "kế hoạch": 468,
+     "đã bắt đầu": 468,
+     "request lỗi": 0,
+     "failed": [],
+     "mồ côi": 0
+    }
+   },
+   {
+    "check": "5.2 coverage mọi phiên trong [0,98; 1,02]",
+    "ok": true,
+    "detail": {
+     "min": 1.0,
+     "max": 1.0,
+     "ngoài khoảng": []
+    }
+   },
+   {
+    "check": "5.3 phiên bị loại <= 14 (3% của 468)",
+    "ok": true,
+    "detail": {
+     "số phiên bị loại": 0,
+     "danh sách": []
+    }
+   },
+   {
+    "check": "5.4 không có alert chưa giải thích",
+    "ok": true,
+    "detail": {
+     "unknown_in_range": 0,
+     "ambiguous": 0,
+     "canary_in_range (được phép)": 0,
+     "liệt kê": []
+    }
+   },
+   {
+    "check": "5.5 ai-service trực tiếp == offline (check_pipeline --stage live)",
+    "ok": true,
+    "detail": [
+     "[OK]      dataset_lockbox1.csv: 154025 alert offline, 154025 tài liệu sự kiện trong index; thiếu 0, trùng 0, thừa 0",
+     "[OK]      dataset_lockbox1.csv: đặc trưng online vs offline: max|Δ| = 0.0e+00, ô lệch 0",
+     "[OK]      dataset_lockbox1.csv: điểm online vs model(offline): max|Δ| = 0.0e+00, cờ lệch {'f1': 0, 'fp5': 0}",
+     "[OK]      dataset_lockbox1.csv: alert đến trễ quá reorder (ai.late) = 0",
+     "TỔNG: OK (16s)"
+    ]
+   }
+  ],
+  "passed": true,
+  "excluded_sessions": []
+ },
+ "model": "/workspace/models/full1/model.joblib",
+ "model_sha256": "7b5186008494a265d7dbe800a7cb39e347b011d644c07af64ba11b0aba97474d",
+ "op": "fp5",
+ "tau": 0.7573061065,
+ "rule_ids": [
+  "110011",
+  "110020",
+  "110030"
+ ],
+ "applied_rules": [
+  {
+   "pid": "AI-R110011-r401-N12-T120-20261028-150005",
+   "family": "r401",
+   "rule_id": "110011",
+   "N": 12,
+   "T": 120,
+   "label_source": "ai",
+   "status": "applied"
+  },
+  {
+   "pid": "AI-R110020-web_scan-N15-T10-20261028-150005",
+   "family": "web_scan",
+   "rule_id": "110020",
+   "N": 15,
+   "T": 10,
+   "label_source": "ai",
+   "status": "applied"
+  },
+  {
+   "pid": "AI-R110030-any-N500-T10-20261028-150005",
+   "family": "any",
+   "rule_id": "110030",
+   "N": 500,
+   "T": 10,
+   "label_source": "ai",
+   "status": "applied"
+  }
+ ],
+ "baseline_rules": [
+  {
+   "pid": "R110011-r401-N12-T120-20261022-163955",
+   "family": "r401",
+   "rule_id": "110011",
+   "N": 12,
+   "T": 120,
+   "label_source": "truth",
+   "status": "removed"
+  },
+  {
+   "pid": "R110020-web_scan-N15-T10-20261022-163955",
+   "family": "web_scan",
+   "rule_id": "110020",
+   "N": 15,
+   "T": 10,
+   "label_source": "truth",
+   "status": "removed"
+  },
+  {
+   "pid": "R110030-any-N600-T10-20261026-110447",
+   "family": "any",
+   "rule_id": "110030",
+   "N": 600,
+   "T": 10,
+   "label_source": "truth",
+   "status": "removed"
+  }
+ ],
+ "baseline_time": "manager_sec (thiếu 0 dòng -> giờ Apache)",
+ "n_boot": 1000,
+ "boot_seed": 12345,
+ "results": {
+  "lockbox": {
+   "rf": {
+    "n_alerts": 153592,
+    "n_sessions": 450,
+    "n_attack_sessions": 210,
+    "n_benign_sessions": 240,
+    "w_precision": 0.9987388772046206,
+    "w_recall": 0.9366685993848457,
+    "w_f1": 0.9667084131667624,
+    "precision": 0.9998378063789797,
+    "recall": 0.9719532554257095,
+    "f1": 0.9856983629069805,
+    "det_k1": 1.0,
+    "fp_k1": 0.041666666666666664,
+    "ttd_k1_s_median": 0.09805846214294431,
+    "ttd_k1_s_p90": 11.51891322135925,
+    "atd_k1_median": 2.0,
+    "atd_k1_p90": 9.099999999999994,
+    "det_k3": 1.0,
+    "fp_k3": 0.008333333333333333,
+    "ttd_k3_s_median": 0.3070030212402344,
+    "ttd_k3_s_p90": 19.893815040588375,
+    "atd_k3_median": 4.0,
+    "atd_k3_p90": 13.0,
+    "benign_alert_flag_rate": 0.0010349024962292878,
+    "attack_alert_flag_rate": 0.9366685993848456,
+    "w_ap": 0.9976180564725461,
+    "w_roc_auc": 0.997425964921881,
+    "n_detected_k1": 210,
+    "n_not_detected_k1": 0,
+    "n_false_alarm_k1": 10,
+    "by_scenario": [
+     {
+      "scenario": "api_client",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0,
+      "rate_k1": 0.0,
+      "rate_k3": 0.0
+     },
+     {
+      "scenario": "auth_fast",
+      "family": "cred",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.9898129625696682,
+      "rate_k1": 1.0,
+      "rate_k3": 1.0,
+      "n_detected_k1": 30,
+      "ttd_k1_s_median": 0.09747600555419915,
+      "atd_k1_median": 2.0,
+      "ttd_k1_s_p90": 0.31225497722625806,
+      "atd_k1_p90": 2.200000000000003,
+      "ttd_k1_s_max": 1.998042106628418,
+      "n_detected_k3": 30,
+      "ttd_k3_s_median": 0.28374743461608887,
+      "atd_k3_median": 4.0,
+      "ttd_k3_s_p90": 1.3206420421600342,
+      "atd_k3_p90": 6.100000000000001,
+      "ttd_k3_s_max": 2.3185360431671143
+     },
+     {
+      "scenario": "auth_slow",
+      "family": "cred",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.8680019613764376,
+      "rate_k1": 1.0,
+      "rate_k3": 1.0,
+      "n_detected_k1": 30,
+      "ttd_k1_s_median": 7.019643068313599,
+      "atd_k1_median": 5.0,
+      "ttd_k1_s_p90": 32.95251517295838,
+      "atd_k1_p90": 12.0,
+      "ttd_k1_s_max": 74.98856401443481,
+      "n_detected_k3": 30,
+      "ttd_k3_s_median": 15.1231369972229,
+      "atd_k3_median": 7.0,
+      "ttd_k3_s_p90": 43.079230046272286,
+      "atd_k3_p90": 14.0,
+      "ttd_k3_s_max": 90.39566707611084
+     },
+     {
+      "scenario": "broken_links",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.008166513965694294,
+      "rate_k1": 0.23333333333333334,
+      "rate_k3": 0.03333333333333333
+     },
+     {
+      "scenario": "browse_human",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0,
+      "rate_k1": 0.0,
+      "rate_k3": 0.0
+     },
+     {
+      "scenario": "crawler",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0,
+      "rate_k1": 0.0,
+      "rate_k3": 0.0
+     },
+     {
+      "scenario": "flood",
+      "family": "flood",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.89407664357735,
+      "rate_k1": 1.0,
+      "rate_k3": 1.0,
+      "n_detected_k1": 30,
+      "ttd_k1_s_median": 0.02292060852050775,
+      "atd_k1_median": 2.5,
+      "ttd_k1_s_p90": 0.0677783727645874,
+      "atd_k1_p90": 4.0,
+      "ttd_k1_s_max": 3.3599929809570312,
+      "n_detected_k3": 30,
+      "ttd_k3_s_median": 0.06149411201477045,
+      "atd_k3_median": 5.0,
+      "ttd_k3_s_p90": 0.11616365909576418,
+      "atd_k3_p90": 6.200000000000003,
+      "ttd_k3_s_max": 3.440645933151245
+     },
+     {
+      "scenario": "forgot_pw",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0,
+      "rate_k1": 0.0,
+      "rate_k3": 0.0
+     },
+     {
+      "scenario": "heavy_burst",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.00011270600414000721,
+      "rate_k1": 0.1,
+      "rate_k3": 0.03333333333333333
+     },
+     {
+      "scenario": "monitor",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0,
+      "rate_k1": 0.0,
+      "rate_k3": 0.0
+     },
+     {
+      "scenario": "recon_then_brute",
+      "family": "recon",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.9987479482975178,
+      "rate_k1": 1.0,
+      "rate_k3": 1.0,
+      "n_detected_k1": 30,
+      "ttd_k1_s_median": 0.04176163673400875,
+      "atd_k1_median": 2.0,
+      "ttd_k1_s_p90": 0.21112267971038812,
+      "atd_k1_p90": 2.0,
+      "ttd_k1_s_max": 0.266456127166748,
+      "n_detected_k3": 30,
+      "ttd_k3_s_median": 0.16884446144103998,
+      "atd_k3_median": 4.0,
+      "ttd_k3_s_p90": 0.6433608770370484,
+      "atd_k3_p90": 4.0,
+      "ttd_k3_s_max": 0.841041088104248
+     },
+     {
+      "scenario": "scan_fast",
+      "family": "recon",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.996841261753526,
+      "rate_k1": 1.0,
+      "rate_k3": 1.0,
+      "n_detected_k1": 30,
+      "ttd_k1_s_median": 0.054710626602172796,
+      "atd_k1_median": 2.0,
+      "ttd_k1_s_p90": 0.2615122318267824,
+      "atd_k1_p90": 2.1000000000000014,
+      "ttd_k1_s_max": 0.7483270168304443,
+      "n_detected_k3": 30,
+      "ttd_k3_s_median": 0.19372594356536865,
+      "atd_k3_median": 4.0,
+      "ttd_k3_s_p90": 0.6852256059646606,
+      "atd_k3_p90": 4.100000000000001,
+      "ttd_k3_s_max": 1.9097318649291992
+     },
+     {
+      "scenario": "scan_pulsed",
+      "family": "recon",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.9508723949485849,
+      "rate_k1": 1.0,
+      "rate_k3": 1.0,
+      "n_detected_k1": 30,
+      "ttd_k1_s_median": 0.09215402603149411,
+      "atd_k1_median": 2.0,
+      "ttd_k1_s_p90": 0.19544150829315182,
+      "atd_k1_p90": 2.0,
+      "ttd_k1_s_max": 0.2539148330688476,
+      "n_detected_k3": 30,
+      "ttd_k3_s_median": 0.26083695888519287,
+      "atd_k3_median": 4.0,
+      "ttd_k3_s_p90": 0.45697460174560545,
+      "atd_k3_p90": 4.0,
+      "ttd_k3_s_max": 0.494359016418457
+     },
+     {
+      "scenario": "scan_stealth",
+      "family": "recon",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.858327023170835,
+      "rate_k1": 1.0,
+      "rate_k3": 1.0,
+      "n_detected_k1": 30,
+      "ttd_k1_s_median": 5.99398946762085,
+      "atd_k1_median": 9.0,
+      "ttd_k1_s_p90": 28.797540879249574,
+      "atd_k1_p90": 18.500000000000007,
+      "ttd_k1_s_max": 37.48902988433838,
+      "n_detected_k3": 30,
+      "ttd_k3_s_median": 8.042868971824646,
+      "atd_k3_median": 13.0,
+      "ttd_k3_s_p90": 30.169212937355045,
+      "atd_k3_p90": 22.300000000000004,
+      "ttd_k3_s_max": 41.6846091747284
+     },
+     {
+      "scenario": "typo_login",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0,
+      "rate_k1": 0.0,
+      "rate_k3": 0.0
+     }
+    ],
+    "ci95": {
+     "w_f1": [
+      0.9564064504658303,
+      0.9747926639154312
+     ],
+     "det_k1": [
+      1.0,
+      1.0
+     ],
+     "det_k3": [
+      1.0,
+      1.0
+     ],
+     "fp_k1": [
+      0.020833333333333332,
+      0.06666666666666667
+     ],
+     "fp_k3": [
+      0.0,
+      0.020833333333333332
+     ]
+    }
+   },
+   "rule": {
+    "n_alerts": 153592,
+    "n_sessions": 450,
+    "n_attack_sessions": 210,
+    "n_benign_sessions": 240,
+    "w_precision": 0.9730738185836532,
+    "w_recall": 0.043251744701176396,
+    "w_f1": 0.08282216230151815,
+    "precision": 0.9869446609508964,
+    "recall": 0.04697644221851233,
+    "f1": 0.08968411360577945,
+    "det_k1": 0.8428571428571429,
+    "fp_k1": 0.058333333333333334,
+    "ttd_k1_s_median": 3.0835518836975098,
+    "ttd_k1_s_p90": 68.89359803199768,
+    "atd_k1_median": 15.0,
+    "atd_k1_p90": 500.0,
+    "det_k3": 0.6238095238095238,
+    "fp_k3": 0.04583333333333333,
+    "ttd_k3_s_median": 5.451308012008667,
+    "ttd_k3_s_p90": 80.48947405815125,
+    "atd_k3_median": 46.0,
+    "atd_k3_p90": 91.0,
+    "benign_alert_flag_rate": 0.0010472265971876221,
+    "attack_alert_flag_rate": 0.0432517447011764,
+    "n_detected_k1": 177,
+    "n_not_detected_k1": 33,
+    "n_false_alarm_k1": 14,
+    "by_scenario": [
+     {
+      "scenario": "api_client",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0,
+      "rate_k1": 0.0,
+      "rate_k3": 0.0
+     },
+     {
+      "scenario": "auth_fast",
+      "family": "cred",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.08012685605550075,
+      "rate_k1": 1.0,
+      "rate_k3": 1.0,
+      "n_detected_k1": 30,
+      "ttd_k1_s_median": 1.1262024641036987,
+      "atd_k1_median": 12.0,
+      "ttd_k1_s_p90": 2.908373284339905,
+      "atd_k1_p90": 12.100000000000001,
+      "ttd_k1_s_max": 3.335759162902832,
+      "n_detected_k3": 30,
+      "ttd_k3_s_median": 3.2696274518966675,
+      "atd_k3_median": 36.0,
+      "ttd_k3_s_p90": 8.703371500968933,
+      "atd_k3_p90": 36.1,
+      "ttd_k3_s_max": 9.985867977142334
+     },
+     {
+      "scenario": "auth_slow",
+      "family": "cred",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.04959824428870292,
+      "rate_k1": 0.9333333333333333,
+      "rate_k3": 0.5333333333333333,
+      "n_detected_k1": 28,
+      "ttd_k1_s_median": 42.11754643917084,
+      "atd_k1_median": 15.0,
+      "ttd_k1_s_p90": 77.28032007217408,
+      "atd_k1_p90": 19.3,
+      "ttd_k1_s_max": 114.76433300971983,
+      "n_detected_k3": 16,
+      "ttd_k3_s_median": 65.15935099124908,
+      "atd_k3_median": 46.0,
+      "ttd_k3_s_p90": 130.45664954185486,
+      "atd_k3_p90": 58.5,
+      "ttd_k3_s_max": 150.25583291053772
+     },
+     {
+      "scenario": "broken_links",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.008049482066891963,
+      "rate_k1": 0.26666666666666666,
+      "rate_k3": 0.23333333333333334
+     },
+     {
+      "scenario": "browse_human",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0,
+      "rate_k1": 0.0,
+      "rate_k3": 0.0
+     },
+     {
+      "scenario": "crawler",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0,
+      "rate_k1": 0.0,
+      "rate_k3": 0.0
+     },
+     {
+      "scenario": "flood",
+      "family": "flood",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.002021832462665828,
+      "rate_k1": 0.8333333333333334,
+      "rate_k3": 0.36666666666666664,
+      "n_detected_k1": 25,
+      "ttd_k1_s_median": 6.614502906799316,
+      "atd_k1_median": 500.0,
+      "ttd_k1_s_p90": 11.307426500320435,
+      "atd_k1_p90": 514.2,
+      "ttd_k1_s_max": 12.737508058547974,
+      "n_detected_k3": 11,
+      "ttd_k3_s_median": 11.753381967544556,
+      "atd_k3_median": 1002.0,
+      "ttd_k3_s_p90": 15.668288946151732,
+      "atd_k3_p90": 1502.0,
+      "ttd_k3_s_max": 15.78047013282776
+     },
+     {
+      "scenario": "forgot_pw",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0,
+      "rate_k1": 0.0,
+      "rate_k3": 0.0
+     },
+     {
+      "scenario": "heavy_burst",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.00032833071060901455,
+      "rate_k1": 0.2,
+      "rate_k3": 0.13333333333333333
+     },
+     {
+      "scenario": "monitor",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0,
+      "rate_k1": 0.0,
+      "rate_k3": 0.0
+     },
+     {
+      "scenario": "recon_then_brute",
+      "family": "recon",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.07106795667754251,
+      "rate_k1": 1.0,
+      "rate_k3": 1.0,
+      "n_detected_k1": 30,
+      "ttd_k1_s_median": 0.7049955129623413,
+      "atd_k1_median": 15.0,
+      "ttd_k1_s_p90": 3.093693208694458,
+      "atd_k1_p90": 17.0,
+      "ttd_k1_s_max": 3.5643839836120605,
+      "n_detected_k3": 30,
+      "ttd_k3_s_median": 2.2667266130447388,
+      "atd_k3_median": 46.0,
+      "ttd_k3_s_p90": 8.7683242559433,
+      "atd_k3_p90": 48.0,
+      "ttd_k3_s_max": 10.46880292892456
+     },
+     {
+      "scenario": "scan_fast",
+      "family": "recon",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.06389743781568198,
+      "rate_k1": 1.0,
+      "rate_k3": 1.0,
+      "n_detected_k1": 30,
+      "ttd_k1_s_median": 0.8396813869476318,
+      "atd_k1_median": 15.0,
+      "ttd_k1_s_p90": 2.5245233535766607,
+      "atd_k1_p90": 16.200000000000003,
+      "ttd_k1_s_max": 3.176877021789551,
+      "n_detected_k3": 30,
+      "ttd_k3_s_median": 2.774224877357483,
+      "atd_k3_median": 46.0,
+      "ttd_k3_s_p90": 8.36694533824921,
+      "atd_k3_p90": 49.1,
+      "ttd_k3_s_max": 10.929297924041748
+     },
+     {
+      "scenario": "scan_pulsed",
+      "family": "recon",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.03037711199701151,
+      "rate_k1": 0.8666666666666667,
+      "rate_k3": 0.3,
+      "n_detected_k1": 26,
+      "ttd_k1_s_median": 62.60699200630188,
+      "atd_k1_median": 23.0,
+      "ttd_k1_s_p90": 112.26729691028595,
+      "atd_k1_p90": 35.5,
+      "ttd_k1_s_max": 234.44133687019348,
+      "n_detected_k3": 9,
+      "ttd_k3_s_median": 211.35793805122373,
+      "atd_k3_median": 66.0,
+      "ttd_k3_s_p90": 305.47625918388366,
+      "atd_k3_p90": 76.4,
+      "ttd_k3_s_max": 318.21077609062195
+     },
+     {
+      "scenario": "scan_stealth",
+      "family": "recon",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.005672773611129295,
+      "rate_k1": 0.26666666666666666,
+      "rate_k3": 0.16666666666666666,
+      "n_detected_k1": 8,
+      "ttd_k1_s_median": 11.791733980178833,
+      "atd_k1_median": 28.0,
+      "ttd_k1_s_p90": 78.55570845603943,
+      "atd_k1_p90": 159.8,
+      "ttd_k1_s_max": 84.65427994728088,
+      "n_detected_k3": 5,
+      "ttd_k3_s_median": 47.03425812721253,
+      "atd_k3_median": 91.0,
+      "ttd_k3_s_p90": 52.62296934127808,
+      "atd_k3_p90": 171.8,
+      "ttd_k3_s_max": 53.695982933044434
+     },
+     {
+      "scenario": "typo_login",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0,
+      "rate_k1": 0.0,
+      "rate_k3": 0.0
+     }
+    ],
+    "ci95": {
+     "w_f1": [
+      0.08022459381372629,
+      0.0854586730893235
+     ],
+     "det_k1": [
+      0.8047619047619048,
+      0.8761904761904762
+     ],
+     "det_k3": [
+      0.5761904761904761,
+      0.6714285714285714
+     ],
+     "fp_k1": [
+      0.03333333333333333,
+      0.0875
+     ],
+     "fp_k3": [
+      0.020833333333333332,
+      0.07083333333333333
+     ]
+    }
+   },
+   "rf_or_rule": {
+    "n_alerts": 153592,
+    "n_sessions": 450,
+    "n_attack_sessions": 210,
+    "n_benign_sessions": 240,
+    "w_precision": 0.9974659888278049,
+    "w_recall": 0.9366755207580462,
+    "w_f1": 0.9661154262945129,
+    "precision": 0.9991990923046119,
+    "recall": 0.9719625301428306,
+    "f1": 0.9853926403731059,
+    "det_k1": 1.0,
+    "fp_k1": 0.0875,
+    "ttd_k1_s_median": 0.09805846214294431,
+    "ttd_k1_s_p90": 11.51891322135925,
+    "atd_k1_median": 2.0,
+    "atd_k1_p90": 9.099999999999994,
+    "det_k3": 1.0,
+    "fp_k3": 0.058333333333333334,
+    "ttd_k3_s_median": 0.3070030212402344,
+    "ttd_k3_s_p90": 19.893815040588375,
+    "atd_k3_median": 4.0,
+    "atd_k3_p90": 13.0,
+    "benign_alert_flag_rate": 0.00208212909341691,
+    "attack_alert_flag_rate": 0.9366755207580459,
+    "n_detected_k1": 210,
+    "n_not_detected_k1": 0,
+    "n_false_alarm_k1": 21,
+    "by_scenario": [
+     {
+      "scenario": "api_client",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0,
+      "rate_k1": 0.0,
+      "rate_k3": 0.0
+     },
+     {
+      "scenario": "auth_fast",
+      "family": "cred",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.9898129625696682,
+      "rate_k1": 1.0,
+      "rate_k3": 1.0,
+      "n_detected_k1": 30,
+      "ttd_k1_s_median": 0.09747600555419915,
+      "atd_k1_median": 2.0,
+      "ttd_k1_s_p90": 0.31225497722625806,
+      "atd_k1_p90": 2.200000000000003,
+      "ttd_k1_s_max": 1.998042106628418,
+      "n_detected_k3": 30,
+      "ttd_k3_s_median": 0.28374743461608887,
+      "atd_k3_median": 4.0,
+      "ttd_k3_s_p90": 1.3206420421600342,
+      "atd_k3_p90": 6.100000000000001,
+      "ttd_k3_s_max": 2.3185360431671143
+     },
+     {
+      "scenario": "auth_slow",
+      "family": "cred",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.8680019613764376,
+      "rate_k1": 1.0,
+      "rate_k3": 1.0,
+      "n_detected_k1": 30,
+      "ttd_k1_s_median": 7.019643068313599,
+      "atd_k1_median": 5.0,
+      "ttd_k1_s_p90": 32.95251517295838,
+      "atd_k1_p90": 12.0,
+      "ttd_k1_s_max": 74.98856401443481,
+      "n_detected_k3": 30,
+      "ttd_k3_s_median": 15.1231369972229,
+      "atd_k3_median": 7.0,
+      "ttd_k3_s_p90": 43.079230046272286,
+      "atd_k3_p90": 14.0,
+      "ttd_k3_s_max": 90.39566707611084
+     },
+     {
+      "scenario": "broken_links",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.01621599603258626,
+      "rate_k1": 0.4666666666666667,
+      "rate_k3": 0.26666666666666666
+     },
+     {
+      "scenario": "browse_human",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0,
+      "rate_k1": 0.0,
+      "rate_k3": 0.0
+     },
+     {
+      "scenario": "crawler",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0,
+      "rate_k1": 0.0,
+      "rate_k3": 0.0
+     },
+     {
+      "scenario": "flood",
+      "family": "flood",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.8941250931897532,
+      "rate_k1": 1.0,
+      "rate_k3": 1.0,
+      "n_detected_k1": 30,
+      "ttd_k1_s_median": 0.02292060852050775,
+      "atd_k1_median": 2.5,
+      "ttd_k1_s_p90": 0.0677783727645874,
+      "atd_k1_p90": 4.0,
+      "ttd_k1_s_max": 3.3599929809570312,
+      "n_detected_k3": 30,
+      "ttd_k3_s_median": 0.06149411201477045,
+      "atd_k3_median": 5.0,
+      "ttd_k3_s_p90": 0.11616365909576418,
+      "atd_k3_p90": 6.200000000000003,
+      "ttd_k3_s_max": 3.440645933151245
+     },
+     {
+      "scenario": "forgot_pw",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0,
+      "rate_k1": 0.0,
+      "rate_k3": 0.0
+     },
+     {
+      "scenario": "heavy_burst",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.00044103671474902175,
+      "rate_k1": 0.23333333333333334,
+      "rate_k3": 0.2
+     },
+     {
+      "scenario": "monitor",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0,
+      "rate_k1": 0.0,
+      "rate_k3": 0.0
+     },
+     {
+      "scenario": "recon_then_brute",
+      "family": "recon",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.9987479482975178,
+      "rate_k1": 1.0,
+      "rate_k3": 1.0,
+      "n_detected_k1": 30,
+      "ttd_k1_s_median": 0.04176163673400875,
+      "atd_k1_median": 2.0,
+      "ttd_k1_s_p90": 0.21112267971038812,
+      "atd_k1_p90": 2.0,
+      "ttd_k1_s_max": 0.266456127166748,
+      "n_detected_k3": 30,
+      "ttd_k3_s_median": 0.16884446144103998,
+      "atd_k3_median": 4.0,
+      "ttd_k3_s_p90": 0.6433608770370484,
+      "atd_k3_p90": 4.0,
+      "ttd_k3_s_max": 0.841041088104248
+     },
+     {
+      "scenario": "scan_fast",
+      "family": "recon",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.996841261753526,
+      "rate_k1": 1.0,
+      "rate_k3": 1.0,
+      "n_detected_k1": 30,
+      "ttd_k1_s_median": 0.054710626602172796,
+      "atd_k1_median": 2.0,
+      "ttd_k1_s_p90": 0.2615122318267824,
+      "atd_k1_p90": 2.1000000000000014,
+      "ttd_k1_s_max": 0.7483270168304443,
+      "n_detected_k3": 30,
+      "ttd_k3_s_median": 0.19372594356536865,
+      "atd_k3_median": 4.0,
+      "ttd_k3_s_p90": 0.6852256059646606,
+      "atd_k3_p90": 4.100000000000001,
+      "ttd_k3_s_max": 1.9097318649291992
+     },
+     {
+      "scenario": "scan_pulsed",
+      "family": "recon",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.9508723949485849,
+      "rate_k1": 1.0,
+      "rate_k3": 1.0,
+      "n_detected_k1": 30,
+      "ttd_k1_s_median": 0.09215402603149411,
+      "atd_k1_median": 2.0,
+      "ttd_k1_s_p90": 0.19544150829315182,
+      "atd_k1_p90": 2.0,
+      "ttd_k1_s_max": 0.2539148330688476,
+      "n_detected_k3": 30,
+      "ttd_k3_s_median": 0.26083695888519287,
+      "atd_k3_median": 4.0,
+      "ttd_k3_s_p90": 0.45697460174560545,
+      "atd_k3_p90": 4.0,
+      "ttd_k3_s_max": 0.494359016418457
+     },
+     {
+      "scenario": "scan_stealth",
+      "family": "recon",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.858327023170835,
+      "rate_k1": 1.0,
+      "rate_k3": 1.0,
+      "n_detected_k1": 30,
+      "ttd_k1_s_median": 5.99398946762085,
+      "atd_k1_median": 9.0,
+      "ttd_k1_s_p90": 28.797540879249574,
+      "atd_k1_p90": 18.500000000000007,
+      "ttd_k1_s_max": 37.48902988433838,
+      "n_detected_k3": 30,
+      "ttd_k3_s_median": 8.042868971824646,
+      "atd_k3_median": 13.0,
+      "ttd_k3_s_p90": 30.169212937355045,
+      "atd_k3_p90": 22.300000000000004,
+      "ttd_k3_s_max": 41.6846091747284
+     },
+     {
+      "scenario": "typo_login",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0,
+      "rate_k1": 0.0,
+      "rate_k3": 0.0
+     }
+    ],
+    "ci95": {
+     "w_f1": [
+      0.9558625492806287,
+      0.9743882812336246
+     ],
+     "det_k1": [
+      1.0,
+      1.0
+     ],
+     "det_k3": [
+      1.0,
+      1.0
+     ],
+     "fp_k1": [
+      0.058333333333333334,
+      0.11666666666666667
+     ],
+     "fp_k3": [
+      0.03333333333333333,
+      0.0834374999999999
+     ]
+    }
+   },
+   "rule_v3sim": {
+    "n_alerts": 153592,
+    "n_sessions": 450,
+    "n_attack_sessions": 210,
+    "n_benign_sessions": 240,
+    "w_precision": 0.9748569302571919,
+    "w_recall": 0.042733317217042086,
+    "w_f1": 0.0818774954758345,
+    "precision": 0.9896558583648299,
+    "recall": 0.046141717677610834,
+    "f1": 0.08817248132427091,
+    "det_k1": 0.8095238095238095,
+    "fp_k1": 0.041666666666666664,
+    "ttd_k1_s_median": 2.8021565675735474,
+    "ttd_k1_s_p90": 68.67276804447174,
+    "atd_k1_median": 15.0,
+    "atd_k1_p90": 600.0,
+    "det_k3": 0.580952380952381,
+    "fp_k3": 0.029166666666666667,
+    "ttd_k3_s_median": 4.9088214635849,
+    "ttd_k3_s_p90": 83.01232509613038,
+    "atd_k3_median": 46.0,
+    "atd_k3_p90": 63.60000000000002,
+    "benign_alert_flag_rate": 0.0009643886185333848,
+    "attack_alert_flag_rate": 0.042733317217042086,
+    "n_detected_k1": 170,
+    "n_not_detected_k1": 40,
+    "n_false_alarm_k1": 10,
+    "by_scenario": [
+     {
+      "scenario": "api_client",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0,
+      "rate_k1": 0.0,
+      "rate_k3": 0.0
+     },
+     {
+      "scenario": "auth_fast",
+      "family": "cred",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.08006218807343042,
+      "rate_k1": 1.0,
+      "rate_k3": 1.0,
+      "n_detected_k1": 30,
+      "ttd_k1_s_median": 1.1262024641036987,
+      "atd_k1_median": 12.0,
+      "ttd_k1_s_p90": 2.901471567153931,
+      "atd_k1_p90": 12.0,
+      "ttd_k1_s_max": 3.335759162902832,
+      "n_detected_k3": 30,
+      "ttd_k3_s_median": 3.5258508920669556,
+      "atd_k3_median": 36.0,
+      "ttd_k3_s_p90": 8.611262083053589,
+      "atd_k3_p90": 36.0,
+      "ttd_k3_s_max": 9.985867977142334
+     },
+     {
+      "scenario": "auth_slow",
+      "family": "cred",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.04959824428870292,
+      "rate_k1": 0.9333333333333333,
+      "rate_k3": 0.5333333333333333,
+      "n_detected_k1": 28,
+      "ttd_k1_s_median": 42.11754643917084,
+      "atd_k1_median": 15.0,
+      "ttd_k1_s_p90": 77.28032007217408,
+      "atd_k1_p90": 19.3,
+      "ttd_k1_s_max": 114.76433300971983,
+      "n_detected_k3": 16,
+      "ttd_k3_s_median": 65.15935099124908,
+      "atd_k3_median": 46.0,
+      "ttd_k3_s_p90": 130.45664954185486,
+      "atd_k3_p90": 58.5,
+      "ttd_k3_s_max": 150.25583291053772
+     },
+     {
+      "scenario": "broken_links",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.007638568194439628,
+      "rate_k1": 0.26666666666666666,
+      "rate_k3": 0.23333333333333334
+     },
+     {
+      "scenario": "browse_human",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0,
+      "rate_k1": 0.0,
+      "rate_k3": 0.0
+     },
+     {
+      "scenario": "crawler",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0,
+      "rate_k1": 0.0,
+      "rate_k3": 0.0
+     },
+     {
+      "scenario": "flood",
+      "family": "flood",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0007657394064472863,
+      "rate_k1": 0.6333333333333333,
+      "rate_k3": 0.06666666666666667,
+      "n_detected_k1": 19,
+      "ttd_k1_s_median": 7.5520710945129395,
+      "atd_k1_median": 600.0,
+      "ttd_k1_s_p90": 9.816792345046997,
+      "atd_k1_p90": 600.2,
+      "ttd_k1_s_max": 12.10292100906372,
+      "n_detected_k3": 2,
+      "ttd_k3_s_median": 18.516520500183105,
+      "atd_k3_median": 1800.0,
+      "ttd_k3_s_p90": 18.841300201416015,
+      "atd_k3_p90": 1800.0,
+      "ttd_k3_s_max": 18.922495126724243
+     },
+     {
+      "scenario": "forgot_pw",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0,
+      "rate_k1": 0.0,
+      "rate_k3": 0.0
+     },
+     {
+      "scenario": "heavy_burst",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 7.654075382745008e-05,
+      "rate_k1": 0.06666666666666667,
+      "rate_k3": 0.0
+     },
+     {
+      "scenario": "monitor",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0,
+      "rate_k1": 0.0,
+      "rate_k3": 0.0
+     },
+     {
+      "scenario": "recon_then_brute",
+      "family": "recon",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.07052648992072191,
+      "rate_k1": 1.0,
+      "rate_k3": 1.0,
+      "n_detected_k1": 30,
+      "ttd_k1_s_median": 0.7049955129623413,
+      "atd_k1_median": 15.0,
+      "ttd_k1_s_p90": 3.093693208694458,
+      "atd_k1_p90": 16.1,
+      "ttd_k1_s_max": 3.5643839836120605,
+      "n_detected_k3": 30,
+      "ttd_k3_s_median": 2.2528780698776245,
+      "atd_k3_median": 46.0,
+      "ttd_k3_s_p90": 8.7683242559433,
+      "atd_k3_p90": 48.0,
+      "ttd_k3_s_max": 10.46880292892456
+     },
+     {
+      "scenario": "scan_fast",
+      "family": "recon",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.06333798842721511,
+      "rate_k1": 1.0,
+      "rate_k3": 1.0,
+      "n_detected_k1": 30,
+      "ttd_k1_s_median": 0.8396813869476318,
+      "atd_k1_median": 15.0,
+      "ttd_k1_s_p90": 2.5245233535766607,
+      "atd_k1_p90": 16.200000000000003,
+      "ttd_k1_s_max": 3.176877021789551,
+      "n_detected_k3": 30,
+      "ttd_k3_s_median": 2.774224877357483,
+      "atd_k3_median": 46.0,
+      "ttd_k3_s_p90": 8.36694533824921,
+      "atd_k3_p90": 49.1,
+      "ttd_k3_s_max": 10.929297924041748
+     },
+     {
+      "scenario": "scan_pulsed",
+      "family": "recon",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.029792316675374082,
+      "rate_k1": 0.8666666666666667,
+      "rate_k3": 0.3,
+      "n_detected_k1": 26,
+      "ttd_k1_s_median": 62.60699200630188,
+      "atd_k1_median": 23.0,
+      "ttd_k1_s_p90": 112.26729691028595,
+      "atd_k1_p90": 35.5,
+      "ttd_k1_s_max": 234.44133687019348,
+      "n_detected_k3": 9,
+      "ttd_k3_s_median": 211.35793805122373,
+      "atd_k3_median": 66.0,
+      "ttd_k3_s_p90": 305.47625918388366,
+      "atd_k3_p90": 76.4,
+      "ttd_k3_s_max": 318.21077609062195
+     },
+     {
+      "scenario": "scan_stealth",
+      "family": "recon",
+      "label": 1,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.005050253727402881,
+      "rate_k1": 0.23333333333333334,
+      "rate_k3": 0.16666666666666666,
+      "n_detected_k1": 7,
+      "ttd_k1_s_median": 11.56659197807312,
+      "atd_k1_median": 28.0,
+      "ttd_k1_s_p90": 40.73993778228762,
+      "atd_k1_p90": 93.80000000000004,
+      "ttd_k1_s_max": 75.94203495979309,
+      "n_detected_k3": 5,
+      "ttd_k3_s_median": 49.7838990688324,
+      "atd_k3_median": 93.0,
+      "ttd_k3_s_p90": 60.173660373687746,
+      "atd_k3_p90": 191.0,
+      "ttd_k3_s_max": 62.33559799194336
+     },
+     {
+      "scenario": "typo_login",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 30,
+      "alert_flag_rate": 0.0,
+      "rate_k1": 0.0,
+      "rate_k3": 0.0
+     }
+    ],
+    "ci95": {
+     "w_f1": [
+      0.07934941147888337,
+      0.08442983560251371
+     ],
+     "det_k1": [
+      0.7714285714285715,
+      0.8476190476190476
+     ],
+     "det_k3": [
+      0.5428571428571428,
+      0.6238095238095238
+     ],
+     "fp_k1": [
+      0.02072916666666667,
+      0.06666666666666667
+     ],
+     "fp_k3": [
+      0.008333333333333333,
+      0.05
+     ]
+    }
+   }
+  },
+  "stress": {
+   "rf": {
+    "n_alerts": 433,
+    "n_sessions": 18,
+    "n_attack_sessions": 0,
+    "n_benign_sessions": 18,
+    "w_precision": null,
+    "w_recall": null,
+    "w_f1": null,
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "det_k1": null,
+    "fp_k1": 0.8333333333333334,
+    "ttd_k1_s_median": null,
+    "ttd_k1_s_p90": null,
+    "atd_k1_median": null,
+    "atd_k1_p90": null,
+    "det_k3": null,
+    "fp_k3": 0.7222222222222222,
+    "ttd_k3_s_median": null,
+    "ttd_k3_s_p90": null,
+    "atd_k3_median": null,
+    "atd_k3_p90": null,
+    "benign_alert_flag_rate": 0.3437424879155706,
+    "attack_alert_flag_rate": null,
+    "n_detected_k1": 0,
+    "n_not_detected_k1": 0,
+    "n_false_alarm_k1": 15,
+    "by_scenario": [
+     {
+      "scenario": "misconfig_monitor",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 9,
+      "alert_flag_rate": 0.25997510115157174,
+      "rate_k1": 0.6666666666666666,
+      "rate_k3": 0.4444444444444444
+     },
+     {
+      "scenario": "sso_retry_storm",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 9,
+      "alert_flag_rate": 0.42750987467956936,
+      "rate_k1": 1.0,
+      "rate_k3": 1.0
+     }
+    ]
+   },
+   "rule": {
+    "n_alerts": 433,
+    "n_sessions": 18,
+    "n_attack_sessions": 0,
+    "n_benign_sessions": 18,
+    "w_precision": null,
+    "w_recall": null,
+    "w_f1": null,
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "det_k1": null,
+    "fp_k1": 0.7222222222222222,
+    "ttd_k1_s_median": null,
+    "ttd_k1_s_p90": null,
+    "atd_k1_median": null,
+    "atd_k1_p90": null,
+    "det_k3": null,
+    "fp_k3": 0.05555555555555555,
+    "ttd_k3_s_median": null,
+    "ttd_k3_s_p90": null,
+    "atd_k3_median": null,
+    "atd_k3_p90": null,
+    "benign_alert_flag_rate": 0.04317137558138816,
+    "attack_alert_flag_rate": null,
+    "n_detected_k1": 0,
+    "n_not_detected_k1": 0,
+    "n_false_alarm_k1": 13,
+    "by_scenario": [
+     {
+      "scenario": "misconfig_monitor",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 9,
+      "alert_flag_rate": 0.029551820728291316,
+      "rate_k1": 0.4444444444444444,
+      "rate_k3": 0.0
+     },
+     {
+      "scenario": "sso_retry_storm",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 9,
+      "alert_flag_rate": 0.05679093043448499,
+      "rate_k1": 1.0,
+      "rate_k3": 0.1111111111111111
+     }
+    ]
+   },
+   "rf_or_rule": {
+    "n_alerts": 433,
+    "n_sessions": 18,
+    "n_attack_sessions": 0,
+    "n_benign_sessions": 18,
+    "w_precision": null,
+    "w_recall": null,
+    "w_f1": null,
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "det_k1": null,
+    "fp_k1": 0.8333333333333334,
+    "ttd_k1_s_median": null,
+    "ttd_k1_s_p90": null,
+    "atd_k1_median": null,
+    "atd_k1_p90": null,
+    "det_k3": null,
+    "fp_k3": 0.7222222222222222,
+    "ttd_k3_s_median": null,
+    "ttd_k3_s_p90": null,
+    "atd_k3_median": null,
+    "atd_k3_p90": null,
+    "benign_alert_flag_rate": 0.3584359472116021,
+    "attack_alert_flag_rate": null,
+    "n_detected_k1": 0,
+    "n_not_detected_k1": 0,
+    "n_false_alarm_k1": 15,
+    "by_scenario": [
+     {
+      "scenario": "misconfig_monitor",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 9,
+      "alert_flag_rate": 0.2757703081232493,
+      "rate_k1": 0.6666666666666666,
+      "rate_k3": 0.4444444444444444
+     },
+     {
+      "scenario": "sso_retry_storm",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 9,
+      "alert_flag_rate": 0.4411015862999549,
+      "rate_k1": 1.0,
+      "rate_k3": 1.0
+     }
+    ]
+   },
+   "rule_v3sim": {
+    "n_alerts": 433,
+    "n_sessions": 18,
+    "n_attack_sessions": 0,
+    "n_benign_sessions": 18,
+    "w_precision": null,
+    "w_recall": null,
+    "w_f1": null,
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "det_k1": null,
+    "fp_k1": 0.7222222222222222,
+    "ttd_k1_s_median": null,
+    "ttd_k1_s_p90": null,
+    "atd_k1_median": null,
+    "atd_k1_p90": null,
+    "det_k3": null,
+    "fp_k3": 0.05555555555555555,
+    "ttd_k3_s_median": null,
+    "ttd_k3_s_p90": null,
+    "atd_k3_median": null,
+    "atd_k3_p90": null,
+    "benign_alert_flag_rate": 0.04317137558138816,
+    "attack_alert_flag_rate": null,
+    "n_detected_k1": 0,
+    "n_not_detected_k1": 0,
+    "n_false_alarm_k1": 13,
+    "by_scenario": [
+     {
+      "scenario": "misconfig_monitor",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 9,
+      "alert_flag_rate": 0.029551820728291316,
+      "rate_k1": 0.4444444444444444,
+      "rate_k3": 0.0
+     },
+     {
+      "scenario": "sso_retry_storm",
+      "family": "benign",
+      "label": 0,
+      "n_sessions": 9,
+      "alert_flag_rate": 0.05679093043448499,
+      "rate_k1": 1.0,
+      "rate_k3": 0.1111111111111111
+     }
+    ]
+   }
+  }
+ },
+ "paired": {
+  "rf-rule": {
+   "det_k1": {
+    "diff": 0.15714285714285714,
+    "ci95": [
+     0.12380952380952381,
+     0.1952380952380952
+    ]
+   },
+   "fp_k1": {
+    "diff": -0.01666666666666667,
+    "ci95": [
+     -0.05010416666666667,
+     0.02083333333333333
+    ]
+   }
+  },
+  "rf_or_rule-rf": {
+   "det_k1": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "fp_k1": {
+    "diff": 0.04583333333333333,
+    "ci95": [
+     0.020833333333333336,
+     0.07500000000000001
+    ]
+   }
+  },
+  "rf_or_rule-rule": {
+   "det_k1": {
+    "diff": 0.15714285714285714,
+    "ci95": [
+     0.12380952380952381,
+     0.1952380952380952
+    ]
+   },
+   "fp_k1": {
+    "diff": 0.02916666666666666,
+    "ci95": [
+     0.012499999999999997,
+     0.05
+    ]
+   }
+  },
+  "rule-rule_v3sim": {
+   "det_k1": {
+    "diff": 0.033333333333333326,
+    "ci95": [
+     0.014285714285714235,
+     0.05714285714285716
+    ]
+   },
+   "fp_k1": {
+    "diff": 0.01666666666666667,
+    "ci95": [
+     0.004166666666666666,
+     0.03333333333333333
+    ]
+   }
+  },
+  "rf-rule_v3sim": {
+   "det_k1": {
+    "diff": 0.19047619047619047,
+    "ci95": [
+     0.1523809523809524,
+     0.22857142857142854
+    ]
+   },
+   "fp_k1": {
+    "diff": 0.0,
+    "ci95": [
+     -0.03333333333333333,
+     0.03333333333333333
+    ]
+   }
+  }
+ }
+}

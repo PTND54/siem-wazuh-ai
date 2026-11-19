@@ -1,0 +1,66 @@
+{
+ "created": "2026-10-28T16:45:19+0000",
+ "batch": "data/runs/lockbox1",
+ "data": "data/dataset_lockbox1.csv",
+ "data_sha256": "57b9bb6026dcc4436036a1babd45a2d2243b4d977b71611b129c88a4806541bf",
+ "audit": "data/dataset_lockbox1.audit.json",
+ "audit_sha256": "1bdda3ea68a9ff0dae8be54bb91dccdbe35e969dcd607716c020c95c6a9582ae",
+ "code_digest": [
+  "72db6b75c3791872"
+ ],
+ "n_planned": 468,
+ "checks": [
+  {
+   "check": "5.1 đủ phiên, 0 lỗi mạng, 0 phiên mồ côi",
+   "ok": true,
+   "detail": {
+    "phiên xong": 468,
+    "kế hoạch": 468,
+    "đã bắt đầu": 468,
+    "request lỗi": 0,
+    "failed": [],
+    "mồ côi": 0
+   }
+  },
+  {
+   "check": "5.2 coverage mọi phiên trong [0,98; 1,02]",
+   "ok": true,
+   "detail": {
+    "min": 1.0,
+    "max": 1.0,
+    "ngoài khoảng": []
+   }
+  },
+  {
+   "check": "5.3 phiên bị loại <= 14 (3% của 468)",
+   "ok": true,
+   "detail": {
+    "số phiên bị loại": 0,
+    "danh sách": []
+   }
+  },
+  {
+   "check": "5.4 không có alert chưa giải thích",
+   "ok": true,
+   "detail": {
+    "unknown_in_range": 0,
+    "ambiguous": 0,
+    "canary_in_range (được phép)": 0,
+    "liệt kê": []
+   }
+  },
+  {
+   "check": "5.5 ai-service trực tiếp == offline (check_pipeline --stage live)",
+   "ok": true,
+   "detail": [
+    "[OK]      dataset_lockbox1.csv: 154025 alert offline, 154025 tài liệu sự kiện trong index; thiếu 0, trùng 0, thừa 0",
+    "[OK]      dataset_lockbox1.csv: đặc trưng online vs offline: max|Δ| = 0.0e+00, ô lệch 0",
+    "[OK]      dataset_lockbox1.csv: điểm online vs model(offline): max|Δ| = 0.0e+00, cờ lệch {'f1': 0, 'fp5': 0}",
+    "[OK]      dataset_lockbox1.csv: alert đến trễ quá reorder (ai.late) = 0",
+    "TỔNG: OK (16s)"
+   ]
+  }
+ ],
+ "passed": true,
+ "excluded_sessions": []
+}

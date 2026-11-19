@@ -1,0 +1,8 @@
+<group name="ai_generated,siem10_canary,">
+  <rule id="119830" level="3" frequency="3" timeframe="60">
+    <if_matched_sid>100012</if_matched_sid>
+    <same_srcip />
+    <srcip>192.0.2.0/24</srcip>
+    <description>siem10 canary: 3 lan 404 / 60s cung nguon (chi TEST-NET 192.0.2.0/24)</description>
+  </rule>
+</group>

@@ -1,0 +1,3257 @@
+{
+ "created": "2026-10-26T07:50:40+0000",
+ "alert_files": [
+  "/wazuh-logs/alerts/2026/Oct/ossec-alerts-20.json",
+  "/wazuh-logs/alerts/2026/Oct/ossec-alerts-21.json",
+  "/wazuh-logs/alerts/2026/Oct/ossec-alerts-22.json",
+  "/wazuh-logs/alerts/2026/Oct/ossec-alerts-26.json",
+  "/wazuh-logs/alerts/alerts.json"
+ ],
+ "batches": [
+  "data/runs/dev_rules1"
+ ],
+ "features_sha": "2f738e629753c3ba",
+ "feature_columns": [
+  "count_60s",
+  "count_10s",
+  "distinct_urls",
+  "distinct_status",
+  "max_url_share",
+  "mean_interval",
+  "interval_cv",
+  "r2xx",
+  "r3xx",
+  "r401",
+  "r403",
+  "r404",
+  "r5xx",
+  "fail_streak",
+  "succ_after_fail",
+  "url_length",
+  "url_entropy",
+  "path_depth"
+ ],
+ "n_alerts_read": 525195,
+ "dropped_on_read": {
+  "same_log_line": 370,
+  "same_id": 47847
+ },
+ "correlated_rule_events": 1849,
+ "n_rows": 37188,
+ "excluded": {
+  "outside_batches": 477359
+ },
+ "excluded_sessions": {
+  "dev_rules1/train_heavy_burst_003": [
+   "lag"
+  ],
+  "dev_rules1/train_forgot_pw_001": [
+   "lag"
+  ],
+  "dev_rules1/train_api_client_000": [
+   "lag"
+  ],
+  "dev_rules1/train_recon_then_brute_001": [
+   "lag"
+  ],
+  "dev_rules1/train_browse_human_004": [
+   "lag"
+  ],
+  "dev_rules1/train_api_client_002": [
+   "lag"
+  ],
+  "dev_rules1/train_broken_links_000": [
+   "lag"
+  ],
+  "dev_rules1/train_crawler_002": [
+   "lag"
+  ],
+  "dev_rules1/val_heavy_burst_001": [
+   "lag"
+  ],
+  "dev_rules1/val_scan_fast_001": [
+   "lag"
+  ],
+  "dev_rules1/val_auth_fast_001": [
+   "lag"
+  ],
+  "dev_rules1/val_heavy_burst_000": [
+   "lag"
+  ],
+  "dev_rules1/val_recon_then_brute_000": [
+   "lag"
+  ],
+  "dev_rules1/test_heavy_burst_001": [
+   "lag"
+  ],
+  "dev_rules1/test_flood_002": [
+   "lag"
+  ],
+  "dev_rules1/test_recon_then_brute_001": [
+   "lag"
+  ],
+  "dev_rules1/test_recon_then_brute_000": [
+   "lag"
+  ],
+  "dev_rules1/test_broken_links_000": [
+   "lag"
+  ]
+ },
+ "n_sessions_kept": 136,
+ "coverage_min": 1.0,
+ "coverage_max": 1.0,
+ "rows_by_split_label": {
+  "stress|0": 75,
+  "test|0": 4193,
+  "test|1": 8420,
+  "train|0": 4712,
+  "train|1": 14686,
+  "val|0": 1213,
+  "val|1": 3889
+ },
+ "sessions": [
+  {
+   "session_key": "dev_rules1/train_flood_000",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.33",
+   "alerts": 762,
+   "responses": 762,
+   "coverage": 1.0,
+   "max_lag": 0.017,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 82.741,
+    "dur": 9.2157,
+    "pool": 1
+   },
+   "duration": 9.204
+  },
+  {
+   "session_key": "dev_rules1/train_heavy_burst_002",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.35",
+   "alerts": 610,
+   "responses": 610,
+   "coverage": 1.0,
+   "max_lag": 0.021,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 25.001,
+    "dur": 24.2184,
+    "reg": 0.4113,
+    "pool": 45
+   },
+   "duration": 24.165
+  },
+  {
+   "session_key": "dev_rules1/train_typo_login_002",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.36",
+   "alerts": 11,
+   "responses": 11,
+   "coverage": 1.0,
+   "max_lag": 0.021,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 4,
+    "tail": 5
+   },
+   "duration": 43.244
+  },
+  {
+   "session_key": "dev_rules1/train_recon_then_brute_002",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.32",
+   "alerts": 274,
+   "responses": 274,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 4.34,
+    "scan_dur": 23.3451,
+    "scan_ph": 0.0614,
+    "brute_rate": 8.109,
+    "brute_dur": 20.4376,
+    "brute_hit": false
+   },
+   "duration": 44.398
+  },
+  {
+   "session_key": "dev_rules1/train_recon_then_brute_000",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.40",
+   "alerts": 1126,
+   "responses": 1126,
+   "coverage": 1.0,
+   "max_lag": 0.06,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 38.571,
+    "scan_dur": 24.9805,
+    "scan_ph": 0.044,
+    "brute_rate": 13.408,
+    "brute_dur": 12.1157,
+    "brute_hit": false
+   },
+   "duration": 37.988
+  },
+  {
+   "session_key": "dev_rules1/train_auth_fast_002",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.43",
+   "alerts": 212,
+   "responses": 212,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 4.828,
+    "dur": 44.368,
+    "hit": false
+   },
+   "duration": 44.115
+  },
+  {
+   "session_key": "dev_rules1/train_scan_stealth_000",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.45",
+   "alerts": 288,
+   "responses": 288,
+   "coverage": 1.0,
+   "max_lag": 0.076,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 3.9,
+    "dur": 76.4407,
+    "mix_valid": 0.3485
+   },
+   "duration": 76.132
+  },
+  {
+   "session_key": "dev_rules1/train_api_client_003",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.41",
+   "alerts": 667,
+   "responses": 667,
+   "coverage": 1.0,
+   "max_lag": 0.18,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 7.006,
+    "dur": 95.8126,
+    "p_5xx": 0.0297
+   },
+   "duration": 95.588
+  },
+  {
+   "session_key": "dev_rules1/train_browse_human_000",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.38",
+   "alerts": 128,
+   "responses": 128,
+   "coverage": 1.0,
+   "max_lag": 0.022,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 114.1858,
+    "think": 6.0
+   },
+   "duration": 113.494
+  },
+  {
+   "session_key": "dev_rules1/train_broken_links_002",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.47",
+   "alerts": 161,
+   "responses": 161,
+   "coverage": 1.0,
+   "max_lag": 0.195,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.822,
+    "dur": 89.309,
+    "p_broken": 0.6844
+   },
+   "duration": 88.404
+  },
+  {
+   "session_key": "dev_rules1/train_api_client_004",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.48",
+   "alerts": 849,
+   "responses": 849,
+   "coverage": 1.0,
+   "max_lag": 0.478,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 9.531,
+    "dur": 90.4656,
+    "p_5xx": 0.0135
+   },
+   "duration": 90.349
+  },
+  {
+   "session_key": "dev_rules1/train_scan_stealth_001",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.34",
+   "alerts": 310,
+   "responses": 310,
+   "coverage": 1.0,
+   "max_lag": 0.08,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.345,
+    "dur": 138.2774,
+    "mix_valid": 0.2559
+   },
+   "duration": 137.232
+  },
+  {
+   "session_key": "dev_rules1/train_scan_pulsed_001",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.39",
+   "alerts": 33,
+   "responses": 33,
+   "coverage": 1.0,
+   "max_lag": 0.0,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     14.421,
+     13.732,
+     11.226
+    ],
+    "bursts": 3
+   },
+   "duration": 135.488
+  },
+  {
+   "session_key": "dev_rules1/train_auth_slow_002",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.42",
+   "alerts": 83,
+   "responses": 83,
+   "coverage": 1.0,
+   "max_lag": 0.034,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.522,
+    "dur": 146.331,
+    "mix_valid": 0.0246
+   },
+   "duration": 144.418
+  },
+  {
+   "session_key": "dev_rules1/train_monitor_000",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.51",
+   "alerts": 10,
+   "responses": 10,
+   "coverage": 1.0,
+   "max_lag": 0.058,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 6.8744,
+    "dur": 69.5754
+   },
+   "duration": 59.718
+  },
+  {
+   "session_key": "dev_rules1/train_scan_fast_004",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.52",
+   "alerts": 278,
+   "responses": 278,
+   "coverage": 1.0,
+   "max_lag": 0.207,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 5.27,
+    "dur": 51.1102,
+    "ph": 0.0799
+   },
+   "duration": 49.921
+  },
+  {
+   "session_key": "dev_rules1/train_auth_fast_000",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.53",
+   "alerts": 819,
+   "responses": 819,
+   "coverage": 1.0,
+   "max_lag": 0.386,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 28.696,
+    "dur": 28.7347,
+    "hit": false
+   },
+   "duration": 28.685
+  },
+  {
+   "session_key": "dev_rules1/train_recon_then_brute_004",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.50",
+   "alerts": 3251,
+   "responses": 3251,
+   "coverage": 1.0,
+   "max_lag": 0.742,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 58.813,
+    "scan_dur": 55.5753,
+    "scan_ph": 0.0753,
+    "brute_rate": 32.448,
+    "brute_dur": 45.3547,
+    "brute_hit": false
+   },
+   "duration": 77.137
+  },
+  {
+   "session_key": "dev_rules1/train_monitor_001",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.49",
+   "alerts": 60,
+   "responses": 60,
+   "coverage": 1.0,
+   "max_lag": 0.157,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 2.3844,
+    "dur": 144.7045
+   },
+   "duration": 136.923
+  },
+  {
+   "session_key": "dev_rules1/train_flood_001",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.65",
+   "alerts": 460,
+   "responses": 460,
+   "coverage": 1.0,
+   "max_lag": 0.066,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 41.477,
+    "dur": 11.1406,
+    "pool": 3
+   },
+   "duration": 11.073
+  },
+  {
+   "session_key": "dev_rules1/train_auth_slow_003",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.46",
+   "alerts": 97,
+   "responses": 97,
+   "coverage": 1.0,
+   "max_lag": 1.222,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.51,
+    "dur": 175.2902,
+    "mix_valid": 0.2352
+   },
+   "duration": 174.298
+  },
+  {
+   "session_key": "dev_rules1/train_scan_pulsed_004",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.44",
+   "alerts": 71,
+   "responses": 71,
+   "coverage": 1.0,
+   "max_lag": 0.714,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     18.774,
+     17.008,
+     5.062,
+     9.267,
+     5.003
+    ],
+    "bursts": 5
+   },
+   "duration": 175.14
+  },
+  {
+   "session_key": "dev_rules1/train_scan_fast_001",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.66",
+   "alerts": 109,
+   "responses": 109,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 4.043,
+    "dur": 27.0125,
+    "ph": 0.0402
+   },
+   "duration": 26.612
+  },
+  {
+   "session_key": "dev_rules1/train_forgot_pw_003",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.54",
+   "alerts": 23,
+   "responses": 23,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 4,
+    "tail": 17
+   },
+   "duration": 77.928
+  },
+  {
+   "session_key": "dev_rules1/train_typo_login_004",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.56",
+   "alerts": 21,
+   "responses": 21,
+   "coverage": 1.0,
+   "max_lag": 0.862,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 1,
+    "tail": 18
+   },
+   "duration": 74.85
+  },
+  {
+   "session_key": "dev_rules1/train_broken_links_003",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.60",
+   "alerts": 60,
+   "responses": 60,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.157,
+    "dur": 56.9085,
+    "p_broken": 0.7099
+   },
+   "duration": 54.45
+  },
+  {
+   "session_key": "dev_rules1/train_forgot_pw_002",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.62",
+   "alerts": 17,
+   "responses": 17,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 10,
+    "tail": 5
+   },
+   "duration": 56.461
+  },
+  {
+   "session_key": "dev_rules1/train_heavy_burst_004",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.69",
+   "alerts": 357,
+   "responses": 357,
+   "coverage": 1.0,
+   "max_lag": 1.531,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 8.861,
+    "dur": 39.5468,
+    "reg": 0.3283,
+    "pool": 35
+   },
+   "duration": 39.463
+  },
+  {
+   "session_key": "dev_rules1/train_crawler_001",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.37",
+   "alerts": 94,
+   "responses": 94,
+   "coverage": 1.0,
+   "max_lag": 0.288,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 2.436,
+    "p_404": 0.1023
+   },
+   "duration": 243.007
+  },
+  {
+   "session_key": "dev_rules1/train_heavy_burst_003",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.67",
+   "alerts": 794,
+   "responses": 794,
+   "coverage": 1.0,
+   "max_lag": 2.373,
+   "excluded": [
+    "lag"
+   ],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 17.287,
+    "dur": 46.4685,
+    "reg": 0.267,
+    "pool": 49
+   },
+   "duration": 46.446
+  },
+  {
+   "session_key": "dev_rules1/train_forgot_pw_001",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.68",
+   "alerts": 16,
+   "responses": 16,
+   "coverage": 1.0,
+   "max_lag": 2.368,
+   "excluded": [
+    "lag"
+   ],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 5,
+    "tail": 9
+   },
+   "duration": 48.373
+  },
+  {
+   "session_key": "dev_rules1/train_scan_pulsed_000",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.71",
+   "alerts": 39,
+   "responses": 39,
+   "coverage": 1.0,
+   "max_lag": 0.376,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     8.337,
+     19.75,
+     13.488
+    ],
+    "bursts": 3
+   },
+   "duration": 63.963
+  },
+  {
+   "session_key": "dev_rules1/train_api_client_000",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.75",
+   "alerts": 96,
+   "responses": 96,
+   "coverage": 1.0,
+   "max_lag": 3.079,
+   "excluded": [
+    "lag"
+   ],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.644,
+    "dur": 38.6326,
+    "p_5xx": 0.0356
+   },
+   "duration": 37.942
+  },
+  {
+   "session_key": "dev_rules1/train_recon_then_brute_001",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.72",
+   "alerts": 559,
+   "responses": 559,
+   "coverage": 1.0,
+   "max_lag": 4.586,
+   "excluded": [
+    "lag"
+   ],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 4.029,
+    "scan_dur": 38.5411,
+    "scan_ph": 0.0662,
+    "brute_rate": 28.917,
+    "brute_dur": 13.4959,
+    "brute_hit": true
+   },
+   "duration": 52.817
+  },
+  {
+   "session_key": "dev_rules1/train_browse_human_004",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.63",
+   "alerts": 88,
+   "responses": 88,
+   "coverage": 1.0,
+   "max_lag": 3.366,
+   "excluded": [
+    "lag"
+   ],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 112.473,
+    "think": 6.0
+   },
+   "duration": 111.511
+  },
+  {
+   "session_key": "dev_rules1/train_api_client_002",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.74",
+   "alerts": 485,
+   "responses": 485,
+   "coverage": 1.0,
+   "max_lag": 4.882,
+   "excluded": [
+    "lag"
+   ],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 9.4,
+    "dur": 51.9675,
+    "p_5xx": 0.0005
+   },
+   "duration": 51.866
+  },
+  {
+   "session_key": "dev_rules1/train_typo_login_000",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.77",
+   "alerts": 12,
+   "responses": 12,
+   "coverage": 1.0,
+   "max_lag": 0.004,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 1,
+    "tail": 9
+   },
+   "duration": 45.87
+  },
+  {
+   "session_key": "dev_rules1/train_broken_links_000",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.58",
+   "alerts": 389,
+   "responses": 389,
+   "coverage": 1.0,
+   "max_lag": 4.0,
+   "excluded": [
+    "lag"
+   ],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.643,
+    "dur": 136.6112,
+    "p_broken": 0.3234
+   },
+   "duration": 136.094
+  },
+  {
+   "session_key": "dev_rules1/train_scan_fast_002",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.80",
+   "alerts": 140,
+   "responses": 140,
+   "coverage": 1.0,
+   "max_lag": 0.992,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 7.622,
+    "dur": 18.7312,
+    "ph": 0.013
+   },
+   "duration": 18.296
+  },
+  {
+   "session_key": "dev_rules1/train_auth_fast_001",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.78",
+   "alerts": 939,
+   "responses": 939,
+   "coverage": 1.0,
+   "max_lag": 0.082,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 19.445,
+    "dur": 47.684,
+    "hit": false
+   },
+   "duration": 47.585
+  },
+  {
+   "session_key": "dev_rules1/train_scan_stealth_003",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.57",
+   "alerts": 67,
+   "responses": 67,
+   "coverage": 1.0,
+   "max_lag": 0.037,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.437,
+    "dur": 153.1822,
+    "mix_valid": 0.6819
+   },
+   "duration": 152.07
+  },
+  {
+   "session_key": "dev_rules1/train_flood_004",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.87",
+   "alerts": 420,
+   "responses": 420,
+   "coverage": 1.0,
+   "max_lag": 0.061,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 50.989,
+    "dur": 8.223,
+    "pool": 1
+   },
+   "duration": 8.199
+  },
+  {
+   "session_key": "dev_rules1/train_heavy_burst_000",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.81",
+   "alerts": 200,
+   "responses": 200,
+   "coverage": 1.0,
+   "max_lag": 0.632,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 6.21,
+    "dur": 32.801,
+    "reg": 0.7419,
+    "pool": 5
+   },
+   "duration": 32.635
+  },
+  {
+   "session_key": "dev_rules1/train_heavy_burst_001",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.86",
+   "alerts": 275,
+   "responses": 275,
+   "coverage": 1.0,
+   "max_lag": 0.999,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 7.065,
+    "dur": 40.3797,
+    "reg": 0.4848,
+    "pool": 24
+   },
+   "duration": 40.248
+  },
+  {
+   "session_key": "dev_rules1/train_scan_stealth_004",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.73",
+   "alerts": 62,
+   "responses": 62,
+   "coverage": 1.0,
+   "max_lag": 0.575,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.623,
+    "dur": 102.9483,
+    "mix_valid": 0.431
+   },
+   "duration": 100.527
+  },
+  {
+   "session_key": "dev_rules1/train_scan_fast_000",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.79",
+   "alerts": 418,
+   "responses": 418,
+   "coverage": 1.0,
+   "max_lag": 0.765,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 8.26,
+    "dur": 51.1611,
+    "ph": 0.0702
+   },
+   "duration": 50.855
+  },
+  {
+   "session_key": "dev_rules1/train_scan_fast_003",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.90",
+   "alerts": 262,
+   "responses": 262,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 13.866,
+    "dur": 18.991,
+    "ph": 0.0573
+   },
+   "duration": 18.861
+  },
+  {
+   "session_key": "dev_rules1/train_scan_stealth_002",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.70",
+   "alerts": 52,
+   "responses": 52,
+   "coverage": 1.0,
+   "max_lag": 0.376,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.325,
+    "dur": 152.6331,
+    "mix_valid": 0.2466
+   },
+   "duration": 150.346
+  },
+  {
+   "session_key": "dev_rules1/train_scan_pulsed_002",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.59",
+   "alerts": 48,
+   "responses": 48,
+   "coverage": 1.0,
+   "max_lag": 0.013,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     6.508,
+     6.633,
+     10.386,
+     13.08
+    ],
+    "bursts": 4
+   },
+   "duration": 194.668
+  },
+  {
+   "session_key": "dev_rules1/train_monitor_003",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.88",
+   "alerts": 9,
+   "responses": 9,
+   "coverage": 1.0,
+   "max_lag": 0.04,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 8.0161,
+    "dur": 75.2262
+   },
+   "duration": 63.472
+  },
+  {
+   "session_key": "dev_rules1/train_auth_fast_003",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.98",
+   "alerts": 1369,
+   "responses": 1369,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 29.631,
+    "dur": 47.7582,
+    "hit": false
+   },
+   "duration": 47.703
+  },
+  {
+   "session_key": "dev_rules1/train_broken_links_004",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.83",
+   "alerts": 92,
+   "responses": 92,
+   "coverage": 1.0,
+   "max_lag": 0.038,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.992,
+    "dur": 93.6117,
+    "p_broken": 0.6659
+   },
+   "duration": 92.463
+  },
+  {
+   "session_key": "dev_rules1/train_auth_fast_004",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.101",
+   "alerts": 223,
+   "responses": 223,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 6.371,
+    "dur": 34.9341,
+    "hit": false
+   },
+   "duration": 34.687
+  },
+  {
+   "session_key": "dev_rules1/train_crawler_002",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.55",
+   "alerts": 132,
+   "responses": 132,
+   "coverage": 1.0,
+   "max_lag": 2.098,
+   "excluded": [
+    "lag"
+   ],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 1.6988,
+    "p_404": 0.0699
+   },
+   "duration": 240.314
+  },
+  {
+   "session_key": "dev_rules1/train_typo_login_003",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.99",
+   "alerts": 18,
+   "responses": 18,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 1,
+    "tail": 15
+   },
+   "duration": 60.935
+  },
+  {
+   "session_key": "dev_rules1/train_browse_human_003",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.89",
+   "alerts": 87,
+   "responses": 87,
+   "coverage": 1.0,
+   "max_lag": 0.042,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 95.1315,
+    "think": 6.0
+   },
+   "duration": 88.321
+  },
+  {
+   "session_key": "dev_rules1/train_typo_login_001",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.82",
+   "alerts": 30,
+   "responses": 30,
+   "coverage": 1.0,
+   "max_lag": 0.038,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 4,
+    "tail": 24
+   },
+   "duration": 126.566
+  },
+  {
+   "session_key": "dev_rules1/train_crawler_004",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.64",
+   "alerts": 104,
+   "responses": 104,
+   "coverage": 1.0,
+   "max_lag": 0.037,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 2.2288,
+    "p_404": 0.0896
+   },
+   "duration": 241.27
+  },
+  {
+   "session_key": "dev_rules1/train_crawler_003",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.61",
+   "alerts": 129,
+   "responses": 129,
+   "coverage": 1.0,
+   "max_lag": 0.863,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 1.7284,
+    "p_404": 0.0551
+   },
+   "duration": 241.944
+  },
+  {
+   "session_key": "dev_rules1/train_forgot_pw_000",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.91",
+   "alerts": 30,
+   "responses": 30,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 10,
+    "tail": 18
+   },
+   "duration": 95.121
+  },
+  {
+   "session_key": "dev_rules1/train_api_client_001",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.103",
+   "alerts": 116,
+   "responses": 116,
+   "coverage": 1.0,
+   "max_lag": 0.084,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.214,
+    "dur": 52.5127,
+    "p_5xx": 0.0719
+   },
+   "duration": 51.81
+  },
+  {
+   "session_key": "dev_rules1/train_monitor_004",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.94",
+   "alerts": 58,
+   "responses": 58,
+   "coverage": 1.0,
+   "max_lag": 0.01,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 1.8726,
+    "dur": 109.9021
+   },
+   "duration": 107.645
+  },
+  {
+   "session_key": "dev_rules1/train_flood_003",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.104",
+   "alerts": 806,
+   "responses": 806,
+   "coverage": 1.0,
+   "max_lag": 0.13,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 72.402,
+    "dur": 11.0417,
+    "pool": 2
+   },
+   "duration": 11.021
+  },
+  {
+   "session_key": "dev_rules1/train_auth_slow_004",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.84",
+   "alerts": 187,
+   "responses": 187,
+   "coverage": 1.0,
+   "max_lag": 0.039,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.158,
+    "dur": 143.5634,
+    "mix_valid": 0.1408
+   },
+   "duration": 143.077
+  },
+  {
+   "session_key": "dev_rules1/train_broken_links_001",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.97",
+   "alerts": 40,
+   "responses": 40,
+   "coverage": 1.0,
+   "max_lag": 0.014,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.403,
+    "dur": 112.9598,
+    "p_broken": 0.6003
+   },
+   "duration": 110.426
+  },
+  {
+   "session_key": "dev_rules1/train_auth_slow_000",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.96",
+   "alerts": 65,
+   "responses": 65,
+   "coverage": 1.0,
+   "max_lag": 0.014,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.486,
+    "dur": 121.9452,
+    "mix_valid": 0.4584
+   },
+   "duration": 116.56
+  },
+  {
+   "session_key": "dev_rules1/train_flood_002",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.106",
+   "alerts": 455,
+   "responses": 455,
+   "coverage": 1.0,
+   "max_lag": 0.101,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 49.237,
+    "dur": 9.0191,
+    "pool": 1
+   },
+   "duration": 8.998
+  },
+  {
+   "session_key": "dev_rules1/train_recon_then_brute_003",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.100",
+   "alerts": 835,
+   "responses": 835,
+   "coverage": 1.0,
+   "max_lag": 1.052,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 11.349,
+    "scan_dur": 59.0969,
+    "scan_ph": 0.0154,
+    "brute_rate": 4.192,
+    "brute_dur": 43.2969,
+    "brute_hit": false
+   },
+   "duration": 103.065
+  },
+  {
+   "session_key": "dev_rules1/train_monitor_002",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.95",
+   "alerts": 34,
+   "responses": 34,
+   "coverage": 1.0,
+   "max_lag": 0.011,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 4.3139,
+    "dur": 147.1156
+   },
+   "duration": 142.536
+  },
+  {
+   "session_key": "dev_rules1/train_forgot_pw_004",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.102",
+   "alerts": 32,
+   "responses": 32,
+   "coverage": 1.0,
+   "max_lag": 0.084,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 10,
+    "tail": 20
+   },
+   "duration": 91.77
+  },
+  {
+   "session_key": "dev_rules1/train_browse_human_002",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.92",
+   "alerts": 162,
+   "responses": 162,
+   "coverage": 1.0,
+   "max_lag": 0.074,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 147.7214,
+    "think": 6.0
+   },
+   "duration": 145.549
+  },
+  {
+   "session_key": "dev_rules1/val_forgot_pw_000",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "val",
+   "srcip": "172.30.90.114",
+   "alerts": 14,
+   "responses": 14,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 8,
+    "tail": 4
+   },
+   "duration": 30.574
+  },
+  {
+   "session_key": "dev_rules1/val_scan_fast_000",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "val",
+   "srcip": "172.30.90.115",
+   "alerts": 176,
+   "responses": 176,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 4.858,
+    "dur": 33.3236,
+    "ph": 0.0316
+   },
+   "duration": 33.128
+  },
+  {
+   "session_key": "dev_rules1/train_browse_human_001",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.93",
+   "alerts": 124,
+   "responses": 124,
+   "coverage": 1.0,
+   "max_lag": 0.462,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 169.4108,
+    "think": 6.0
+   },
+   "duration": 161.709
+  },
+  {
+   "session_key": "dev_rules1/val_flood_000",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "val",
+   "srcip": "172.30.90.117",
+   "alerts": 719,
+   "responses": 719,
+   "coverage": 1.0,
+   "max_lag": 0.17,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 56.894,
+    "dur": 13.2247,
+    "pool": 2
+   },
+   "duration": 13.191
+  },
+  {
+   "session_key": "dev_rules1/val_scan_stealth_000",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "val",
+   "srcip": "172.30.90.107",
+   "alerts": 183,
+   "responses": 183,
+   "coverage": 1.0,
+   "max_lag": 1.187,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.477,
+    "dur": 73.8361,
+    "mix_valid": 0.2264
+   },
+   "duration": 73.098
+  },
+  {
+   "session_key": "dev_rules1/val_typo_login_001",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "val",
+   "srcip": "172.30.90.112",
+   "alerts": 19,
+   "responses": 19,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 3,
+    "tail": 14
+   },
+   "duration": 70.787
+  },
+  {
+   "session_key": "dev_rules1/val_browse_human_000",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "val",
+   "srcip": "172.30.90.108",
+   "alerts": 77,
+   "responses": 77,
+   "coverage": 1.0,
+   "max_lag": 1.85,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 83.3863,
+    "think": 6.0
+   },
+   "duration": 79.358
+  },
+  {
+   "session_key": "dev_rules1/val_heavy_burst_001",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "val",
+   "srcip": "172.30.90.124",
+   "alerts": 164,
+   "responses": 164,
+   "coverage": 1.0,
+   "max_lag": 2.118,
+   "excluded": [
+    "lag"
+   ],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 7.337,
+    "dur": 21.9652,
+    "reg": 0.7263,
+    "pool": 44
+   },
+   "duration": 21.721
+  },
+  {
+   "session_key": "dev_rules1/val_forgot_pw_001",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "val",
+   "srcip": "172.30.90.110",
+   "alerts": 28,
+   "responses": 28,
+   "coverage": 1.0,
+   "max_lag": 0.007,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 10,
+    "tail": 16
+   },
+   "duration": 86.396
+  },
+  {
+   "session_key": "dev_rules1/train_auth_slow_001",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.105",
+   "alerts": 61,
+   "responses": 61,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.561,
+    "dur": 111.3293,
+    "mix_valid": 0.4202
+   },
+   "duration": 108.282
+  },
+  {
+   "session_key": "dev_rules1/val_broken_links_000",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "val",
+   "srcip": "172.30.90.109",
+   "alerts": 108,
+   "responses": 108,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 1.123,
+    "dur": 96.3924,
+    "p_broken": 0.4499
+   },
+   "duration": 95.17
+  },
+  {
+   "session_key": "dev_rules1/train_crawler_000",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "train",
+   "srcip": "172.30.90.85",
+   "alerts": 92,
+   "responses": 92,
+   "coverage": 1.0,
+   "max_lag": 0.037,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 2.5313,
+    "p_404": 0.0356
+   },
+   "duration": 241.04
+  },
+  {
+   "session_key": "dev_rules1/val_api_client_001",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "val",
+   "srcip": "172.30.90.119",
+   "alerts": 157,
+   "responses": 157,
+   "coverage": 1.0,
+   "max_lag": 1.779,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 3.723,
+    "dur": 41.5984,
+    "p_5xx": 0.0715
+   },
+   "duration": 41.232
+  },
+  {
+   "session_key": "dev_rules1/val_recon_then_brute_001",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "val",
+   "srcip": "172.30.90.122",
+   "alerts": 376,
+   "responses": 376,
+   "coverage": 1.0,
+   "max_lag": 0.009,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 7.577,
+    "scan_dur": 29.8392,
+    "scan_ph": 0.0357,
+    "brute_rate": 9.066,
+    "brute_dur": 16.6371,
+    "brute_hit": false
+   },
+   "duration": 47.215
+  },
+  {
+   "session_key": "dev_rules1/train_scan_pulsed_003",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "train",
+   "srcip": "172.30.90.76",
+   "alerts": 65,
+   "responses": 65,
+   "coverage": 1.0,
+   "max_lag": 0.209,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     10.547,
+     17.429,
+     9.56,
+     6.576,
+     8.186
+    ],
+    "bursts": 5
+   },
+   "duration": 304.494
+  },
+  {
+   "session_key": "dev_rules1/val_scan_fast_001",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "val",
+   "srcip": "172.30.90.118",
+   "alerts": 297,
+   "responses": 297,
+   "coverage": 1.0,
+   "max_lag": 3.581,
+   "excluded": [
+    "lag"
+   ],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 6.578,
+    "dur": 48.9356,
+    "ph": 0.0711
+   },
+   "duration": 52.449
+  },
+  {
+   "session_key": "dev_rules1/val_auth_fast_001",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "val",
+   "srcip": "172.30.90.127",
+   "alerts": 208,
+   "responses": 208,
+   "coverage": 1.0,
+   "max_lag": 3.037,
+   "excluded": [
+    "lag"
+   ],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 4.524,
+    "dur": 44.8406,
+    "hit": false
+   },
+   "duration": 44.187
+  },
+  {
+   "session_key": "dev_rules1/val_broken_links_001",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "val",
+   "srcip": "172.30.90.126",
+   "alerts": 22,
+   "responses": 22,
+   "coverage": 1.0,
+   "max_lag": 0.014,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.323,
+    "dur": 67.9175,
+    "p_broken": 0.3931
+   },
+   "duration": 63.236
+  },
+  {
+   "session_key": "dev_rules1/val_heavy_burst_000",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "val",
+   "srcip": "172.30.90.132",
+   "alerts": 599,
+   "responses": 599,
+   "coverage": 1.0,
+   "max_lag": 3.624,
+   "excluded": [
+    "lag"
+   ],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 15.265,
+    "dur": 39.1249,
+    "reg": 0.4403,
+    "pool": 24
+   },
+   "duration": 39.062
+  },
+  {
+   "session_key": "dev_rules1/val_monitor_000",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "val",
+   "srcip": "172.30.90.129",
+   "alerts": 16,
+   "responses": 16,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 5.0849,
+    "dur": 84.888
+   },
+   "duration": 76.17
+  },
+  {
+   "session_key": "dev_rules1/val_api_client_000",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "val",
+   "srcip": "172.30.90.121",
+   "alerts": 294,
+   "responses": 294,
+   "coverage": 1.0,
+   "max_lag": 0.008,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 3.262,
+    "dur": 90.7943,
+    "p_5xx": 0.0363
+   },
+   "duration": 90.226
+  },
+  {
+   "session_key": "dev_rules1/val_recon_then_brute_000",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "val",
+   "srcip": "172.30.90.123",
+   "alerts": 1312,
+   "responses": 1312,
+   "coverage": 1.0,
+   "max_lag": 3.425,
+   "excluded": [
+    "lag"
+   ],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 6.279,
+    "scan_dur": 57.504,
+    "scan_ph": 0.0554,
+    "brute_rate": 25.72,
+    "brute_dur": 36.6413,
+    "brute_hit": true
+   },
+   "duration": 94.928
+  },
+  {
+   "session_key": "dev_rules1/val_auth_slow_000",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "val",
+   "srcip": "172.30.90.120",
+   "alerts": 19,
+   "responses": 19,
+   "coverage": 1.0,
+   "max_lag": 0.007,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.166,
+    "dur": 105.9802,
+    "mix_valid": 0.2221
+   },
+   "duration": 95.12
+  },
+  {
+   "session_key": "dev_rules1/val_flood_001",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "val",
+   "srcip": "172.30.90.133",
+   "alerts": 1299,
+   "responses": 1299,
+   "coverage": 1.0,
+   "max_lag": 0.762,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 71.884,
+    "dur": 18.0781,
+    "pool": 2
+   },
+   "duration": 18.115
+  },
+  {
+   "session_key": "dev_rules1/val_scan_stealth_001",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "val",
+   "srcip": "172.30.90.131",
+   "alerts": 119,
+   "responses": 119,
+   "coverage": 1.0,
+   "max_lag": 1.401,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.992,
+    "dur": 109.1863,
+    "mix_valid": 0.2482
+   },
+   "duration": 105.974
+  },
+  {
+   "session_key": "dev_rules1/val_auth_fast_000",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "val",
+   "srcip": "172.30.90.135",
+   "alerts": 771,
+   "responses": 771,
+   "coverage": 1.0,
+   "max_lag": 0.077,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 17.554,
+    "dur": 43.5059,
+    "hit": false
+   },
+   "duration": 43.437
+  },
+  {
+   "session_key": "dev_rules1/test_api_client_001",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "test",
+   "srcip": "172.30.90.141",
+   "alerts": 70,
+   "responses": 70,
+   "coverage": 1.0,
+   "max_lag": 0.075,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.053,
+    "dur": 35.0664,
+    "p_5xx": 0.0667
+   },
+   "duration": 33.683
+  },
+  {
+   "session_key": "dev_rules1/val_typo_login_000",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "val",
+   "srcip": "172.30.90.130",
+   "alerts": 32,
+   "responses": 32,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 1,
+    "tail": 29
+   },
+   "duration": 143.463
+  },
+  {
+   "session_key": "dev_rules1/test_heavy_burst_002",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "test",
+   "srcip": "172.30.90.143",
+   "alerts": 1800,
+   "responses": 1800,
+   "coverage": 1.0,
+   "max_lag": 0.074,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 37.719,
+    "dur": 55.1734,
+    "reg": 0.5783,
+    "pool": 21
+   },
+   "duration": 47.057
+  },
+  {
+   "session_key": "dev_rules1/test_auth_fast_002",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "test",
+   "srcip": "172.30.90.148",
+   "alerts": 82,
+   "responses": 82,
+   "coverage": 1.0,
+   "max_lag": 0.009,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 4.506,
+    "dur": 17.4888,
+    "hit": false
+   },
+   "duration": 17.232
+  },
+  {
+   "session_key": "dev_rules1/val_monitor_001",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "val",
+   "srcip": "172.30.90.125",
+   "alerts": 143,
+   "responses": 143,
+   "coverage": 1.0,
+   "max_lag": 0.696,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 1.1492,
+    "dur": 164.877
+   },
+   "duration": 170.383
+  },
+  {
+   "session_key": "dev_rules1/val_scan_pulsed_000",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "val",
+   "srcip": "172.30.90.116",
+   "alerts": 76,
+   "responses": 76,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     7.337,
+     13.267,
+     16.661,
+     8.436,
+     11.313
+    ],
+    "bursts": 5
+   },
+   "duration": 231.456
+  },
+  {
+   "session_key": "dev_rules1/test_heavy_burst_000",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "test",
+   "srcip": "172.30.90.147",
+   "alerts": 210,
+   "responses": 210,
+   "coverage": 1.0,
+   "max_lag": 0.268,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 5.351,
+    "dur": 38.9243,
+    "reg": 0.1547,
+    "pool": 47
+   },
+   "duration": 38.548
+  },
+  {
+   "session_key": "dev_rules1/test_scan_fast_000",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "test",
+   "srcip": "172.30.90.154",
+   "alerts": 522,
+   "responses": 522,
+   "coverage": 1.0,
+   "max_lag": 0.541,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 25.078,
+    "dur": 20.3971,
+    "ph": 0.0378
+   },
+   "duration": 20.333
+  },
+  {
+   "session_key": "dev_rules1/val_crawler_000",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "val",
+   "srcip": "172.30.90.113",
+   "alerts": 81,
+   "responses": 81,
+   "coverage": 1.0,
+   "max_lag": 0.035,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 2.8313,
+    "p_404": 0.0422
+   },
+   "duration": 242.457
+  },
+  {
+   "session_key": "dev_rules1/val_browse_human_001",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "val",
+   "srcip": "172.30.90.136",
+   "alerts": 59,
+   "responses": 59,
+   "coverage": 1.0,
+   "max_lag": 0.089,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 75.8892,
+    "think": 6.0
+   },
+   "duration": 75.236
+  },
+  {
+   "session_key": "dev_rules1/test_api_client_000",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "test",
+   "srcip": "172.30.90.145",
+   "alerts": 216,
+   "responses": 216,
+   "coverage": 1.0,
+   "max_lag": 0.038,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 4.827,
+    "dur": 46.2133,
+    "p_5xx": 0.0109
+   },
+   "duration": 45.742
+  },
+  {
+   "session_key": "dev_rules1/val_auth_slow_001",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "val",
+   "srcip": "172.30.90.134",
+   "alerts": 62,
+   "responses": 62,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.607,
+    "dur": 103.7943,
+    "mix_valid": 0.3676
+   },
+   "duration": 101.138
+  },
+  {
+   "session_key": "dev_rules1/test_auth_fast_001",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "test",
+   "srcip": "172.30.90.157",
+   "alerts": 203,
+   "responses": 203,
+   "coverage": 1.0,
+   "max_lag": 0.203,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 15.372,
+    "dur": 12.9352,
+    "hit": false
+   },
+   "duration": 12.815
+  },
+  {
+   "session_key": "dev_rules1/val_scan_pulsed_001",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "val",
+   "srcip": "172.30.90.111",
+   "alerts": 89,
+   "responses": 89,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     5.015,
+     5.249,
+     10.073,
+     8.483,
+     7.196,
+     8.451
+    ],
+    "bursts": 6
+   },
+   "duration": 266.976
+  },
+  {
+   "session_key": "dev_rules1/test_broken_links_001",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "test",
+   "srcip": "172.30.90.140",
+   "alerts": 301,
+   "responses": 301,
+   "coverage": 1.0,
+   "max_lag": 0.074,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.516,
+    "dur": 117.3186,
+    "p_broken": 0.766
+   },
+   "duration": 116.866
+  },
+  {
+   "session_key": "dev_rules1/test_forgot_pw_001",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "test",
+   "srcip": "172.30.90.146",
+   "alerts": 24,
+   "responses": 24,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 5,
+    "tail": 17
+   },
+   "duration": 90.323
+  },
+  {
+   "session_key": "dev_rules1/test_scan_fast_001",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "test",
+   "srcip": "172.30.90.155",
+   "alerts": 1785,
+   "responses": 1785,
+   "coverage": 1.0,
+   "max_lag": 1.282,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 33.809,
+    "dur": 53.0919,
+    "ph": 0.0139
+   },
+   "duration": 53.034
+  },
+  {
+   "session_key": "dev_rules1/test_monitor_002",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "test",
+   "srcip": "172.30.90.139",
+   "alerts": 34,
+   "responses": 34,
+   "coverage": 1.0,
+   "max_lag": 0.299,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 3.772,
+    "dur": 129.8076
+   },
+   "duration": 125.816
+  },
+  {
+   "session_key": "dev_rules1/val_crawler_001",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "val",
+   "srcip": "172.30.90.128",
+   "alerts": 163,
+   "responses": 163,
+   "coverage": 1.0,
+   "max_lag": 0.744,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 1.3236,
+    "p_404": 0.0368
+   },
+   "duration": 229.306
+  },
+  {
+   "session_key": "dev_rules1/test_browse_human_002",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "test",
+   "srcip": "172.30.90.144",
+   "alerts": 92,
+   "responses": 92,
+   "coverage": 1.0,
+   "max_lag": 0.08,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 118.7022,
+    "think": 6.0
+   },
+   "duration": 99.446
+  },
+  {
+   "session_key": "dev_rules1/test_flood_001",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "test",
+   "srcip": "172.30.90.159",
+   "alerts": 473,
+   "responses": 473,
+   "coverage": 1.0,
+   "max_lag": 0.172,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 40.733,
+    "dur": 11.74,
+    "pool": 2
+   },
+   "duration": 11.704
+  },
+  {
+   "session_key": "dev_rules1/test_scan_stealth_000",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "test",
+   "srcip": "172.30.90.142",
+   "alerts": 95,
+   "responses": 95,
+   "coverage": 1.0,
+   "max_lag": 0.482,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.592,
+    "dur": 152.6931,
+    "mix_valid": 0.2576
+   },
+   "duration": 147.279
+  },
+  {
+   "session_key": "dev_rules1/test_typo_login_001",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "test",
+   "srcip": "172.30.90.153",
+   "alerts": 24,
+   "responses": 24,
+   "coverage": 1.0,
+   "max_lag": 0.378,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 2,
+    "tail": 20
+   },
+   "duration": 97.718
+  },
+  {
+   "session_key": "dev_rules1/test_api_client_002",
+   "scenario": "api_client",
+   "family": "benign",
+   "label": 0,
+   "split": "test",
+   "srcip": "172.30.90.156",
+   "alerts": 664,
+   "responses": 664,
+   "coverage": 1.0,
+   "max_lag": 1.156,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 8.823,
+    "dur": 75.338,
+    "p_5xx": 0.0318
+   },
+   "duration": 75.198
+  },
+  {
+   "session_key": "dev_rules1/test_browse_human_001",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "test",
+   "srcip": "172.30.90.137",
+   "alerts": 119,
+   "responses": 119,
+   "coverage": 1.0,
+   "max_lag": 0.49,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 160.1459,
+    "think": 6.0
+   },
+   "duration": 151.892
+  },
+  {
+   "session_key": "dev_rules1/test_heavy_burst_001",
+   "scenario": "heavy_burst",
+   "family": "benign",
+   "label": 0,
+   "split": "test",
+   "srcip": "172.30.90.162",
+   "alerts": 809,
+   "responses": 809,
+   "coverage": 1.0,
+   "max_lag": 4.454,
+   "excluded": [
+    "lag"
+   ],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 37.642,
+    "dur": 21.4056,
+    "reg": 0.4726,
+    "pool": 8
+   },
+   "duration": 21.369
+  },
+  {
+   "session_key": "dev_rules1/test_auth_slow_001",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "test",
+   "srcip": "172.30.90.138",
+   "alerts": 27,
+   "responses": 27,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.167,
+    "dur": 169.4941,
+    "mix_valid": 0.4589
+   },
+   "duration": 158.422
+  },
+  {
+   "session_key": "dev_rules1/test_browse_human_000",
+   "scenario": "browse_human",
+   "family": "benign",
+   "label": 0,
+   "split": "test",
+   "srcip": "172.30.90.152",
+   "alerts": 126,
+   "responses": 126,
+   "coverage": 1.0,
+   "max_lag": 0.556,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "dur": 109.8059,
+    "think": 6.0
+   },
+   "duration": 109.112
+  },
+  {
+   "session_key": "dev_rules1/test_flood_000",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "test",
+   "srcip": "172.30.90.164",
+   "alerts": 886,
+   "responses": 886,
+   "coverage": 1.0,
+   "max_lag": 0.271,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 51.006,
+    "dur": 17.9153,
+    "pool": 3
+   },
+   "duration": 17.818
+  },
+  {
+   "session_key": "dev_rules1/test_flood_002",
+   "scenario": "flood",
+   "family": "flood",
+   "label": 1,
+   "split": "test",
+   "srcip": "172.30.90.169",
+   "alerts": 872,
+   "responses": 872,
+   "coverage": 1.0,
+   "max_lag": 2.019,
+   "excluded": [
+    "lag"
+   ],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 66.514,
+    "dur": 13.2424,
+    "pool": 2
+   },
+   "duration": 13.228
+  },
+  {
+   "session_key": "dev_rules1/test_auth_fast_000",
+   "scenario": "auth_fast",
+   "family": "cred",
+   "label": 1,
+   "split": "test",
+   "srcip": "172.30.90.171",
+   "alerts": 271,
+   "responses": 271,
+   "coverage": 1.0,
+   "max_lag": 1.938,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 12.088,
+    "dur": 22.0931,
+    "hit": false
+   },
+   "duration": 21.906
+  },
+  {
+   "session_key": "dev_rules1/test_crawler_001",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "test",
+   "srcip": "172.30.90.151",
+   "alerts": 110,
+   "responses": 110,
+   "coverage": 1.0,
+   "max_lag": 0.809,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 1.3076,
+    "p_404": 0.0486
+   },
+   "duration": 151.332
+  },
+  {
+   "session_key": "dev_rules1/test_auth_slow_000",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "test",
+   "srcip": "172.30.90.149",
+   "alerts": 111,
+   "responses": 111,
+   "coverage": 1.0,
+   "max_lag": 0.239,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.605,
+    "dur": 155.8662,
+    "mix_valid": 0.156
+   },
+   "duration": 152.971
+  },
+  {
+   "session_key": "dev_rules1/test_typo_login_002",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "test",
+   "srcip": "172.30.90.150",
+   "alerts": 34,
+   "responses": 34,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 3,
+    "tail": 29
+   },
+   "duration": 155.82
+  },
+  {
+   "session_key": "dev_rules1/test_scan_pulsed_002",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "test",
+   "srcip": "172.30.90.158",
+   "alerts": 55,
+   "responses": 55,
+   "coverage": 1.0,
+   "max_lag": 0.365,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     11.926,
+     6.184,
+     9.228,
+     5.843
+    ],
+    "bursts": 4
+   },
+   "duration": 130.201
+  },
+  {
+   "session_key": "dev_rules1/test_typo_login_000",
+   "scenario": "typo_login",
+   "family": "benign",
+   "label": 0,
+   "split": "test",
+   "srcip": "172.30.90.165",
+   "alerts": 14,
+   "responses": 14,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 2,
+    "tail": 10
+   },
+   "duration": 57.153
+  },
+  {
+   "session_key": "dev_rules1/test_forgot_pw_002",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "test",
+   "srcip": "172.30.90.161",
+   "alerts": 29,
+   "responses": 29,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 7,
+    "tail": 20
+   },
+   "duration": 103.296
+  },
+  {
+   "session_key": "dev_rules1/test_monitor_000",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "test",
+   "srcip": "172.30.90.166",
+   "alerts": 12,
+   "responses": 12,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 6.8199,
+    "dur": 86.0951
+   },
+   "duration": 74.585
+  },
+  {
+   "session_key": "dev_rules1/test_recon_then_brute_001",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "test",
+   "srcip": "172.30.90.173",
+   "alerts": 1575,
+   "responses": 1575,
+   "coverage": 1.0,
+   "max_lag": 3.242,
+   "excluded": [
+    "lag"
+   ],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 42.584,
+    "scan_dur": 35.6489,
+    "scan_ph": 0.0475,
+    "brute_rate": 5.694,
+    "brute_dur": 15.4624,
+    "brute_hit": false
+   },
+   "duration": 52.01
+  },
+  {
+   "session_key": "dev_rules1/test_forgot_pw_000",
+   "scenario": "forgot_pw",
+   "family": "benign",
+   "label": 0,
+   "split": "test",
+   "srcip": "172.30.90.174",
+   "alerts": 19,
+   "responses": 19,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "n_wrong": 7,
+    "tail": 10
+   },
+   "duration": 62.444
+  },
+  {
+   "session_key": "dev_rules1/test_recon_then_brute_000",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "test",
+   "srcip": "172.30.90.172",
+   "alerts": 1826,
+   "responses": 1826,
+   "coverage": 1.0,
+   "max_lag": 4.141,
+   "excluded": [
+    "lag"
+   ],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 32.652,
+    "scan_dur": 53.3591,
+    "scan_ph": 0.0685,
+    "brute_rate": 3.729,
+    "brute_dur": 27.654,
+    "brute_hit": true
+   },
+   "duration": 81.601
+  },
+  {
+   "session_key": "dev_rules1/test_scan_fast_002",
+   "scenario": "scan_fast",
+   "family": "recon",
+   "label": 1,
+   "split": "test",
+   "srcip": "172.30.90.175",
+   "alerts": 1703,
+   "responses": 1703,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 59.823,
+    "dur": 27.9466,
+    "ph": 0.0413
+   },
+   "duration": 27.926
+  },
+  {
+   "session_key": "dev_rules1/test_monitor_001",
+   "scenario": "monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "test",
+   "srcip": "172.30.90.163",
+   "alerts": 32,
+   "responses": 32,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 4.9181,
+    "dur": 159.5268
+   },
+   "duration": 152.559
+  },
+  {
+   "session_key": "dev_rules1/test_auth_slow_002",
+   "scenario": "auth_slow",
+   "family": "cred",
+   "label": 1,
+   "split": "test",
+   "srcip": "172.30.90.168",
+   "alerts": 136,
+   "responses": 136,
+   "coverage": 1.0,
+   "max_lag": 0.047,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.939,
+    "dur": 142.2473,
+    "mix_valid": 0.0007
+   },
+   "duration": 139.333
+  },
+  {
+   "session_key": "dev_rules1/test_scan_pulsed_001",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "test",
+   "srcip": "172.30.90.160",
+   "alerts": 47,
+   "responses": 47,
+   "coverage": 1.0,
+   "max_lag": 1.248,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     8.088,
+     5.677,
+     11.206,
+     19.82
+    ],
+    "bursts": 4
+   },
+   "duration": 173.802
+  },
+  {
+   "session_key": "dev_rules1/test_broken_links_000",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "test",
+   "srcip": "172.30.90.170",
+   "alerts": 427,
+   "responses": 427,
+   "coverage": 1.0,
+   "max_lag": 2.754,
+   "excluded": [
+    "lag"
+   ],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.996,
+    "dur": 136.0159,
+    "p_broken": 0.7714
+   },
+   "duration": 135.356
+  },
+  {
+   "session_key": "dev_rules1/test_recon_then_brute_002",
+   "scenario": "recon_then_brute",
+   "family": "recon",
+   "label": 1,
+   "split": "test",
+   "srcip": "172.30.90.177",
+   "alerts": 1611,
+   "responses": 1611,
+   "coverage": 1.0,
+   "max_lag": 0.068,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "scan_rate": 33.71,
+    "scan_dur": 45.9271,
+    "scan_ph": 0.0685,
+    "brute_rate": 5.746,
+    "brute_dur": 11.6063,
+    "brute_hit": false
+   },
+   "duration": 58.449
+  },
+  {
+   "session_key": "dev_rules1/test_scan_stealth_001",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "test",
+   "srcip": "172.30.90.178",
+   "alerts": 35,
+   "responses": 35,
+   "coverage": 1.0,
+   "max_lag": 0.002,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.499,
+    "dur": 70.2121,
+    "mix_valid": 0.5809
+   },
+   "duration": 66.337
+  },
+  {
+   "session_key": "dev_rules1/stress_sso_retry_storm_000",
+   "scenario": "sso_retry_storm",
+   "family": "benign",
+   "label": 0,
+   "split": "stress",
+   "srcip": "172.30.90.184",
+   "alerts": 19,
+   "responses": 19,
+   "coverage": 1.0,
+   "max_lag": 0.008,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0
+   },
+   "duration": 65.477
+  },
+  {
+   "session_key": "dev_rules1/test_broken_links_002",
+   "scenario": "broken_links",
+   "family": "benign",
+   "label": 0,
+   "split": "test",
+   "srcip": "172.30.90.181",
+   "alerts": 42,
+   "responses": 42,
+   "coverage": 1.0,
+   "max_lag": 0.005,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 0.474,
+    "dur": 86.6851,
+    "p_broken": 0.6472
+   },
+   "duration": 82.561
+  },
+  {
+   "session_key": "dev_rules1/test_crawler_000",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "test",
+   "srcip": "172.30.90.167",
+   "alerts": 101,
+   "responses": 101,
+   "coverage": 1.0,
+   "max_lag": 0.003,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 2.2568,
+    "p_404": 0.0551
+   },
+   "duration": 241.85
+  },
+  {
+   "session_key": "dev_rules1/stress_misconfig_monitor_000",
+   "scenario": "misconfig_monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "stress",
+   "srcip": "172.30.90.182",
+   "alerts": 11,
+   "responses": 11,
+   "coverage": 1.0,
+   "max_lag": 0.006,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 11.8964,
+    "dur": 133.7801
+   },
+   "duration": 120.093
+  },
+  {
+   "session_key": "dev_rules1/test_scan_stealth_002",
+   "scenario": "scan_stealth",
+   "family": "recon",
+   "label": 1,
+   "split": "test",
+   "srcip": "172.30.90.180",
+   "alerts": 334,
+   "responses": 334,
+   "coverage": 1.0,
+   "max_lag": 0.105,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": 2.591,
+    "dur": 129.5916,
+    "mix_valid": 0.6676
+   },
+   "duration": 128.972
+  },
+  {
+   "session_key": "dev_rules1/stress_misconfig_monitor_001",
+   "scenario": "misconfig_monitor",
+   "family": "benign",
+   "label": 0,
+   "split": "stress",
+   "srcip": "172.30.90.185",
+   "alerts": 13,
+   "responses": 13,
+   "coverage": 1.0,
+   "max_lag": 0.01,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "interval": 11.6116,
+    "dur": 155.8864
+   },
+   "duration": 142.83
+  },
+  {
+   "session_key": "dev_rules1/test_scan_pulsed_000",
+   "scenario": "scan_pulsed",
+   "family": "recon",
+   "label": 1,
+   "split": "test",
+   "srcip": "172.30.90.179",
+   "alerts": 44,
+   "responses": 44,
+   "coverage": 1.0,
+   "max_lag": 0.0,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "rate": [
+     19.307,
+     8.082,
+     15.627,
+     6.748,
+     8.09
+    ],
+    "bursts": 5
+   },
+   "duration": 166.347
+  },
+  {
+   "session_key": "dev_rules1/test_crawler_002",
+   "scenario": "crawler",
+   "family": "benign",
+   "label": 0,
+   "split": "test",
+   "srcip": "172.30.90.176",
+   "alerts": 120,
+   "responses": 120,
+   "coverage": 1.0,
+   "max_lag": 0.001,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0,
+    "d_med": 1.8069,
+    "p_404": 0.0799
+   },
+   "duration": 241.926
+  },
+  {
+   "session_key": "dev_rules1/stress_sso_retry_storm_001",
+   "scenario": "sso_retry_storm",
+   "family": "benign",
+   "label": 0,
+   "split": "stress",
+   "srcip": "172.30.90.183",
+   "alerts": 32,
+   "responses": 32,
+   "coverage": 1.0,
+   "max_lag": 0.008,
+   "excluded": [],
+   "params": {
+    "shift_mult": 1.0
+   },
+   "duration": 294.609
+  }
+ ],
+ "orphans": []
+}

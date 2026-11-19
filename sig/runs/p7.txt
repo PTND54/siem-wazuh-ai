@@ -1,0 +1,44 @@
+TRÙNG bản kê đã chốt: digest 5e55b4673c269d5bb8b66d7ff30fffcfcfa6484a8517339cd1fe8b20bc90ede0 (394 file), applied ['AI-R110011-r401-N12-T120-20261028-150005', 'AI-R110020-web_scan-N15-T10-20261028-150005', 'AI-R110030-any-N500-T10-20261028-150005']
+file trên host: /home/thuan/siem-wazuh-ai/sig/rules/zy_siem10_sig_rules.xml sha256 c5a016d3d8b0ef58
+file trên Manager: /var/ossec/etc/rules/zy_siem10_sig_rules.xml sha256 c5a016d3d8b0ef58
+base patt {'lines': 1440, 'skipped_non_ascii': 0, 'chunks_resent': 0, 'seconds': 7.5}
+base bdev {'lines': 106, 'skipped_non_ascii': 0, 'chunks_resent': 0, 'seconds': 1.1}
+base btest {'lines': 96, 'skipped_non_ascii': 0, 'chunks_resent': 0, 'seconds': 1.1}
+base regress {'lines': 9482, 'skipped_non_ascii': 0, 'chunks_resent': 0, 'seconds': 47.1}
+base nikto {'lines': 8469, 'skipped_non_ascii': 0, 'chunks_resent': 0, 'seconds': 43.8}
+base sl_sqli {'lines': 360, 'skipped_non_ascii': 0, 'chunks_resent': 0, 'seconds': 2.2}
+base sl_xss {'lines': 360, 'skipped_non_ascii': 0, 'chunks_resent': 0, 'seconds': 2.2}
+base sl_traversal {'lines': 360, 'skipped_non_ascii': 0, 'chunks_resent': 0, 'seconds': 2.3}
+base sl_cmdi {'lines': 360, 'skipped_non_ascii': 0, 'chunks_resent': 0, 'seconds': 2.4}
+DỌN: đã xóa; analysisd -t rc=0; trở về đúng ban đầu
+analysisd -t với file vô hiệu hóa: rc=0, cảnh báo MỚI: không
+builtin(base) patt {'lines': 1440, 'skipped_non_ascii': 0, 'chunks_resent': 0, 'seconds': 7.6}
+builtin(base) bdev {'lines': 106, 'skipped_non_ascii': 0, 'chunks_resent': 0, 'seconds': 1.0}
+builtin(base) btest {'lines': 96, 'skipped_non_ascii': 0, 'chunks_resent': 0, 'seconds': 1.0}
+builtin(base) regress {'lines': 9482, 'skipped_non_ascii': 0, 'chunks_resent': 0, 'seconds': 46.7}
+builtin(base) nikto {'lines': 8469, 'skipped_non_ascii': 0, 'chunks_resent': 0, 'seconds': 42.9}
+builtin(base) sl_sqli {'lines': 360, 'skipped_non_ascii': 0, 'chunks_resent': 0, 'seconds': 2.2}
+builtin(base) sl_xss {'lines': 360, 'skipped_non_ascii': 0, 'chunks_resent': 0, 'seconds': 2.2}
+builtin(base) sl_traversal {'lines': 360, 'skipped_non_ascii': 0, 'chunks_resent': 0, 'seconds': 2.1}
+builtin(base) sl_cmdi {'lines': 360, 'skipped_non_ascii': 0, 'chunks_resent': 0, 'seconds': 2.2}
+DỌN: đã xóa; analysisd -t rc=0; trở về đúng ban đầu
+only_404 {"lines": 30, "parsed": 30, "rule": "110020", "fired_at": ["SIEMLAB #15", "SIEMLAB #30"], "expected": ["SIEMLAB #15", "SIEMLAB #30"], "other_rules": [], "ok": true}
+mix_404 {"lines": 60, "parsed": 60, "rule": "110020", "fired_at": ["SIEMLAB #15", "SIEMLAB #30"], "expected": ["SIEMLAB #15", "SIEMLAB #30"], "other_rules": [], "ok": true}
+mix_401 {"lines": 60, "parsed": 60, "rule": "110011", "fired_at": ["SIEMLAB #12", "SIEMLAB #24"], "expected": ["SIEMLAB #12", "SIEMLAB #24"], "other_rules": [], "ok": true}
+mix_200 {"lines": 2000, "parsed": 2000, "rule": "110030", "fired_at": ["SIEMLAB #500", "SIEMLAB #1000"], "expected": ["SIEMLAB #500", "SIEMLAB #1000"], "other_rules": [], "ok": true}
+KẾT QUẢ: ĐẠT
+TAG=sigload1794815695
+Complete requests:      5000
+Failed requests:        0
+Requests per second:    3116.04 [#/sec] (mean)
+ĐỐI CHIẾU: ĐẠT (phản hồi 40, access_log 40, siem.log 40)
+siem.log: 5000  access_log: 5000
+alert theo (decoder, rule): {('siemlab', '100010'): 4976, ('siemlab', '110030'): 24}  tổng SIEMLAB: 5000
+logcollector /var/log/apache-lab/access_log events 5043 drops [0]
+logcollector /var/log/apache-lab/siem.log events 5043 drops [0]
+{"session": "slow_sqli", "ip": "172.30.90.249", "n": 40, "alerts_ip_all_days": 78, "siemlab_alerts": 40, "siemlab_ok": true, "web_alerts": 38, "ai": {"total": 40, "flagged": 0}, "rate": 0.333, "start_utc": "2026-11-16T07:54:58.877760+00:00", "end_utc": "2026-11-16T07:57:03.997809+00:00"}
+
+== theo loại (đường thật)
+  test2[slow_sqli] / sqli      nhóm   37/40    92.5%  hợp   38/40    95.0%
+  test2[slow_sqli] / sqli / E1 nhóm   37/40    92.5%  hợp   38/40    95.0%
+-> sig/runs/p7_slow_measure.json

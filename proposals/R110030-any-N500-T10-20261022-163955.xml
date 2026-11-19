@@ -1,0 +1,8 @@
+<group name="ai_generated,">
+  <rule id="110030" level="10" frequency="500" timeframe="10">
+    <if_matched_group>siemlab_observed</if_matched_group>
+    <same_srcip />
+    <description>siem10 de xuat [any]: moi ma HTTP (tan suat cao) &gt;= 500 lan trong 10s tu cung nguon</description>
+    <group>siem10_any,attack,ai_generated,</group>
+  </rule>
+</group>

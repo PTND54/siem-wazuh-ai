@@ -1,0 +1,51 @@
+<group name="web,accesslog,">
+  <rule id="31101" level="0" overwrite="yes">
+    <if_sid>31100</if_sid>
+    <id>^4</id>
+    <description>Web server 400 error code. (siem10: tat alert, trung luong SIEMLAB)</description>
+  </rule>
+  <rule id="31120" level="0" overwrite="yes">
+    <if_sid>31100</if_sid>
+    <id>^50</id>
+    <description>Web server 500 error code (server error). (siem10: tat alert)</description>
+  </rule>
+  <rule id="31121" level="0" overwrite="yes">
+    <if_sid>31120</if_sid>
+    <id>^501</id>
+    <description>Web server 501 error code (Not Implemented). (siem10: tat alert)</description>
+  </rule>
+  <rule id="31122" level="0" overwrite="yes">
+    <if_sid>31120</if_sid>
+    <id>^500</id>
+    <description>Web server 500 error code (Internal Error). (siem10: tat alert)</description>
+  </rule>
+  <rule id="31123" level="0" overwrite="yes">
+    <if_sid>31120</if_sid>
+    <id>^503</id>
+    <description>Web server 503 error code (Service unavailable). (siem10: tat alert)</description>
+  </rule>
+  <rule id="31151" level="0" frequency="14" timeframe="90" overwrite="yes">
+    <if_matched_sid>31101</if_matched_sid>
+    <same_source_ip />
+    <description>Multiple web server 400 error codes from same source ip. (siem10: tat, bo nhom web_scan)</description>
+    <group>recon,</group>
+  </rule>
+  <rule id="31161" level="0" frequency="14" timeframe="120" overwrite="yes">
+    <if_matched_sid>31121</if_matched_sid>
+    <same_source_ip />
+    <description>Multiple web server 501 error code (Not Implemented). (siem10: tat, bo nhom web_scan)</description>
+    <group>recon,</group>
+  </rule>
+  <rule id="31162" level="0" frequency="14" timeframe="120" overwrite="yes">
+    <if_matched_sid>31122</if_matched_sid>
+    <same_source_ip />
+    <description>Multiple web server 500 error code (Internal Error). (siem10: tat)</description>
+    <group>system_error,</group>
+  </rule>
+  <rule id="31163" level="0" frequency="14" timeframe="120" overwrite="yes">
+    <if_matched_sid>31123</if_matched_sid>
+    <same_source_ip />
+    <description>Multiple web server 503 error code (Service unavailable). (siem10: tat, bo nhom web_scan)</description>
+    <group>recon,</group>
+  </rule>
+</group>

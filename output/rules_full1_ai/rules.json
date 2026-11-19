@@ -1,0 +1,5238 @@
+{
+ "created": "2026-10-28T15:00:04+00:00",
+ "data": "data/dataset_full1.csv",
+ "data_sha256": "36c103e0a2390a472936dc499bf1b341610af33e1ede509a6231995c79fbb372",
+ "eval": [
+  "data/dataset_shift1.csv",
+  "data/dataset_tools2.csv"
+ ],
+ "fp_target": 0.05,
+ "select_splits": [
+  "val"
+ ],
+ "val_benign_sessions": 124,
+ "allowed_false_alarm_sessions": 6,
+ "t_grid": [
+  10,
+  30,
+  60,
+  120,
+  240
+ ],
+ "n_grid": [
+  2,
+  3,
+  4,
+  5,
+  6,
+  8,
+  10,
+  12,
+  15,
+  20,
+  30,
+  50,
+  75,
+  100,
+  150,
+  200,
+  300,
+  400,
+  500,
+  600,
+  800,
+  1000
+ ],
+ "template": {
+  "name": "freq_same_srcip",
+  "version": 1
+ },
+ "time_model": "wazuh_sec_worst_case",
+ "purpose": "official",
+ "wazuh_sim_sha256": "77cd323ffc5d375d",
+ "families": {
+  "r401": {
+   "rule_id": 110011,
+   "cond": "<if_matched_sid>100011</if_matched_sid>"
+  },
+  "web_scan": {
+   "rule_id": 110020,
+   "cond": "<if_matched_group>web_scan</if_matched_group>"
+  },
+  "r3xx": {
+   "rule_id": 110014,
+   "cond": "<if_matched_sid>100014</if_matched_sid>"
+  },
+  "r5xx": {
+   "rule_id": 110015,
+   "cond": "<if_matched_sid>100015</if_matched_sid>"
+  },
+  "other": {
+   "rule_id": 110016,
+   "cond": "<if_matched_sid>100016</if_matched_sid>"
+  },
+  "any": {
+   "rule_id": 110030,
+   "cond": "<if_matched_group>siemlab_observed</if_matched_group>"
+  }
+ },
+ "chosen": {
+  "r401": {
+   "N": 12,
+   "T": 120
+  },
+  "web_scan": {
+   "N": 15,
+   "T": 10
+  },
+  "any": {
+   "N": 500,
+   "T": 10
+  }
+ },
+ "selection_info": {
+  "r401": {
+   "alone": {
+    "N": 12,
+    "T": 120
+   },
+   "detected": 49,
+   "false_alarm": 0,
+   "ttd_median_s": 25.143447875976562,
+   "feasible_points": 77,
+   "candidate_points": 1
+  },
+  "web_scan": {
+   "alone": {
+    "N": 15,
+    "T": 10
+   },
+   "detected": 53,
+   "false_alarm": 3,
+   "ttd_median_s": 2.3691859245300293,
+   "feasible_points": 59,
+   "candidate_points": 5
+  },
+  "r3xx": {
+   "alone": {
+    "N": 2,
+    "T": 10
+   },
+   "detected": 35,
+   "false_alarm": 4,
+   "ttd_median_s": 5.279813051223755,
+   "feasible_points": 104,
+   "candidate_points": 9,
+   "not_in_set": "tổ hợp tối ưu không dùng họ này (thêm vào không tăng số phiên bắt được trong hạn mức báo nhầm)"
+  },
+  "r5xx": {
+   "alone": {
+    "N": 4,
+    "T": 10
+   },
+   "detected": 1,
+   "false_alarm": 6,
+   "ttd_median_s": 19.47522807121277,
+   "feasible_points": 83,
+   "candidate_points": 1,
+   "not_in_set": "tổ hợp tối ưu không dùng họ này (thêm vào không tăng số phiên bắt được trong hạn mức báo nhầm)"
+  },
+  "other": {
+   "alone": null,
+   "reason": "không (N, T) nào vừa đạt ngưỡng báo nhầm vừa bắt được phiên tấn công",
+   "val_member_alerts": 0,
+   "feasible_points": 110,
+   "best_unconstrained": {
+    "N": 2,
+    "T": 10,
+    "detected": 0,
+    "false_alarm": 0
+   },
+   "candidate_points": 0,
+   "not_in_set": "không có điểm khả thi"
+  },
+  "any": {
+   "alone": {
+    "N": 300,
+    "T": 10
+   },
+   "detected": 32,
+   "false_alarm": 5,
+   "ttd_median_s": 6.819540023803711,
+   "feasible_points": 15,
+   "candidate_points": 8
+  }
+ },
+ "set": [
+  "r401",
+  "web_scan",
+  "any"
+ ],
+ "greedy_steps": {
+  "combinations_evaluated": 710,
+  "ties_at_best": 1,
+  "best_key": [
+   95,
+   -5,
+   -3
+  ],
+  "candidate_points": {
+   "r401": 1,
+   "web_scan": 5,
+   "r3xx": 9,
+   "r5xx": 1,
+   "other": 0,
+   "any": 8
+  }
+ },
+ "search": {
+  "combinations_evaluated": 710,
+  "ties_at_best": 1,
+  "best_key": [
+   95,
+   -5,
+   -3
+  ],
+  "candidate_points": {
+   "r401": 1,
+   "web_scan": 5,
+   "r3xx": 9,
+   "r5xx": 1,
+   "other": 0,
+   "any": 8
+  }
+ },
+ "results": {
+  "SELECT": {
+   "rules": {
+    "r401": {
+     "attack_sessions": 116,
+     "benign_sessions": 124,
+     "detected": 49,
+     "false_alarm": 0,
+     "detect_rate": 0.4224137931034483,
+     "fp_rate": 0.0,
+     "ttd_median_s": 25.143447875976562,
+     "alerts_to_first_median": 16.0,
+     "fires_per_detected_session_median": 13.0,
+     "unique_detected": 32
+    },
+    "web_scan": {
+     "attack_sessions": 116,
+     "benign_sessions": 124,
+     "detected": 53,
+     "false_alarm": 3,
+     "detect_rate": 0.45689655172413796,
+     "fp_rate": 0.024193548387096774,
+     "ttd_median_s": 2.3691859245300293,
+     "alerts_to_first_median": 16.0,
+     "fires_per_detected_session_median": 14.0,
+     "unique_detected": 35
+    },
+    "any": {
+     "attack_sessions": 116,
+     "benign_sessions": 124,
+     "detected": 12,
+     "false_alarm": 2,
+     "detect_rate": 0.10344827586206896,
+     "fp_rate": 0.016129032258064516,
+     "ttd_median_s": 7.9123375415802,
+     "alerts_to_first_median": 500.0,
+     "fires_per_detected_session_median": 1.0,
+     "unique_detected": 10
+    }
+   },
+   "union": {
+    "attack_sessions": 116,
+    "benign_sessions": 124,
+    "detected": 95,
+    "false_alarm": 5,
+    "detect_rate": 0.8189655172413793,
+    "fp_rate": 0.04032258064516129
+   },
+   "by_scenario": {
+    "r401": [
+     {
+      "scenario": "api_client",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "browse_human",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "crawler",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "forgot_pw",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "heavy_burst",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "monitor",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "typo_login",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_fast",
+      "label": 1,
+      "sessions": 16,
+      "fired": 16
+     },
+     {
+      "scenario": "auth_slow",
+      "label": 1,
+      "sessions": 16,
+      "fired": 16
+     },
+     {
+      "scenario": "broken_links",
+      "label": 1,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "flood",
+      "label": 1,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "sessions": 16,
+      "fired": 16
+     },
+     {
+      "scenario": "scan_fast",
+      "label": 1,
+      "sessions": 16,
+      "fired": 1
+     },
+     {
+      "scenario": "scan_pulsed",
+      "label": 1,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "scan_stealth",
+      "label": 1,
+      "sessions": 16,
+      "fired": 0
+     }
+    ],
+    "web_scan": [
+     {
+      "scenario": "api_client",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "browse_human",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "crawler",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "forgot_pw",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "heavy_burst",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "monitor",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "typo_login",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_fast",
+      "label": 1,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_slow",
+      "label": 1,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "broken_links",
+      "label": 1,
+      "sessions": 16,
+      "fired": 4
+     },
+     {
+      "scenario": "flood",
+      "label": 1,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "sessions": 16,
+      "fired": 16
+     },
+     {
+      "scenario": "scan_fast",
+      "label": 1,
+      "sessions": 16,
+      "fired": 16
+     },
+     {
+      "scenario": "scan_pulsed",
+      "label": 1,
+      "sessions": 16,
+      "fired": 14
+     },
+     {
+      "scenario": "scan_stealth",
+      "label": 1,
+      "sessions": 16,
+      "fired": 6
+     }
+    ],
+    "any": [
+     {
+      "scenario": "api_client",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "browse_human",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "crawler",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "forgot_pw",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "heavy_burst",
+      "label": 0,
+      "sessions": 16,
+      "fired": 2
+     },
+     {
+      "scenario": "monitor",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "typo_login",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_fast",
+      "label": 1,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_slow",
+      "label": 1,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "broken_links",
+      "label": 1,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "flood",
+      "label": 1,
+      "sessions": 16,
+      "fired": 10
+     },
+     {
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "sessions": 16,
+      "fired": 1
+     },
+     {
+      "scenario": "scan_fast",
+      "label": 1,
+      "sessions": 16,
+      "fired": 1
+     },
+     {
+      "scenario": "scan_pulsed",
+      "label": 1,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "scan_stealth",
+      "label": 1,
+      "sessions": 16,
+      "fired": 0
+     }
+    ],
+    "union": [
+     {
+      "scenario": "api_client",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "browse_human",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "crawler",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "forgot_pw",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "heavy_burst",
+      "label": 0,
+      "sessions": 16,
+      "fired": 2
+     },
+     {
+      "scenario": "monitor",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "typo_login",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_fast",
+      "label": 1,
+      "sessions": 16,
+      "fired": 16
+     },
+     {
+      "scenario": "auth_slow",
+      "label": 1,
+      "sessions": 16,
+      "fired": 16
+     },
+     {
+      "scenario": "broken_links",
+      "label": 1,
+      "sessions": 16,
+      "fired": 4
+     },
+     {
+      "scenario": "flood",
+      "label": 1,
+      "sessions": 16,
+      "fired": 10
+     },
+     {
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "sessions": 16,
+      "fired": 16
+     },
+     {
+      "scenario": "scan_fast",
+      "label": 1,
+      "sessions": 16,
+      "fired": 16
+     },
+     {
+      "scenario": "scan_pulsed",
+      "label": 1,
+      "sessions": 16,
+      "fired": 14
+     },
+     {
+      "scenario": "scan_stealth",
+      "label": 1,
+      "sessions": 16,
+      "fired": 6
+     }
+    ]
+   },
+   "joint": {
+    "union": {
+     "attack_sessions": 116,
+     "benign_sessions": 124,
+     "detected": 95,
+     "false_alarm": 5,
+     "detect_rate": 0.8189655172413793,
+     "fp_rate": 0.04032258064516129
+    },
+    "differs_from_independent": 0,
+    "rules": {
+     "r401": {
+      "detected": 49,
+      "false_alarm": 0,
+      "unique_detected": 32
+     },
+     "web_scan": {
+      "detected": 53,
+      "false_alarm": 3,
+      "unique_detected": 36
+     },
+     "any": {
+      "detected": 10,
+      "false_alarm": 2,
+      "unique_detected": 10
+     }
+    }
+   }
+  },
+  "SELECT_TRUTH": {
+   "rules": {
+    "r401": {
+     "attack_sessions": 112,
+     "benign_sessions": 128,
+     "detected": 49,
+     "false_alarm": 0,
+     "detect_rate": 0.4375,
+     "fp_rate": 0.0,
+     "ttd_median_s": 25.143447875976562,
+     "alerts_to_first_median": 16.0,
+     "fires_per_detected_session_median": 13.0,
+     "unique_detected": 32
+    },
+    "web_scan": {
+     "attack_sessions": 112,
+     "benign_sessions": 128,
+     "detected": 52,
+     "false_alarm": 4,
+     "detect_rate": 0.4642857142857143,
+     "fp_rate": 0.03125,
+     "ttd_median_s": 2.3048189878463745,
+     "alerts_to_first_median": 16.0,
+     "fires_per_detected_session_median": 13.0,
+     "unique_detected": 34
+    },
+    "any": {
+     "attack_sessions": 112,
+     "benign_sessions": 128,
+     "detected": 12,
+     "false_alarm": 3,
+     "detect_rate": 0.10714285714285714,
+     "fp_rate": 0.0234375,
+     "ttd_median_s": 7.9123375415802,
+     "alerts_to_first_median": 500.0,
+     "fires_per_detected_session_median": 1.0,
+     "unique_detected": 10
+    }
+   },
+   "union": {
+    "attack_sessions": 112,
+    "benign_sessions": 128,
+    "detected": 94,
+    "false_alarm": 7,
+    "detect_rate": 0.8392857142857143,
+    "fp_rate": 0.0546875
+   },
+   "by_scenario": {
+    "r401": [
+     {
+      "scenario": "api_client",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "broken_links",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "browse_human",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "crawler",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "forgot_pw",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "heavy_burst",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "monitor",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "typo_login",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_fast",
+      "label": 1,
+      "sessions": 16,
+      "fired": 16
+     },
+     {
+      "scenario": "auth_slow",
+      "label": 1,
+      "sessions": 16,
+      "fired": 16
+     },
+     {
+      "scenario": "flood",
+      "label": 1,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "sessions": 16,
+      "fired": 16
+     },
+     {
+      "scenario": "scan_fast",
+      "label": 1,
+      "sessions": 16,
+      "fired": 1
+     },
+     {
+      "scenario": "scan_pulsed",
+      "label": 1,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "scan_stealth",
+      "label": 1,
+      "sessions": 16,
+      "fired": 0
+     }
+    ],
+    "web_scan": [
+     {
+      "scenario": "api_client",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "broken_links",
+      "label": 0,
+      "sessions": 16,
+      "fired": 4
+     },
+     {
+      "scenario": "browse_human",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "crawler",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "forgot_pw",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "heavy_burst",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "monitor",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "typo_login",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_fast",
+      "label": 1,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_slow",
+      "label": 1,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "flood",
+      "label": 1,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "sessions": 16,
+      "fired": 16
+     },
+     {
+      "scenario": "scan_fast",
+      "label": 1,
+      "sessions": 16,
+      "fired": 16
+     },
+     {
+      "scenario": "scan_pulsed",
+      "label": 1,
+      "sessions": 16,
+      "fired": 14
+     },
+     {
+      "scenario": "scan_stealth",
+      "label": 1,
+      "sessions": 16,
+      "fired": 6
+     }
+    ],
+    "any": [
+     {
+      "scenario": "api_client",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "broken_links",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "browse_human",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "crawler",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "forgot_pw",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "heavy_burst",
+      "label": 0,
+      "sessions": 16,
+      "fired": 3
+     },
+     {
+      "scenario": "monitor",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "typo_login",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_fast",
+      "label": 1,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_slow",
+      "label": 1,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "flood",
+      "label": 1,
+      "sessions": 16,
+      "fired": 10
+     },
+     {
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "sessions": 16,
+      "fired": 1
+     },
+     {
+      "scenario": "scan_fast",
+      "label": 1,
+      "sessions": 16,
+      "fired": 1
+     },
+     {
+      "scenario": "scan_pulsed",
+      "label": 1,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "scan_stealth",
+      "label": 1,
+      "sessions": 16,
+      "fired": 0
+     }
+    ],
+    "union": [
+     {
+      "scenario": "api_client",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "broken_links",
+      "label": 0,
+      "sessions": 16,
+      "fired": 4
+     },
+     {
+      "scenario": "browse_human",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "crawler",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "forgot_pw",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "heavy_burst",
+      "label": 0,
+      "sessions": 16,
+      "fired": 3
+     },
+     {
+      "scenario": "monitor",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "typo_login",
+      "label": 0,
+      "sessions": 16,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_fast",
+      "label": 1,
+      "sessions": 16,
+      "fired": 16
+     },
+     {
+      "scenario": "auth_slow",
+      "label": 1,
+      "sessions": 16,
+      "fired": 16
+     },
+     {
+      "scenario": "flood",
+      "label": 1,
+      "sessions": 16,
+      "fired": 10
+     },
+     {
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "sessions": 16,
+      "fired": 16
+     },
+     {
+      "scenario": "scan_fast",
+      "label": 1,
+      "sessions": 16,
+      "fired": 16
+     },
+     {
+      "scenario": "scan_pulsed",
+      "label": 1,
+      "sessions": 16,
+      "fired": 14
+     },
+     {
+      "scenario": "scan_stealth",
+      "label": 1,
+      "sessions": 16,
+      "fired": 6
+     }
+    ]
+   },
+   "joint": {
+    "union": {
+     "attack_sessions": 112,
+     "benign_sessions": 128,
+     "detected": 94,
+     "false_alarm": 7,
+     "detect_rate": 0.8392857142857143,
+     "fp_rate": 0.0546875
+    },
+    "differs_from_independent": 0,
+    "rules": {
+     "r401": {
+      "detected": 49,
+      "false_alarm": 0,
+      "unique_detected": 32
+     },
+     "web_scan": {
+      "detected": 52,
+      "false_alarm": 4,
+      "unique_detected": 35
+     },
+     "any": {
+      "detected": 10,
+      "false_alarm": 3,
+      "unique_detected": 10
+     }
+    }
+   }
+  },
+  "val": {
+   "rules": {
+    "r401": {
+     "attack_sessions": 42,
+     "benign_sessions": 48,
+     "detected": 18,
+     "false_alarm": 0,
+     "detect_rate": 0.42857142857142855,
+     "fp_rate": 0.0,
+     "ttd_median_s": 25.279815912246704,
+     "alerts_to_first_median": 17.5,
+     "fires_per_detected_session_median": 16.0,
+     "unique_detected": 12
+    },
+    "web_scan": {
+     "attack_sessions": 42,
+     "benign_sessions": 48,
+     "detected": 18,
+     "false_alarm": 0,
+     "detect_rate": 0.42857142857142855,
+     "fp_rate": 0.0,
+     "ttd_median_s": 1.2175060510635376,
+     "alerts_to_first_median": 16.0,
+     "fires_per_detected_session_median": 16.0,
+     "unique_detected": 12
+    },
+    "any": {
+     "attack_sessions": 42,
+     "benign_sessions": 48,
+     "detected": 4,
+     "false_alarm": 3,
+     "detect_rate": 0.09523809523809523,
+     "fp_rate": 0.0625,
+     "ttd_median_s": 7.0332465171813965,
+     "alerts_to_first_median": 500.0,
+     "fires_per_detected_session_median": 1.0,
+     "unique_detected": 4
+    }
+   },
+   "union": {
+    "attack_sessions": 42,
+    "benign_sessions": 48,
+    "detected": 34,
+    "false_alarm": 3,
+    "detect_rate": 0.8095238095238095,
+    "fp_rate": 0.0625
+   },
+   "by_scenario": {
+    "r401": [
+     {
+      "scenario": "api_client",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "broken_links",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "browse_human",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "crawler",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "forgot_pw",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "heavy_burst",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "monitor",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "typo_login",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_fast",
+      "label": 1,
+      "sessions": 6,
+      "fired": 6
+     },
+     {
+      "scenario": "auth_slow",
+      "label": 1,
+      "sessions": 6,
+      "fired": 6
+     },
+     {
+      "scenario": "flood",
+      "label": 1,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "sessions": 6,
+      "fired": 6
+     },
+     {
+      "scenario": "scan_fast",
+      "label": 1,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "scan_pulsed",
+      "label": 1,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "scan_stealth",
+      "label": 1,
+      "sessions": 6,
+      "fired": 0
+     }
+    ],
+    "web_scan": [
+     {
+      "scenario": "api_client",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "broken_links",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "browse_human",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "crawler",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "forgot_pw",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "heavy_burst",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "monitor",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "typo_login",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_fast",
+      "label": 1,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_slow",
+      "label": 1,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "flood",
+      "label": 1,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "sessions": 6,
+      "fired": 6
+     },
+     {
+      "scenario": "scan_fast",
+      "label": 1,
+      "sessions": 6,
+      "fired": 6
+     },
+     {
+      "scenario": "scan_pulsed",
+      "label": 1,
+      "sessions": 6,
+      "fired": 5
+     },
+     {
+      "scenario": "scan_stealth",
+      "label": 1,
+      "sessions": 6,
+      "fired": 1
+     }
+    ],
+    "any": [
+     {
+      "scenario": "api_client",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "broken_links",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "browse_human",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "crawler",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "forgot_pw",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "heavy_burst",
+      "label": 0,
+      "sessions": 6,
+      "fired": 3
+     },
+     {
+      "scenario": "monitor",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "typo_login",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_fast",
+      "label": 1,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_slow",
+      "label": 1,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "flood",
+      "label": 1,
+      "sessions": 6,
+      "fired": 4
+     },
+     {
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "scan_fast",
+      "label": 1,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "scan_pulsed",
+      "label": 1,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "scan_stealth",
+      "label": 1,
+      "sessions": 6,
+      "fired": 0
+     }
+    ],
+    "union": [
+     {
+      "scenario": "api_client",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "broken_links",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "browse_human",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "crawler",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "forgot_pw",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "heavy_burst",
+      "label": 0,
+      "sessions": 6,
+      "fired": 3
+     },
+     {
+      "scenario": "monitor",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "typo_login",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_fast",
+      "label": 1,
+      "sessions": 6,
+      "fired": 6
+     },
+     {
+      "scenario": "auth_slow",
+      "label": 1,
+      "sessions": 6,
+      "fired": 6
+     },
+     {
+      "scenario": "flood",
+      "label": 1,
+      "sessions": 6,
+      "fired": 4
+     },
+     {
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "sessions": 6,
+      "fired": 6
+     },
+     {
+      "scenario": "scan_fast",
+      "label": 1,
+      "sessions": 6,
+      "fired": 6
+     },
+     {
+      "scenario": "scan_pulsed",
+      "label": 1,
+      "sessions": 6,
+      "fired": 5
+     },
+     {
+      "scenario": "scan_stealth",
+      "label": 1,
+      "sessions": 6,
+      "fired": 1
+     }
+    ]
+   },
+   "joint": {
+    "union": {
+     "attack_sessions": 42,
+     "benign_sessions": 48,
+     "detected": 34,
+     "false_alarm": 3,
+     "detect_rate": 0.8095238095238095,
+     "fp_rate": 0.0625
+    },
+    "differs_from_independent": 0,
+    "rules": {
+     "r401": {
+      "detected": 18,
+      "false_alarm": 0,
+      "unique_detected": 12
+     },
+     "web_scan": {
+      "detected": 18,
+      "false_alarm": 0,
+      "unique_detected": 12
+     },
+     "any": {
+      "detected": 4,
+      "false_alarm": 3,
+      "unique_detected": 4
+     }
+    }
+   }
+  },
+  "train": {
+   "rules": {
+    "r401": {
+     "attack_sessions": 126,
+     "benign_sessions": 144,
+     "detected": 52,
+     "false_alarm": 0,
+     "detect_rate": 0.4126984126984127,
+     "fp_rate": 0.0,
+     "ttd_median_s": 24.44964849948883,
+     "alerts_to_first_median": 15.5,
+     "fires_per_detected_session_median": 14.0,
+     "unique_detected": 33
+    },
+    "web_scan": {
+     "attack_sessions": 126,
+     "benign_sessions": 144,
+     "detected": 58,
+     "false_alarm": 7,
+     "detect_rate": 0.4603174603174603,
+     "fp_rate": 0.04861111111111111,
+     "ttd_median_s": 2.0787389278411865,
+     "alerts_to_first_median": 16.0,
+     "fires_per_detected_session_median": 11.5,
+     "unique_detected": 39
+    },
+    "any": {
+     "attack_sessions": 126,
+     "benign_sessions": 144,
+     "detected": 15,
+     "false_alarm": 1,
+     "detect_rate": 0.11904761904761904,
+     "fp_rate": 0.006944444444444444,
+     "ttd_median_s": 6.972349166870117,
+     "alerts_to_first_median": 500.0,
+     "fires_per_detected_session_median": 1.0,
+     "unique_detected": 14
+    }
+   },
+   "union": {
+    "attack_sessions": 126,
+    "benign_sessions": 144,
+    "detected": 105,
+    "false_alarm": 8,
+    "detect_rate": 0.8333333333333334,
+    "fp_rate": 0.05555555555555555
+   },
+   "by_scenario": {
+    "r401": [
+     {
+      "scenario": "api_client",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "broken_links",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "browse_human",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "crawler",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "forgot_pw",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "heavy_burst",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "monitor",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "typo_login",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_fast",
+      "label": 1,
+      "sessions": 18,
+      "fired": 18
+     },
+     {
+      "scenario": "auth_slow",
+      "label": 1,
+      "sessions": 18,
+      "fired": 15
+     },
+     {
+      "scenario": "flood",
+      "label": 1,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "sessions": 18,
+      "fired": 18
+     },
+     {
+      "scenario": "scan_fast",
+      "label": 1,
+      "sessions": 18,
+      "fired": 1
+     },
+     {
+      "scenario": "scan_pulsed",
+      "label": 1,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "scan_stealth",
+      "label": 1,
+      "sessions": 18,
+      "fired": 0
+     }
+    ],
+    "web_scan": [
+     {
+      "scenario": "api_client",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "broken_links",
+      "label": 0,
+      "sessions": 18,
+      "fired": 7
+     },
+     {
+      "scenario": "browse_human",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "crawler",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "forgot_pw",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "heavy_burst",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "monitor",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "typo_login",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_fast",
+      "label": 1,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_slow",
+      "label": 1,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "flood",
+      "label": 1,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "sessions": 18,
+      "fired": 18
+     },
+     {
+      "scenario": "scan_fast",
+      "label": 1,
+      "sessions": 18,
+      "fired": 18
+     },
+     {
+      "scenario": "scan_pulsed",
+      "label": 1,
+      "sessions": 18,
+      "fired": 14
+     },
+     {
+      "scenario": "scan_stealth",
+      "label": 1,
+      "sessions": 18,
+      "fired": 8
+     }
+    ],
+    "any": [
+     {
+      "scenario": "api_client",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "broken_links",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "browse_human",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "crawler",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "forgot_pw",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "heavy_burst",
+      "label": 0,
+      "sessions": 18,
+      "fired": 1
+     },
+     {
+      "scenario": "monitor",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "typo_login",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_fast",
+      "label": 1,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_slow",
+      "label": 1,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "flood",
+      "label": 1,
+      "sessions": 18,
+      "fired": 14
+     },
+     {
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "sessions": 18,
+      "fired": 1
+     },
+     {
+      "scenario": "scan_fast",
+      "label": 1,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "scan_pulsed",
+      "label": 1,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "scan_stealth",
+      "label": 1,
+      "sessions": 18,
+      "fired": 0
+     }
+    ],
+    "union": [
+     {
+      "scenario": "api_client",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "broken_links",
+      "label": 0,
+      "sessions": 18,
+      "fired": 7
+     },
+     {
+      "scenario": "browse_human",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "crawler",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "forgot_pw",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "heavy_burst",
+      "label": 0,
+      "sessions": 18,
+      "fired": 1
+     },
+     {
+      "scenario": "monitor",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "typo_login",
+      "label": 0,
+      "sessions": 18,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_fast",
+      "label": 1,
+      "sessions": 18,
+      "fired": 18
+     },
+     {
+      "scenario": "auth_slow",
+      "label": 1,
+      "sessions": 18,
+      "fired": 15
+     },
+     {
+      "scenario": "flood",
+      "label": 1,
+      "sessions": 18,
+      "fired": 14
+     },
+     {
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "sessions": 18,
+      "fired": 18
+     },
+     {
+      "scenario": "scan_fast",
+      "label": 1,
+      "sessions": 18,
+      "fired": 18
+     },
+     {
+      "scenario": "scan_pulsed",
+      "label": 1,
+      "sessions": 18,
+      "fired": 14
+     },
+     {
+      "scenario": "scan_stealth",
+      "label": 1,
+      "sessions": 18,
+      "fired": 8
+     }
+    ]
+   },
+   "joint": {
+    "union": {
+     "attack_sessions": 126,
+     "benign_sessions": 144,
+     "detected": 105,
+     "false_alarm": 8,
+     "detect_rate": 0.8333333333333334,
+     "fp_rate": 0.05555555555555555
+    },
+    "differs_from_independent": 0,
+    "rules": {
+     "r401": {
+      "detected": 52,
+      "false_alarm": 0,
+      "unique_detected": 33
+     },
+     "web_scan": {
+      "detected": 58,
+      "false_alarm": 7,
+      "unique_detected": 39
+     },
+     "any": {
+      "detected": 14,
+      "false_alarm": 1,
+      "unique_detected": 14
+     }
+    }
+   }
+  },
+  "test": {
+   "rules": {
+    "r401": {
+     "attack_sessions": 70,
+     "benign_sessions": 80,
+     "detected": 30,
+     "false_alarm": 0,
+     "detect_rate": 0.42857142857142855,
+     "fp_rate": 0.0,
+     "ttd_median_s": 20.07126498222351,
+     "alerts_to_first_median": 14.0,
+     "fires_per_detected_session_median": 9.0,
+     "unique_detected": 20
+    },
+    "web_scan": {
+     "attack_sessions": 70,
+     "benign_sessions": 80,
+     "detected": 34,
+     "false_alarm": 4,
+     "detect_rate": 0.4857142857142857,
+     "fp_rate": 0.05,
+     "ttd_median_s": 1.5768336057662964,
+     "alerts_to_first_median": 16.0,
+     "fires_per_detected_session_median": 16.0,
+     "unique_detected": 24
+    },
+    "any": {
+     "attack_sessions": 70,
+     "benign_sessions": 80,
+     "detected": 9,
+     "false_alarm": 1,
+     "detect_rate": 0.12857142857142856,
+     "fp_rate": 0.0125,
+     "ttd_median_s": 8.680404901504517,
+     "alerts_to_first_median": 500.0,
+     "fires_per_detected_session_median": 1.0,
+     "unique_detected": 9
+    }
+   },
+   "union": {
+    "attack_sessions": 70,
+    "benign_sessions": 80,
+    "detected": 63,
+    "false_alarm": 5,
+    "detect_rate": 0.9,
+    "fp_rate": 0.0625
+   },
+   "by_scenario": {
+    "r401": [
+     {
+      "scenario": "api_client",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "broken_links",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "browse_human",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "crawler",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "forgot_pw",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "heavy_burst",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "monitor",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "typo_login",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_fast",
+      "label": 1,
+      "sessions": 10,
+      "fired": 10
+     },
+     {
+      "scenario": "auth_slow",
+      "label": 1,
+      "sessions": 10,
+      "fired": 10
+     },
+     {
+      "scenario": "flood",
+      "label": 1,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "sessions": 10,
+      "fired": 10
+     },
+     {
+      "scenario": "scan_fast",
+      "label": 1,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "scan_pulsed",
+      "label": 1,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "scan_stealth",
+      "label": 1,
+      "sessions": 10,
+      "fired": 0
+     }
+    ],
+    "web_scan": [
+     {
+      "scenario": "api_client",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "broken_links",
+      "label": 0,
+      "sessions": 10,
+      "fired": 4
+     },
+     {
+      "scenario": "browse_human",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "crawler",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "forgot_pw",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "heavy_burst",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "monitor",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "typo_login",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_fast",
+      "label": 1,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_slow",
+      "label": 1,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "flood",
+      "label": 1,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "sessions": 10,
+      "fired": 10
+     },
+     {
+      "scenario": "scan_fast",
+      "label": 1,
+      "sessions": 10,
+      "fired": 10
+     },
+     {
+      "scenario": "scan_pulsed",
+      "label": 1,
+      "sessions": 10,
+      "fired": 9
+     },
+     {
+      "scenario": "scan_stealth",
+      "label": 1,
+      "sessions": 10,
+      "fired": 5
+     }
+    ],
+    "any": [
+     {
+      "scenario": "api_client",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "broken_links",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "browse_human",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "crawler",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "forgot_pw",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "heavy_burst",
+      "label": 0,
+      "sessions": 10,
+      "fired": 1
+     },
+     {
+      "scenario": "monitor",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "typo_login",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_fast",
+      "label": 1,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_slow",
+      "label": 1,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "flood",
+      "label": 1,
+      "sessions": 10,
+      "fired": 9
+     },
+     {
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "scan_fast",
+      "label": 1,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "scan_pulsed",
+      "label": 1,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "scan_stealth",
+      "label": 1,
+      "sessions": 10,
+      "fired": 0
+     }
+    ],
+    "union": [
+     {
+      "scenario": "api_client",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "broken_links",
+      "label": 0,
+      "sessions": 10,
+      "fired": 4
+     },
+     {
+      "scenario": "browse_human",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "crawler",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "forgot_pw",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "heavy_burst",
+      "label": 0,
+      "sessions": 10,
+      "fired": 1
+     },
+     {
+      "scenario": "monitor",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "typo_login",
+      "label": 0,
+      "sessions": 10,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_fast",
+      "label": 1,
+      "sessions": 10,
+      "fired": 10
+     },
+     {
+      "scenario": "auth_slow",
+      "label": 1,
+      "sessions": 10,
+      "fired": 10
+     },
+     {
+      "scenario": "flood",
+      "label": 1,
+      "sessions": 10,
+      "fired": 9
+     },
+     {
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "sessions": 10,
+      "fired": 10
+     },
+     {
+      "scenario": "scan_fast",
+      "label": 1,
+      "sessions": 10,
+      "fired": 10
+     },
+     {
+      "scenario": "scan_pulsed",
+      "label": 1,
+      "sessions": 10,
+      "fired": 9
+     },
+     {
+      "scenario": "scan_stealth",
+      "label": 1,
+      "sessions": 10,
+      "fired": 5
+     }
+    ]
+   },
+   "joint": {
+    "union": {
+     "attack_sessions": 70,
+     "benign_sessions": 80,
+     "detected": 63,
+     "false_alarm": 5,
+     "detect_rate": 0.9,
+     "fp_rate": 0.0625
+    },
+    "differs_from_independent": 0,
+    "rules": {
+     "r401": {
+      "detected": 30,
+      "false_alarm": 0,
+      "unique_detected": 20
+     },
+     "web_scan": {
+      "detected": 34,
+      "false_alarm": 4,
+      "unique_detected": 24
+     },
+     "any": {
+      "detected": 9,
+      "false_alarm": 1,
+      "unique_detected": 9
+     }
+    }
+   }
+  },
+  "stress": {
+   "rules": {
+    "r401": {
+     "attack_sessions": 0,
+     "benign_sessions": 12,
+     "detected": 0,
+     "false_alarm": 9,
+     "detect_rate": null,
+     "fp_rate": 0.75,
+     "ttd_median_s": null,
+     "alerts_to_first_median": null,
+     "fires_per_detected_session_median": null,
+     "unique_detected": 0
+    },
+    "web_scan": {
+     "attack_sessions": 0,
+     "benign_sessions": 12,
+     "detected": 0,
+     "false_alarm": 0,
+     "detect_rate": null,
+     "fp_rate": 0.0,
+     "ttd_median_s": null,
+     "alerts_to_first_median": null,
+     "fires_per_detected_session_median": null,
+     "unique_detected": 0
+    },
+    "any": {
+     "attack_sessions": 0,
+     "benign_sessions": 12,
+     "detected": 0,
+     "false_alarm": 0,
+     "detect_rate": null,
+     "fp_rate": 0.0,
+     "ttd_median_s": null,
+     "alerts_to_first_median": null,
+     "fires_per_detected_session_median": null,
+     "unique_detected": 0
+    }
+   },
+   "union": {
+    "attack_sessions": 0,
+    "benign_sessions": 12,
+    "detected": 0,
+    "false_alarm": 9,
+    "detect_rate": null,
+    "fp_rate": 0.75
+   },
+   "by_scenario": {
+    "r401": [
+     {
+      "scenario": "misconfig_monitor",
+      "label": 0,
+      "sessions": 6,
+      "fired": 3
+     },
+     {
+      "scenario": "sso_retry_storm",
+      "label": 0,
+      "sessions": 6,
+      "fired": 6
+     }
+    ],
+    "web_scan": [
+     {
+      "scenario": "misconfig_monitor",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "sso_retry_storm",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     }
+    ],
+    "any": [
+     {
+      "scenario": "misconfig_monitor",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     },
+     {
+      "scenario": "sso_retry_storm",
+      "label": 0,
+      "sessions": 6,
+      "fired": 0
+     }
+    ],
+    "union": [
+     {
+      "scenario": "misconfig_monitor",
+      "label": 0,
+      "sessions": 6,
+      "fired": 3
+     },
+     {
+      "scenario": "sso_retry_storm",
+      "label": 0,
+      "sessions": 6,
+      "fired": 6
+     }
+    ]
+   },
+   "joint": {
+    "union": {
+     "attack_sessions": 0,
+     "benign_sessions": 12,
+     "detected": 0,
+     "false_alarm": 9,
+     "detect_rate": null,
+     "fp_rate": 0.75
+    },
+    "differs_from_independent": 0,
+    "rules": {
+     "r401": {
+      "detected": 0,
+      "false_alarm": 9,
+      "unique_detected": 0
+     },
+     "web_scan": {
+      "detected": 0,
+      "false_alarm": 0,
+      "unique_detected": 0
+     },
+     "any": {
+      "detected": 0,
+      "false_alarm": 0,
+      "unique_detected": 0
+     }
+    }
+   }
+  },
+  "shift1:shift": {
+   "rules": {
+    "r401": {
+     "attack_sessions": 56,
+     "benign_sessions": 64,
+     "detected": 23,
+     "false_alarm": 0,
+     "detect_rate": 0.4107142857142857,
+     "fp_rate": 0.0,
+     "ttd_median_s": 21.205518007278442,
+     "alerts_to_first_median": 14.0,
+     "fires_per_detected_session_median": 20.0,
+     "unique_detected": 14
+    },
+    "web_scan": {
+     "attack_sessions": 56,
+     "benign_sessions": 64,
+     "detected": 23,
+     "false_alarm": 3,
+     "detect_rate": 0.4107142857142857,
+     "fp_rate": 0.046875,
+     "ttd_median_s": 3.0394420623779297,
+     "alerts_to_first_median": 16.0,
+     "fires_per_detected_session_median": 15.0,
+     "unique_detected": 15
+    },
+    "any": {
+     "attack_sessions": 56,
+     "benign_sessions": 64,
+     "detected": 6,
+     "false_alarm": 2,
+     "detect_rate": 0.10714285714285714,
+     "fp_rate": 0.03125,
+     "ttd_median_s": 5.320038557052612,
+     "alerts_to_first_median": 500.0,
+     "fires_per_detected_session_median": 3.0,
+     "unique_detected": 4
+    }
+   },
+   "union": {
+    "attack_sessions": 56,
+    "benign_sessions": 64,
+    "detected": 42,
+    "false_alarm": 5,
+    "detect_rate": 0.75,
+    "fp_rate": 0.078125
+   },
+   "by_scenario": {
+    "r401": [
+     {
+      "scenario": "api_client",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "broken_links",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "browse_human",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "crawler",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "forgot_pw",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "heavy_burst",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "monitor",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "typo_login",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_fast",
+      "label": 1,
+      "sessions": 8,
+      "fired": 8
+     },
+     {
+      "scenario": "auth_slow",
+      "label": 1,
+      "sessions": 8,
+      "fired": 7
+     },
+     {
+      "scenario": "flood",
+      "label": 1,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "sessions": 8,
+      "fired": 8
+     },
+     {
+      "scenario": "scan_fast",
+      "label": 1,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "scan_pulsed",
+      "label": 1,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "scan_stealth",
+      "label": 1,
+      "sessions": 8,
+      "fired": 0
+     }
+    ],
+    "web_scan": [
+     {
+      "scenario": "api_client",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "broken_links",
+      "label": 0,
+      "sessions": 8,
+      "fired": 3
+     },
+     {
+      "scenario": "browse_human",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "crawler",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "forgot_pw",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "heavy_burst",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "monitor",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "typo_login",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_fast",
+      "label": 1,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_slow",
+      "label": 1,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "flood",
+      "label": 1,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "sessions": 8,
+      "fired": 8
+     },
+     {
+      "scenario": "scan_fast",
+      "label": 1,
+      "sessions": 8,
+      "fired": 8
+     },
+     {
+      "scenario": "scan_pulsed",
+      "label": 1,
+      "sessions": 8,
+      "fired": 6
+     },
+     {
+      "scenario": "scan_stealth",
+      "label": 1,
+      "sessions": 8,
+      "fired": 1
+     }
+    ],
+    "any": [
+     {
+      "scenario": "api_client",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "broken_links",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "browse_human",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "crawler",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "forgot_pw",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "heavy_burst",
+      "label": 0,
+      "sessions": 8,
+      "fired": 2
+     },
+     {
+      "scenario": "monitor",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "typo_login",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_fast",
+      "label": 1,
+      "sessions": 8,
+      "fired": 1
+     },
+     {
+      "scenario": "auth_slow",
+      "label": 1,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "flood",
+      "label": 1,
+      "sessions": 8,
+      "fired": 4
+     },
+     {
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "sessions": 8,
+      "fired": 1
+     },
+     {
+      "scenario": "scan_fast",
+      "label": 1,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "scan_pulsed",
+      "label": 1,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "scan_stealth",
+      "label": 1,
+      "sessions": 8,
+      "fired": 0
+     }
+    ],
+    "union": [
+     {
+      "scenario": "api_client",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "broken_links",
+      "label": 0,
+      "sessions": 8,
+      "fired": 3
+     },
+     {
+      "scenario": "browse_human",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "crawler",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "forgot_pw",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "heavy_burst",
+      "label": 0,
+      "sessions": 8,
+      "fired": 2
+     },
+     {
+      "scenario": "monitor",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "typo_login",
+      "label": 0,
+      "sessions": 8,
+      "fired": 0
+     },
+     {
+      "scenario": "auth_fast",
+      "label": 1,
+      "sessions": 8,
+      "fired": 8
+     },
+     {
+      "scenario": "auth_slow",
+      "label": 1,
+      "sessions": 8,
+      "fired": 7
+     },
+     {
+      "scenario": "flood",
+      "label": 1,
+      "sessions": 8,
+      "fired": 4
+     },
+     {
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "sessions": 8,
+      "fired": 8
+     },
+     {
+      "scenario": "scan_fast",
+      "label": 1,
+      "sessions": 8,
+      "fired": 8
+     },
+     {
+      "scenario": "scan_pulsed",
+      "label": 1,
+      "sessions": 8,
+      "fired": 6
+     },
+     {
+      "scenario": "scan_stealth",
+      "label": 1,
+      "sessions": 8,
+      "fired": 1
+     }
+    ]
+   },
+   "joint": {
+    "union": {
+     "attack_sessions": 56,
+     "benign_sessions": 64,
+     "detected": 42,
+     "false_alarm": 5,
+     "detect_rate": 0.75,
+     "fp_rate": 0.078125
+    },
+    "differs_from_independent": 0,
+    "rules": {
+     "r401": {
+      "detected": 23,
+      "false_alarm": 0,
+      "unique_detected": 15
+     },
+     "web_scan": {
+      "detected": 23,
+      "false_alarm": 3,
+      "unique_detected": 15
+     },
+     "any": {
+      "detected": 4,
+      "false_alarm": 2,
+      "unique_detected": 4
+     }
+    }
+   }
+  },
+  "shift1:stress": {
+   "rules": {
+    "r401": {
+     "attack_sessions": 0,
+     "benign_sessions": 6,
+     "detected": 0,
+     "false_alarm": 5,
+     "detect_rate": null,
+     "fp_rate": 0.8333333333333334,
+     "ttd_median_s": null,
+     "alerts_to_first_median": null,
+     "fires_per_detected_session_median": null,
+     "unique_detected": 0
+    },
+    "web_scan": {
+     "attack_sessions": 0,
+     "benign_sessions": 6,
+     "detected": 0,
+     "false_alarm": 0,
+     "detect_rate": null,
+     "fp_rate": 0.0,
+     "ttd_median_s": null,
+     "alerts_to_first_median": null,
+     "fires_per_detected_session_median": null,
+     "unique_detected": 0
+    },
+    "any": {
+     "attack_sessions": 0,
+     "benign_sessions": 6,
+     "detected": 0,
+     "false_alarm": 0,
+     "detect_rate": null,
+     "fp_rate": 0.0,
+     "ttd_median_s": null,
+     "alerts_to_first_median": null,
+     "fires_per_detected_session_median": null,
+     "unique_detected": 0
+    }
+   },
+   "union": {
+    "attack_sessions": 0,
+    "benign_sessions": 6,
+    "detected": 0,
+    "false_alarm": 5,
+    "detect_rate": null,
+    "fp_rate": 0.8333333333333334
+   },
+   "by_scenario": {
+    "r401": [
+     {
+      "scenario": "misconfig_monitor",
+      "label": 0,
+      "sessions": 3,
+      "fired": 2
+     },
+     {
+      "scenario": "sso_retry_storm",
+      "label": 0,
+      "sessions": 3,
+      "fired": 3
+     }
+    ],
+    "web_scan": [
+     {
+      "scenario": "misconfig_monitor",
+      "label": 0,
+      "sessions": 3,
+      "fired": 0
+     },
+     {
+      "scenario": "sso_retry_storm",
+      "label": 0,
+      "sessions": 3,
+      "fired": 0
+     }
+    ],
+    "any": [
+     {
+      "scenario": "misconfig_monitor",
+      "label": 0,
+      "sessions": 3,
+      "fired": 0
+     },
+     {
+      "scenario": "sso_retry_storm",
+      "label": 0,
+      "sessions": 3,
+      "fired": 0
+     }
+    ],
+    "union": [
+     {
+      "scenario": "misconfig_monitor",
+      "label": 0,
+      "sessions": 3,
+      "fired": 2
+     },
+     {
+      "scenario": "sso_retry_storm",
+      "label": 0,
+      "sessions": 3,
+      "fired": 3
+     }
+    ]
+   },
+   "joint": {
+    "union": {
+     "attack_sessions": 0,
+     "benign_sessions": 6,
+     "detected": 0,
+     "false_alarm": 5,
+     "detect_rate": null,
+     "fp_rate": 0.8333333333333334
+    },
+    "differs_from_independent": 0,
+    "rules": {
+     "r401": {
+      "detected": 0,
+      "false_alarm": 5,
+      "unique_detected": 0
+     },
+     "web_scan": {
+      "detected": 0,
+      "false_alarm": 0,
+      "unique_detected": 0
+     },
+     "any": {
+      "detected": 0,
+      "false_alarm": 0,
+      "unique_detected": 0
+     }
+    }
+   }
+  },
+  "tools2:tools": {
+   "rules": {
+    "r401": {
+     "attack_sessions": 22,
+     "benign_sessions": 8,
+     "detected": 6,
+     "false_alarm": 0,
+     "detect_rate": 0.2727272727272727,
+     "fp_rate": 0.0,
+     "ttd_median_s": 0.29096341133117676,
+     "alerts_to_first_median": 12.0,
+     "fires_per_detected_session_median": 24.0,
+     "unique_detected": 4
+    },
+    "web_scan": {
+     "attack_sessions": 22,
+     "benign_sessions": 8,
+     "detected": 14,
+     "false_alarm": 0,
+     "detect_rate": 0.6363636363636364,
+     "fp_rate": 0.0,
+     "ttd_median_s": 0.015334486961364746,
+     "alerts_to_first_median": 16.0,
+     "fires_per_detected_session_median": 306.0,
+     "unique_detected": 2
+    },
+    "any": {
+     "attack_sessions": 22,
+     "benign_sessions": 8,
+     "detected": 16,
+     "false_alarm": 0,
+     "detect_rate": 0.7272727272727273,
+     "fp_rate": 0.0,
+     "ttd_median_s": 0.09060895442962646,
+     "alerts_to_first_median": 500.0,
+     "fires_per_detected_session_median": 10.0,
+     "unique_detected": 4
+    }
+   },
+   "union": {
+    "attack_sessions": 22,
+    "benign_sessions": 8,
+    "detected": 22,
+    "false_alarm": 0,
+    "detect_rate": 1.0,
+    "fp_rate": 0.0
+   },
+   "by_scenario": {
+    "r401": [
+     {
+      "scenario": "ab_light",
+      "label": 0,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "curl_login_typos",
+      "label": 0,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "curl_loop_1s",
+      "label": 0,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "wget_mirror",
+      "label": 0,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "ab_flood",
+      "label": 1,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "ab_flood_keepalive",
+      "label": 1,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "dirb_default",
+      "label": 1,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "dirb_slow",
+      "label": 1,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "ffuf",
+      "label": 1,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "gobuster",
+      "label": 1,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "hydra_t1_slow",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "hydra_t4",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "nikto",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "nmap_httpenum_T2",
+      "label": 1,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "nmap_httpenum_T4",
+      "label": 1,
+      "sessions": 2,
+      "fired": 0
+     }
+    ],
+    "web_scan": [
+     {
+      "scenario": "ab_light",
+      "label": 0,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "curl_login_typos",
+      "label": 0,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "curl_loop_1s",
+      "label": 0,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "wget_mirror",
+      "label": 0,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "ab_flood",
+      "label": 1,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "ab_flood_keepalive",
+      "label": 1,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "dirb_default",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "dirb_slow",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "ffuf",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "gobuster",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "hydra_t1_slow",
+      "label": 1,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "hydra_t4",
+      "label": 1,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "nikto",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "nmap_httpenum_T2",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "nmap_httpenum_T4",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     }
+    ],
+    "any": [
+     {
+      "scenario": "ab_light",
+      "label": 0,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "curl_login_typos",
+      "label": 0,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "curl_loop_1s",
+      "label": 0,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "wget_mirror",
+      "label": 0,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "ab_flood",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "ab_flood_keepalive",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "dirb_default",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "dirb_slow",
+      "label": 1,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "ffuf",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "gobuster",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "hydra_t1_slow",
+      "label": 1,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "hydra_t4",
+      "label": 1,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "nikto",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "nmap_httpenum_T2",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "nmap_httpenum_T4",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     }
+    ],
+    "union": [
+     {
+      "scenario": "ab_light",
+      "label": 0,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "curl_login_typos",
+      "label": 0,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "curl_loop_1s",
+      "label": 0,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "wget_mirror",
+      "label": 0,
+      "sessions": 2,
+      "fired": 0
+     },
+     {
+      "scenario": "ab_flood",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "ab_flood_keepalive",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "dirb_default",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "dirb_slow",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "ffuf",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "gobuster",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "hydra_t1_slow",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "hydra_t4",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "nikto",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "nmap_httpenum_T2",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     },
+     {
+      "scenario": "nmap_httpenum_T4",
+      "label": 1,
+      "sessions": 2,
+      "fired": 2
+     }
+    ]
+   },
+   "joint": {
+    "union": {
+     "attack_sessions": 22,
+     "benign_sessions": 8,
+     "detected": 22,
+     "false_alarm": 0,
+     "detect_rate": 1.0,
+     "fp_rate": 0.0
+    },
+    "differs_from_independent": 0,
+    "rules": {
+     "r401": {
+      "detected": 6,
+      "false_alarm": 0,
+      "unique_detected": 4
+     },
+     "web_scan": {
+      "detected": 14,
+      "false_alarm": 0,
+      "unique_detected": 12
+     },
+     "any": {
+      "detected": 4,
+      "false_alarm": 0,
+      "unique_detected": 4
+     }
+    }
+   }
+  }
+ },
+ "rf_fp5": {
+  "test": {
+   "n_alerts": 48004,
+   "n_sessions": 150,
+   "n_attack_sessions": 70,
+   "n_benign_sessions": 80,
+   "w_precision": 0.9988568773803906,
+   "w_recall": 0.9585183717267184,
+   "w_f1": 0.9782719671472615,
+   "precision": 0.999797652772157,
+   "recall": 0.9926242681666858,
+   "f1": 0.9961980471787782,
+   "det_k1": 1.0,
+   "fp_k1": 0.0375,
+   "ttd_k1_s_median": 0.09866499900817866,
+   "ttd_k1_s_p90": 12.235437083244324,
+   "atd_k1_median": 2.0,
+   "atd_k1_p90": 11.0,
+   "det_k3": 1.0,
+   "fp_k3": 0.0125,
+   "ttd_k3_s_median": 0.2735046148300171,
+   "ttd_k3_s_p90": 15.506613874435425,
+   "atd_k3_median": 4.0,
+   "atd_k3_p90": 13.100000000000001,
+   "benign_alert_flag_rate": 0.0009598382408322741,
+   "attack_alert_flag_rate": 0.9585183717267185,
+   "w_ap": 0.9982071682546828,
+   "w_roc_auc": 0.998242234732981,
+   "by_scenario": [
+    {
+     "scenario": "api_client",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 10,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    },
+    {
+     "scenario": "auth_fast",
+     "family": "cred",
+     "label": 1,
+     "n_sessions": 10,
+     "alert_flag_rate": 0.9911473056064279,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 10,
+     "ttd_k1_s_median": 0.1285600662231445,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.29892091751098604,
+     "atd_k1_p90": 2.299999999999999,
+     "ttd_k1_s_max": 1.0327801704406738,
+     "n_detected_k3": 10,
+     "ttd_k3_s_median": 0.18785703182220453,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 0.7851438045501706,
+     "atd_k3_p90": 4.299999999999999,
+     "ttd_k3_s_max": 1.3345820903778076
+    },
+    {
+     "scenario": "auth_slow",
+     "family": "cred",
+     "label": 1,
+     "n_sessions": 10,
+     "alert_flag_rate": 0.86031253139731,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 10,
+     "ttd_k1_s_median": 10.880753636360168,
+     "atd_k1_median": 5.5,
+     "ttd_k1_s_p90": 35.69705140590667,
+     "atd_k1_p90": 12.0,
+     "ttd_k1_s_max": 52.17198705673218,
+     "n_detected_k3": 10,
+     "ttd_k3_s_median": 13.846469044685364,
+     "atd_k3_median": 7.5,
+     "ttd_k3_s_p90": 44.02649769783019,
+     "atd_k3_p90": 15.0,
+     "ttd_k3_s_max": 71.68201112747192
+    },
+    {
+     "scenario": "broken_links",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 10,
+     "alert_flag_rate": 0.001428705926658193,
+     "rate_k1": 0.2,
+     "rate_k3": 0.0
+    },
+    {
+     "scenario": "browse_human",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 10,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    },
+    {
+     "scenario": "crawler",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 10,
+     "alert_flag_rate": 0.00625,
+     "rate_k1": 0.1,
+     "rate_k3": 0.1
+    },
+    {
+     "scenario": "flood",
+     "family": "flood",
+     "label": 1,
+     "n_sessions": 10,
+     "alert_flag_rate": 0.9968633329707931,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 10,
+     "ttd_k1_s_median": 0.01951003074645995,
+     "atd_k1_median": 2.5,
+     "ttd_k1_s_p90": 0.049429416656494064,
+     "atd_k1_p90": 3.1999999999999993,
+     "ttd_k1_s_max": 0.0878450870513916,
+     "n_detected_k3": 10,
+     "ttd_k3_s_median": 0.05123913288116455,
+     "atd_k3_median": 4.5,
+     "ttd_k3_s_p90": 0.09139275550842282,
+     "atd_k3_p90": 5.199999999999999,
+     "ttd_k3_s_max": 0.1083099842071533
+    },
+    {
+     "scenario": "forgot_pw",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 10,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    },
+    {
+     "scenario": "heavy_burst",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 10,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    },
+    {
+     "scenario": "monitor",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 10,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    },
+    {
+     "scenario": "recon_then_brute",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 10,
+     "alert_flag_rate": 0.998624794186194,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 10,
+     "ttd_k1_s_median": 0.0351420640945434,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.15221099853515616,
+     "atd_k1_p90": 2.0,
+     "ttd_k1_s_max": 0.2447218894958496,
+     "n_detected_k3": 10,
+     "ttd_k3_s_median": 0.09980750083923334,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 0.5581926345825194,
+     "atd_k3_p90": 4.0,
+     "ttd_k3_s_max": 0.7466030120849609
+    },
+    {
+     "scenario": "scan_fast",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 10,
+     "alert_flag_rate": 0.9982951770995914,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 10,
+     "ttd_k1_s_median": 0.0445250272750854,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.11540381908416743,
+     "atd_k1_p90": 2.0,
+     "ttd_k1_s_max": 0.1175339221954345,
+     "n_detected_k3": 10,
+     "ttd_k3_s_median": 0.13818752765655515,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 0.22345972061157215,
+     "atd_k3_p90": 4.0,
+     "ttd_k3_s_max": 0.3730261325836181
+    },
+    {
+     "scenario": "scan_pulsed",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 10,
+     "alert_flag_rate": 0.9553877408910744,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 10,
+     "ttd_k1_s_median": 0.09866499900817866,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.16791141033172605,
+     "atd_k1_p90": 2.0,
+     "ttd_k1_s_max": 0.1750600337982177,
+     "n_detected_k3": 10,
+     "ttd_k3_s_median": 0.34559202194213867,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 0.5094814300537109,
+     "atd_k3_p90": 4.0,
+     "ttd_k3_s_max": 0.5191609859466553
+    },
+    {
+     "scenario": "scan_stealth",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 10,
+     "alert_flag_rate": 0.9089977199356383,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 10,
+     "ttd_k1_s_median": 4.901822447776794,
+     "atd_k1_median": 10.5,
+     "ttd_k1_s_p90": 15.033111906051634,
+     "atd_k1_p90": 13.2,
+     "ttd_k1_s_max": 16.635236978530884,
+     "n_detected_k3": 10,
+     "ttd_k3_s_median": 5.70025098323822,
+     "atd_k3_median": 13.0,
+     "ttd_k3_s_p90": 24.0754831790924,
+     "atd_k3_p90": 18.9,
+     "ttd_k3_s_max": 39.68808197975159
+    },
+    {
+     "scenario": "typo_login",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 10,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    }
+   ],
+   "tie_included": {
+    "det_k1": 1.0,
+    "fp_k1": 0.1875
+   },
+   "ci95": {
+    "w_f1": [
+     0.9709081823587767,
+     0.9856690819629146
+    ],
+    "det_k1": [
+     1.0,
+     1.0
+    ],
+    "det_k3": [
+     1.0,
+     1.0
+    ],
+    "fp_k1": [
+     0.0,
+     0.0875
+    ],
+    "fp_k3": [
+     0.0,
+     0.0375
+    ]
+   }
+  },
+  "val": {
+   "n_alerts": 31910,
+   "n_sessions": 90,
+   "n_attack_sessions": 42,
+   "n_benign_sessions": 48,
+   "w_precision": 0.9998860159312226,
+   "w_recall": 0.9548324164495794,
+   "w_f1": 0.9768400041154988,
+   "precision": 0.9998487140695915,
+   "recall": 0.9878923766816143,
+   "f1": 0.9938345864661654,
+   "det_k1": 1.0,
+   "fp_k1": 0.041666666666666664,
+   "ttd_k1_s_median": 0.08642303943634025,
+   "ttd_k1_s_p90": 10.309185075759887,
+   "atd_k1_median": 2.0,
+   "atd_k1_p90": 10.799999999999997,
+   "det_k3": 1.0,
+   "fp_k3": 0.0,
+   "ttd_k3_s_median": 0.2904200553894043,
+   "ttd_k3_s_p90": 14.33319637775421,
+   "atd_k3_median": 4.0,
+   "atd_k3_p90": 12.799999999999997,
+   "benign_alert_flag_rate": 9.524207942882641e-05,
+   "attack_alert_flag_rate": 0.9548324164495794,
+   "w_ap": 0.998405023862159,
+   "w_roc_auc": 0.9981594756051128,
+   "by_scenario": [
+    {
+     "scenario": "api_client",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 6,
+     "alert_flag_rate": 0.0006693440428380187,
+     "rate_k1": 0.16666666666666666,
+     "rate_k3": 0.0
+    },
+    {
+     "scenario": "auth_fast",
+     "family": "cred",
+     "label": 1,
+     "n_sessions": 6,
+     "alert_flag_rate": 0.9967483638994464,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 6,
+     "ttd_k1_s_median": 0.07699358463287345,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.30556452274322504,
+     "atd_k1_p90": 2.5,
+     "ttd_k1_s_max": 0.493265151977539,
+     "n_detected_k3": 6,
+     "ttd_k3_s_median": 0.2916954755783081,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 0.6929675340652466,
+     "atd_k3_p90": 4.5,
+     "ttd_k3_s_max": 0.7149391174316406
+    },
+    {
+     "scenario": "auth_slow",
+     "family": "cred",
+     "label": 1,
+     "n_sessions": 6,
+     "alert_flag_rate": 0.8985606404918637,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 6,
+     "ttd_k1_s_median": 8.806256413459778,
+     "atd_k1_median": 3.0,
+     "ttd_k1_s_p90": 27.385622024536133,
+     "atd_k1_p90": 12.0,
+     "ttd_k1_s_max": 37.89334201812744,
+     "n_detected_k3": 6,
+     "ttd_k3_s_median": 16.707497477531433,
+     "atd_k3_median": 5.0,
+     "ttd_k3_s_p90": 41.35158360004425,
+     "atd_k3_p90": 14.0,
+     "ttd_k3_s_max": 50.4803831577301
+    },
+    {
+     "scenario": "broken_links",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 6,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    },
+    {
+     "scenario": "browse_human",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 6,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    },
+    {
+     "scenario": "crawler",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 6,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    },
+    {
+     "scenario": "flood",
+     "family": "flood",
+     "label": 1,
+     "n_sessions": 6,
+     "alert_flag_rate": 0.9944552564007526,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 6,
+     "ttd_k1_s_median": 0.01961505413055415,
+     "atd_k1_median": 2.5,
+     "ttd_k1_s_p90": 0.04475045204162595,
+     "atd_k1_p90": 3.0,
+     "ttd_k1_s_max": 0.048508882522583,
+     "n_detected_k3": 6,
+     "ttd_k3_s_median": 0.05992293357849115,
+     "atd_k3_median": 5.0,
+     "ttd_k3_s_p90": 0.12380146980285639,
+     "atd_k3_p90": 6.0,
+     "ttd_k3_s_max": 0.1288070678710937
+    },
+    {
+     "scenario": "forgot_pw",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 6,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    },
+    {
+     "scenario": "heavy_burst",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 6,
+     "alert_flag_rate": 9.259259259259259e-05,
+     "rate_k1": 0.16666666666666666,
+     "rate_k3": 0.0
+    },
+    {
+     "scenario": "monitor",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 6,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    },
+    {
+     "scenario": "recon_then_brute",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 6,
+     "alert_flag_rate": 0.998128381271155,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 6,
+     "ttd_k1_s_median": 0.0470260381698608,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.10982656478881836,
+     "atd_k1_p90": 2.0,
+     "ttd_k1_s_max": 0.143449068069458,
+     "n_detected_k3": 6,
+     "ttd_k3_s_median": 0.1443879604339599,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 0.3670536279678345,
+     "atd_k3_p90": 4.0,
+     "ttd_k3_s_max": 0.4316461086273193
+    },
+    {
+     "scenario": "scan_fast",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 6,
+     "alert_flag_rate": 0.9977248388809651,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 6,
+     "ttd_k1_s_median": 0.08099305629730219,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.20208001136779785,
+     "atd_k1_p90": 2.0,
+     "ttd_k1_s_max": 0.2273259162902832,
+     "n_detected_k3": 6,
+     "ttd_k3_s_median": 0.2256810665130615,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 0.658611536026001,
+     "atd_k3_p90": 4.0,
+     "ttd_k3_s_max": 0.7928149700164795
+    },
+    {
+     "scenario": "scan_pulsed",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 6,
+     "alert_flag_rate": 0.9304412143886106,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 6,
+     "ttd_k1_s_median": 0.0827745199203491,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.1365745067596435,
+     "atd_k1_p90": 2.0,
+     "ttd_k1_s_max": 0.1607890129089355,
+     "n_detected_k3": 6,
+     "ttd_k3_s_median": 0.24984407424926755,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 0.44712352752685547,
+     "atd_k3_p90": 4.0,
+     "ttd_k3_s_max": 0.5770139694213867
+    },
+    {
+     "scenario": "scan_stealth",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 6,
+     "alert_flag_rate": 0.8677682198142626,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 6,
+     "ttd_k1_s_median": 9.478367447853088,
+     "atd_k1_median": 10.0,
+     "ttd_k1_s_p90": 16.788441061973572,
+     "atd_k1_p90": 26.5,
+     "ttd_k1_s_max": 23.19529414176941,
+     "n_detected_k3": 6,
+     "ttd_k3_s_median": 11.284266471862793,
+     "atd_k3_median": 12.0,
+     "ttd_k3_s_p90": 19.305747032165527,
+     "atd_k3_p90": 28.5,
+     "ttd_k3_s_max": 24.081165075302124
+    },
+    {
+     "scenario": "typo_login",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 6,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    }
+   ],
+   "tie_included": {
+    "det_k1": 1.0,
+    "fp_k1": 0.14583333333333334
+   }
+  },
+  "stress": {
+   "n_alerts": 317,
+   "n_sessions": 12,
+   "n_attack_sessions": 0,
+   "n_benign_sessions": 12,
+   "w_precision": null,
+   "w_recall": null,
+   "w_f1": null,
+   "precision": null,
+   "recall": null,
+   "f1": null,
+   "det_k1": null,
+   "fp_k1": 0.8333333333333334,
+   "ttd_k1_s_median": null,
+   "ttd_k1_s_p90": null,
+   "atd_k1_median": null,
+   "atd_k1_p90": null,
+   "det_k3": null,
+   "fp_k3": 0.75,
+   "ttd_k3_s_median": null,
+   "ttd_k3_s_p90": null,
+   "atd_k3_median": null,
+   "atd_k3_p90": null,
+   "benign_alert_flag_rate": 0.29288059176134024,
+   "attack_alert_flag_rate": null,
+   "by_scenario": [
+    {
+     "scenario": "misconfig_monitor",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 6,
+     "alert_flag_rate": 0.19975270301357254,
+     "rate_k1": 0.6666666666666666,
+     "rate_k3": 0.5
+    },
+    {
+     "scenario": "sso_retry_storm",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 6,
+     "alert_flag_rate": 0.38600848050910797,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0
+    }
+   ],
+   "tie_included": {
+    "det_k1": null,
+    "fp_k1": 0.8333333333333334
+   },
+   "ci95": {
+    "w_f1": null,
+    "det_k1": null,
+    "det_k3": null,
+    "fp_k1": [
+     0.6666666666666666,
+     1.0
+    ],
+    "fp_k3": [
+     0.5833333333333334,
+     0.9166666666666666
+    ]
+   }
+  },
+  "shift1:shift": {
+   "n_alerts": 44918,
+   "n_sessions": 120,
+   "n_attack_sessions": 56,
+   "n_benign_sessions": 64,
+   "w_precision": 0.9995422944002328,
+   "w_recall": 0.8560232793768161,
+   "w_f1": 0.9222325363437904,
+   "precision": 0.9996705348317897,
+   "recall": 0.9690216812746176,
+   "f1": 0.9841075354066813,
+   "det_k1": 0.9821428571428571,
+   "fp_k1": 0.015625,
+   "ttd_k1_s_median": 0.1237969398498535,
+   "ttd_k1_s_p90": 22.83940353393555,
+   "atd_k1_median": 2.0,
+   "atd_k1_p90": 11.0,
+   "det_k3": 0.9464285714285714,
+   "fp_k3": 0.015625,
+   "ttd_k3_s_median": 0.4970390796661377,
+   "ttd_k3_s_p90": 27.37475609779359,
+   "atd_k3_median": 4.0,
+   "atd_k3_p90": 13.800000000000004,
+   "benign_alert_flag_rate": 0.00034298780487804876,
+   "attack_alert_flag_rate": 0.8560232793768162,
+   "w_ap": 0.9841981650404014,
+   "w_roc_auc": 0.9827081839810161,
+   "by_scenario": [
+    {
+     "scenario": "api_client",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 8,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    },
+    {
+     "scenario": "auth_fast",
+     "family": "cred",
+     "label": 1,
+     "n_sessions": 8,
+     "alert_flag_rate": 0.9948546607890303,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 8,
+     "ttd_k1_s_median": 0.024569511413574198,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.22560875415801995,
+     "atd_k1_p90": 2.3,
+     "ttd_k1_s_max": 0.5139429569244385,
+     "n_detected_k3": 8,
+     "ttd_k3_s_median": 0.07248747348785395,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 0.8290415525436399,
+     "atd_k3_p90": 4.6,
+     "ttd_k3_s_max": 1.711400032043457
+    },
+    {
+     "scenario": "auth_slow",
+     "family": "cred",
+     "label": 1,
+     "n_sessions": 8,
+     "alert_flag_rate": 0.7438790104678343,
+     "rate_k1": 1.0,
+     "rate_k3": 0.875,
+     "n_detected_k1": 8,
+     "ttd_k1_s_median": 6.751851916313171,
+     "atd_k1_median": 5.5,
+     "ttd_k1_s_p90": 61.5892245531082,
+     "atd_k1_p90": 13.0,
+     "ttd_k1_s_max": 93.92193603515624,
+     "n_detected_k3": 7,
+     "ttd_k3_s_median": 9.570864915847778,
+     "atd_k3_median": 7.0,
+     "ttd_k3_s_p90": 59.13092803955078,
+     "atd_k3_p90": 13.8,
+     "ttd_k3_s_max": 62.69267201423645
+    },
+    {
+     "scenario": "broken_links",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 8,
+     "alert_flag_rate": 0.00274390243902439,
+     "rate_k1": 0.125,
+     "rate_k3": 0.125
+    },
+    {
+     "scenario": "browse_human",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 8,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    },
+    {
+     "scenario": "crawler",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 8,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    },
+    {
+     "scenario": "flood",
+     "family": "flood",
+     "label": 1,
+     "n_sessions": 8,
+     "alert_flag_rate": 0.8076444954054602,
+     "rate_k1": 0.875,
+     "rate_k3": 0.875,
+     "n_detected_k1": 7,
+     "ttd_k1_s_median": 0.023853063583374,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.07178897857666011,
+     "atd_k1_p90": 4.4,
+     "ttd_k1_s_max": 0.0955729484558105,
+     "n_detected_k3": 7,
+     "ttd_k3_s_median": 0.0756680965423584,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 3.5813193798065215,
+     "atd_k3_p90": 82.80000000000007,
+     "ttd_k3_s_max": 8.79040002822876
+    },
+    {
+     "scenario": "forgot_pw",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 8,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    },
+    {
+     "scenario": "heavy_burst",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 8,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    },
+    {
+     "scenario": "monitor",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 8,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    },
+    {
+     "scenario": "recon_then_brute",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 8,
+     "alert_flag_rate": 0.9968480235163208,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 8,
+     "ttd_k1_s_median": 0.07364106178283686,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.24395513534545893,
+     "atd_k1_p90": 2.3,
+     "ttd_k1_s_max": 0.4828908443450928,
+     "n_detected_k3": 8,
+     "ttd_k3_s_median": 0.35004448890686035,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 0.949362325668335,
+     "atd_k3_p90": 4.3,
+     "ttd_k3_s_max": 0.988163948059082
+    },
+    {
+     "scenario": "scan_fast",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 8,
+     "alert_flag_rate": 0.9935691000525362,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 8,
+     "ttd_k1_s_median": 0.0902473926544189,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.3365630865097045,
+     "atd_k1_p90": 2.0,
+     "ttd_k1_s_max": 0.5432939529418945,
+     "n_detected_k3": 8,
+     "ttd_k3_s_median": 0.29608452320098877,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 0.9405799865722655,
+     "atd_k3_p90": 4.0,
+     "ttd_k3_s_max": 1.390423059463501
+    },
+    {
+     "scenario": "scan_pulsed",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 8,
+     "alert_flag_rate": 0.8952899840475385,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 8,
+     "ttd_k1_s_median": 0.17002940177917475,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.5349427938461303,
+     "atd_k1_p90": 3.3,
+     "ttd_k1_s_max": 0.7285668849945068,
+     "n_detected_k3": 8,
+     "ttd_k3_s_median": 0.702193021774292,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 1.0427990198135375,
+     "atd_k3_p90": 5.3,
+     "ttd_k3_s_max": 1.109121799468994
+    },
+    {
+     "scenario": "scan_stealth",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 8,
+     "alert_flag_rate": 0.560077681358993,
+     "rate_k1": 1.0,
+     "rate_k3": 0.875,
+     "n_detected_k1": 8,
+     "ttd_k1_s_median": 22.787734627723694,
+     "atd_k1_median": 10.0,
+     "ttd_k1_s_p90": 48.9632749557495,
+     "atd_k1_p90": 17.9,
+     "ttd_k1_s_max": 106.02470111846924,
+     "n_detected_k3": 7,
+     "ttd_k3_s_median": 27.8971951007843,
+     "atd_k3_median": 14.0,
+     "ttd_k3_s_p90": 34.76457142829895,
+     "atd_k3_p90": 16.4,
+     "ttd_k3_s_max": 38.49791312217712
+    },
+    {
+     "scenario": "typo_login",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 8,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    }
+   ],
+   "tie_included": {
+    "det_k1": 0.9821428571428571,
+    "fp_k1": 0.1875
+   },
+   "ci95": {
+    "w_f1": [
+     0.8874397851064053,
+     0.9523511628765484
+    ],
+    "det_k1": [
+     0.9464285714285714,
+     1.0
+    ],
+    "det_k3": [
+     0.8928571428571429,
+     1.0
+    ],
+    "fp_k1": [
+     0.0,
+     0.046875
+    ],
+    "fp_k3": [
+     0.0,
+     0.046875
+    ]
+   }
+  },
+  "shift1:stress": {
+   "n_alerts": 261,
+   "n_sessions": 6,
+   "n_attack_sessions": 0,
+   "n_benign_sessions": 6,
+   "w_precision": null,
+   "w_recall": null,
+   "w_f1": null,
+   "precision": null,
+   "recall": null,
+   "f1": null,
+   "det_k1": null,
+   "fp_k1": 0.8333333333333334,
+   "ttd_k1_s_median": null,
+   "ttd_k1_s_p90": null,
+   "atd_k1_median": null,
+   "atd_k1_p90": null,
+   "det_k3": null,
+   "fp_k3": 0.6666666666666666,
+   "ttd_k3_s_median": null,
+   "ttd_k3_s_p90": null,
+   "atd_k3_median": null,
+   "atd_k3_p90": null,
+   "benign_alert_flag_rate": 0.3432969031284971,
+   "attack_alert_flag_rate": null,
+   "by_scenario": [
+    {
+     "scenario": "misconfig_monitor",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 3,
+     "alert_flag_rate": 0.35765460030165913,
+     "rate_k1": 0.6666666666666666,
+     "rate_k3": 0.3333333333333333
+    },
+    {
+     "scenario": "sso_retry_storm",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 3,
+     "alert_flag_rate": 0.328939205955335,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0
+    }
+   ],
+   "tie_included": {
+    "det_k1": null,
+    "fp_k1": 0.8333333333333334
+   },
+   "ci95": {
+    "w_f1": null,
+    "det_k1": null,
+    "det_k3": null,
+    "fp_k1": [
+     0.5,
+     1.0
+    ],
+    "fp_k3": [
+     0.5,
+     1.0
+    ]
+   }
+  },
+  "tools1:tools": {
+   "n_alerts": 63173,
+   "n_sessions": 30,
+   "n_attack_sessions": 22,
+   "n_benign_sessions": 8,
+   "w_precision": 0.916749699285057,
+   "w_recall": 0.9977510964005487,
+   "w_f1": 0.9555368372244297,
+   "precision": 0.9904801324503312,
+   "recall": 0.9985074866395981,
+   "f1": 0.9944776107474805,
+   "det_k1": 1.0,
+   "fp_k1": 0.25,
+   "ttd_k1_s_median": 0.1111074686050415,
+   "ttd_k1_s_p90": 1.6103695869445815,
+   "atd_k1_median": 2.0,
+   "atd_k1_p90": 8.0,
+   "det_k3": 1.0,
+   "fp_k3": 0.25,
+   "ttd_k3_s_median": 0.312827467918396,
+   "ttd_k3_s_p90": 1.6106201887130753,
+   "atd_k3_median": 4.0,
+   "atd_k3_p90": 10.0,
+   "benign_alert_flag_rate": 0.24916666666666668,
+   "attack_alert_flag_rate": 0.9977510964005489,
+   "w_ap": 0.9798224092010532,
+   "w_roc_auc": 0.9452921302173533,
+   "by_scenario": [
+    {
+     "scenario": "ab_flood",
+     "family": "flood",
+     "label": 1,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.9997131121263124,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 2,
+     "ttd_k1_s_median": 0.0144025087356567,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.01445333957672118,
+     "atd_k1_p90": 2.0,
+     "ttd_k1_s_max": 0.0144660472869873,
+     "n_detected_k3": 2,
+     "ttd_k3_s_median": 0.0148144960403442,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 0.01491014957427972,
+     "atd_k3_p90": 4.0,
+     "ttd_k3_s_max": 0.0149340629577636
+    },
+    {
+     "scenario": "ab_flood_keepalive",
+     "family": "flood",
+     "label": 1,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.9996086527776447,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 2,
+     "ttd_k1_s_median": 0.0087753534317016,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.008892560005187919,
+     "atd_k1_p90": 2.0,
+     "ttd_k1_s_max": 0.0089218616485595,
+     "n_detected_k3": 2,
+     "ttd_k3_s_median": 0.00901889801025385,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 0.009134864807128851,
+     "atd_k3_p90": 4.0,
+     "ttd_k3_s_max": 0.0091638565063476
+    },
+    {
+     "scenario": "ab_light",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.9966666666666667,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0
+    },
+    {
+     "scenario": "curl_login_typos",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    },
+    {
+     "scenario": "curl_loop_1s",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    },
+    {
+     "scenario": "dirb_default",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.999895010839221,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 2,
+     "ttd_k1_s_median": 0.11098253726959226,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.11550686359405517,
+     "atd_k1_p90": 2.0,
+     "ttd_k1_s_max": 0.1166379451751709,
+     "n_detected_k3": 2,
+     "ttd_k3_s_median": 0.11471450328826899,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 0.11924531459808348,
+     "atd_k3_p90": 4.0,
+     "ttd_k3_s_max": 0.1203780174255371
+    },
+    {
+     "scenario": "dirb_slow",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.9986702104144451,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 2,
+     "ttd_k1_s_median": 0.10446751117706295,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.10535509586334227,
+     "atd_k1_p90": 2.0,
+     "ttd_k1_s_max": 0.1055769920349121,
+     "n_detected_k3": 2,
+     "ttd_k3_s_median": 0.9094613790512085,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 0.9105473279953002,
+     "atd_k3_p90": 4.0,
+     "ttd_k3_s_max": 0.9108188152313232
+    },
+    {
+     "scenario": "ffuf",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.9994910390383887,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 2,
+     "ttd_k1_s_median": 0.011889934539794849,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.01192350387573233,
+     "atd_k1_p90": 2.0,
+     "ttd_k1_s_max": 0.0119318962097167,
+     "n_detected_k3": 2,
+     "ttd_k3_s_median": 0.0120019912719726,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 0.01212520599365228,
+     "atd_k3_p90": 4.0,
+     "ttd_k3_s_max": 0.0121560096740722
+    },
+    {
+     "scenario": "gobuster",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.9971390702130424,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 2,
+     "ttd_k1_s_median": 0.0101809501647949,
+     "atd_k1_median": 5.0,
+     "ttd_k1_s_p90": 0.0106570243835449,
+     "atd_k1_p90": 5.0,
+     "ttd_k1_s_max": 0.0107760429382324,
+     "n_detected_k3": 2,
+     "ttd_k3_s_median": 0.010307908058166448,
+     "atd_k3_median": 7.0,
+     "ttd_k3_s_p90": 0.010771870613098089,
+     "atd_k3_p90": 7.0,
+     "ttd_k3_s_max": 0.010887861251831
+    },
+    {
+     "scenario": "hydra_t1_slow",
+     "family": "cred",
+     "label": 1,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.9966666666666667,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 2,
+     "ttd_k1_s_median": 0.3628484010696411,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.36311361789703367,
+     "atd_k1_p90": 2.0,
+     "ttd_k1_s_max": 0.3631799221038818,
+     "n_detected_k3": 2,
+     "ttd_k3_s_median": 0.5691820383071899,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 0.5695515871047974,
+     "atd_k3_p90": 4.0,
+     "ttd_k3_s_max": 0.5696439743041992
+    },
+    {
+     "scenario": "hydra_t4",
+     "family": "cred",
+     "label": 1,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.9966555183946488,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 2,
+     "ttd_k1_s_median": 0.27515602111816406,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.27914085388183596,
+     "atd_k1_p90": 2.0,
+     "ttd_k1_s_max": 0.2801370620727539,
+     "n_detected_k3": 2,
+     "ttd_k3_s_median": 0.3787764310836792,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 0.38231923580169674,
+     "atd_k3_p90": 4.0,
+     "ttd_k3_s_max": 0.3832049369812011
+    },
+    {
+     "scenario": "nikto",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.9969331059010487,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 2,
+     "ttd_k1_s_median": 1.225056529045105,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 1.8789376974105836,
+     "atd_k1_p90": 2.0,
+     "ttd_k1_s_max": 2.042407989501953,
+     "n_detected_k3": 2,
+     "ttd_k3_s_median": 1.2494070529937744,
+     "atd_k3_median": 24.5,
+     "ttd_k3_s_p90": 1.9017422199249268,
+     "atd_k3_p90": 24.9,
+     "ttd_k3_s_max": 2.064826011657715
+    },
+    {
+     "scenario": "nmap_httpenum_T2",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.9947670319953047,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 2,
+     "ttd_k1_s_median": 1.4095524549484255,
+     "atd_k1_median": 8.0,
+     "ttd_k1_s_p90": 1.7251807928085332,
+     "atd_k1_p90": 8.0,
+     "ttd_k1_s_max": 1.80408787727356,
+     "n_detected_k3": 2,
+     "ttd_k3_s_median": 1.4098185300827026,
+     "atd_k3_median": 10.0,
+     "ttd_k3_s_p90": 1.7254333257675172,
+     "atd_k3_p90": 10.0,
+     "ttd_k3_s_max": 1.8043370246887207
+    },
+    {
+     "scenario": "nmap_httpenum_T4",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.9957226420393126,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 2,
+     "ttd_k1_s_median": 0.963768482208252,
+     "atd_k1_median": 8.0,
+     "ttd_k1_s_p90": 1.5339695930480957,
+     "atd_k1_p90": 8.0,
+     "ttd_k1_s_max": 1.6765198707580566,
+     "n_detected_k3": 2,
+     "ttd_k3_s_median": 0.9640369415283204,
+     "atd_k3_median": 10.0,
+     "ttd_k3_s_p90": 1.534220886230469,
+     "atd_k3_p90": 10.0,
+     "ttd_k3_s_max": 1.676766872406006
+    },
+    {
+     "scenario": "wget_mirror",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    }
+   ],
+   "tie_included": {
+    "det_k1": 1.0,
+    "fp_k1": 0.25
+   },
+   "ci95": {
+    "w_f1": [
+     0.95547320180015,
+     0.9556030619441098
+    ],
+    "det_k1": [
+     1.0,
+     1.0
+    ],
+    "det_k3": [
+     1.0,
+     1.0
+    ],
+    "fp_k1": [
+     0.25,
+     0.25
+    ],
+    "fp_k3": [
+     0.25,
+     0.25
+    ]
+   }
+  },
+  "tools2:tools": {
+   "n_alerts": 122366,
+   "n_sessions": 30,
+   "n_attack_sessions": 22,
+   "n_benign_sessions": 8,
+   "w_precision": 0.9167937668447559,
+   "w_recall": 0.9983275104764407,
+   "w_f1": 0.9558250432627194,
+   "precision": 0.9950986820536358,
+   "recall": 0.9992263629180932,
+   "f1": 0.9971582509280856,
+   "det_k1": 1.0,
+   "fp_k1": 0.25,
+   "ttd_k1_s_median": 0.1035280227661132,
+   "ttd_k1_s_p90": 0.36553721427917474,
+   "atd_k1_median": 2.0,
+   "atd_k1_p90": 8.0,
+   "det_k3": 1.0,
+   "fp_k3": 0.25,
+   "ttd_k3_s_median": 0.23400747776031489,
+   "ttd_k3_s_p90": 0.9077239990234375,
+   "atd_k3_median": 4.0,
+   "atd_k3_p90": 10.0,
+   "benign_alert_flag_rate": 0.24916666666666668,
+   "attack_alert_flag_rate": 0.9983275104764405,
+   "w_ap": 0.9777987055828581,
+   "w_roc_auc": 0.9399413669459064,
+   "by_scenario": [
+    {
+     "scenario": "ab_flood",
+     "family": "flood",
+     "label": 1,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.9998332916550892,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 2,
+     "ttd_k1_s_median": 0.0142788887023925,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.01591405868530266,
+     "atd_k1_p90": 2.0,
+     "ttd_k1_s_max": 0.0163228511810302,
+     "n_detected_k3": 2,
+     "ttd_k3_s_median": 0.0146193504333496,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 0.016303730010986322,
+     "atd_k3_p90": 4.0,
+     "ttd_k3_s_max": 0.0167248249053955
+    },
+    {
+     "scenario": "ab_flood_keepalive",
+     "family": "flood",
+     "label": 1,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.9998727654384598,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 2,
+     "ttd_k1_s_median": 0.00997030735015865,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.01012833118438717,
+     "atd_k1_p90": 2.0,
+     "ttd_k1_s_max": 0.0101678371429443,
+     "n_detected_k3": 2,
+     "ttd_k3_s_median": 0.01028287410736075,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 0.01049087047576895,
+     "atd_k3_p90": 4.0,
+     "ttd_k3_s_max": 0.010542869567871
+    },
+    {
+     "scenario": "ab_light",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.9966666666666667,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0
+    },
+    {
+     "scenario": "curl_login_typos",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    },
+    {
+     "scenario": "curl_loop_1s",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    },
+    {
+     "scenario": "dirb_default",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.9999566949592933,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 2,
+     "ttd_k1_s_median": 0.10293543338775629,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.10342304706573478,
+     "atd_k1_p90": 2.0,
+     "ttd_k1_s_max": 0.1035449504852294,
+     "n_detected_k3": 2,
+     "ttd_k3_s_median": 0.10629689693450925,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 0.10678164958953856,
+     "atd_k3_p90": 4.0,
+     "ttd_k3_s_max": 0.1069028377532959
+    },
+    {
+     "scenario": "dirb_slow",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.9986710957588087,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 2,
+     "ttd_k1_s_median": 0.10333800315856931,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.10347647666931147,
+     "atd_k1_p90": 2.0,
+     "ttd_k1_s_max": 0.103511095046997,
+     "n_detected_k3": 2,
+     "ttd_k3_s_median": 0.9077119827270508,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 0.9077239990234375,
+     "atd_k3_p90": 4.0,
+     "ttd_k3_s_max": 0.9077270030975342
+    },
+    {
+     "scenario": "ffuf",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.9995665366276549,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 2,
+     "ttd_k1_s_median": 0.010263442993164,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.010519790649414,
+     "atd_k1_p90": 2.0,
+     "ttd_k1_s_max": 0.0105838775634765,
+     "n_detected_k3": 2,
+     "ttd_k3_s_median": 0.0105319023132324,
+     "atd_k3_median": 5.0,
+     "ttd_k3_s_p90": 0.01084718704223632,
+     "atd_k3_p90": 5.0,
+     "ttd_k3_s_max": 0.0109260082244873
+    },
+    {
+     "scenario": "gobuster",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.999133261105092,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 2,
+     "ttd_k1_s_median": 0.00877451896667475,
+     "atd_k1_median": 5.0,
+     "ttd_k1_s_p90": 0.00890707969665519,
+     "atd_k1_p90": 5.0,
+     "ttd_k1_s_max": 0.0089402198791503,
+     "n_detected_k3": 2,
+     "ttd_k3_s_median": 0.0090144872665405,
+     "atd_k3_median": 7.0,
+     "ttd_k3_s_p90": 0.00906932353973386,
+     "atd_k3_p90": 7.0,
+     "ttd_k3_s_max": 0.0090830326080322
+    },
+    {
+     "scenario": "hydra_t1_slow",
+     "family": "cred",
+     "label": 1,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.9966666666666667,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 2,
+     "ttd_k1_s_median": 0.3621900081634521,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.36336436271667477,
+     "atd_k1_p90": 2.0,
+     "ttd_k1_s_max": 0.3636579513549804,
+     "n_detected_k3": 2,
+     "ttd_k3_s_median": 0.569454550743103,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 0.570372462272644,
+     "atd_k3_p90": 4.0,
+     "ttd_k3_s_max": 0.5706019401550293
+    },
+    {
+     "scenario": "hydra_t4",
+     "family": "cred",
+     "label": 1,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.9966270789252156,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 2,
+     "ttd_k1_s_median": 0.2637094259262085,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.26627776622772215,
+     "atd_k1_p90": 2.0,
+     "ttd_k1_s_max": 0.2669198513031006,
+     "n_detected_k3": 2,
+     "ttd_k3_s_median": 0.317501425743103,
+     "atd_k3_median": 4.0,
+     "ttd_k3_s_p90": 0.35783145427703855,
+     "atd_k3_p90": 4.0,
+     "ttd_k3_s_max": 0.3679139614105224
+    },
+    {
+     "scenario": "nikto",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.9976158038147139,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 2,
+     "ttd_k1_s_median": 0.35404849052429194,
+     "atd_k1_median": 2.0,
+     "ttd_k1_s_p90": 0.3634065151214599,
+     "atd_k1_p90": 2.0,
+     "ttd_k1_s_max": 0.3657460212707519,
+     "n_detected_k3": 2,
+     "ttd_k3_s_median": 0.37664556503295893,
+     "atd_k3_median": 24.0,
+     "ttd_k3_s_p90": 0.3859404563903808,
+     "atd_k3_p90": 24.0,
+     "ttd_k3_s_max": 0.3882641792297363
+    },
+    {
+     "scenario": "nmap_httpenum_T2",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.9968297101449275,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 2,
+     "ttd_k1_s_median": 1.0022900104522705,
+     "atd_k1_median": 8.0,
+     "ttd_k1_s_p90": 1.007782793045044,
+     "atd_k1_p90": 8.0,
+     "ttd_k1_s_max": 1.0091559886932373,
+     "n_detected_k3": 2,
+     "ttd_k3_s_median": 1.002500057220459,
+     "atd_k3_median": 10.0,
+     "ttd_k3_s_p90": 1.008004093170166,
+     "atd_k3_p90": 10.0,
+     "ttd_k3_s_max": 1.0093801021575928
+    },
+    {
+     "scenario": "nmap_httpenum_T4",
+     "family": "recon",
+     "label": 1,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.9968297101449275,
+     "rate_k1": 1.0,
+     "rate_k3": 1.0,
+     "n_detected_k1": 2,
+     "ttd_k1_s_median": 0.23375153541564941,
+     "atd_k1_median": 8.0,
+     "ttd_k1_s_p90": 0.24145283699035644,
+     "atd_k1_p90": 8.0,
+     "ttd_k1_s_max": 0.2433781623840332,
+     "n_detected_k3": 2,
+     "ttd_k3_s_median": 0.23400747776031489,
+     "atd_k3_median": 10.0,
+     "ttd_k3_s_p90": 0.24170238971710203,
+     "atd_k3_p90": 10.0,
+     "ttd_k3_s_max": 0.2436261177062988
+    },
+    {
+     "scenario": "wget_mirror",
+     "family": "benign",
+     "label": 0,
+     "n_sessions": 2,
+     "alert_flag_rate": 0.0,
+     "rate_k1": 0.0,
+     "rate_k3": 0.0
+    }
+   ],
+   "tie_included": {
+    "det_k1": 1.0,
+    "fp_k1": 0.25
+   },
+   "ci95": {
+    "w_f1": [
+     0.9558237107942256,
+     0.9558263761998207
+    ],
+    "det_k1": [
+     1.0,
+     1.0
+    ],
+    "det_k3": [
+     1.0,
+     1.0
+    ],
+    "fp_k1": [
+     0.25,
+     0.25
+    ],
+    "fp_k3": [
+     0.25,
+     0.25
+    ]
+   }
+  }
+ },
+ "label_source": "ai",
+ "ai_labels": {
+  "model": "/workspace/models/full1/model.joblib",
+  "model_sha256": "7b5186008494a265d7dbe800a7cb39e347b011d644c07af64ba11b0aba97474d",
+  "op": "fp5",
+  "threshold": 0.7573061065,
+  "score_decimals": 9,
+  "k": 1,
+  "rule": "phiên nghi ngờ nếu >= 1 alert có round(predict_proba, 9) >= 0.7573061065 (fp5)",
+  "alerts_scored": 79671,
+  "alerts_flagged": 52267,
+  "model_train_data": {
+   "path": "data/dataset_full1.csv",
+   "sha256": "36c103e0a2390a472936dc499bf1b341610af33e1ede509a6231995c79fbb372",
+   "features_sha_dataset": "2f738e629753c3ba",
+   "features_sha_code": "2f738e629753c3ba",
+   "rows": 161614
+  },
+  "agreement": {
+   "sessions": 240,
+   "ai_attack_truth_attack": 112,
+   "ai_attack_truth_benign": 4,
+   "ai_benign_truth_attack": 0,
+   "ai_benign_truth_benign": 124
+  },
+  "disagree_sessions": [
+   {
+    "session": "dev1/test_broken_links_000",
+    "scenario": "broken_links",
+    "truth": 0,
+    "ai": 1
+   },
+   {
+    "session": "dev1/test_heavy_burst_001",
+    "scenario": "heavy_burst",
+    "truth": 0,
+    "ai": 1
+   },
+   {
+    "session": "full1/val_api_client_001",
+    "scenario": "api_client",
+    "truth": 0,
+    "ai": 1
+   },
+   {
+    "session": "full1/val_heavy_burst_004",
+    "scenario": "heavy_burst",
+    "truth": 0,
+    "ai": 1
+   }
+  ]
+ },
+ "select_name": "val+dev1 (nhãn AI)",
+ "select_extra": [
+  {
+   "path": "data/dataset_dev1.csv",
+   "sha256": "fe641f986d3b07b36cb6a18403002666f3e0abeadbd8a381ca33cafbead7088b"
+  }
+ ],
+ "proposals_written": [
+  "AI-R110011-r401-N12-T120-20261028-150005",
+  "AI-R110020-web_scan-N15-T10-20261028-150005",
+  "AI-R110030-any-N500-T10-20261028-150005"
+ ]
+}

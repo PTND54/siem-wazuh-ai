@@ -1,0 +1,14 @@
+
+== Tầng 1->2: generator -> siem.log ==
+  theo kịch bản: {'api_client': '9284/9284', 'auth_fast': '9106/9106', 'auth_slow': '2026/2026', 'broken_links': '3406/3406', 'browse_human': '2893/2893', 'crawler': '3242/3242', 'flood': '31870/31870', 'forgot_pw': '566/566', 'heavy_burst': '25137/25137', 'misconfig_monitor': '136/136', 'monitor': '604/604', 'recon_then_brute': '36566/36566', 'scan_fast': '22350/22350', 'scan_pulsed': '1631/1631', 'scan_stealth': '4271/4271', 'sso_retry_storm': '297/297', 'typo_login': '640/640'}
+  theo mã HTTP : {200: '77384/77384', 301: '1187/1187', 401: '23638/23638', 403: '1361/1361', 404: '50025/50025', 500: '430/430'}
+  TỔNG 154025/154025 = 1.0000
+
+== Tầng 2->3: siem.log -> alerts.json ==
+  theo kịch bản: {'api_client': '9284/9284', 'auth_fast': '9106/9106', 'auth_slow': '2026/2026', 'broken_links': '3406/3406', 'browse_human': '2893/2893', 'crawler': '3242/3242', 'flood': '31870/31870', 'forgot_pw': '566/566', 'heavy_burst': '25137/25137', 'misconfig_monitor': '136/136', 'monitor': '604/604', 'recon_then_brute': '36566/36566', 'scan_fast': '22350/22350', 'scan_pulsed': '1631/1631', 'scan_stealth': '4271/4271', 'sso_retry_storm': '297/297', 'typo_login': '640/640'}
+  theo mã HTTP : {200: '77384/77384', 301: '1187/1187', 401: '23638/23638', 403: '1361/1361', 404: '50025/50025', 500: '430/430'}
+  TỔNG 154025/154025 = 1.0000
+
+Request lỗi mạng (không tới Apache): 0. Dòng siem.log thừa trong cửa sổ phiên: 0
+Phiên thiếu nhiều nhất (tỉ lệ, run_id, đã gửi, thiếu): [(0.0, 'stress_sso_retry_storm_008', 29, 0), (0.0, 'stress_sso_retry_storm_007', 37, 0), (0.0, 'stress_sso_retry_storm_006', 31, 0), (0.0, 'stress_sso_retry_storm_005', 30, 0), (0.0, 'stress_sso_retry_storm_004', 44, 0)]
+Trễ lịch của generator: p50=0.000s  max=0.132s

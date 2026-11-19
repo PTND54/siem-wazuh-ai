@@ -1,0 +1,62 @@
+<!-- Luật SIEMLAB. Khác v9: phủ MỌI nhóm mã trạng thái mà site có thể trả (200, 3xx, 401, 403, 404, 5xx, còn lại),
+     để "không có rule" không còn là lý do âm thầm làm rơi sự kiện. Mọi luật gắn group siemlab_observed.
+     Luật do AI đề xuất (110xxx) KHÔNG nằm ở đây: chúng chỉ được thêm sau khi người duyệt (giai đoạn sau). -->
+<group name="siemlab,">
+
+  <rule id="100009" level="0">
+    <decoded_as>siemlab</decoded_as>
+    <description>SIEMLAB base event (không alert)</description>
+  </rule>
+
+  <rule id="100010" level="3">
+    <if_sid>100009</if_sid>
+    <field name="http_status">^200$</field>
+    <description>SIEMLAB: HTTP 200</description>
+    <group>siemlab_observed,</group>
+  </rule>
+
+  <rule id="100011" level="5">
+    <if_sid>100009</if_sid>
+    <field name="http_status">^401$</field>
+    <description>SIEMLAB: HTTP 401 - xác thực thất bại</description>
+    <group>siemlab_observed,authentication_failed,</group>
+  </rule>
+
+  <rule id="100012" level="4">
+    <if_sid>100009</if_sid>
+    <field name="http_status">^404$</field>
+    <description>SIEMLAB: HTTP 404 - not found</description>
+    <group>siemlab_observed,web_scan,</group>
+  </rule>
+
+  <rule id="100013" level="4">
+    <if_sid>100009</if_sid>
+    <field name="http_status">^403$</field>
+    <description>SIEMLAB: HTTP 403 - forbidden</description>
+    <group>siemlab_observed,web_scan,</group>
+  </rule>
+
+  <rule id="100014" level="3">
+    <if_sid>100009</if_sid>
+    <field name="http_status">^30\d$</field>
+    <description>SIEMLAB: HTTP 3xx - chuyển hướng</description>
+    <group>siemlab_observed,</group>
+  </rule>
+
+  <rule id="100015" level="5">
+    <if_sid>100009</if_sid>
+    <field name="http_status">^5\d\d$</field>
+    <description>SIEMLAB: HTTP 5xx - lỗi máy chủ</description>
+    <group>siemlab_observed,</group>
+  </rule>
+
+  <!-- MỌI mã còn lại (204, 400, 405, 412, 429...): dùng negate thay vì liệt kê, để không có mã nào rơi âm thầm.
+       Không phụ thuộc thứ tự đánh giá rule con. setup/03_verify.sh kiểm 405 và 418 phải ra 100016. -->
+  <rule id="100016" level="4">
+    <if_sid>100009</if_sid>
+    <field name="http_status" negate="yes">^200$|^401$|^403$|^404$|^30\d$|^5\d\d$</field>
+    <description>SIEMLAB: HTTP mã khác (4xx/2xx hiếm)</description>
+    <group>siemlab_observed,</group>
+  </rule>
+
+</group>

@@ -1,0 +1,16 @@
+{
+ "ip": "172.30.90.231",
+ "cases_file": "/workspace/sig/payloads/benign_dev/cases.jsonl",
+ "n_cases": 106,
+ "n_responses": 106,
+ "n_errors": 0,
+ "start_utc": "2026-11-15T08:31:08.997835+00:00",
+ "end_utc": "2026-11-15T08:31:35.215071+00:00",
+ "rate": 5.0,
+ "access_log_lines": 106,
+ "siem_log_lines": 106,
+ "offsets": {
+  "access_log": 102790365,
+  "siem.log": 66122209
+ }
+}

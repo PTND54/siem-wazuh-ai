@@ -1,0 +1,32 @@
+## B5 state tho
+{
+	"global":	{
+		"start":	"2026-11-14 16:03:56",
+		"end":	"2026-11-14 16:09:56",
+		"files":	[{
+				"location":	"/var/log/apache-lab/siem.log",
+				"events":	0,
+				"bytes":	0,
+				"targets":	[{
+						"name":	"agent",
+						"drops":	0
+					}]
+			}]
+	},
+	"interval":	{
+		"start":	"2026-11-14 16:08:56",
+		"end":	"2026-11-14 16:09:56",
+		"files":	[{
+				"location":	"/var/log/apache-lab/siem.log",
+				"events":	0,
+				"bytes":	0,
+				"targets":	[{
+						"name":	"agent",
+						"drops":	0
+					}]
+			}]
+	}
+}
+
+## C7 ossec.conf agent so voi host
+TRUNG

@@ -1,0 +1,84 @@
+{
+ "format": "siem10-proposal-v1",
+ "proposal_id": "CANARY-BROKEN-20261022-222703",
+ "status": "rejected",
+ "created_at": "2026-10-22T11:27:03+00:00",
+ "generated_by": "apply_rule.py make-canary",
+ "kind": "canary",
+ "template": {
+  "name": "canary_frequency",
+  "version": 1
+ },
+ "fingerprint": "3af6e13f9049834d",
+ "xml_sha256": "3af6e13f9049834d1a5bb1526ee3705f7fb6ec09b8b52d7cfa311185b28a4f94",
+ "regression": {
+  "passed": true,
+  "summary": "không áp dụng — luật thử chỉ khớp 192.0.2.0/24 (TEST-NET)",
+  "kind": "canary"
+ },
+ "verify": {
+  "lines": [
+   "SIEMLAB 1792668423344370 192.0.2.77 \"GET /canary0 HTTP/1.1\" 404 10",
+   "SIEMLAB 1792668423344371 192.0.2.77 \"GET /canary1 HTTP/1.1\" 404 10",
+   "SIEMLAB 1792668423344372 192.0.2.77 \"GET /canary2 HTTP/1.1\" 404 10",
+   "SIEMLAB 1792668423344373 192.0.2.77 \"GET /canary3 HTTP/1.1\" 404 10",
+   "SIEMLAB 1792668423344374 192.0.2.77 \"GET /canary4 HTTP/1.1\" 404 10",
+   "SIEMLAB 1792668423344375 192.0.2.77 \"GET /canary5 HTTP/1.1\" 404 10",
+   "SIEMLAB 1792668423344376 192.0.2.77 \"GET /canary6 HTTP/1.1\" 404 10"
+  ],
+  "expect_fire_at": [
+   3,
+   6
+  ]
+ },
+ "history": [
+  {
+   "at": "2026-10-22T11:27:24+00:00",
+   "action": "apply",
+   "by": "thuan",
+   "ok": false,
+   "rule_ids": [
+    "119802"
+   ],
+   "timings": {
+    "backup_s": 0.9,
+    "write_s": 0.18,
+    "validate_s": 0.76
+   },
+   "details": {
+    "backup": [
+     "wazuh/backups/local_rules.20261022-222721.host.xml",
+     "wazuh/backups/local_rules.20261022-222721.active.xml",
+     "/var/ossec/etc/rules/local_rules.xml.bak.20261022-222721"
+    ],
+    "validate": {
+     "ok": false,
+     "out": "2026/10/22 11:27:23 wazuh-analysisd: WARNING: (7620): Signature ID '999999' was not found. Invalid 'if_matched_sid'.Rule '119802' will be ignored.",
+     "new_messages": [
+      "WARNING: (7620): Signature ID '999999' was not found. Invalid 'if_matched_sid'.Rule '119802' will be ignored."
+     ]
+    },
+    "restored": {
+     "reason": "analysisd -t lỗi hoặc có cảnh báo mới",
+     "validate_ok": true,
+     "new_messages": []
+    },
+    "pre_health": {
+     "ready_s": 0.5,
+     "canary_http": 404,
+     "canary_alert": true,
+     "canary_alert_s": 2.4,
+     "canary_enriched": 1,
+     "canary_enriched_s": 8.4
+    }
+   }
+  },
+  {
+   "at": "2026-10-22T16:40:06+00:00",
+   "action": "reject",
+   "by": "thuan",
+   "ok": true,
+   "reason": "canary hỏng: đã bị chặn đúng ở analysisd -t"
+  }
+ ]
+}

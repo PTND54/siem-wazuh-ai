@@ -1,0 +1,66 @@
+{
+ "started_utc": "2026-11-16T07:51:07.220968+00:00",
+ "baseline_messages": [],
+ "runs": {
+  "base_patt": {
+   "lines": 1440,
+   "skipped_non_ascii": 0,
+   "chunks_resent": 0,
+   "seconds": 7.5
+  },
+  "base_bdev": {
+   "lines": 106,
+   "skipped_non_ascii": 0,
+   "chunks_resent": 0,
+   "seconds": 1.1
+  },
+  "base_btest": {
+   "lines": 96,
+   "skipped_non_ascii": 0,
+   "chunks_resent": 0,
+   "seconds": 1.1
+  },
+  "base_regress": {
+   "lines": 9482,
+   "skipped_non_ascii": 0,
+   "chunks_resent": 0,
+   "seconds": 47.1
+  },
+  "base_nikto": {
+   "lines": 8469,
+   "skipped_non_ascii": 0,
+   "chunks_resent": 0,
+   "seconds": 43.8
+  },
+  "base_sl_sqli": {
+   "lines": 360,
+   "skipped_non_ascii": 0,
+   "chunks_resent": 0,
+   "seconds": 2.2
+  },
+  "base_sl_xss": {
+   "lines": 360,
+   "skipped_non_ascii": 0,
+   "chunks_resent": 0,
+   "seconds": 2.2
+  },
+  "base_sl_traversal": {
+   "lines": 360,
+   "skipped_non_ascii": 0,
+   "chunks_resent": 0,
+   "seconds": 2.3
+  },
+  "base_sl_cmdi": {
+   "lines": 360,
+   "skipped_non_ascii": 0,
+   "chunks_resent": 0,
+   "seconds": 2.4
+  }
+ },
+ "cleanup": {
+  "file_removed": true,
+  "rc": 0,
+  "back_to_baseline": true
+ },
+ "ended_utc": "2026-11-16T07:52:58.204244+00:00"
+}

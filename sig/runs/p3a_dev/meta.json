@@ -1,0 +1,16 @@
+{
+ "ip": "172.30.90.230",
+ "cases_file": "/workspace/sig/payloads/dev/cases.jsonl",
+ "n_cases": 1440,
+ "n_responses": 1440,
+ "n_errors": 0,
+ "start_utc": "2026-11-15T08:26:14.986424+00:00",
+ "end_utc": "2026-11-15T08:31:08.203572+00:00",
+ "rate": 5.0,
+ "access_log_lines": 1440,
+ "siem_log_lines": 1440,
+ "offsets": {
+  "access_log": 102456438,
+  "siem.log": 65870362
+ }
+}

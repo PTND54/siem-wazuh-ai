@@ -1,0 +1,81 @@
+  sqli      sql-injection_detect_xplatform.txt                      giữ   193  dài TV    12  có ký tự đặc biệt 0.83  có khoảng trắng nhưng không ký tự đặc biệt 0.03  bỏ {}
+  sqli      sql-injection_detect_GenericBlind.txt                   giữ    31  dài TV    32  có ký tự đặc biệt 1.00  có khoảng trắng nhưng không ký tự đặc biệt 0.00  bỏ {}
+  sqli      sql-injection_detect_MySQL.txt                          giữ     9  dài TV    10  có ký tự đặc biệt 1.00  có khoảng trắng nhưng không ký tự đặc biệt 0.00  bỏ {}
+  sqli      sql-injection_detect_MSSQL.txt                          giữ    12  dài TV  45.0  có ký tự đặc biệt 1.00  có khoảng trắng nhưng không ký tự đặc biệt 0.00  bỏ {}
+  sqli      sql-injection_detect_MSSQL_blind.txt                    giữ     8  dài TV  75.0  có ký tự đặc biệt 1.00  có khoảng trắng nhưng không ký tự đặc biệt 0.00  bỏ {}
+  sqli      sql-injection_detect_oracle.txt                         giữ    54  dài TV 158.0  có ký tự đặc biệt 1.00  có khoảng trắng nhưng không ký tự đặc biệt 0.00  bỏ {'rỗng': 1}
+  sqli      sql-injection_exploit_mysql-injection-login-bypass.txt  giữ     5  dài TV    20  có ký tự đặc biệt 1.00  có khoảng trắng nhưng không ký tự đặc biệt 0.00  bỏ {}
+  xss       xss_xss-other.txt                                       giữ   159  dài TV    58  có ký tự đặc biệt 0.99  có khoảng trắng nhưng không ký tự đặc biệt 0.00  bỏ {'dài': 8}
+  xss       xss_xss-uri.txt                                         giữ     3  dài TV    90  có ký tự đặc biệt 1.00  có khoảng trắng nhưng không ký tự đặc biệt 0.00  bỏ {'dài': 3}
+  xss       xss_XSSPolyglot.txt                                     giữ    26  dài TV 164.0  có ký tự đặc biệt 1.00  có khoảng trắng nhưng không ký tự đặc biệt 0.00  bỏ {'rỗng': 6}
+  traversal path-traversal_path-traversal-windows.txt               giữ     6  dài TV  29.0  có ký tự đặc biệt 1.00  có khoảng trắng nhưng không ký tự đặc biệt 0.00  bỏ {}
+  traversal lfi_JHADDIX_LFI.txt                                     giữ   867  dài TV    24  có ký tự đặc biệt 0.92  có khoảng trắng nhưng không ký tự đặc biệt 0.01  bỏ {}
+  traversal lfi_common-unix-httpd-log-locations.txt                 giữ    52  dài TV  26.0  có ký tự đặc biệt 1.00  có khoảng trắng nhưng không ký tự đặc biệt 0.00  bỏ {}
+  traversal lfi_common-ms-httpd-log-locations.txt                   giữ     6  dài TV  50.5  có ký tự đặc biệt 1.00  có khoảng trắng nhưng không ký tự đặc biệt 0.00  bỏ {}
+  cmdi      os-cmd-execution_command-injection-template.txt         giữ   114  dài TV  12.0  có ký tự đặc biệt 0.96  có khoảng trắng nhưng không ký tự đặc biệt 0.00  bỏ {'mẫu x 2 lệnh': 114}
+  cmdi      os-cmd-execution_OSCommandInject.Windows.txt            giữ    20  dài TV  13.5  có ký tự đặc biệt 1.00  có khoảng trắng nhưng không ký tự đặc biệt 0.00  bỏ {}
+  cmdi      os-cmd-execution_source-disc-cmd-exec-traversal.txt     giữ     5  dài TV    12  có ký tự đặc biệt 1.00  có khoảng trắng nhưng không ký tự đặc biệt 0.00  bỏ {'rỗng': 1}
+  cmdi      os-cmd-execution_command-execution-unix.txt             giữ    68  dài TV  13.0  có ký tự đặc biệt 1.00  có khoảng trắng nhưng không ký tự đặc biệt 0.00  bỏ {}
+{
+ "sqli": {
+  "unique_after_filters": 310,
+  "removed_overlap_with_dev": 173,
+  "eligible": 137,
+  "sampled": 120,
+  "by_file": {
+   "sql-injection_detect_xplatform.txt": 37,
+   "sql-injection_exploit_mysql-injection-login-bypass.txt": 3,
+   "sql-injection_detect_MSSQL.txt": 10,
+   "sql-injection_detect_oracle.txt": 50,
+   "sql-injection_detect_MySQL.txt": 6,
+   "sql-injection_detect_MSSQL_blind.txt": 7,
+   "sql-injection_detect_GenericBlind.txt": 7
+  }
+ },
+ "xss": {
+  "unique_after_filters": 188,
+  "removed_overlap_with_dev": 54,
+  "eligible": 134,
+  "sampled": 120,
+  "by_file": {
+   "xss_xss-other.txt": 96,
+   "xss_XSSPolyglot.txt": 21,
+   "xss_xss-uri.txt": 3
+  }
+ },
+ "traversal": {
+  "unique_after_filters": 908,
+  "removed_overlap_with_dev": 370,
+  "eligible": 538,
+  "sampled": 120,
+  "by_file": {
+   "lfi_JHADDIX_LFI.txt": 118,
+   "lfi_common-unix-httpd-log-locations.txt": 1,
+   "lfi_common-ms-httpd-log-locations.txt": 1
+  }
+ },
+ "cmdi": {
+  "unique_after_filters": 203,
+  "removed_overlap_with_dev": 62,
+  "eligible": 141,
+  "sampled": 120,
+  "by_file": {
+   "os-cmd-execution_command-injection-template.txt": 96,
+   "os-cmd-execution_source-disc-cmd-exec-traversal.txt": 5,
+   "os-cmd-execution_OSCommandInject.Windows.txt": 17,
+   "os-cmd-execution_command-execution-unix.txt": 2
+  }
+ }
+}
+{
+ "test2": {
+  "cases": 1440,
+  "sha256": "72a172e97759adf49726f3109a87f7f3a72d9c4121c8dd0364e314078dc02e4e",
+  "max_url_len": 983
+ },
+ "benign2": {
+  "cases": 120,
+  "sha256": "bdc89b6eb5933e7243e1eaff453a737c8eb529bff51ba9adcfd4145a5f6d1594",
+  "max_url_len": 121
+ }
+} {"values": 60, "by_ctx": {"ctx1": 6, "ctx2": 6, "ctx3": 6, "ctx4": 6, "ctx5": 6, "ctx6": 6, "ctx7": 6, "ctx8": 6, "ctx9": 6, "ctx10": 6}}

@@ -1,0 +1,147 @@
+{
+ "format": "siem10-proposal-v1",
+ "proposal_id": "CANARY-20261022-221925",
+ "status": "removed",
+ "created_at": "2026-10-22T11:19:25+00:00",
+ "generated_by": "apply_rule.py make-canary",
+ "kind": "canary",
+ "template": {
+  "name": "canary_frequency",
+  "version": 1
+ },
+ "fingerprint": "0dfda9dd0e96cbf2",
+ "xml_sha256": "0dfda9dd0e96cbf2793b0805b79424414c5add05f9e43458f9de1bc1fc3caf45",
+ "regression": {
+  "passed": true,
+  "summary": "không áp dụng — luật thử chỉ khớp 192.0.2.0/24 (TEST-NET)",
+  "kind": "canary"
+ },
+ "verify": {
+  "lines": [
+   "SIEMLAB 1792667965506595 192.0.2.77 \"GET /canary0 HTTP/1.1\" 404 10",
+   "SIEMLAB 1792667965506596 192.0.2.77 \"GET /canary1 HTTP/1.1\" 404 10",
+   "SIEMLAB 1792667965506597 192.0.2.77 \"GET /canary2 HTTP/1.1\" 404 10",
+   "SIEMLAB 1792667965506598 192.0.2.77 \"GET /canary3 HTTP/1.1\" 404 10",
+   "SIEMLAB 1792667965506599 192.0.2.77 \"GET /canary4 HTTP/1.1\" 404 10",
+   "SIEMLAB 1792667965506600 192.0.2.77 \"GET /canary5 HTTP/1.1\" 404 10",
+   "SIEMLAB 1792667965506601 192.0.2.77 \"GET /canary6 HTTP/1.1\" 404 10"
+  ],
+  "expect_fire_at": [
+   3,
+   6
+  ]
+ },
+ "history": [
+  {
+   "at": "2026-10-22T11:20:16+00:00",
+   "action": "apply",
+   "by": "thuan",
+   "ok": true,
+   "rule_ids": [
+    "119800"
+   ],
+   "timings": {
+    "backup_s": 0.18,
+    "write_s": 0.19,
+    "validate_s": 0.75,
+    "restart_s": 14.8,
+    "health_s": 0.5
+   },
+   "details": {
+    "backup": [
+     "wazuh/backups/local_rules.20261022-221951.host.xml",
+     "wazuh/backups/local_rules.20261022-221951.active.xml",
+     "/var/ossec/etc/rules/local_rules.xml.bak.20261022-221951"
+    ],
+    "validate": {
+     "ok": true,
+     "out": ""
+    },
+    "restart": {
+     "ok": true,
+     "out": "ead.\n  from starlette.testclient import TestClient\n2026/10/22 11:20:00 wazuh-integratord: INFO: Remote integrations not configured. Clean exit.\n2026/10/22 11:20:04 wazuh-modulesd:router: INFO: Loaded router module.\n2026/10/22 11:20:04 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.\n2026/10/22 11:20:04 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module."
+    },
+    "health": {
+     "ready_s": 0.5,
+     "canary_http": 404,
+     "canary_alert": true,
+     "canary_alert_s": 2.4,
+     "canary_enriched": 1,
+     "canary_enriched_s": 8.4
+    },
+    "pre_health": {
+     "ready_s": 0.5,
+     "canary_http": 404,
+     "canary_alert": true,
+     "canary_alert_s": 2.4,
+     "canary_enriched": 1,
+     "canary_enriched_s": 8.4
+    }
+   },
+   "no_regression_override": false
+  },
+  {
+   "at": "2026-10-22T11:20:38+00:00",
+   "action": "verify",
+   "by": "thuan",
+   "ok": true,
+   "result": {
+    "fired_at": [
+     3,
+     6
+    ],
+    "expected": [
+     3,
+     6
+    ],
+    "match": true,
+    "rule_ids": [
+     "100012",
+     "100012",
+     "119800",
+     "100012",
+     "100012",
+     "119800",
+     "100012"
+    ]
+   }
+  },
+  {
+   "at": "2026-10-22T11:21:11+00:00",
+   "action": "remove",
+   "by": "thuan",
+   "ok": true,
+   "timings": {
+    "backup_s": 0.17,
+    "write_s": 0.18,
+    "validate_s": 0.74,
+    "restart_s": 11.6,
+    "health_s": 4.0
+   },
+   "details": {
+    "backup": [
+     "wazuh/backups/local_rules.20261022-222044.host.xml",
+     "wazuh/backups/local_rules.20261022-222044.active.xml",
+     "/var/ossec/etc/rules/local_rules.xml.bak.20261022-222044"
+    ],
+    "validate": {
+     "ok": true,
+     "out": ""
+    },
+    "restart": {
+     "ok": true,
+     "out": "ead.\n  from starlette.testclient import TestClient\n2026/10/22 11:20:50 wazuh-integratord: INFO: Remote integrations not configured. Clean exit.\n2026/10/22 11:20:53 wazuh-modulesd:router: INFO: Loaded router module.\n2026/10/22 11:20:53 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.\n2026/10/22 11:20:53 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module."
+    },
+    "health": {
+     "ready_s": 4.0,
+     "canary_http": 404,
+     "canary_alert": true,
+     "canary_alert_s": 2.4,
+     "canary_enriched": 1,
+     "canary_enriched_s": 10.4
+    }
+   },
+   "reason": null
+  }
+ ]
+}

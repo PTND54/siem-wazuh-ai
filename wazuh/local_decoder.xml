@@ -1,0 +1,12 @@
+<!-- Decoder cho luồng log SIEMLAB. Apache: LogFormat SIEMLAB %{usec}t %a "%r" %>s %B
+     (dòng yêu cầu GỐC %r, không dùng %U vì %U bị mod_dir đổi /private/ thành /private/index.html)
+     Ví dụ: SIEMLAB 1788940800000000 172.30.90.40 "GET /index.html HTTP/1.1" 200 23 -->
+<decoder name="siemlab">
+  <prematch>^SIEMLAB </prematch>
+</decoder>
+
+<decoder name="siemlab-fields">
+  <parent>siemlab</parent>
+  <regex offset="after_parent">^(\d+) (\S+) "(\S+) (\S+) \S+" (\d+) (\d+)$</regex>
+  <order>event_usec, srcip, http_method, url, http_status, bytes</order>
+</decoder>

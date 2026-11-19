@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+
+# Bản sao lưu do setup/manager_tune.sh và scripts/apply_rule.py tạo khi chạy
+*.orig
+wazuh/backups/
+
+# Chứng chỉ TLS do setup/00_clone_wazuh.sh sinh trên từng máy
+vendor/wazuh-docker/single-node/config/wazuh_indexer_ssl_certs/
+vendor/wazuh-docker/multi-node/config/wazuh_indexer_ssl_certs/
+
+# Dữ liệu lớn: phát hành riêng trong gói dataset (xem README mục 3.8 và 5)
+data/dataset_*.csv
+data/runs/*/requests/
+data/.lockbox_seed
+
+# Alert thô và log Apache giải nén từ gói dataset
+data/export/

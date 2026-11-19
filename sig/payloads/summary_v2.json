@@ -1,0 +1,277 @@
+{
+ "seed": 20261116,
+ "files": [
+  {
+   "category": "sqli",
+   "file": "sql-injection_detect_xplatform.txt",
+   "sha256": "eca4a122e72eb2677a730ca330218ef64c9cc3bad8c291e1b88d939601c08875",
+   "kept": 193,
+   "median_len": 12,
+   "frac_has_special": 0.83,
+   "frac_has_space_no_special": 0.03
+  },
+  {
+   "category": "sqli",
+   "file": "sql-injection_detect_GenericBlind.txt",
+   "sha256": "224a67f0923dee5395c0b00b68d273ebf1ad1baeed8bef292409407a5e27ae3c",
+   "kept": 31,
+   "median_len": 32,
+   "frac_has_special": 1.0,
+   "frac_has_space_no_special": 0.0
+  },
+  {
+   "category": "sqli",
+   "file": "sql-injection_detect_MySQL.txt",
+   "sha256": "05698d9b9ff0b19ea473a0df81a397d36528d720db4ac3939faba534130efb52",
+   "kept": 9,
+   "median_len": 10,
+   "frac_has_special": 1.0,
+   "frac_has_space_no_special": 0.0
+  },
+  {
+   "category": "sqli",
+   "file": "sql-injection_detect_MSSQL.txt",
+   "sha256": "787c10d50b61f3f812e8c801c30e2f480994433808b576a803eaac7f91965fbe",
+   "kept": 12,
+   "median_len": 45.0,
+   "frac_has_special": 1.0,
+   "frac_has_space_no_special": 0.0
+  },
+  {
+   "category": "sqli",
+   "file": "sql-injection_detect_MSSQL_blind.txt",
+   "sha256": "a2fb40547106c4bc33e95a38eff5a7815533a7f40e358fa24935a1e0c0f6da6e",
+   "kept": 8,
+   "median_len": 75.0,
+   "frac_has_special": 1.0,
+   "frac_has_space_no_special": 0.0
+  },
+  {
+   "category": "sqli",
+   "file": "sql-injection_detect_oracle.txt",
+   "sha256": "4ea50e4006609ac0ce904a265fe53020a7502e55d980a516d31cf0c537faea68",
+   "kept": 54,
+   "median_len": 158.0,
+   "frac_has_special": 1.0,
+   "frac_has_space_no_special": 0.0
+  },
+  {
+   "category": "sqli",
+   "file": "sql-injection_exploit_mysql-injection-login-bypass.txt",
+   "sha256": "44886c92c4d0016758cb29aed81b6a4ae90a06655556dac8aadf0da69c709f27",
+   "kept": 5,
+   "median_len": 20,
+   "frac_has_special": 1.0,
+   "frac_has_space_no_special": 0.0
+  },
+  {
+   "category": "xss",
+   "file": "xss_xss-other.txt",
+   "sha256": "b2757a3d36b822d64c86152be1ca7323677cc1f64aad4c603799258ccd9683c5",
+   "kept": 159,
+   "median_len": 58,
+   "frac_has_special": 0.99,
+   "frac_has_space_no_special": 0.0
+  },
+  {
+   "category": "xss",
+   "file": "xss_xss-uri.txt",
+   "sha256": "54dc51ebd9fe4dca9e62a5ac5753b31662f17b79beb33da19437ebd1c5efad0d",
+   "kept": 3,
+   "median_len": 90,
+   "frac_has_special": 1.0,
+   "frac_has_space_no_special": 0.0
+  },
+  {
+   "category": "xss",
+   "file": "xss_XSSPolyglot.txt",
+   "sha256": "c55cbd1c9038fc019c9e9ca14cffac0cdaa889fe423c4b8258bd8d194fe64cab",
+   "kept": 26,
+   "median_len": 164.0,
+   "frac_has_special": 1.0,
+   "frac_has_space_no_special": 0.0
+  },
+  {
+   "category": "traversal",
+   "file": "path-traversal_path-traversal-windows.txt",
+   "sha256": "bc78ec8d3c1b33093ac0f93bff3e1c15c93a6b5eb081e9494fe8aad4c43bd046",
+   "kept": 6,
+   "median_len": 29.0,
+   "frac_has_special": 1.0,
+   "frac_has_space_no_special": 0.0
+  },
+  {
+   "category": "traversal",
+   "file": "lfi_JHADDIX_LFI.txt",
+   "sha256": "333e1982ddebf1e5687bdc43c63ffce3867a4f9f2a0d13516ebbe7909fe1fa6b",
+   "kept": 867,
+   "median_len": 24,
+   "frac_has_special": 0.92,
+   "frac_has_space_no_special": 0.01
+  },
+  {
+   "category": "traversal",
+   "file": "lfi_common-unix-httpd-log-locations.txt",
+   "sha256": "3a0bdd5e539080ea5d5942aece5d7d2dec641884ef768f788b15e9091978feae",
+   "kept": 52,
+   "median_len": 26.0,
+   "frac_has_special": 1.0,
+   "frac_has_space_no_special": 0.0
+  },
+  {
+   "category": "traversal",
+   "file": "lfi_common-ms-httpd-log-locations.txt",
+   "sha256": "56af5aee9f86f5cab36bd42c2197b302fa66f8e4482658fb43326afb9c95d7f9",
+   "kept": 6,
+   "median_len": 50.5,
+   "frac_has_special": 1.0,
+   "frac_has_space_no_special": 0.0
+  },
+  {
+   "category": "cmdi",
+   "file": "os-cmd-execution_command-injection-template.txt",
+   "sha256": "0f695ef85a048b4f5ef9c2b26e21a4c3dc700f67b4b5afa5510658e0f449d60e",
+   "kept": 114,
+   "median_len": 12.0,
+   "frac_has_special": 0.96,
+   "frac_has_space_no_special": 0.0
+  },
+  {
+   "category": "cmdi",
+   "file": "os-cmd-execution_OSCommandInject.Windows.txt",
+   "sha256": "6151e2f4bbee864949e9840c1b43e556bf80d89f39e8235b09e10863bf6a7b6a",
+   "kept": 20,
+   "median_len": 13.5,
+   "frac_has_special": 1.0,
+   "frac_has_space_no_special": 0.0
+  },
+  {
+   "category": "cmdi",
+   "file": "os-cmd-execution_source-disc-cmd-exec-traversal.txt",
+   "sha256": "b6e93241ba14d8e583e15d4d05f300701cf13b902e70eb2399882fbdb339fb2b",
+   "kept": 5,
+   "median_len": 12,
+   "frac_has_special": 1.0,
+   "frac_has_space_no_special": 0.0
+  },
+  {
+   "category": "cmdi",
+   "file": "os-cmd-execution_command-execution-unix.txt",
+   "sha256": "2a331555079a8448876fb656a5be71b2ed628a84e47d12ce5a7faedb75546727",
+   "kept": 68,
+   "median_len": 13.0,
+   "frac_has_special": 1.0,
+   "frac_has_space_no_special": 0.0
+  }
+ ],
+ "drop": {
+  "sql-injection_detect_xplatform.txt": {},
+  "sql-injection_detect_GenericBlind.txt": {},
+  "sql-injection_detect_MySQL.txt": {},
+  "sql-injection_detect_MSSQL.txt": {},
+  "sql-injection_detect_MSSQL_blind.txt": {},
+  "sql-injection_detect_oracle.txt": {
+   "rỗng": 1
+  },
+  "sql-injection_exploit_mysql-injection-login-bypass.txt": {},
+  "xss_xss-other.txt": {
+   "dài": 8
+  },
+  "xss_xss-uri.txt": {
+   "dài": 3
+  },
+  "xss_XSSPolyglot.txt": {
+   "rỗng": 6
+  },
+  "path-traversal_path-traversal-windows.txt": {},
+  "lfi_JHADDIX_LFI.txt": {},
+  "lfi_common-unix-httpd-log-locations.txt": {},
+  "lfi_common-ms-httpd-log-locations.txt": {},
+  "os-cmd-execution_command-injection-template.txt": {
+   "mẫu x 2 lệnh": 114
+  },
+  "os-cmd-execution_OSCommandInject.Windows.txt": {},
+  "os-cmd-execution_source-disc-cmd-exec-traversal.txt": {
+   "rỗng": 1
+  },
+  "os-cmd-execution_command-execution-unix.txt": {}
+ },
+ "test2": {
+  "sqli": {
+   "unique_after_filters": 310,
+   "removed_overlap_with_dev": 173,
+   "eligible": 137,
+   "sampled": 120,
+   "by_file": {
+    "sql-injection_detect_xplatform.txt": 37,
+    "sql-injection_exploit_mysql-injection-login-bypass.txt": 3,
+    "sql-injection_detect_MSSQL.txt": 10,
+    "sql-injection_detect_oracle.txt": 50,
+    "sql-injection_detect_MySQL.txt": 6,
+    "sql-injection_detect_MSSQL_blind.txt": 7,
+    "sql-injection_detect_GenericBlind.txt": 7
+   }
+  },
+  "xss": {
+   "unique_after_filters": 188,
+   "removed_overlap_with_dev": 54,
+   "eligible": 134,
+   "sampled": 120,
+   "by_file": {
+    "xss_xss-other.txt": 96,
+    "xss_XSSPolyglot.txt": 21,
+    "xss_xss-uri.txt": 3
+   }
+  },
+  "traversal": {
+   "unique_after_filters": 908,
+   "removed_overlap_with_dev": 370,
+   "eligible": 538,
+   "sampled": 120,
+   "by_file": {
+    "lfi_JHADDIX_LFI.txt": 118,
+    "lfi_common-unix-httpd-log-locations.txt": 1,
+    "lfi_common-ms-httpd-log-locations.txt": 1
+   }
+  },
+  "cmdi": {
+   "unique_after_filters": 203,
+   "removed_overlap_with_dev": 62,
+   "eligible": 141,
+   "sampled": 120,
+   "by_file": {
+    "os-cmd-execution_command-injection-template.txt": 96,
+    "os-cmd-execution_source-disc-cmd-exec-traversal.txt": 5,
+    "os-cmd-execution_OSCommandInject.Windows.txt": 17,
+    "os-cmd-execution_command-execution-unix.txt": 2
+   }
+  }
+ },
+ "benign2": {
+  "values": 60,
+  "by_ctx": {
+   "ctx1": 6,
+   "ctx2": 6,
+   "ctx3": 6,
+   "ctx4": 6,
+   "ctx5": 6,
+   "ctx6": 6,
+   "ctx7": 6,
+   "ctx8": 6,
+   "ctx9": 6,
+   "ctx10": 6
+  }
+ },
+ "out": {
+  "test2": {
+   "cases": 1440,
+   "sha256": "72a172e97759adf49726f3109a87f7f3a72d9c4121c8dd0364e314078dc02e4e",
+   "max_url_len": 983
+  },
+  "benign2": {
+   "cases": 120,
+   "sha256": "bdc89b6eb5933e7243e1eaff453a737c8eb529bff51ba9adcfd4145a5f6d1594",
+   "max_url_len": 121
+  }
+ }
+}

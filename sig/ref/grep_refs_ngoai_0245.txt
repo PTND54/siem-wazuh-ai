@@ -1,0 +1,19 @@
+/var/ossec/ruleset/rules/0999-malicious-ioc-rules.xml:54:    <if_sid>31103, 31104, 31105, 31106, 31109, 31164, 31165, 31170, 31171</if_sid>
+/var/ossec/ruleset/rules/0270-web_appsec_rules.xml:19:    <if_sid>31100</if_sid>
+/var/ossec/ruleset/rules/0270-web_appsec_rules.xml:34:    <if_sid>31100</if_sid>
+/var/ossec/ruleset/rules/0270-web_appsec_rules.xml:47:    <if_sid>31100</if_sid>
+/var/ossec/ruleset/rules/0270-web_appsec_rules.xml:60:    <if_sid>31100</if_sid>
+/var/ossec/ruleset/rules/0270-web_appsec_rules.xml:73:    <if_sid>31100</if_sid>
+/var/ossec/ruleset/rules/0270-web_appsec_rules.xml:86:    <if_sid>31100</if_sid>
+/var/ossec/ruleset/rules/0270-web_appsec_rules.xml:99:    <if_sid>31100</if_sid>
+/var/ossec/ruleset/rules/0270-web_appsec_rules.xml:110:    <if_sid>31100</if_sid>
+/var/ossec/ruleset/rules/0270-web_appsec_rules.xml:118:    <if_sid>31108</if_sid>
+/var/ossec/ruleset/rules/0270-web_appsec_rules.xml:143:    <if_sid>31100</if_sid>
+/var/ossec/ruleset/rules/0270-web_appsec_rules.xml:152:    <if_sid>31100</if_sid>
+/var/ossec/ruleset/rules/0270-web_appsec_rules.xml:165:    <if_sid>31100</if_sid>
+/var/ossec/ruleset/rules/0270-web_appsec_rules.xml:178:    <if_sid>31100</if_sid>
+/var/ossec/ruleset/rules/0270-web_appsec_rules.xml:192:    <if_sid>31100</if_sid>
+/var/ossec/ruleset/rules/0270-web_appsec_rules.xml:204:    <if_sid>31100</if_sid>
+/var/ossec/ruleset/rules/0270-web_appsec_rules.xml:215:    <if_sid>31100</if_sid>
+/var/ossec/ruleset/rules/0270-web_appsec_rules.xml:240:    <if_sid>31100</if_sid>
+/var/ossec/ruleset/rules/0010-rules_config.xml:33:    <category>web-log</category>

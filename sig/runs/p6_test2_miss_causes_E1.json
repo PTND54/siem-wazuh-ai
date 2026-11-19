@@ -1,0 +1,32 @@
+{
+ "traversal": {
+  "lot_E1": 39,
+  "nguyen_nhan": {
+   "'..2f' thiếu dấu % (payload hỏng/biến thể lạ)": 13,
+   "đường dẫn tuyệt đối ngoài danh sách tệp/thư mục": 5,
+   "mã hóa base64": 13,
+   "'../' một lần + tên tệp ngoài danh sách": 4,
+   "khác": 4
+  }
+ },
+ "cmdi": {
+  "lot_E1": 57,
+  "nguyen_nhan": {
+   "[mẫu FuzzDB điền lệnh] lệnh không có trong danh sách lệnh của luật": 53,
+   "[payload FuzzDB gốc] lệnh không có trong danh sách lệnh của luật": 2,
+   "[payload FuzzDB gốc] có lệnh trong danh sách nhưng sai cú pháp/vị trí": 2
+  }
+ },
+ "xss": {
+  "lot_E1": 9,
+  "nguyen_nhan": {
+   "—": 9
+  }
+ },
+ "sqli": {
+  "lot_E1": 8,
+  "nguyen_nhan": {
+   "—": 8
+  }
+ }
+}

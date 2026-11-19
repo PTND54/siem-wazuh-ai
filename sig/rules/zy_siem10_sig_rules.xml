@@ -1,0 +1,179 @@
+<!-- siem10: luat chu ky cho tan cong theo noi dung URL (SQLi, XSS, path traversal, command injection).
+     Sinh tu sig/tools/sig_rules_gen.py - KHONG sua tay. Luat viet thu cong; khong do mo hinh AI cua he thong sinh.
+     Phan 1: ha 9 luat dung san chi xet ma trang thai ve level 0 (cach 2, xem sig/ref/NOTES.md muc 21).
+     Phan 2: 20 luat chu ky 1001xx (level 8); khong co luat tan suat. -->
+
+<group name="web,accesslog,">
+  <rule id="31101" level="0" overwrite="yes">
+    <if_sid>31100</if_sid>
+    <id>^4</id>
+    <description>Web server 400 error code. (siem10: tat alert, trung luong SIEMLAB)</description>
+  </rule>
+  <rule id="31120" level="0" overwrite="yes">
+    <if_sid>31100</if_sid>
+    <id>^50</id>
+    <description>Web server 500 error code (server error). (siem10: tat alert)</description>
+  </rule>
+  <rule id="31121" level="0" overwrite="yes">
+    <if_sid>31120</if_sid>
+    <id>^501</id>
+    <description>Web server 501 error code (Not Implemented). (siem10: tat alert)</description>
+  </rule>
+  <rule id="31122" level="0" overwrite="yes">
+    <if_sid>31120</if_sid>
+    <id>^500</id>
+    <description>Web server 500 error code (Internal Error). (siem10: tat alert)</description>
+  </rule>
+  <rule id="31123" level="0" overwrite="yes">
+    <if_sid>31120</if_sid>
+    <id>^503</id>
+    <description>Web server 503 error code (Service unavailable). (siem10: tat alert)</description>
+  </rule>
+  <rule id="31151" level="0" frequency="14" timeframe="90" overwrite="yes">
+    <if_matched_sid>31101</if_matched_sid>
+    <same_source_ip />
+    <description>Multiple web server 400 error codes from same source ip. (siem10: tat, bo nhom web_scan)</description>
+    <group>recon,</group>
+  </rule>
+  <rule id="31161" level="0" frequency="14" timeframe="120" overwrite="yes">
+    <if_matched_sid>31121</if_matched_sid>
+    <same_source_ip />
+    <description>Multiple web server 501 error code (Not Implemented). (siem10: tat, bo nhom web_scan)</description>
+    <group>recon,</group>
+  </rule>
+  <rule id="31162" level="0" frequency="14" timeframe="120" overwrite="yes">
+    <if_matched_sid>31122</if_matched_sid>
+    <same_source_ip />
+    <description>Multiple web server 500 error code (Internal Error). (siem10: tat)</description>
+    <group>system_error,</group>
+  </rule>
+  <rule id="31163" level="0" frequency="14" timeframe="120" overwrite="yes">
+    <if_matched_sid>31123</if_matched_sid>
+    <same_source_ip />
+    <description>Multiple web server 503 error code (Service unavailable). (siem10: tat, bo nhom web_scan)</description>
+    <group>recon,</group>
+  </rule>
+</group>
+
+<group name="web,accesslog,attack,siem10_sig,">
+  <rule id="100110" level="8">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">(?i)union(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)+(?:all(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)+|distinct(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)+)?(?:(?:\(|%(?:25){0,2}28)(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)*)?select</url>
+    <description>SIG SQLi: UNION [ALL] SELECT</description>
+    <group>siem10_sig_sqli,</group>
+  </rule>
+  <rule id="100111" level="8">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">(?i)(?:(?:'|%(?:25){0,2}27)|(?:\x22|%(?:25){0,2}22)|`|%(?:25){0,2}60)(?:(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)|(?:\)|%(?:25){0,2}29))*(?:or|and|xor|\|\||%(?:25){0,2}7c%(?:25){0,2}7c|\x26\x26|%(?:25){0,2}26%(?:25){0,2}26)(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)*(?:(?:\(|%(?:25){0,2}28)|(?:(?:'|%(?:25){0,2}27)|(?:\x22|%(?:25){0,2}22)|`|%(?:25){0,2}60)|\d|[a-z_]+(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)*(?:=|%(?:25){0,2}3d)|not(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)|exists|sleep|true|false|null|(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f))</url>
+    <description>SIG SQLi: dau nhay dong chuoi roi OR/AND/toan tu</description>
+    <group>siem10_sig_sqli,</group>
+  </rule>
+  <rule id="100112" level="8">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">(?i)(?:(?:'|%(?:25){0,2}27)|(?:\x22|%(?:25){0,2}22)|`|%(?:25){0,2}60)(?:(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)|(?:\)|%(?:25){0,2}29))*(?:--|(?:#|%(?:25){0,2}23)|/\*|%(?:25){0,2}2f%(?:25){0,2}2a|(?:;|%(?:25){0,2}3b))</url>
+    <description>SIG SQLi: dau nhay roi chu thich/ket thuc lenh</description>
+    <group>siem10_sig_sqli,</group>
+  </rule>
+  <rule id="100113" level="8">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">(?i)(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)(?:or|and|xor|\|\||\x26\x26)(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)+(\d+|(?:(?:'|%(?:25){0,2}27)|(?:\x22|%(?:25){0,2}22)|`|%(?:25){0,2}60)[a-z0-9]*(?:(?:'|%(?:25){0,2}27)|(?:\x22|%(?:25){0,2}22)|`|%(?:25){0,2}60))(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)*(?:(?:=|%(?:25){0,2}3d)|like|(?:\x3c|%(?:25){0,2}3c)|(?:\x3e|%(?:25){0,2}3e))(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)*(?:\d|(?:(?:'|%(?:25){0,2}27)|(?:\x22|%(?:25){0,2}22)|`|%(?:25){0,2}60))</url>
+    <description>SIG SQLi: tautology so (or 1=1)</description>
+    <group>siem10_sig_sqli,</group>
+  </rule>
+  <rule id="100114" level="8">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">(?i)(?:(?:sleep|benchmark|pg_sleep|randomblob|extractvalue|updatexml|load_file|convert|cast|char|chr|concat|group_concat|ascii|substring|substr|mid|md5|user|database|version|count|if|iif|elt|exp|floor|rand)\s*(?:\(|%(?:25){0,2}28).{0,200}(?:(?:\)|%(?:25){0,2}29)|,)|waitfor(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)+delay|@@(?:version|datadir|hostname|basedir)|information_schema|sysobjects|syscolumns|dbms_pipe|utl_inaddr|xp_cmdshell|into(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)+(?:out|dump)file|declare(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)+@|exec(?:ute)?(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)*(?:(?:\(|%(?:25){0,2}28)(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)*@|(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)+xp)|select(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)+(?:top(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)+\d|@)|(?:\(|%(?:25){0,2}28)(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)*select(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)|in(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)*(?:\(|%(?:25){0,2}28)(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)*select\b|0x[0-9a-f]{16,})</url>
+    <description>SIG SQLi: ham/bien he thong (sleep, benchmark, @@version, information_schema...)</description>
+    <group>siem10_sig_sqli,</group>
+  </rule>
+  <rule id="100115" level="8">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">(?i)(?:(?:order|group)(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)+by(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)+(?:\d|[a-z_]\w*(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)+having)|having(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)+\d+(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)*(?:=|%(?:25){0,2}3d)|(?:;|%(?:25){0,2}3b)(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)*(?:select|insert|update|delete|drop|create|alter|exec|execute|shutdown|declare|truncate)\b)</url>
+    <description>SIG SQLi: ORDER BY / GROUP BY so, hoac cau lenh noi tiep sau ;</description>
+    <group>siem10_sig_sqli,</group>
+  </rule>
+  <rule id="100116" level="8">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">(?i)(?:=|(?:/|%(?:25){0,2}2f))(?:(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)|(?:\)|%(?:25){0,2}29))*(?:or|and|xor|\|\||%(?:25){0,2}7c%(?:25){0,2}7c)(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)+(?:\d+(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)*(?:(?:=|%(?:25){0,2}3d)|like|(?:\x3c|%(?:25){0,2}3c)|(?:\x3e|%(?:25){0,2}3e))|[a-z_]\w*(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)*(?:=|%(?:25){0,2}3d)|(?:(?:'|%(?:25){0,2}27)|(?:\x22|%(?:25){0,2}22)|`|%(?:25){0,2}60)|(?:\(|%(?:25){0,2}28)|not(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)|exists|true\b|false\b|null\b)</url>
+    <description>SIG SQLi: OR/AND ngay dau gia tri tham so</description>
+    <group>siem10_sig_sqli,</group>
+  </rule>
+  <rule id="100117" level="8">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">(?i)(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)(?:or|and|xor|\|\||\x26\x26)(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)+([a-z_0-9]+|(?:(?:'|%(?:25){0,2}27)|(?:\x22|%(?:25){0,2}22)|`|%(?:25){0,2}60)[a-z0-9_]*(?:(?:'|%(?:25){0,2}27)|(?:\x22|%(?:25){0,2}22)|`|%(?:25){0,2}60))(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)*(?:=|%(?:25){0,2}3d)(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)*\1(?![a-z0-9_])</url>
+    <description>SIG SQLi: tautology hai ve giong nhau (a=a, 1=1, 'x'='x')</description>
+    <group>siem10_sig_sqli,</group>
+  </rule>
+  <rule id="100118" level="8">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">(?i)[a-z]{2,}(?:/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)[a-z]{2,}</url>
+    <description>SIG SQLi: chen chu thich giua tu (uni/**/on, sel/**/ect)</description>
+    <group>siem10_sig_sqli,</group>
+  </rule>
+  <rule id="100120" level="8">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">(?i)(?:\x3c|%(?:25){0,2}3c|\\x3c|\\u003c|\x26lt;?|\x26#0*60;?|\x26#x0*3c;?)(?:(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)|(?:/|%(?:25){0,2}2f))*(?:script|svg|img|iframe|frame|frameset|body|details|video|audio|source|object|embed|applet|input|marquee|math|style|link|meta|form|base|isindex|xss|bgsound|layer|ilayer|table|div|textarea|keygen|button|select|plaintext|xmp|html|x|a)(?![a-z0-9_-])</url>
+    <description>SIG XSS: the HTML nguy hiem</description>
+    <group>siem10_sig_xss,</group>
+  </rule>
+  <rule id="100121" level="8">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">(?i)(?:(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)|(?:/|%(?:25){0,2}2f)|(?:(?:'|%(?:25){0,2}27)|(?:\x22|%(?:25){0,2}22)|`|%(?:25){0,2}60)|\\x0[9acd]|(?:\x3c|%(?:25){0,2}3c)[a-z]+(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)*)on[a-z]{3,25}(?:(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)|\\x0[9acd])*(?:=|%(?:25){0,2}3d)</url>
+    <description>SIG XSS: thuoc tinh su kien on...=</description>
+    <group>siem10_sig_xss,</group>
+  </rule>
+  <rule id="100122" level="8">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">(?i)(?:javascript|vbscript|livescript|java\x26#?\w+;?script|data(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)*(?::|%(?:25){0,2}3a)(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)*text/html)(?:(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)|\\x0[9acd]|\x26#\w+;?)*(?::|%(?:25){0,2}3a|\x26colon;)</url>
+    <description>SIG XSS: giao thuc javascript:/vbscript:/data:text/html</description>
+    <group>siem10_sig_xss,</group>
+  </rule>
+  <rule id="100123" level="8">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">(?i)(?:(?:alert|prompt|confirm|eval|settimeout|setinterval|fromcharcode|atob|expression)(?:(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f))*(?:(?:\(|%(?:25){0,2}28)|`|%(?:25){0,2}60)|document(?:\.|%(?:25){0,2}2e|%c0%ae|%c0%2e|%e0%80%ae|%u002e|%uff0e)(?:cookie|domain|write|location)|window(?:\.|%(?:25){0,2}2e|%c0%ae|%c0%2e|%e0%80%ae|%u002e|%uff0e)(?:location|open)|\.innerhtml)</url>
+    <description>SIG XSS: ham/doi tuong JS (alert, prompt, document.cookie...)</description>
+    <group>siem10_sig_xss,</group>
+  </rule>
+  <rule id="100130" level="8">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">(?i)(?:(?:\.|%(?:25){0,2}2e|%c0%ae|%c0%2e|%e0%80%ae|%u002e|%uff0e){2,}(?:(?:/|%(?:25){0,2}2f)|(?:\\|%(?:25){0,2}5c|%c0%5c|%c1%9c|%u2216)|%c0%af|%u2215|%uefc8|%uf025)+(?:(?:\.|%(?:25){0,2}2e|%c0%ae|%c0%2e|%e0%80%ae|%u002e|%uff0e)*(?:(?:/|%(?:25){0,2}2f)|(?:\\|%(?:25){0,2}5c|%c0%5c|%c1%9c|%u2216)|%c0%af|%u2215|%uefc8|%uf025)*)*){2,}|(?:(?:(?:/|%(?:25){0,2}2f)|(?:\\|%(?:25){0,2}5c|%c0%5c|%c1%9c|%u2216)|%c0%af|%u2215|%uefc8|%uf025)(?:\.|%(?:25){0,2}2e|%c0%ae|%c0%2e|%e0%80%ae|%u002e|%uff0e){2,}){2,}</url>
+    <description>SIG Path traversal: ../ lap tu 2 lan (moi dang ma hoa)</description>
+    <group>siem10_sig_traversal,</group>
+  </rule>
+  <rule id="100131" level="8">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">(?i)(?:etc(?:(?:/|%(?:25){0,2}2f)|(?:\\|%(?:25){0,2}5c|%c0%5c|%c1%9c|%u2216)|%c0%af|%u2215|%uefc8|%uf025)+(?:passwd|shadow|group|hosts|issue|motd|crontab|sudoers|fstab|hostname|resolv(?:\.|%(?:25){0,2}2e|%c0%ae|%c0%2e|%e0%80%ae|%u002e|%uff0e)conf)|proc(?:(?:/|%(?:25){0,2}2f)|(?:\\|%(?:25){0,2}5c|%c0%5c|%c1%9c|%u2216)|%c0%af|%u2215|%uefc8|%uf025)+self(?:(?:/|%(?:25){0,2}2f)|(?:\\|%(?:25){0,2}5c|%c0%5c|%c1%9c|%u2216)|%c0%af|%u2215|%uefc8|%uf025)|(?:win|boot|system)(?:\.|%(?:25){0,2}2e|%c0%ae|%c0%2e|%e0%80%ae|%u002e|%uff0e)ini|system32|inetpub|global(?:\.|%(?:25){0,2}2e|%c0%ae|%c0%2e|%e0%80%ae|%u002e|%uff0e)asa|web(?:\.|%(?:25){0,2}2e|%c0%ae|%c0%2e|%e0%80%ae|%u002e|%uff0e)config|wp-config|(?:\.|%(?:25){0,2}2e|%c0%ae|%c0%2e|%e0%80%ae|%u002e|%uff0e)ht(?:passwd|access)|var(?:(?:/|%(?:25){0,2}2f)|(?:\\|%(?:25){0,2}5c|%c0%5c|%c1%9c|%u2216)|%c0%af|%u2215|%uefc8|%uf025)+(?:log|mail|adm|spool|lib(?:(?:/|%(?:25){0,2}2f)|(?:\\|%(?:25){0,2}5c|%c0%5c|%c1%9c|%u2216)|%c0%af|%u2215|%uefc8|%uf025)+mysql)(?:(?:/|%(?:25){0,2}2f)|(?:\\|%(?:25){0,2}5c|%c0%5c|%c1%9c|%u2216)|%c0%af|%u2215|%uefc8|%uf025)|(?:\.|%(?:25){0,2}2e|%c0%ae|%c0%2e|%e0%80%ae|%u002e|%uff0e)ssh(?:(?:/|%(?:25){0,2}2f)|(?:\\|%(?:25){0,2}5c|%c0%5c|%c1%9c|%u2216)|%c0%af|%u2215|%uefc8|%uf025)|id_rsa|(?:\.|%(?:25){0,2}2e|%c0%ae|%c0%2e|%e0%80%ae|%u002e|%uff0e)bash_history)</url>
+    <description>SIG Path traversal/LFI: tep he thong nhay cam</description>
+    <group>siem10_sig_traversal,</group>
+  </rule>
+  <rule id="100132" level="8">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">(?i)(?:(?:\.|%(?:25){0,2}2e|%c0%ae|%c0%2e|%e0%80%ae|%u002e|%uff0e){2}(?:(?:/|%(?:25){0,2}2f)|(?:\\|%(?:25){0,2}5c|%c0%5c|%c1%9c|%u2216)|%c0%af|%u2215|%uefc8|%uf025).{0,40}(?:etc|windows|winnt|boot|proc|var|usr)(?:(?:/|%(?:25){0,2}2f)|(?:\\|%(?:25){0,2}5c|%c0%5c|%c1%9c|%u2216)|%c0%af|%u2215|%uefc8|%uf025)|%(?:25){0,2}00|(?:php|file|zip|phar|expect|glob|data)(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)*(?::|%(?:25){0,2}3a)(?:(?:/|%(?:25){0,2}2f)){2})</url>
+    <description>SIG Path traversal/LFI: ../ mot lan ket hop tep he thong, byte rong, wrapper</description>
+    <group>siem10_sig_traversal,</group>
+  </rule>
+  <rule id="100133" level="8">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">(?i)(?:=|(?:/|%(?:25){0,2}2f))(?:/|%(?:25){0,2}2f)etc(?:(?:/|%(?:25){0,2}2f)|(?:\\|%(?:25){0,2}5c|%c0%5c|%c1%9c|%u2216)|%c0%af|%u2215|%uefc8|%uf025)[a-z]|(?:=|(?:/|%(?:25){0,2}2f))(?:(?:/|%(?:25){0,2}2f)(?:etc|var|usr|opt|proc|root|home|private|volumes|srv|logs?|apache\d*|nginx|xampp|lampp)|[a-z](?::|%(?:25){0,2}3a)(?:(?:\\|%(?:25){0,2}5c|%c0%5c|%c1%9c|%u2216)|(?:/|%(?:25){0,2}2f)))[^\x26?#\s]{0,200}?(?:\.(?:conf|cnf|cfg|ini|log|err|config|default|pl|htpasswd)|_log|error_log|access_log|passwd|shadow|ftpusers|inittab|sshd_config|xferlog|messages|sendmail|hosts|my\.ini)(?![a-z0-9])</url>
+    <description>SIG LFI: duong dan tuyet doi toi tep cau hinh/nhat ky he thong</description>
+    <group>siem10_sig_traversal,</group>
+  </rule>
+  <rule id="100142" level="8">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">(?i)(?:\$|%(?:25){0,2}24)(?:\{|%(?:25){0,2}7b)?ifs</url>
+    <description>SIG Command injection: bien IFS thay khoang trang (${IFS}, $IFS)</description>
+    <group>siem10_sig_cmdi,</group>
+  </rule>
+  <rule id="100140" level="8">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">(?i)(?:(?:;|%(?:25){0,2}3b)|(?:[|]|%(?:25){0,2}7c)|(?:\x26|%(?:25){0,2}26)|`|%(?:25){0,2}60|\$(?:(?:\(|%(?:25){0,2}28)|\{)|%(?:25){0,2}24%(?:25){0,2}28|%(?:25){0,2}0a|%(?:25){0,2}0d|\\n)(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)*(?:(?:(?:'|%(?:25){0,2}27)|(?:\x22|%(?:25){0,2}22)|`|%(?:25){0,2}60))?(?:/(?:usr/)?(?:s?bin)/)?(?:id|whoami|uname|cat|ls|dir|ping|nc|ncat|netcat|wget|curl|bash|sh|zsh|dash|python[23]?|perl|php|ruby|nslookup|sleep|echo|ifconfig|ipconfig|netstat|ps|net|systeminfo|type|powershell|cmd|hostname|pwd|env|ver|tasklist|rm|chmod|touch|telnet|ssh|base64|xterm|dig|reg|phpinfo|system|exec|passthru|shell_exec|popen|proc_open|eval)(?:(?:\.|%(?:25){0,2}2e|%c0%ae|%c0%2e|%e0%80%ae|%u002e|%uff0e)exe)?(?=(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)|(?:;|%(?:25){0,2}3b)|(?:[|]|%(?:25){0,2}7c)|(?:\x26|%(?:25){0,2}26)|`|%(?:25){0,2}60|(?:/|%(?:25){0,2}2f)|(?:\)|%(?:25){0,2}29)|(?:\(|%(?:25){0,2}28)|-|$)</url>
+    <description>SIG Command injection: ky tu noi lenh roi lenh he thong</description>
+    <group>siem10_sig_cmdi,</group>
+  </rule>
+  <rule id="100141" level="8">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">(?i)(?:(?:/|%(?:25){0,2}2f)(?:usr(?:/|%(?:25){0,2}2f))?s?bin(?:/|%(?:25){0,2}2f)(?:ba|z|da|k|c|tc)?sh|(?:/|%(?:25){0,2}2f)(?:usr(?:/|%(?:25){0,2}2f))?s?bin(?:/|%(?:25){0,2}2f)(?:id|cat|nc|ls|ping|wget|curl|python[23]?|perl)\b|cmd(?:\.|%(?:25){0,2}2e|%c0%ae|%c0%2e|%e0%80%ae|%u002e|%uff0e)exe|powershell(?:\.|%(?:25){0,2}2e|%c0%ae|%c0%2e|%e0%80%ae|%u002e|%uff0e)exe|\b(?:system|passthru|shell_exec|popen|proc_open)(?:%(?:25){0,2}(?:20|09|0a|0b|0c|0d|a0)|\+|/\*.*?\*/|%(?:25){0,2}2f%(?:25){0,2}2a.*?%(?:25){0,2}2a%(?:25){0,2}2f)*(?:\(|%(?:25){0,2}28))</url>
+    <description>SIG Command injection: duong dan shell/trinh thong dich</description>
+    <group>siem10_sig_cmdi,</group>
+  </rule>
+</group>

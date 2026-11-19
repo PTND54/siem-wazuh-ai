@@ -1,0 +1,7 @@
+[ĐẠT      ] 5.1 đủ phiên, 0 lỗi mạng, 0 phiên mồ côi: {"phiên xong": 468, "kế hoạch": 468, "đã bắt đầu": 468, "request lỗi": 0, "failed": [], "mồ côi": 0}
+[ĐẠT      ] 5.2 coverage mọi phiên trong [0,98; 1,02]: {"min": 1.0, "max": 1.0, "ngoài khoảng": []}
+[ĐẠT      ] 5.3 phiên bị loại <= 14 (3% của 468): {"số phiên bị loại": 0, "danh sách": []}
+[ĐẠT      ] 5.4 không có alert chưa giải thích: {"unknown_in_range": 0, "ambiguous": 0, "canary_in_range (được phép)": 0, "liệt kê": []}
+[ĐẠT      ] 5.5 ai-service trực tiếp == offline (check_pipeline --stage live): ["[OK]      dataset_lockbox1.csv: 154025 alert offline, 154025 tài liệu sự kiện trong index; thiếu 0, trùng 0, thừa 0", "[OK]      dataset_lockbox1.csv: đặc trưng online vs offline: max|Δ| = 0.0e+00, ô lệch 0", "[OK]      dataset_lockbox1.csv: điểm online vs model(offline): max|Δ| = 0.0e+00, cờ lệch {'f1': 0, 'fp5': 0}", "[OK]      dataset_lockbox1.csv: alert đến trễ quá reorder (ai.late) = 0", "TỔNG: OK (16s)"]
+
+MỤC 5: HỢP LỆ — được tính chỉ số mục 6  -> output/lockbox1/validity.json

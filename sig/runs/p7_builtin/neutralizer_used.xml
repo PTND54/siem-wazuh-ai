@@ -1,0 +1,103 @@
+<!-- TAM THOI - sig_eval.py: vo hieu hoa luat nhom de do rieng luat dung san -->
+<group name="siem10_sigeval,">
+  <rule id="100110" level="8" overwrite="yes">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">^SIEM10_SIGEVAL_KHONG_BAO_GIO_KHOP$</url>
+    <description>tam tat 100110</description>
+  </rule>
+  <rule id="100111" level="8" overwrite="yes">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">^SIEM10_SIGEVAL_KHONG_BAO_GIO_KHOP$</url>
+    <description>tam tat 100111</description>
+  </rule>
+  <rule id="100112" level="8" overwrite="yes">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">^SIEM10_SIGEVAL_KHONG_BAO_GIO_KHOP$</url>
+    <description>tam tat 100112</description>
+  </rule>
+  <rule id="100113" level="8" overwrite="yes">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">^SIEM10_SIGEVAL_KHONG_BAO_GIO_KHOP$</url>
+    <description>tam tat 100113</description>
+  </rule>
+  <rule id="100114" level="8" overwrite="yes">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">^SIEM10_SIGEVAL_KHONG_BAO_GIO_KHOP$</url>
+    <description>tam tat 100114</description>
+  </rule>
+  <rule id="100115" level="8" overwrite="yes">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">^SIEM10_SIGEVAL_KHONG_BAO_GIO_KHOP$</url>
+    <description>tam tat 100115</description>
+  </rule>
+  <rule id="100116" level="8" overwrite="yes">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">^SIEM10_SIGEVAL_KHONG_BAO_GIO_KHOP$</url>
+    <description>tam tat 100116</description>
+  </rule>
+  <rule id="100117" level="8" overwrite="yes">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">^SIEM10_SIGEVAL_KHONG_BAO_GIO_KHOP$</url>
+    <description>tam tat 100117</description>
+  </rule>
+  <rule id="100118" level="8" overwrite="yes">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">^SIEM10_SIGEVAL_KHONG_BAO_GIO_KHOP$</url>
+    <description>tam tat 100118</description>
+  </rule>
+  <rule id="100120" level="8" overwrite="yes">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">^SIEM10_SIGEVAL_KHONG_BAO_GIO_KHOP$</url>
+    <description>tam tat 100120</description>
+  </rule>
+  <rule id="100121" level="8" overwrite="yes">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">^SIEM10_SIGEVAL_KHONG_BAO_GIO_KHOP$</url>
+    <description>tam tat 100121</description>
+  </rule>
+  <rule id="100122" level="8" overwrite="yes">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">^SIEM10_SIGEVAL_KHONG_BAO_GIO_KHOP$</url>
+    <description>tam tat 100122</description>
+  </rule>
+  <rule id="100123" level="8" overwrite="yes">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">^SIEM10_SIGEVAL_KHONG_BAO_GIO_KHOP$</url>
+    <description>tam tat 100123</description>
+  </rule>
+  <rule id="100130" level="8" overwrite="yes">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">^SIEM10_SIGEVAL_KHONG_BAO_GIO_KHOP$</url>
+    <description>tam tat 100130</description>
+  </rule>
+  <rule id="100131" level="8" overwrite="yes">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">^SIEM10_SIGEVAL_KHONG_BAO_GIO_KHOP$</url>
+    <description>tam tat 100131</description>
+  </rule>
+  <rule id="100132" level="8" overwrite="yes">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">^SIEM10_SIGEVAL_KHONG_BAO_GIO_KHOP$</url>
+    <description>tam tat 100132</description>
+  </rule>
+  <rule id="100133" level="8" overwrite="yes">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">^SIEM10_SIGEVAL_KHONG_BAO_GIO_KHOP$</url>
+    <description>tam tat 100133</description>
+  </rule>
+  <rule id="100142" level="8" overwrite="yes">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">^SIEM10_SIGEVAL_KHONG_BAO_GIO_KHOP$</url>
+    <description>tam tat 100142</description>
+  </rule>
+  <rule id="100140" level="8" overwrite="yes">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">^SIEM10_SIGEVAL_KHONG_BAO_GIO_KHOP$</url>
+    <description>tam tat 100140</description>
+  </rule>
+  <rule id="100141" level="8" overwrite="yes">
+    <if_sid>31100,31108</if_sid>
+    <url type="pcre2">^SIEM10_SIGEVAL_KHONG_BAO_GIO_KHOP$</url>
+    <description>tam tat 100141</description>
+  </rule>
+</group>

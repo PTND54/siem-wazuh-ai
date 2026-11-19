@@ -1,0 +1,6 @@
+✓ đã áp AI-R110011-r401-N12-T120-20261028-150005 ({'backup_s': 0.9, 'write_s': 0.17, 'validate_s': 0.7, 'restart_s': 13.1, 'health_s': 0.5, 'functional_s': 0.87}).  Tiếp: python3 scripts/apply_rule.py verify AI-R110011-r401-N12-T120-20261028-150005
+AI-R110011-r401-N12-T120-20261028-150005: luật ['110011'] khớp ở dòng [12] (kỳ vọng [12]: KHỚP)
+✓ đã áp AI-R110020-web_scan-N15-T10-20261028-150005 ({'backup_s': 1.19, 'write_s': 0.21, 'validate_s': 0.82, 'restart_s': 13.6, 'health_s': 0.5, 'functional_s': 0.92}).  Tiếp: python3 scripts/apply_rule.py verify AI-R110020-web_scan-N15-T10-20261028-150005
+AI-R110020-web_scan-N15-T10-20261028-150005: luật ['110020'] khớp ở dòng [15] (kỳ vọng [15]: KHỚP)
+✓ đã áp AI-R110030-any-N500-T10-20261028-150005 ({'backup_s': 0.92, 'write_s': 0.18, 'validate_s': 0.77, 'restart_s': 14.3, 'health_s': 0.5, 'functional_s': 1.7}).  Tiếp: python3 scripts/apply_rule.py verify AI-R110030-any-N500-T10-20261028-150005
+AI-R110030-any-N500-T10-20261028-150005: luật ['110030'] khớp ở dòng [500] (kỳ vọng [500]: KHỚP)

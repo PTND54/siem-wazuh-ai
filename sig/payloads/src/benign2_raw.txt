@@ -1,0 +1,60 @@
+1	SELECT * FROM users WHERE name = 'O''Brien';
+1	<div> vs <span> difference
+1	javascript array.filter(x => x > 0) not working
+1	grep -r "TODO" . | wc -l
+1	regex for email ^[\w.-]+@[\w-]+\.\w+$
+1	find . -name "*.log" -mtime +7 -delete
+2	Guns N' Roses
+2	Simon & Garfunkel greatest hits
+2	"The Hitchhiker's Guide to the Galaxy"
+2	AC/DC Back in Black vinyl
+2	Harry Potter & the Philosopher's Stone (illustrated)
+2	Beyoncé - Lemonade
+3	Outlook keeps asking for password after update
+3	VPN disconnects every 10 min – urgent!!
+3	Printer on 3rd floor (HP M404) shows "offline"
+3	Can't access \\fileserver01\finance share
+3	Request: new laptop for new hire <start date 12/01>
+3	Error 0x80070005 when installing Windows updates
+4	C:\Users\lan.nguyen\Documents\Q3 Report (final).docx
+4	/home/dev/projects/api/config.yaml
+4	Invoice #2024-0153.pdf
+4	\\NAS\Shared\Marketing\2026\Brochures
+4	~/Downloads/photos_2026-10-*.jpg
+4	budget_v2 - copy (3).xlsx
+5	65" 4K TV under $800
+5	USB-C to HDMI adapter 4K@60Hz
+5	iPhone 16 Pro vs Samsung S25
+5	men's running shoes size 10 1/2
+5	Samsung SSD 990 PRO 2TB MZ-V9P2T0BW
+5	coffee grinder 50% off
+6	(1250 * 12) / 0.85
+6	15% of 2,400
+6	loan 200000 @ 6.5% 30 yrs
+6	sqrt(144) + 3^2
+6	=SUM(A1:A10)/COUNT(A1:A10)
+6	1 USD = ? VND
+7	phở bò gần đây
+7	thời tiết Hà Nội ngày mai
+7	cách làm bánh xèo miền Tây
+7	vé máy bay đi Đà Nẵng giá rẻ
+7	học tiếng Anh online miễn phí
+7	điện thoại Samsung giá dưới 5 triệu
+8	nguyen.van.an@gmail.com
+8	O'Connor_Mike
+8	xX_DarkKnight_Xx
+8	Trần Thị Mai (Admin)
+8	j.smith+newsletter@company.co.uk
+8	dev_ops#42
+9	chicken tikka masala (slow cooker)
+9	gluten-free & dairy-free brownies
+9	1/2 cup butter to grams
+9	mac 'n' cheese baked
+9	350°F to °C
+9	"no-knead" bread recipe
+10	flights HAN -> SGN Dec 20-27
+10	hotels in Paris < €150/night
+10	Tokyo 5 nights | 2 adults + 1 child
+10	cheap flights NYC to LA one-way
+10	Bali villa w/ private pool
+10	train London – Edinburgh return

@@ -1,0 +1,591 @@
+{
+ "format": "siem10-proposal-v1",
+ "proposal_id": "AI-R110020-web_scan-N15-T10-20261028-150005",
+ "status": "applied",
+ "created_at": "2026-10-28T15:00:04+00:00",
+ "generated_by": "rule_proposer.py",
+ "kind": "frequency_rule",
+ "family": "web_scan",
+ "template": {
+  "name": "freq_same_srcip",
+  "version": 1
+ },
+ "purpose": "official",
+ "label_source": "ai",
+ "ai_labels": {
+  "model": "/workspace/models/full1/model.joblib",
+  "model_sha256": "7b5186008494a265d7dbe800a7cb39e347b011d644c07af64ba11b0aba97474d",
+  "op": "fp5",
+  "threshold": 0.7573061065,
+  "score_decimals": 9,
+  "k": 1,
+  "rule": "phiên nghi ngờ nếu >= 1 alert có round(predict_proba, 9) >= 0.7573061065 (fp5)",
+  "alerts_scored": 79671,
+  "alerts_flagged": 52267,
+  "model_train_data": {
+   "path": "data/dataset_full1.csv",
+   "sha256": "36c103e0a2390a472936dc499bf1b341610af33e1ede509a6231995c79fbb372",
+   "features_sha_dataset": "2f738e629753c3ba",
+   "features_sha_code": "2f738e629753c3ba",
+   "rows": 161614
+  },
+  "agreement": {
+   "sessions": 240,
+   "ai_attack_truth_attack": 112,
+   "ai_attack_truth_benign": 4,
+   "ai_benign_truth_attack": 0,
+   "ai_benign_truth_benign": 124
+  }
+ },
+ "params": {
+  "frequency": 15,
+  "timeframe": 10,
+  "parent": "<if_matched_group>web_scan</if_matched_group>",
+  "same_srcip": true
+ },
+ "fingerprint": "7b2764ec6b4071ee",
+ "xml_sha256": "b1f2fa885e72a8ad387c522e9aea6da8ebfb848ecd7aad596a45ab5a183c25fe",
+ "data": {
+  "path": "data/dataset_full1.csv",
+  "sha256": "36c103e0a2390a472936dc499bf1b341610af33e1ede509a6231995c79fbb372",
+  "eval": [
+   "data/dataset_shift1.csv",
+   "data/dataset_tools2.csv"
+  ],
+  "select_extra": [
+   {
+    "path": "data/dataset_dev1.csv",
+    "sha256": "fe641f986d3b07b36cb6a18403002666f3e0abeadbd8a381ca33cafbead7088b"
+   }
+  ]
+ },
+ "selection": {
+  "split": "val+dev1 (nhãn AI)",
+  "label_source": "ai",
+  "criterion": "dò chung: tối đa số phiên AI cho là nghi ngờ bị luật bắt, cả bộ chạm <= 6/124 phiên AI cho là sạch (val+dev1 (nhãn AI)); nhãn thật KHÔNG dùng để chọn",
+  "search": {
+   "combinations_evaluated": 710,
+   "ties_at_best": 1,
+   "best_key": [
+    95,
+    -5,
+    -3
+   ],
+   "candidate_points": {
+    "r401": 1,
+    "web_scan": 5,
+    "r3xx": 9,
+    "r5xx": 1,
+    "other": 0,
+    "any": 8
+   }
+  },
+  "set": [
+   "r401",
+   "web_scan",
+   "any"
+  ],
+  "info": {
+   "alone": {
+    "N": 15,
+    "T": 10
+   },
+   "detected": 53,
+   "false_alarm": 3,
+   "ttd_median_s": 2.3691859245300293,
+   "feasible_points": 59,
+   "candidate_points": 5
+  }
+ },
+ "regression": {
+  "passed": true,
+  "summary": "val+dev1 (nhãn AI): bắt 53/116 (riêng 35), báo nhầm 3/124 (cả bộ 5/124; ngưỡng 6)",
+  "criteria": "val+dev1 (nhãn AI): cả bộ <= ngưỡng báo nhầm, luật bắt >= 1 phiên mà các luật khác không bắt — cả khi mô phỏng độc lập lẫn mô phỏng chung; báo nhầm tính với cửa sổ T+1 s (làm tròn giây xấu nhất); các tập khác chỉ tham khảo; nhãn = kết luận AI theo phiên (nhãn thật chỉ báo cáo ở SELECT_TRUTH)",
+  "joint_select": {
+   "union": {
+    "attack_sessions": 116,
+    "benign_sessions": 124,
+    "detected": 95,
+    "false_alarm": 5,
+    "detect_rate": 0.8189655172413793,
+    "fp_rate": 0.04032258064516129
+   },
+   "rule": {
+    "detected": 53,
+    "false_alarm": 3,
+    "unique_detected": 36
+   }
+  },
+  "time_model": "wazuh_sec_worst_case",
+  "decision_split": "val+dev1 (nhãn AI)",
+  "splits": {
+   "SELECT": {
+    "rule": {
+     "attack_sessions": 116,
+     "benign_sessions": 124,
+     "detected": 53,
+     "false_alarm": 3,
+     "detect_rate": 0.45689655172413796,
+     "fp_rate": 0.024193548387096774,
+     "ttd_median_s": 2.3691859245300293,
+     "alerts_to_first_median": 16.0,
+     "fires_per_detected_session_median": 14.0,
+     "unique_detected": 35
+    },
+    "union": {
+     "attack_sessions": 116,
+     "benign_sessions": 124,
+     "detected": 95,
+     "false_alarm": 5,
+     "detect_rate": 0.8189655172413793,
+     "fp_rate": 0.04032258064516129
+    }
+   },
+   "SELECT_TRUTH": {
+    "rule": {
+     "attack_sessions": 112,
+     "benign_sessions": 128,
+     "detected": 52,
+     "false_alarm": 4,
+     "detect_rate": 0.4642857142857143,
+     "fp_rate": 0.03125,
+     "ttd_median_s": 2.3048189878463745,
+     "alerts_to_first_median": 16.0,
+     "fires_per_detected_session_median": 13.0,
+     "unique_detected": 34
+    },
+    "union": {
+     "attack_sessions": 112,
+     "benign_sessions": 128,
+     "detected": 94,
+     "false_alarm": 7,
+     "detect_rate": 0.8392857142857143,
+     "fp_rate": 0.0546875
+    }
+   },
+   "val": {
+    "rule": {
+     "attack_sessions": 42,
+     "benign_sessions": 48,
+     "detected": 18,
+     "false_alarm": 0,
+     "detect_rate": 0.42857142857142855,
+     "fp_rate": 0.0,
+     "ttd_median_s": 1.2175060510635376,
+     "alerts_to_first_median": 16.0,
+     "fires_per_detected_session_median": 16.0,
+     "unique_detected": 12
+    },
+    "union": {
+     "attack_sessions": 42,
+     "benign_sessions": 48,
+     "detected": 34,
+     "false_alarm": 3,
+     "detect_rate": 0.8095238095238095,
+     "fp_rate": 0.0625
+    }
+   },
+   "train": {
+    "rule": {
+     "attack_sessions": 126,
+     "benign_sessions": 144,
+     "detected": 58,
+     "false_alarm": 7,
+     "detect_rate": 0.4603174603174603,
+     "fp_rate": 0.04861111111111111,
+     "ttd_median_s": 2.0787389278411865,
+     "alerts_to_first_median": 16.0,
+     "fires_per_detected_session_median": 11.5,
+     "unique_detected": 39
+    },
+    "union": {
+     "attack_sessions": 126,
+     "benign_sessions": 144,
+     "detected": 105,
+     "false_alarm": 8,
+     "detect_rate": 0.8333333333333334,
+     "fp_rate": 0.05555555555555555
+    }
+   },
+   "test": {
+    "rule": {
+     "attack_sessions": 70,
+     "benign_sessions": 80,
+     "detected": 34,
+     "false_alarm": 4,
+     "detect_rate": 0.4857142857142857,
+     "fp_rate": 0.05,
+     "ttd_median_s": 1.5768336057662964,
+     "alerts_to_first_median": 16.0,
+     "fires_per_detected_session_median": 16.0,
+     "unique_detected": 24
+    },
+    "union": {
+     "attack_sessions": 70,
+     "benign_sessions": 80,
+     "detected": 63,
+     "false_alarm": 5,
+     "detect_rate": 0.9,
+     "fp_rate": 0.0625
+    }
+   },
+   "stress": {
+    "rule": {
+     "attack_sessions": 0,
+     "benign_sessions": 12,
+     "detected": 0,
+     "false_alarm": 0,
+     "detect_rate": null,
+     "fp_rate": 0.0,
+     "ttd_median_s": null,
+     "alerts_to_first_median": null,
+     "fires_per_detected_session_median": null,
+     "unique_detected": 0
+    },
+    "union": {
+     "attack_sessions": 0,
+     "benign_sessions": 12,
+     "detected": 0,
+     "false_alarm": 9,
+     "detect_rate": null,
+     "fp_rate": 0.75
+    }
+   },
+   "shift1:shift": {
+    "rule": {
+     "attack_sessions": 56,
+     "benign_sessions": 64,
+     "detected": 23,
+     "false_alarm": 3,
+     "detect_rate": 0.4107142857142857,
+     "fp_rate": 0.046875,
+     "ttd_median_s": 3.0394420623779297,
+     "alerts_to_first_median": 16.0,
+     "fires_per_detected_session_median": 15.0,
+     "unique_detected": 15
+    },
+    "union": {
+     "attack_sessions": 56,
+     "benign_sessions": 64,
+     "detected": 42,
+     "false_alarm": 5,
+     "detect_rate": 0.75,
+     "fp_rate": 0.078125
+    }
+   },
+   "shift1:stress": {
+    "rule": {
+     "attack_sessions": 0,
+     "benign_sessions": 6,
+     "detected": 0,
+     "false_alarm": 0,
+     "detect_rate": null,
+     "fp_rate": 0.0,
+     "ttd_median_s": null,
+     "alerts_to_first_median": null,
+     "fires_per_detected_session_median": null,
+     "unique_detected": 0
+    },
+    "union": {
+     "attack_sessions": 0,
+     "benign_sessions": 6,
+     "detected": 0,
+     "false_alarm": 5,
+     "detect_rate": null,
+     "fp_rate": 0.8333333333333334
+    }
+   },
+   "tools2:tools": {
+    "rule": {
+     "attack_sessions": 22,
+     "benign_sessions": 8,
+     "detected": 14,
+     "false_alarm": 0,
+     "detect_rate": 0.6363636363636364,
+     "fp_rate": 0.0,
+     "ttd_median_s": 0.015334486961364746,
+     "alerts_to_first_median": 16.0,
+     "fires_per_detected_session_median": 306.0,
+     "unique_detected": 2
+    },
+    "union": {
+     "attack_sessions": 22,
+     "benign_sessions": 8,
+     "detected": 22,
+     "false_alarm": 0,
+     "detect_rate": 1.0,
+     "fp_rate": 0.0
+    }
+   }
+  },
+  "by_scenario_select": [
+   {
+    "scenario": "api_client",
+    "label": 0,
+    "sessions": 16,
+    "fired": 0
+   },
+   {
+    "scenario": "browse_human",
+    "label": 0,
+    "sessions": 16,
+    "fired": 0
+   },
+   {
+    "scenario": "crawler",
+    "label": 0,
+    "sessions": 16,
+    "fired": 0
+   },
+   {
+    "scenario": "forgot_pw",
+    "label": 0,
+    "sessions": 16,
+    "fired": 0
+   },
+   {
+    "scenario": "heavy_burst",
+    "label": 0,
+    "sessions": 16,
+    "fired": 0
+   },
+   {
+    "scenario": "monitor",
+    "label": 0,
+    "sessions": 16,
+    "fired": 0
+   },
+   {
+    "scenario": "typo_login",
+    "label": 0,
+    "sessions": 16,
+    "fired": 0
+   },
+   {
+    "scenario": "auth_fast",
+    "label": 1,
+    "sessions": 16,
+    "fired": 0
+   },
+   {
+    "scenario": "auth_slow",
+    "label": 1,
+    "sessions": 16,
+    "fired": 0
+   },
+   {
+    "scenario": "broken_links",
+    "label": 1,
+    "sessions": 16,
+    "fired": 4
+   },
+   {
+    "scenario": "flood",
+    "label": 1,
+    "sessions": 16,
+    "fired": 0
+   },
+   {
+    "scenario": "recon_then_brute",
+    "label": 1,
+    "sessions": 16,
+    "fired": 16
+   },
+   {
+    "scenario": "scan_fast",
+    "label": 1,
+    "sessions": 16,
+    "fired": 16
+   },
+   {
+    "scenario": "scan_pulsed",
+    "label": 1,
+    "sessions": 16,
+    "fired": 14
+   },
+   {
+    "scenario": "scan_stealth",
+    "label": 1,
+    "sessions": 16,
+    "fired": 6
+   }
+  ]
+ },
+ "evidence": [
+  {
+   "session": "dev1/test_broken_links_000",
+   "scenario": "broken_links",
+   "fires": 22
+  },
+  {
+   "session": "dev1/test_broken_links_001",
+   "scenario": "broken_links",
+   "fires": 15
+  },
+  {
+   "session": "dev1/test_recon_then_brute_000",
+   "scenario": "recon_then_brute",
+   "fires": 110
+  },
+  {
+   "session": "dev1/test_recon_then_brute_001",
+   "scenario": "recon_then_brute",
+   "fires": 95
+  },
+  {
+   "session": "dev1/test_recon_then_brute_002",
+   "scenario": "recon_then_brute",
+   "fires": 98
+  },
+  {
+   "session": "dev1/test_scan_fast_000",
+   "scenario": "scan_fast",
+   "fires": 33
+  },
+  {
+   "session": "dev1/test_scan_fast_001",
+   "scenario": "scan_fast",
+   "fires": 116
+  },
+  {
+   "session": "dev1/test_scan_fast_002",
+   "scenario": "scan_fast",
+   "fires": 110
+  },
+  {
+   "session": "dev1/test_scan_pulsed_001",
+   "scenario": "scan_pulsed",
+   "fires": 1
+  },
+  {
+   "session": "dev1/test_scan_pulsed_002",
+   "scenario": "scan_pulsed",
+   "fires": 2
+  }
+ ],
+ "verify": {
+  "lines": [
+   "SIEMLAB 1792546250453331 172.30.90.170 \"GET /old/page-2.html HTTP/1.1\" 404 0",
+   "SIEMLAB 1792546250664688 172.30.90.170 \"GET /old/page-0.html HTTP/1.1\" 404 0",
+   "SIEMLAB 1792546251018345 172.30.90.170 \"GET /old/page-3.html HTTP/1.1\" 404 0",
+   "SIEMLAB 1792546251241909 172.30.90.170 \"GET /old/page-2.html HTTP/1.1\" 404 0",
+   "SIEMLAB 1792546251703265 172.30.90.170 \"GET /old/page-3.html HTTP/1.1\" 404 0",
+   "SIEMLAB 1792546252903749 172.30.90.170 \"GET /old/page-1.html HTTP/1.1\" 404 0",
+   "SIEMLAB 1792546253605357 172.30.90.170 \"GET /old/page-3.html HTTP/1.1\" 404 0",
+   "SIEMLAB 1792546254005191 172.30.90.170 \"GET /old/page-3.html HTTP/1.1\" 404 0",
+   "SIEMLAB 1792546254743054 172.30.90.170 \"GET /old/page-0.html HTTP/1.1\" 404 0",
+   "SIEMLAB 1792546255078419 172.30.90.170 \"GET /old/page-0.html HTTP/1.1\" 404 0",
+   "SIEMLAB 1792546255316388 172.30.90.170 \"GET /old/page-0.html HTTP/1.1\" 404 0",
+   "SIEMLAB 1792546255470670 172.30.90.170 \"GET /old/page-0.html HTTP/1.1\" 404 0",
+   "SIEMLAB 1792546255787583 172.30.90.170 \"GET /old/page-2.html HTTP/1.1\" 404 0",
+   "SIEMLAB 1792546256273644 172.30.90.170 \"GET /old/page-2.html HTTP/1.1\" 404 0",
+   "SIEMLAB 1792546256410329 172.30.90.170 \"GET /old/page-2.html HTTP/1.1\" 404 0",
+   "SIEMLAB 1792546256594916 172.30.90.170 \"GET /old/page-2.html HTTP/1.1\" 404 0"
+  ],
+  "expect_fire_at": [
+   15
+  ],
+  "source_session": "dev1/test_broken_links_000",
+  "note": "logtest đọc liền một mạch nên mọi dòng nằm trong T; kỳ vọng tính bằng wazuh_sim"
+ },
+ "limitations": [
+  "giờ Apache thay giờ Manager (trễ trung vị 0,48 s đo ở 2b); làm tròn giây tính theo trường hợp xấu nhất",
+  "nhiều luồng so luật song song của Wazuh có thể làm lần khớp lệch ±1-2 sự kiện (2b: khớp mức phiên 100%)"
+ ],
+ "history": [
+  {
+   "at": "2026-10-28T15:04:10+00:00",
+   "action": "apply",
+   "by": "thuan",
+   "ok": true,
+   "rule_ids": [
+    "110020"
+   ],
+   "timings": {
+    "backup_s": 1.19,
+    "write_s": 0.21,
+    "validate_s": 0.82,
+    "restart_s": 13.6,
+    "health_s": 0.5,
+    "functional_s": 0.92
+   },
+   "details": {
+    "backup": [
+     "wazuh/backups/ai_rules.20261029-020340.host.xml",
+     "wazuh/backups/ai_rules.20261029-020340.active.xml",
+     "/var/ossec/etc/siem10_backups/ai_rules.20261029-020340.xml"
+    ],
+    "validate": {
+     "ok": true,
+     "out": "",
+     "new_messages": []
+    },
+    "restart": {
+     "ok": true,
+     "out": "ead.\n  from starlette.testclient import TestClient\n2026/10/28 15:03:47 wazuh-integratord: INFO: Remote integrations not configured. Clean exit.\n2026/10/28 15:03:52 wazuh-modulesd:router: INFO: Loaded router module.\n2026/10/28 15:03:52 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.\n2026/10/28 15:03:52 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module."
+    },
+    "health": {
+     "ready_s": 0.5,
+     "canary_http": 404,
+     "canary_alert": true,
+     "canary_alert_s": 2.4,
+     "canary_enriched": 1,
+     "canary_enriched_s": 12.5,
+     "ai_rules_host_eq_active": true
+    },
+    "functional": {
+     "fired_at": [
+      15
+     ],
+     "expected": [
+      15
+     ]
+    },
+    "pre_health": {
+     "ready_s": 0.5,
+     "canary_http": 404,
+     "canary_alert": true,
+     "canary_alert_s": 2.4,
+     "canary_enriched": 1,
+     "canary_enriched_s": 8.4,
+     "ai_rules_host_eq_active": true
+    }
+   },
+   "no_regression_override": false,
+   "demo_override": false
+  },
+  {
+   "at": "2026-10-28T15:04:11+00:00",
+   "action": "verify",
+   "by": "thuan",
+   "ok": true,
+   "result": {
+    "fired_at": [
+     15
+    ],
+    "expected": [
+     15
+    ],
+    "match": true,
+    "rule_ids": [
+     "100012",
+     "100012",
+     "100012",
+     "100012",
+     "100012",
+     "100012",
+     "100012",
+     "100012",
+     "100012",
+     "100012",
+     "100012",
+     "100012",
+     "100012",
+     "100012",
+     "110020",
+     "100012"
+    ]
+   }
+  }
+ ]
+}

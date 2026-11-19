@@ -1,0 +1,47 @@
+## thoi diem
+Sat Nov 14 16:01:54 UTC 2026
+Sun Nov 15 03:01:54 +11 2026
+## A1 manifest
+TRÙNG bản kê đã chốt: digest 5e55b4673c269d5bb8b66d7ff30fffcfcfa6484a8517339cd1fe8b20bc90ede0 (394 file), applied ['AI-R110011-r401-N12-T120-20261028-150005', 'AI-R110020-web_scan-N15-T10-20261028-150005', 'AI-R110030-any-N500-T10-20261028-150005']
+## A2 de xuat
+ĐỀ XUẤT                                      TRẠNG THÁI         RULE      HỒI QUY   TẠO LÚC
+AI-R110011-r401-N12-T120-20261028-150005     applied            110011    đạt       2026-10-28T15:00:04
+AI-R110020-web_scan-N15-T10-20261028-150005  applied            110020    đạt       2026-10-28T15:00:04
+AI-R110030-any-N500-T10-20261028-150005      applied            110030    đạt       2026-10-28T15:00:04
+CANARY-20261022-221925                       removed            119800    đạt       2026-10-22T11:19:25
+CANARY-20261022-222728                       removed            119803    đạt       2026-10-22T11:27:28
+CANARY-20261026-182004                       removed            119830    đạt       2026-10-26T07:20:04
+CANARY-BROKEN-20261022-222120                removed            119801    đạt       2026-10-22T11:21:20
+CANARY-BROKEN-20261022-222703                rejected           119802    đạt       2026-10-22T11:27:03
+DEMO-R110030-any-N300-T10-20261026-141544    proposed (demo)    110030    đạt       2026-10-26T14:15:44
+R110011-r401-N12-T120-20261022-163955        removed            110011    đạt       2026-10-22T16:39:55
+R110020-web_scan-N15-T10-20261022-163955     removed            110020    đạt       2026-10-22T16:39:55
+R110030-any-N500-T10-20261022-163955         removed            110030    đạt       2026-10-22T16:39:55
+R110030-any-N600-T10-20261026-110447         removed            110030    đạt       2026-10-26T11:04:47
+## A3 dataset
+12
+36c103e0a2390a47
+fe641f986d3b07b3
+## A4 thu muc la
+ls: cannot access 'sig': No such file or directory
+ls: cannot access 'demo': No such file or directory
+ls: cannot access 'proposals.bak': No such file or directory
+ls: cannot access 'zz.bak': No such file or directory
+## A5 ban sao D: so voi WSL
+(het A5)
+## B1 container
+ai-service  exited  Exited (0) 11 days ago
+apache-target  exited  Exited (0) 11 days ago
+redis  exited  Exited (0) 11 days ago
+wazuh.dashboard  exited  Exited (127) 11 days ago
+wazuh.indexer  exited  Exited (127) 11 days ago
+wazuh.manager  exited  Exited (127) 11 days ago
+wazuh-agent  exited  Exited (137) 11 days ago
+## B2 tai nguyen
+/dev/sdd       1007G  2.6G  954G   1% /
+Mem:            7557        1054        5984          49         726        6503
+TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
+Images          11        8         8.851GB   472.2MB (5%)
+Containers      11        0         103.7MB   103.7MB (100%)
+Local Volumes   17        17        12.98GB   0B (0%)
+Build Cache     0         0         0B        0B

@@ -1,0 +1,11 @@
+# Mọi tệp văn bản lưu và lấy ra với xuống dòng LF, để các script .sh chạy được trong WSL kể cả khi clone trên Windows
+* text=auto eol=lf
+
+# Tệp payload tải về và kết quả đo thô: giữ nguyên từng byte (sha256 đã ghi trong sig/payloads/src/manifest*.txt)
+sig/payloads/src/** -text
+sig/runs/** -text
+
+# Tệp nhị phân
+*.joblib binary
+*.png binary
+*.tgz binary

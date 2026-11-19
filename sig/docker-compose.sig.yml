@@ -1,0 +1,8 @@
+# siem10, luật chữ ký — file compose PHỤ: cho agent đọc thêm access_log. Không sửa docker-compose.yml.
+# Bật:  docker compose -p siem10 -f docker-compose.yml -f sig/docker-compose.sig.yml up -d --no-deps --force-recreate wazuh-agent
+# Tắt:  docker compose -p siem10 up -d --no-deps --force-recreate wazuh-agent
+# Mọi lệnh `up` cho agent KHÔNG kèm file này (kể cả setup/after_unzip.sh, setup/agent_tune.sh) sẽ lặng lẽ tắt access_log.
+services:
+  wazuh-agent:
+    volumes:
+      - ./sig/agent/ossec.conf:/wazuh-config-mount/etc/ossec.conf

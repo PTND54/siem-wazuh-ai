@@ -1,0 +1,112 @@
+{
+ "dev": {
+  "sqli": {
+   "unique": 770,
+   "removed_overlap_with_dev": 0,
+   "sampled": 120
+  },
+  "xss": {
+   "unique": 852,
+   "removed_overlap_with_dev": 0,
+   "sampled": 120
+  },
+  "traversal": {
+   "unique": 1430,
+   "removed_overlap_with_dev": 0,
+   "sampled": 120
+  },
+  "cmdi": {
+   "unique": 492,
+   "removed_overlap_with_dev": 0,
+   "sampled": 120
+  }
+ },
+ "test": {
+  "sqli": {
+   "unique": 251,
+   "removed_overlap_with_dev": 93,
+   "sampled": 120
+  },
+  "xss": {
+   "unique": 6041,
+   "removed_overlap_with_dev": 6,
+   "sampled": 120
+  },
+  "traversal": {
+   "unique": 1461,
+   "removed_overlap_with_dev": 15,
+   "sampled": 120
+  },
+  "cmdi": {
+   "unique": 8262,
+   "removed_overlap_with_dev": 0,
+   "sampled": 120
+  }
+ },
+ "benign": {
+  "dev_values": 53,
+  "test_values": 48,
+  "subtypes": {
+   "sql_words": 26,
+   "quote": 9,
+   "tech": 21,
+   "shell_words": 17,
+   "paths": 9,
+   "urls": 4,
+   "misc": 15
+  }
+ },
+ "files": {
+  "dev": {
+   "cases": 1440,
+   "sha256": "46e3621de3e32636ea368cc359346bef868057fb9a311293124d267951e67eed",
+   "max_url_len": 971,
+   "by_category": {
+    "sqli": 360,
+    "xss": 360,
+    "traversal": 360,
+    "cmdi": 360
+   }
+  },
+  "test": {
+   "cases": 1440,
+   "sha256": "d664ef855bf71732626e60caef6a19b737bd1f2dff8032bd90ad30ad4d2dee8f",
+   "max_url_len": 405,
+   "by_category": {
+    "sqli": 360,
+    "xss": 360,
+    "traversal": 360,
+    "cmdi": 360
+   }
+  },
+  "benign_dev": {
+   "cases": 106,
+   "sha256": "2cc3357a5dfa044fc1b1ae955615196c53011ffdb66c4990c713c34692fd81df",
+   "max_url_len": 64,
+   "by_category": {
+    "sql_words": 26,
+    "quote": 10,
+    "tech": 22,
+    "shell_words": 18,
+    "paths": 10,
+    "urls": 4,
+    "misc": 16
+   }
+  },
+  "benign_test": {
+   "cases": 96,
+   "sha256": "a1f9b2c863fcb7fd4eef8049a81b87a86a0c663cbc91841623495a55b106f631",
+   "max_url_len": 74,
+   "by_category": {
+    "sql_words": 26,
+    "quote": 8,
+    "tech": 20,
+    "shell_words": 16,
+    "paths": 8,
+    "urls": 4,
+    "misc": 14
+   }
+  }
+ }
+}
+dropped: {"dev/Generic_Fuzz.txt": {}, "dev/Generic_UnionSelect.txt": {}, "dev/Generic_ErrorBased.txt": {}, "dev/Generic_TimeBased.txt": {}, "dev/Auth_Bypass.txt": {}, "dev/IntrudersXSS.txt": {"dài > 400": 2}, "dev/XSS_Polyglots.txt": {}, "dev/RSNAKE_XSS.txt": {}, "dev/xss_alert.txt": {"dài > 400": 2}, "dev/directory_traversal.txt": {}, "dev/deep_traversal.txt": {"thay {FILE} -> etc/passwd (vẫn giữ)": 896, "dài > 400": 16}, "dev/traversals-8-deep-exotic-encoding.txt": {"thay {FILE} -> etc/passwd (vẫn giữ)": 871, "dài > 400": 16}, "dev/command-execution-unix.txt": {}, "dev/command_exec.txt": {"dài > 400": 4}, "test/Generic-SQLi.txt": {}, "test/quick-SQLi.txt": {}, "test/XSS-Cheat-Sheet-PortSwigger.txt": {}, "test/LFI-LFISuite-pathtotest.txt": {"rỗng": 1}, "test/LFI-linux-and-windows_by-1N3_CrowdShield.txt": {}, "test/command-injection-commix.txt": {}}

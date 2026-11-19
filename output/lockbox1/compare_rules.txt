@@ -1,0 +1,28 @@
+# Luật thật so với mô phỏng — dataset_lockbox1.csv
+
+154025 dòng, 468 phiên. Luật đang áp: r401 (110011: N=12, T=120s), web_scan (110020: N=15, T=10s), any (110030: N=500, T=10s)
+Alert theo rule trong dataset: {'100010': 77294, '100012': 46933, '100011': 21761, '110020': 3188, '110011': 1877, '100013': 1265, '100014': 1187, '100015': 430, '110030': 90}. Dòng không tìm thấy alert: 0.
+
+Trễ Manager − Apache: trung vị 1.076 s, p95 1.909 s, p99 1.983 s, max 2.011 s, min 0.007 s.
+
+| cách tính giờ | luật | phiên khớp từng dòng | phiên khớp bắt/không bắt | phiên thật bắt | phiên mô phỏng bắt | lần khớp thật | lần khớp mô phỏng |
+|---|---|---|---|---|---|---|---|
+| apache | r401 | 420/468 | 468/468 | 103 | 103 | 1877 | 1874 |
+| apache | web_scan | 408/468 | 465/468 | 102 | 99 | 3188 | 3132 |
+| apache | any | 442/468 | 453/468 | 31 | 30 | 90 | 62 |
+| manager | r401 | 420/468 | 468/468 | 103 | 103 | 1877 | 1874 |
+| manager | web_scan | 408/468 | 465/468 | 102 | 99 | 3188 | 3133 |
+| manager | any | 437/468 | 453/468 | 31 | 32 | 90 | 64 |
+| manager_sec | r401 | 420/468 | 468/468 | 103 | 103 | 1877 | 1874 |
+| manager_sec | web_scan | 414/468 | 467/468 | 102 | 101 | 3188 | 3143 |
+| manager_sec | any | 440/468 | 455/468 | 31 | 40 | 90 | 82 |
+| joint | r401 | 420/468 | 468/468 | 103 | 103 | 1877 | 1874 |
+| joint | web_scan | 414/468 | 467/468 | 102 | 101 | 3188 | 3143 |
+| joint | any | 451/468 | 466/468 | 31 | 29 | 90 | 56 |
+
+Dòng mà mô phỏng độc lập (manager_sec) cho >= 2 luật cùng khớp (Wazuh chỉ sinh 1 alert): 1
+Thứ tự nạp dùng cho 'joint': r401 (110011) -> web_scan (110020) -> any (110030)
+
+## Chỗ lệch (joint, tối đa 20 mỗi luật)
+
+-> /workspace/output/compare_lockbox1/report.md

@@ -1,0 +1,3862 @@
+{
+ "data": "data/dataset_dev_rules1.csv",
+ "rules": {
+  "r401": {
+   "pid": "R110011-r401-N12-T120-20261022-163955",
+   "rule_id": "110011",
+   "N": 12,
+   "T": 120,
+   "applied_at": "2026-10-26T07:25:17+00:00"
+  },
+  "web_scan": {
+   "pid": "R110020-web_scan-N15-T10-20261022-163955",
+   "rule_id": "110020",
+   "N": 15,
+   "T": 10,
+   "applied_at": "2026-10-26T07:26:00+00:00"
+  },
+  "any": {
+   "pid": "R110030-any-N500-T10-20261022-163955",
+   "rule_id": "110030",
+   "N": 500,
+   "T": 10,
+   "applied_at": "2026-10-26T07:26:43+00:00"
+  }
+ },
+ "rows": 37188,
+ "sessions": 136,
+ "rows_without_alert": 0,
+ "rows_rule_id_differs_from_alert": 0,
+ "rule_id_counts": {
+  "100010": 16333,
+  "100012": 11334,
+  "100011": 7376,
+  "110020": 767,
+  "110011": 643,
+  "100013": 323,
+  "100014": 301,
+  "100015": 105,
+  "110030": 6
+ },
+ "latency_manager_minus_apache": {
+  "median_s": 0.4825880527496338,
+  "p95_s": 1.6667749166488652,
+  "p99_s": 1.985157046318054,
+  "max_s": 5.533202171325684,
+  "min_s": 0.0014710426330566406
+ },
+ "results": {
+  "apache": {
+   "r401": {
+    "sessions": 136,
+    "exact": 125,
+    "session_agree": 136,
+    "actual_detected": 28,
+    "sim_detected": 28,
+    "actual_fires": 643,
+    "sim_fires": 640,
+    "mismatches": [
+     {
+      "session": "dev_rules1/test_auth_fast_000",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       216,
+       228,
+       240,
+       252,
+       264
+      ],
+      "only_sim": [
+       215,
+       227,
+       239,
+       251,
+       263
+      ],
+      "span_only_actual_s": [
+       0.817,
+       0.782,
+       0.701,
+       0.895,
+       0.755
+      ],
+      "span_only_sim_s": [
+       0.822,
+       0.714,
+       0.716,
+       0.884,
+       0.748
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/test_auth_fast_001",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       142
+      ],
+      "only_sim": [
+       143
+      ],
+      "span_only_actual_s": [
+       0.56
+      ],
+      "span_only_sim_s": [
+       0.577
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_auth_fast_000",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       73,
+       84,
+       97,
+       99,
+       109,
+       121,
+       133,
+       145,
+       157,
+       169
+      ],
+      "only_sim": [
+       83,
+       95,
+       107,
+       119,
+       131,
+       143,
+       155,
+       167,
+       179,
+       191
+      ],
+      "span_only_actual_s": [
+       0.368,
+       0.478,
+       0.496,
+       0.498,
+       0.365
+      ],
+      "span_only_sim_s": [
+       0.448,
+       0.545,
+       0.387,
+       0.382,
+       0.57
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_auth_fast_001",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       121,
+       132,
+       144,
+       156,
+       168,
+       180,
+       192,
+       204,
+       216,
+       228
+      ],
+      "only_sim": [
+       119,
+       131,
+       143,
+       155,
+       167,
+       179,
+       191,
+       203,
+       215,
+       227
+      ],
+      "span_only_actual_s": [
+       0.663,
+       0.703,
+       0.437,
+       0.333,
+       0.372
+      ],
+      "span_only_sim_s": [
+       0.607,
+       0.732,
+       0.391,
+       0.309,
+       0.465
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_auth_fast_002",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       144
+      ],
+      "only_sim": [
+       143
+      ],
+      "span_only_actual_s": [
+       2.795
+      ],
+      "span_only_sim_s": [
+       3.22
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_auth_fast_003",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       481,
+       682,
+       960
+      ],
+      "only_sim": [
+       479,
+       683,
+       959
+      ],
+      "span_only_actual_s": [
+       0.41,
+       0.375,
+       0.283
+      ],
+      "span_only_sim_s": [
+       0.406,
+       0.376,
+       0.309
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_000",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       1045,
+       1057,
+       1069,
+       1081,
+       1093,
+       1105,
+       1117
+      ],
+      "only_sim": [
+       1044,
+       1056,
+       1068,
+       1080,
+       1092,
+       1104,
+       1116
+      ],
+      "span_only_actual_s": [
+       0.862,
+       0.812,
+       0.878,
+       0.901,
+       0.984
+      ],
+      "span_only_sim_s": [
+       0.863,
+       0.815,
+       0.888,
+       0.773,
+       1.028
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_002",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       269
+      ],
+      "only_sim": [
+       267
+      ],
+      "span_only_actual_s": [
+       1.166
+      ],
+      "span_only_sim_s": [
+       1.263
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_003",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       688,
+       700,
+       713,
+       725,
+       737,
+       749,
+       761,
+       773,
+       785,
+       797
+      ],
+      "only_sim": [
+       699,
+       711,
+       723,
+       735,
+       747,
+       759,
+       771,
+       783,
+       795,
+       807
+      ],
+      "span_only_actual_s": [
+       3.379,
+       2.545,
+       4.177,
+       2.937,
+       1.665
+      ],
+      "span_only_sim_s": [
+       2.71,
+       2.969,
+       3.894,
+       1.573,
+       2.135
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_004",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       1961,
+       1976,
+       1988,
+       2012,
+       2024,
+       2036,
+       2048,
+       2060,
+       2072,
+       2084
+      ],
+      "only_sim": [
+       1960,
+       1972,
+       1984,
+       2008,
+       2020,
+       2032,
+       2044,
+       2056,
+       2068,
+       2080
+      ],
+      "span_only_actual_s": [
+       0.328,
+       0.408,
+       0.376,
+       0.352,
+       0.348
+      ],
+      "span_only_sim_s": [
+       0.406,
+       0.363,
+       0.333,
+       0.299,
+       0.357
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/val_auth_fast_000",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       180,
+       193,
+       205,
+       217,
+       229,
+       241,
+       253,
+       265,
+       277,
+       289
+      ],
+      "only_sim": [
+       179,
+       191,
+       203,
+       215,
+       227,
+       239,
+       251,
+       263,
+       275,
+       287
+      ],
+      "span_only_actual_s": [
+       0.687,
+       0.494,
+       0.518,
+       0.508,
+       0.489
+      ],
+      "span_only_sim_s": [
+       0.755,
+       0.516,
+       0.499,
+       0.54,
+       0.523
+      ],
+      "T": 120,
+      "N": 12
+     }
+    ]
+   },
+   "web_scan": {
+    "sessions": 136,
+    "exact": 122,
+    "session_agree": 136,
+    "actual_detected": 31,
+    "sim_detected": 31,
+    "actual_fires": 767,
+    "sim_fires": 754,
+    "mismatches": [
+     {
+      "session": "dev_rules1/test_recon_then_brute_002",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       239,
+       253,
+       268,
+       284,
+       300,
+       317,
+       332,
+       348,
+       364,
+       379
+      ],
+      "only_sim": [
+       237,
+       252,
+       267,
+       283,
+       299,
+       316,
+       331,
+       346,
+       363,
+       378
+      ],
+      "span_only_actual_s": [
+       0.358,
+       0.401,
+       0.42,
+       0.525,
+       0.547
+      ],
+      "span_only_sim_s": [
+       0.366,
+       0.397,
+       0.418,
+       0.534,
+       0.552
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/test_scan_fast_000",
+      "scenario": "scan_fast",
+      "label": 1,
+      "only_actual": [
+       95,
+       110,
+       125,
+       140,
+       155,
+       170,
+       185,
+       201,
+       216,
+       231
+      ],
+      "only_sim": [
+       94,
+       109,
+       124,
+       139,
+       154,
+       169,
+       184,
+       200,
+       215,
+       230
+      ],
+      "span_only_actual_s": [
+       0.574,
+       0.675,
+       0.479,
+       0.522,
+       1.125
+      ],
+      "span_only_sim_s": [
+       0.612,
+       0.685,
+       0.454,
+       0.626,
+       0.555
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/test_scan_fast_001",
+      "scenario": "scan_fast",
+      "label": 1,
+      "only_actual": [
+       16,
+       32,
+       47,
+       62,
+       80,
+       93,
+       109,
+       124,
+       139,
+       154
+      ],
+      "only_sim": [
+       14,
+       30,
+       45,
+       60,
+       76,
+       91,
+       107,
+       122,
+       137,
+       152
+      ],
+      "span_only_actual_s": [
+       0.4,
+       0.435,
+       0.426,
+       0.403,
+       0.441
+      ],
+      "span_only_sim_s": [
+       0.414,
+       0.432,
+       0.415,
+       0.425,
+       0.444
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/test_scan_fast_002",
+      "scenario": "scan_fast",
+      "label": 1,
+      "only_actual": [
+       462,
+       483,
+       485,
+       497,
+       511,
+       512,
+       527,
+       542,
+       557,
+       572
+      ],
+      "only_sim": [
+       461,
+       478,
+       494,
+       509,
+       524,
+       539,
+       554,
+       569,
+       584,
+       599
+      ],
+      "span_only_actual_s": [
+       0.237,
+       0.261,
+       0.261,
+       0.176,
+       0.26
+      ],
+      "span_only_sim_s": [
+       0.259,
+       0.253,
+       0.205,
+       0.214,
+       0.244
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/test_scan_stealth_002",
+      "scenario": "scan_stealth",
+      "label": 1,
+      "only_actual": [
+       103,
+       272
+      ],
+      "only_sim": [
+       117
+      ],
+      "span_only_actual_s": [
+       10.279,
+       10.801
+      ],
+      "span_only_sim_s": [
+       9.685
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/train_broken_links_002",
+      "scenario": "broken_links",
+      "label": 0,
+      "only_actual": [
+       20,
+       43,
+       100,
+       119
+      ],
+      "only_sim": [
+       108
+      ],
+      "span_only_actual_s": [
+       10.402,
+       11.401,
+       11.494,
+       10.009
+      ],
+      "span_only_sim_s": [
+       9.278
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_000",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       31,
+       46,
+       61,
+       62,
+       74,
+       93,
+       108,
+       125,
+       140,
+       156
+      ],
+      "only_sim": [
+       30,
+       45,
+       60,
+       75,
+       90,
+       105,
+       122,
+       137,
+       153,
+       168
+      ],
+      "span_only_actual_s": [
+       0.358,
+       0.377,
+       0.326,
+       0.333,
+       0.312
+      ],
+      "span_only_sim_s": [
+       0.356,
+       0.399,
+       0.322,
+       0.318,
+       0.37
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_003",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       32,
+       46,
+       61,
+       77,
+       92,
+       107,
+       122,
+       137,
+       152,
+       167
+      ],
+      "only_sim": [
+       30,
+       45,
+       60,
+       75,
+       91,
+       106,
+       121,
+       136,
+       151,
+       166
+      ],
+      "span_only_actual_s": [
+       1.237,
+       2.182,
+       1.518,
+       1.208,
+       1.531
+      ],
+      "span_only_sim_s": [
+       1.185,
+       2.202,
+       1.462,
+       1.082,
+       1.756
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_004",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       161,
+       177,
+       184,
+       196,
+       221,
+       237,
+       238,
+       250,
+       266,
+       281
+      ],
+      "only_sim": [
+       157,
+       172,
+       187,
+       202,
+       217,
+       232,
+       247,
+       263,
+       278,
+       293
+      ],
+      "span_only_actual_s": [
+       0.238,
+       0.22,
+       0.212,
+       0.239,
+       0.274
+      ],
+      "span_only_sim_s": [
+       0.267,
+       0.229,
+       0.196,
+       0.262,
+       0.248
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/train_scan_fast_003",
+      "scenario": "scan_fast",
+      "label": 1,
+      "only_actual": [
+       63,
+       78,
+       98,
+       114,
+       130,
+       145,
+       160,
+       175,
+       190,
+       206
+      ],
+      "only_sim": [
+       62,
+       77,
+       97,
+       113,
+       129,
+       144,
+       159,
+       174,
+       189,
+       205
+      ],
+      "span_only_actual_s": [
+       0.992,
+       1.007,
+       1.373,
+       1.047,
+       1.088
+      ],
+      "span_only_sim_s": [
+       0.991,
+       1.006,
+       1.372,
+       1.057,
+       1.077
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/train_scan_stealth_001",
+      "scenario": "scan_stealth",
+      "label": 1,
+      "only_actual": [
+       42,
+       60,
+       83,
+       99,
+       118,
+       146,
+       164,
+       181,
+       206,
+       225
+      ],
+      "only_sim": [
+       46,
+       64,
+       86,
+       102,
+       122,
+       152,
+       171,
+       199,
+       218,
+       236
+      ],
+      "span_only_actual_s": [
+       10.243,
+       6.234,
+       7.693,
+       7.46,
+       6.345
+      ],
+      "span_only_sim_s": [
+       9.18,
+       6.722,
+       7.968,
+       6.939,
+       5.656
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/val_recon_then_brute_001",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       135
+      ],
+      "only_sim": [
+       134
+      ],
+      "span_only_actual_s": [
+       1.612
+      ],
+      "span_only_sim_s": [
+       1.655
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/val_scan_fast_000",
+      "scenario": "scan_fast",
+      "label": 1,
+      "only_actual": [
+       92,
+       108,
+       123,
+       138,
+       153,
+       168
+      ],
+      "only_sim": [
+       91,
+       107,
+       122,
+       137,
+       152,
+       167
+      ],
+      "span_only_actual_s": [
+       2.332,
+       3.148,
+       2.465,
+       3.055,
+       1.938
+      ],
+      "span_only_sim_s": [
+       2.239,
+       3.117,
+       2.5,
+       2.742,
+       2.026
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/val_scan_stealth_001",
+      "scenario": "scan_stealth",
+      "label": 1,
+      "only_actual": [
+       55,
+       80
+      ],
+      "only_sim": [
+       86
+      ],
+      "span_only_actual_s": [
+       11.335,
+       10.429
+      ],
+      "span_only_sim_s": [
+       9.992
+      ],
+      "T": 10,
+      "N": 15
+     }
+    ]
+   },
+   "any": {
+    "sessions": 136,
+    "exact": 134,
+    "session_agree": 134,
+    "actual_detected": 5,
+    "sim_detected": 7,
+    "actual_fires": 6,
+    "sim_fires": 12,
+    "mismatches": [
+     {
+      "session": "dev_rules1/test_scan_fast_002",
+      "scenario": "scan_fast",
+      "label": 1,
+      "only_actual": [],
+      "only_sim": [
+       499,
+       999,
+       1499
+      ],
+      "span_only_actual_s": [],
+      "span_only_sim_s": [
+       8.212,
+       7.897,
+       8.247
+      ],
+      "T": 10,
+      "N": 500
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_004",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [],
+      "only_sim": [
+       499,
+       999,
+       1499
+      ],
+      "span_only_actual_s": [],
+      "span_only_sim_s": [
+       8.862,
+       8.3,
+       8.42
+      ],
+      "T": 10,
+      "N": 500
+     }
+    ]
+   }
+  },
+  "manager": {
+   "r401": {
+    "sessions": 136,
+    "exact": 125,
+    "session_agree": 136,
+    "actual_detected": 28,
+    "sim_detected": 28,
+    "actual_fires": 643,
+    "sim_fires": 640,
+    "mismatches": [
+     {
+      "session": "dev_rules1/test_auth_fast_000",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       216,
+       228,
+       240,
+       252,
+       264
+      ],
+      "only_sim": [
+       215,
+       227,
+       239,
+       251,
+       263
+      ],
+      "span_only_actual_s": [
+       0.949,
+       1.034,
+       0.371,
+       1.598,
+       0.383
+      ],
+      "span_only_sim_s": [
+       0.948,
+       1.027,
+       0.372,
+       1.601,
+       0.05
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/test_auth_fast_001",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       142
+      ],
+      "only_sim": [
+       143
+      ],
+      "span_only_actual_s": [
+       1.286
+      ],
+      "span_only_sim_s": [
+       1.283
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_auth_fast_000",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       73,
+       84,
+       97,
+       99,
+       109,
+       121,
+       133,
+       145,
+       157,
+       169
+      ],
+      "only_sim": [
+       83,
+       95,
+       107,
+       119,
+       131,
+       143,
+       155,
+       167,
+       179,
+       191
+      ],
+      "span_only_actual_s": [
+       0.031,
+       0.029,
+       0.039,
+       0.029,
+       0.059
+      ],
+      "span_only_sim_s": [
+       0.029,
+       0.04,
+       0.03,
+       1.873,
+       0.036
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_auth_fast_001",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       121,
+       132,
+       144,
+       156,
+       168,
+       180,
+       192,
+       204,
+       216,
+       228
+      ],
+      "only_sim": [
+       119,
+       131,
+       143,
+       155,
+       167,
+       179,
+       191,
+       203,
+       215,
+       227
+      ],
+      "span_only_actual_s": [
+       0.031,
+       0.578,
+       0.657,
+       0.696,
+       0.022
+      ],
+      "span_only_sim_s": [
+       0.684,
+       0.576,
+       0.657,
+       0.694,
+       0.023
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_auth_fast_002",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       144
+      ],
+      "only_sim": [
+       143
+      ],
+      "span_only_actual_s": [
+       3.943
+      ],
+      "span_only_sim_s": [
+       3.968
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_auth_fast_003",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       481,
+       682,
+       960
+      ],
+      "only_sim": [
+       479,
+       683,
+       959
+      ],
+      "span_only_actual_s": [
+       0.022,
+       0.407,
+       0.417
+      ],
+      "span_only_sim_s": [
+       0.026,
+       0.404,
+       0.419
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_000",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       1045,
+       1057,
+       1069,
+       1081,
+       1093,
+       1105,
+       1117
+      ],
+      "only_sim": [
+       1044,
+       1056,
+       1068,
+       1080,
+       1092,
+       1104,
+       1116
+      ],
+      "span_only_actual_s": [
+       0.05,
+       1.923,
+       0.041,
+       1.938,
+       0.05
+      ],
+      "span_only_sim_s": [
+       0.04,
+       1.92,
+       0.043,
+       1.937,
+       0.05
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_002",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       269
+      ],
+      "only_sim": [
+       267
+      ],
+      "span_only_actual_s": [
+       0.069
+      ],
+      "span_only_sim_s": [
+       1.97
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_003",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       688,
+       700,
+       713,
+       725,
+       737,
+       749,
+       761,
+       773,
+       785,
+       797
+      ],
+      "only_sim": [
+       699,
+       711,
+       723,
+       735,
+       747,
+       759,
+       771,
+       783,
+       795,
+       807
+      ],
+      "span_only_actual_s": [
+       3.398,
+       4.084,
+       2.882,
+       3.045,
+       1.424
+      ],
+      "span_only_sim_s": [
+       2.596,
+       1.368,
+       3.971,
+       1.416,
+       2.559
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_004",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       1961,
+       1976,
+       1988,
+       2012,
+       2024,
+       2036,
+       2048,
+       2060,
+       2072,
+       2084
+      ],
+      "only_sim": [
+       1960,
+       1972,
+       1984,
+       2008,
+       2020,
+       2032,
+       2044,
+       2056,
+       2068,
+       2080
+      ],
+      "span_only_actual_s": [
+       1.845,
+       0.01,
+       0.02,
+       0.009,
+       1.928
+      ],
+      "span_only_sim_s": [
+       1.922,
+       0.019,
+       0.02,
+       0.019,
+       1.925
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/val_auth_fast_000",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       180,
+       193,
+       205,
+       217,
+       229,
+       241,
+       253,
+       265,
+       277,
+       289
+      ],
+      "only_sim": [
+       179,
+       191,
+       203,
+       215,
+       227,
+       239,
+       251,
+       263,
+       275,
+       287
+      ],
+      "span_only_actual_s": [
+       0.883,
+       0.626,
+       0.056,
+       0.859,
+       0.056
+      ],
+      "span_only_sim_s": [
+       0.875,
+       0.079,
+       0.607,
+       0.43,
+       0.057
+      ],
+      "T": 120,
+      "N": 12
+     }
+    ]
+   },
+   "web_scan": {
+    "sessions": 136,
+    "exact": 121,
+    "session_agree": 136,
+    "actual_detected": 31,
+    "sim_detected": 31,
+    "actual_fires": 767,
+    "sim_fires": 754,
+    "mismatches": [
+     {
+      "session": "dev_rules1/test_recon_then_brute_002",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       239,
+       253,
+       268,
+       284,
+       300,
+       317,
+       332,
+       348,
+       364,
+       379
+      ],
+      "only_sim": [
+       237,
+       252,
+       267,
+       283,
+       299,
+       316,
+       331,
+       346,
+       363,
+       378
+      ],
+      "span_only_actual_s": [
+       0.029,
+       0.972,
+       0.018,
+       0.955,
+       0.02
+      ],
+      "span_only_sim_s": [
+       0.029,
+       0.97,
+       0.018,
+       0.956,
+       0.021
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/test_scan_fast_000",
+      "scenario": "scan_fast",
+      "label": 1,
+      "only_actual": [
+       95,
+       110,
+       125,
+       140,
+       155,
+       170,
+       185,
+       201,
+       216,
+       231
+      ],
+      "only_sim": [
+       94,
+       109,
+       124,
+       139,
+       154,
+       169,
+       184,
+       200,
+       215,
+       230
+      ],
+      "span_only_actual_s": [
+       0.042,
+       0.65,
+       0.467,
+       0.86,
+       1.133
+      ],
+      "span_only_sim_s": [
+       0.795,
+       0.647,
+       0.467,
+       0.865,
+       1.125
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/test_scan_fast_001",
+      "scenario": "scan_fast",
+      "label": 1,
+      "only_actual": [
+       16,
+       32,
+       47,
+       62,
+       80,
+       93,
+       109,
+       124,
+       139,
+       154
+      ],
+      "only_sim": [
+       14,
+       30,
+       45,
+       60,
+       76,
+       91,
+       107,
+       122,
+       137,
+       152
+      ],
+      "span_only_actual_s": [
+       0.668,
+       0.042,
+       0.44,
+       0.848,
+       0.02
+      ],
+      "span_only_sim_s": [
+       0.67,
+       0.04,
+       0.439,
+       0.853,
+       0.03
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/test_scan_fast_002",
+      "scenario": "scan_fast",
+      "label": 1,
+      "only_actual": [
+       462,
+       483,
+       485,
+       497,
+       511,
+       512,
+       527,
+       542,
+       557,
+       572
+      ],
+      "only_sim": [
+       461,
+       478,
+       494,
+       509,
+       524,
+       539,
+       554,
+       569,
+       584,
+       599
+      ],
+      "span_only_actual_s": [
+       0.921,
+       0.02,
+       0.019,
+       0.02,
+       0.054
+      ],
+      "span_only_sim_s": [
+       0.916,
+       0.02,
+       0.01,
+       0.011,
+       0.964
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/test_scan_stealth_002",
+      "scenario": "scan_stealth",
+      "label": 1,
+      "only_actual": [
+       272
+      ],
+      "only_sim": [],
+      "span_only_actual_s": [
+       10.985
+      ],
+      "span_only_sim_s": [],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/train_broken_links_002",
+      "scenario": "broken_links",
+      "label": 0,
+      "only_actual": [
+       43,
+       100,
+       119
+      ],
+      "only_sim": [
+       108
+      ],
+      "span_only_actual_s": [
+       10.061,
+       10.04,
+       10.001
+      ],
+      "span_only_sim_s": [
+       9.981
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_000",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       31,
+       46,
+       61,
+       62,
+       74,
+       93,
+       108,
+       125,
+       140,
+       156
+      ],
+      "only_sim": [
+       30,
+       45,
+       60,
+       75,
+       90,
+       105,
+       122,
+       137,
+       153,
+       168
+      ],
+      "span_only_actual_s": [
+       0.04,
+       0.03,
+       0.03,
+       0.03,
+       0.029
+      ],
+      "span_only_sim_s": [
+       1.93,
+       0.039,
+       0.03,
+       0.029,
+       0.04
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_003",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       32,
+       46,
+       61,
+       77,
+       92,
+       107,
+       122,
+       137,
+       152,
+       167
+      ],
+      "only_sim": [
+       30,
+       45,
+       60,
+       75,
+       91,
+       106,
+       121,
+       136,
+       151,
+       166
+      ],
+      "span_only_actual_s": [
+       0.502,
+       2.533,
+       1.408,
+       1.567,
+       1.973
+      ],
+      "span_only_sim_s": [
+       0.464,
+       2.528,
+       1.404,
+       1.557,
+       1.984
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_004",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       161,
+       177,
+       184,
+       196,
+       221,
+       237,
+       238,
+       250,
+       266,
+       281
+      ],
+      "only_sim": [
+       157,
+       172,
+       187,
+       202,
+       217,
+       232,
+       247,
+       263,
+       278,
+       293
+      ],
+      "span_only_actual_s": [
+       1.633,
+       0.001,
+       0.001,
+       0.001,
+       0.001
+      ],
+      "span_only_sim_s": [
+       1.923,
+       0.0,
+       0.0,
+       0.001,
+       0.001
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/train_scan_fast_003",
+      "scenario": "scan_fast",
+      "label": 1,
+      "only_actual": [
+       63,
+       78,
+       98,
+       114,
+       130,
+       145,
+       160,
+       175,
+       190,
+       206
+      ],
+      "only_sim": [
+       62,
+       77,
+       97,
+       113,
+       129,
+       144,
+       159,
+       174,
+       189,
+       205
+      ],
+      "span_only_actual_s": [
+       0.446,
+       1.543,
+       1.033,
+       0.984,
+       1.017
+      ],
+      "span_only_sim_s": [
+       0.449,
+       1.551,
+       1.034,
+       0.982,
+       1.017
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/train_scan_stealth_001",
+      "scenario": "scan_stealth",
+      "label": 1,
+      "only_actual": [
+       146,
+       164,
+       181,
+       206,
+       225,
+       246,
+       266,
+       286
+      ],
+      "only_sim": [
+       152,
+       171,
+       198,
+       217,
+       235,
+       261,
+       281,
+       303
+      ],
+      "span_only_actual_s": [
+       10.041,
+       7.992,
+       7.969,
+       6.503,
+       8.012
+      ],
+      "span_only_sim_s": [
+       8.062,
+       7.994,
+       9.979,
+       8.007,
+       9.981
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/val_recon_then_brute_001",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       135
+      ],
+      "only_sim": [
+       134
+      ],
+      "span_only_actual_s": [
+       1.333
+      ],
+      "span_only_sim_s": [
+       1.997
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/val_scan_fast_000",
+      "scenario": "scan_fast",
+      "label": 1,
+      "only_actual": [
+       92,
+       108,
+       123,
+       138,
+       153,
+       168
+      ],
+      "only_sim": [
+       91,
+       107,
+       122,
+       137,
+       152,
+       167
+      ],
+      "span_only_actual_s": [
+       1.516,
+       3.991,
+       1.999,
+       3.015,
+       1.57
+      ],
+      "span_only_sim_s": [
+       1.514,
+       3.029,
+       2.001,
+       3.014,
+       2.006
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/val_scan_stealth_000",
+      "scenario": "scan_stealth",
+      "label": 1,
+      "only_actual": [
+       22,
+       42,
+       60,
+       83,
+       101,
+       126,
+       142,
+       162,
+       181
+      ],
+      "only_sim": [
+       23,
+       43,
+       65,
+       87,
+       106,
+       128,
+       145,
+       165
+      ],
+      "span_only_actual_s": [
+       10.009,
+       7.015,
+       10.001,
+       7.513,
+       5.454
+      ],
+      "span_only_sim_s": [
+       8.994,
+       7.408,
+       9.986,
+       8.0,
+       6.976
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/val_scan_stealth_001",
+      "scenario": "scan_stealth",
+      "label": 1,
+      "only_actual": [
+       55,
+       80
+      ],
+      "only_sim": [
+       86
+      ],
+      "span_only_actual_s": [
+       10.703,
+       10.017
+      ],
+      "span_only_sim_s": [
+       9.595
+      ],
+      "T": 10,
+      "N": 15
+     }
+    ]
+   },
+   "any": {
+    "sessions": 136,
+    "exact": 132,
+    "session_agree": 134,
+    "actual_detected": 5,
+    "sim_detected": 7,
+    "actual_fires": 6,
+    "sim_fires": 12,
+    "mismatches": [
+     {
+      "session": "dev_rules1/test_flood_000",
+      "scenario": "flood",
+      "label": 1,
+      "only_actual": [
+       499
+      ],
+      "only_sim": [
+       501
+      ],
+      "span_only_actual_s": [
+       10.008
+      ],
+      "span_only_sim_s": [
+       10.0
+      ],
+      "T": 10,
+      "N": 500
+     },
+     {
+      "session": "dev_rules1/test_scan_fast_002",
+      "scenario": "scan_fast",
+      "label": 1,
+      "only_actual": [],
+      "only_sim": [
+       499,
+       999,
+       1499
+      ],
+      "span_only_actual_s": [],
+      "span_only_sim_s": [
+       8.059,
+       7.989,
+       8.042
+      ],
+      "T": 10,
+      "N": 500
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_004",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [],
+      "only_sim": [
+       523,
+       1023,
+       1523
+      ],
+      "span_only_actual_s": [],
+      "span_only_sim_s": [
+       8.092,
+       7.998,
+       8.025
+      ],
+      "T": 10,
+      "N": 500
+     },
+     {
+      "session": "dev_rules1/val_flood_000",
+      "scenario": "flood",
+      "label": 1,
+      "only_actual": [
+       499
+      ],
+      "only_sim": [
+       502
+      ],
+      "span_only_actual_s": [
+       10.112
+      ],
+      "span_only_sim_s": [
+       9.691
+      ],
+      "T": 10,
+      "N": 500
+     }
+    ]
+   }
+  },
+  "manager_sec": {
+   "r401": {
+    "sessions": 136,
+    "exact": 125,
+    "session_agree": 136,
+    "actual_detected": 28,
+    "sim_detected": 28,
+    "actual_fires": 643,
+    "sim_fires": 640,
+    "mismatches": [
+     {
+      "session": "dev_rules1/test_auth_fast_000",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       216,
+       228,
+       240,
+       252,
+       264
+      ],
+      "only_sim": [
+       215,
+       227,
+       239,
+       251,
+       263
+      ],
+      "span_only_actual_s": [
+       1.0,
+       1.0,
+       0.0,
+       2.0,
+       0.0
+      ],
+      "span_only_sim_s": [
+       1.0,
+       1.0,
+       0.0,
+       2.0,
+       0.0
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/test_auth_fast_001",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       142
+      ],
+      "only_sim": [
+       143
+      ],
+      "span_only_actual_s": [
+       1.0
+      ],
+      "span_only_sim_s": [
+       1.0
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_auth_fast_000",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       73,
+       84,
+       97,
+       99,
+       109,
+       121,
+       133,
+       145,
+       157,
+       169
+      ],
+      "only_sim": [
+       83,
+       95,
+       107,
+       119,
+       131,
+       143,
+       155,
+       167,
+       179,
+       191
+      ],
+      "span_only_actual_s": [
+       0.0,
+       0.0,
+       1.0,
+       1.0,
+       0.0
+      ],
+      "span_only_sim_s": [
+       0.0,
+       1.0,
+       0.0,
+       1.0,
+       0.0
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_auth_fast_001",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       121,
+       132,
+       144,
+       156,
+       168,
+       180,
+       192,
+       204,
+       216,
+       228
+      ],
+      "only_sim": [
+       119,
+       131,
+       143,
+       155,
+       167,
+       179,
+       191,
+       203,
+       215,
+       227
+      ],
+      "span_only_actual_s": [
+       0.0,
+       0.0,
+       1.0,
+       1.0,
+       0.0
+      ],
+      "span_only_sim_s": [
+       1.0,
+       0.0,
+       1.0,
+       1.0,
+       0.0
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_auth_fast_002",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       144
+      ],
+      "only_sim": [
+       143
+      ],
+      "span_only_actual_s": [
+       4.0
+      ],
+      "span_only_sim_s": [
+       4.0
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_auth_fast_003",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       481,
+       682,
+       960
+      ],
+      "only_sim": [
+       479,
+       683,
+       959
+      ],
+      "span_only_actual_s": [
+       0.0,
+       1.0,
+       1.0
+      ],
+      "span_only_sim_s": [
+       0.0,
+       1.0,
+       1.0
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_000",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       1045,
+       1057,
+       1069,
+       1081,
+       1093,
+       1105,
+       1117
+      ],
+      "only_sim": [
+       1044,
+       1056,
+       1068,
+       1080,
+       1092,
+       1104,
+       1116
+      ],
+      "span_only_actual_s": [
+       0.0,
+       2.0,
+       0.0,
+       2.0,
+       0.0
+      ],
+      "span_only_sim_s": [
+       0.0,
+       2.0,
+       0.0,
+       2.0,
+       0.0
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_002",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       269
+      ],
+      "only_sim": [
+       267
+      ],
+      "span_only_actual_s": [
+       0.0
+      ],
+      "span_only_sim_s": [
+       2.0
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_003",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       688,
+       700,
+       713,
+       725,
+       737,
+       749,
+       761,
+       773,
+       785,
+       797
+      ],
+      "only_sim": [
+       699,
+       711,
+       723,
+       735,
+       747,
+       759,
+       771,
+       783,
+       795,
+       807
+      ],
+      "span_only_actual_s": [
+       4.0,
+       4.0,
+       3.0,
+       3.0,
+       2.0
+      ],
+      "span_only_sim_s": [
+       2.0,
+       2.0,
+       4.0,
+       2.0,
+       2.0
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_004",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       1961,
+       1976,
+       1988,
+       2012,
+       2024,
+       2036,
+       2048,
+       2060,
+       2072,
+       2084
+      ],
+      "only_sim": [
+       1960,
+       1972,
+       1984,
+       2008,
+       2020,
+       2032,
+       2044,
+       2056,
+       2068,
+       2080
+      ],
+      "span_only_actual_s": [
+       1.0,
+       0.0,
+       0.0,
+       0.0,
+       2.0
+      ],
+      "span_only_sim_s": [
+       2.0,
+       0.0,
+       0.0,
+       0.0,
+       2.0
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/val_auth_fast_000",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       180,
+       193,
+       205,
+       217,
+       229,
+       241,
+       253,
+       265,
+       277,
+       289
+      ],
+      "only_sim": [
+       179,
+       191,
+       203,
+       215,
+       227,
+       239,
+       251,
+       263,
+       275,
+       287
+      ],
+      "span_only_actual_s": [
+       1.0,
+       0.0,
+       1.0,
+       1.0,
+       0.0
+      ],
+      "span_only_sim_s": [
+       1.0,
+       0.0,
+       1.0,
+       0.0,
+       0.0
+      ],
+      "T": 120,
+      "N": 12
+     }
+    ]
+   },
+   "web_scan": {
+    "sessions": 136,
+    "exact": 124,
+    "session_agree": 136,
+    "actual_detected": 31,
+    "sim_detected": 31,
+    "actual_fires": 767,
+    "sim_fires": 758,
+    "mismatches": [
+     {
+      "session": "dev_rules1/test_recon_then_brute_002",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       239,
+       253,
+       268,
+       284,
+       300,
+       317,
+       332,
+       348,
+       364,
+       379
+      ],
+      "only_sim": [
+       237,
+       252,
+       267,
+       283,
+       299,
+       316,
+       331,
+       346,
+       363,
+       378
+      ],
+      "span_only_actual_s": [
+       0.0,
+       1.0,
+       0.0,
+       1.0,
+       0.0
+      ],
+      "span_only_sim_s": [
+       0.0,
+       1.0,
+       0.0,
+       1.0,
+       0.0
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/test_scan_fast_000",
+      "scenario": "scan_fast",
+      "label": 1,
+      "only_actual": [
+       95,
+       110,
+       125,
+       140,
+       155,
+       170,
+       185,
+       201,
+       216,
+       231
+      ],
+      "only_sim": [
+       94,
+       109,
+       124,
+       139,
+       154,
+       169,
+       184,
+       200,
+       215,
+       230
+      ],
+      "span_only_actual_s": [
+       0.0,
+       1.0,
+       0.0,
+       1.0,
+       1.0
+      ],
+      "span_only_sim_s": [
+       1.0,
+       1.0,
+       0.0,
+       1.0,
+       1.0
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/test_scan_fast_001",
+      "scenario": "scan_fast",
+      "label": 1,
+      "only_actual": [
+       16,
+       32,
+       47,
+       62,
+       80,
+       93,
+       109,
+       124,
+       139,
+       154
+      ],
+      "only_sim": [
+       14,
+       30,
+       45,
+       60,
+       76,
+       91,
+       107,
+       122,
+       137,
+       152
+      ],
+      "span_only_actual_s": [
+       0.0,
+       1.0,
+       0.0,
+       1.0,
+       0.0
+      ],
+      "span_only_sim_s": [
+       0.0,
+       1.0,
+       0.0,
+       1.0,
+       0.0
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/test_scan_fast_002",
+      "scenario": "scan_fast",
+      "label": 1,
+      "only_actual": [
+       462,
+       483,
+       485,
+       497,
+       511,
+       512,
+       527,
+       542,
+       557,
+       572
+      ],
+      "only_sim": [
+       461,
+       478,
+       494,
+       509,
+       524,
+       539,
+       554,
+       569,
+       584,
+       599
+      ],
+      "span_only_actual_s": [
+       1.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      "span_only_sim_s": [
+       1.0,
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/test_scan_stealth_002",
+      "scenario": "scan_stealth",
+      "label": 1,
+      "only_actual": [
+       272
+      ],
+      "only_sim": [
+       286
+      ],
+      "span_only_actual_s": [
+       11.0
+      ],
+      "span_only_sim_s": [
+       10.0
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_000",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       31,
+       46,
+       61,
+       62,
+       74,
+       93,
+       108,
+       125,
+       140,
+       156
+      ],
+      "only_sim": [
+       30,
+       45,
+       60,
+       75,
+       90,
+       105,
+       122,
+       137,
+       153,
+       168
+      ],
+      "span_only_actual_s": [
+       0.0,
+       0.0,
+       1.0,
+       1.0,
+       0.0
+      ],
+      "span_only_sim_s": [
+       1.0,
+       0.0,
+       1.0,
+       0.0,
+       0.0
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_003",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       32,
+       46,
+       61,
+       77,
+       92,
+       107,
+       122,
+       137,
+       152,
+       167
+      ],
+      "only_sim": [
+       30,
+       45,
+       60,
+       75,
+       91,
+       106,
+       121,
+       136,
+       151,
+       166
+      ],
+      "span_only_actual_s": [
+       1.0,
+       2.0,
+       2.0,
+       1.0,
+       2.0
+      ],
+      "span_only_sim_s": [
+       1.0,
+       2.0,
+       2.0,
+       1.0,
+       2.0
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_004",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       161,
+       177,
+       184,
+       196,
+       221,
+       237,
+       238,
+       250,
+       266,
+       281
+      ],
+      "only_sim": [
+       157,
+       172,
+       187,
+       202,
+       217,
+       232,
+       247,
+       263,
+       278,
+       293
+      ],
+      "span_only_actual_s": [
+       2.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      "span_only_sim_s": [
+       2.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/train_scan_fast_003",
+      "scenario": "scan_fast",
+      "label": 1,
+      "only_actual": [
+       63,
+       78,
+       98,
+       114,
+       130,
+       145,
+       160,
+       175,
+       190,
+       206
+      ],
+      "only_sim": [
+       62,
+       77,
+       97,
+       113,
+       129,
+       144,
+       159,
+       174,
+       189,
+       205
+      ],
+      "span_only_actual_s": [
+       1.0,
+       1.0,
+       1.0,
+       1.0,
+       1.0
+      ],
+      "span_only_sim_s": [
+       1.0,
+       1.0,
+       1.0,
+       1.0,
+       1.0
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/val_recon_then_brute_001",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       135
+      ],
+      "only_sim": [
+       134
+      ],
+      "span_only_actual_s": [
+       2.0
+      ],
+      "span_only_sim_s": [
+       2.0
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/val_scan_fast_000",
+      "scenario": "scan_fast",
+      "label": 1,
+      "only_actual": [
+       92,
+       108,
+       123,
+       138,
+       153,
+       168
+      ],
+      "only_sim": [
+       91,
+       107,
+       122,
+       137,
+       152,
+       167
+      ],
+      "span_only_actual_s": [
+       1.0,
+       4.0,
+       2.0,
+       3.0,
+       1.0
+      ],
+      "span_only_sim_s": [
+       1.0,
+       3.0,
+       2.0,
+       3.0,
+       2.0
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/val_scan_stealth_001",
+      "scenario": "scan_stealth",
+      "label": 1,
+      "only_actual": [
+       55
+      ],
+      "only_sim": [],
+      "span_only_actual_s": [
+       11.0
+      ],
+      "span_only_sim_s": [],
+      "T": 10,
+      "N": 15
+     }
+    ]
+   },
+   "any": {
+    "sessions": 136,
+    "exact": 134,
+    "session_agree": 134,
+    "actual_detected": 5,
+    "sim_detected": 7,
+    "actual_fires": 6,
+    "sim_fires": 12,
+    "mismatches": [
+     {
+      "session": "dev_rules1/test_scan_fast_002",
+      "scenario": "scan_fast",
+      "label": 1,
+      "only_actual": [],
+      "only_sim": [
+       499,
+       999,
+       1499
+      ],
+      "span_only_actual_s": [],
+      "span_only_sim_s": [
+       8.0,
+       8.0,
+       8.0
+      ],
+      "T": 10,
+      "N": 500
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_004",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [],
+      "only_sim": [
+       499,
+       999,
+       1499
+      ],
+      "span_only_actual_s": [],
+      "span_only_sim_s": [
+       10.0,
+       8.0,
+       8.0
+      ],
+      "T": 10,
+      "N": 500
+     }
+    ]
+   }
+  },
+  "joint": {
+   "r401": {
+    "sessions": 136,
+    "exact": 125,
+    "session_agree": 136,
+    "actual_detected": 28,
+    "sim_detected": 28,
+    "actual_fires": 643,
+    "sim_fires": 640,
+    "mismatches": [
+     {
+      "session": "dev_rules1/test_auth_fast_000",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       216,
+       228,
+       240,
+       252,
+       264
+      ],
+      "only_sim": [
+       215,
+       227,
+       239,
+       251,
+       263
+      ],
+      "span_only_actual_s": [
+       1.0,
+       1.0,
+       0.0,
+       2.0,
+       0.0
+      ],
+      "span_only_sim_s": [
+       1.0,
+       1.0,
+       0.0,
+       2.0,
+       0.0
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/test_auth_fast_001",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       142
+      ],
+      "only_sim": [
+       143
+      ],
+      "span_only_actual_s": [
+       1.0
+      ],
+      "span_only_sim_s": [
+       1.0
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_auth_fast_000",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       73,
+       84,
+       97,
+       99,
+       109,
+       121,
+       133,
+       145,
+       157,
+       169
+      ],
+      "only_sim": [
+       83,
+       95,
+       107,
+       119,
+       131,
+       143,
+       155,
+       167,
+       179,
+       191
+      ],
+      "span_only_actual_s": [
+       0.0,
+       0.0,
+       1.0,
+       1.0,
+       0.0
+      ],
+      "span_only_sim_s": [
+       0.0,
+       1.0,
+       0.0,
+       1.0,
+       0.0
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_auth_fast_001",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       121,
+       132,
+       144,
+       156,
+       168,
+       180,
+       192,
+       204,
+       216,
+       228
+      ],
+      "only_sim": [
+       119,
+       131,
+       143,
+       155,
+       167,
+       179,
+       191,
+       203,
+       215,
+       227
+      ],
+      "span_only_actual_s": [
+       0.0,
+       0.0,
+       1.0,
+       1.0,
+       0.0
+      ],
+      "span_only_sim_s": [
+       1.0,
+       0.0,
+       1.0,
+       1.0,
+       0.0
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_auth_fast_002",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       144
+      ],
+      "only_sim": [
+       143
+      ],
+      "span_only_actual_s": [
+       4.0
+      ],
+      "span_only_sim_s": [
+       4.0
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_auth_fast_003",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       481,
+       682,
+       960
+      ],
+      "only_sim": [
+       479,
+       683,
+       959
+      ],
+      "span_only_actual_s": [
+       0.0,
+       1.0,
+       1.0
+      ],
+      "span_only_sim_s": [
+       0.0,
+       1.0,
+       1.0
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_000",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       1045,
+       1057,
+       1069,
+       1081,
+       1093,
+       1105,
+       1117
+      ],
+      "only_sim": [
+       1044,
+       1056,
+       1068,
+       1080,
+       1092,
+       1104,
+       1116
+      ],
+      "span_only_actual_s": [
+       0.0,
+       2.0,
+       0.0,
+       2.0,
+       0.0
+      ],
+      "span_only_sim_s": [
+       0.0,
+       2.0,
+       0.0,
+       2.0,
+       0.0
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_002",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       269
+      ],
+      "only_sim": [
+       267
+      ],
+      "span_only_actual_s": [
+       0.0
+      ],
+      "span_only_sim_s": [
+       2.0
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_003",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       688,
+       700,
+       713,
+       725,
+       737,
+       749,
+       761,
+       773,
+       785,
+       797
+      ],
+      "only_sim": [
+       699,
+       711,
+       723,
+       735,
+       747,
+       759,
+       771,
+       783,
+       795,
+       807
+      ],
+      "span_only_actual_s": [
+       4.0,
+       4.0,
+       3.0,
+       3.0,
+       2.0
+      ],
+      "span_only_sim_s": [
+       2.0,
+       2.0,
+       4.0,
+       2.0,
+       2.0
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_004",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       1961,
+       1976,
+       1988,
+       2012,
+       2024,
+       2036,
+       2048,
+       2060,
+       2072,
+       2084
+      ],
+      "only_sim": [
+       1960,
+       1972,
+       1984,
+       2008,
+       2020,
+       2032,
+       2044,
+       2056,
+       2068,
+       2080
+      ],
+      "span_only_actual_s": [
+       1.0,
+       0.0,
+       0.0,
+       0.0,
+       2.0
+      ],
+      "span_only_sim_s": [
+       2.0,
+       0.0,
+       0.0,
+       0.0,
+       2.0
+      ],
+      "T": 120,
+      "N": 12
+     },
+     {
+      "session": "dev_rules1/val_auth_fast_000",
+      "scenario": "auth_fast",
+      "label": 1,
+      "only_actual": [
+       180,
+       193,
+       205,
+       217,
+       229,
+       241,
+       253,
+       265,
+       277,
+       289
+      ],
+      "only_sim": [
+       179,
+       191,
+       203,
+       215,
+       227,
+       239,
+       251,
+       263,
+       275,
+       287
+      ],
+      "span_only_actual_s": [
+       1.0,
+       0.0,
+       1.0,
+       1.0,
+       0.0
+      ],
+      "span_only_sim_s": [
+       1.0,
+       0.0,
+       1.0,
+       0.0,
+       0.0
+      ],
+      "T": 120,
+      "N": 12
+     }
+    ]
+   },
+   "web_scan": {
+    "sessions": 136,
+    "exact": 124,
+    "session_agree": 136,
+    "actual_detected": 31,
+    "sim_detected": 31,
+    "actual_fires": 767,
+    "sim_fires": 758,
+    "mismatches": [
+     {
+      "session": "dev_rules1/test_recon_then_brute_002",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       239,
+       253,
+       268,
+       284,
+       300,
+       317,
+       332,
+       348,
+       364,
+       379
+      ],
+      "only_sim": [
+       237,
+       252,
+       267,
+       283,
+       299,
+       316,
+       331,
+       346,
+       363,
+       378
+      ],
+      "span_only_actual_s": [
+       0.0,
+       1.0,
+       0.0,
+       1.0,
+       0.0
+      ],
+      "span_only_sim_s": [
+       0.0,
+       1.0,
+       0.0,
+       1.0,
+       0.0
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/test_scan_fast_000",
+      "scenario": "scan_fast",
+      "label": 1,
+      "only_actual": [
+       95,
+       110,
+       125,
+       140,
+       155,
+       170,
+       185,
+       201,
+       216,
+       231
+      ],
+      "only_sim": [
+       94,
+       109,
+       124,
+       139,
+       154,
+       169,
+       184,
+       200,
+       215,
+       230
+      ],
+      "span_only_actual_s": [
+       0.0,
+       1.0,
+       0.0,
+       1.0,
+       1.0
+      ],
+      "span_only_sim_s": [
+       1.0,
+       1.0,
+       0.0,
+       1.0,
+       1.0
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/test_scan_fast_001",
+      "scenario": "scan_fast",
+      "label": 1,
+      "only_actual": [
+       16,
+       32,
+       47,
+       62,
+       80,
+       93,
+       109,
+       124,
+       139,
+       154
+      ],
+      "only_sim": [
+       14,
+       30,
+       45,
+       60,
+       76,
+       91,
+       107,
+       122,
+       137,
+       152
+      ],
+      "span_only_actual_s": [
+       0.0,
+       1.0,
+       0.0,
+       1.0,
+       0.0
+      ],
+      "span_only_sim_s": [
+       0.0,
+       1.0,
+       0.0,
+       1.0,
+       0.0
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/test_scan_fast_002",
+      "scenario": "scan_fast",
+      "label": 1,
+      "only_actual": [
+       462,
+       483,
+       485,
+       497,
+       511,
+       512,
+       527,
+       542,
+       557,
+       572
+      ],
+      "only_sim": [
+       461,
+       478,
+       494,
+       509,
+       524,
+       539,
+       554,
+       569,
+       584,
+       599
+      ],
+      "span_only_actual_s": [
+       1.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      "span_only_sim_s": [
+       1.0,
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/test_scan_stealth_002",
+      "scenario": "scan_stealth",
+      "label": 1,
+      "only_actual": [
+       272
+      ],
+      "only_sim": [
+       286
+      ],
+      "span_only_actual_s": [
+       11.0
+      ],
+      "span_only_sim_s": [
+       10.0
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_000",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       31,
+       46,
+       61,
+       62,
+       74,
+       93,
+       108,
+       125,
+       140,
+       156
+      ],
+      "only_sim": [
+       30,
+       45,
+       60,
+       75,
+       90,
+       105,
+       122,
+       137,
+       153,
+       168
+      ],
+      "span_only_actual_s": [
+       0.0,
+       0.0,
+       1.0,
+       1.0,
+       0.0
+      ],
+      "span_only_sim_s": [
+       1.0,
+       0.0,
+       1.0,
+       0.0,
+       0.0
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_003",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       32,
+       46,
+       61,
+       77,
+       92,
+       107,
+       122,
+       137,
+       152,
+       167
+      ],
+      "only_sim": [
+       30,
+       45,
+       60,
+       75,
+       91,
+       106,
+       121,
+       136,
+       151,
+       166
+      ],
+      "span_only_actual_s": [
+       1.0,
+       2.0,
+       2.0,
+       1.0,
+       2.0
+      ],
+      "span_only_sim_s": [
+       1.0,
+       2.0,
+       2.0,
+       1.0,
+       2.0
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/train_recon_then_brute_004",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       161,
+       177,
+       184,
+       196,
+       221,
+       237,
+       238,
+       250,
+       266,
+       281
+      ],
+      "only_sim": [
+       157,
+       172,
+       187,
+       202,
+       217,
+       232,
+       247,
+       263,
+       278,
+       293
+      ],
+      "span_only_actual_s": [
+       2.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      "span_only_sim_s": [
+       2.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/train_scan_fast_003",
+      "scenario": "scan_fast",
+      "label": 1,
+      "only_actual": [
+       63,
+       78,
+       98,
+       114,
+       130,
+       145,
+       160,
+       175,
+       190,
+       206
+      ],
+      "only_sim": [
+       62,
+       77,
+       97,
+       113,
+       129,
+       144,
+       159,
+       174,
+       189,
+       205
+      ],
+      "span_only_actual_s": [
+       1.0,
+       1.0,
+       1.0,
+       1.0,
+       1.0
+      ],
+      "span_only_sim_s": [
+       1.0,
+       1.0,
+       1.0,
+       1.0,
+       1.0
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/val_recon_then_brute_001",
+      "scenario": "recon_then_brute",
+      "label": 1,
+      "only_actual": [
+       135
+      ],
+      "only_sim": [
+       134
+      ],
+      "span_only_actual_s": [
+       2.0
+      ],
+      "span_only_sim_s": [
+       2.0
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/val_scan_fast_000",
+      "scenario": "scan_fast",
+      "label": 1,
+      "only_actual": [
+       92,
+       108,
+       123,
+       138,
+       153,
+       168
+      ],
+      "only_sim": [
+       91,
+       107,
+       122,
+       137,
+       152,
+       167
+      ],
+      "span_only_actual_s": [
+       1.0,
+       4.0,
+       2.0,
+       3.0,
+       1.0
+      ],
+      "span_only_sim_s": [
+       1.0,
+       3.0,
+       2.0,
+       3.0,
+       2.0
+      ],
+      "T": 10,
+      "N": 15
+     },
+     {
+      "session": "dev_rules1/val_scan_stealth_001",
+      "scenario": "scan_stealth",
+      "label": 1,
+      "only_actual": [
+       55
+      ],
+      "only_sim": [],
+      "span_only_actual_s": [
+       11.0
+      ],
+      "span_only_sim_s": [],
+      "T": 10,
+      "N": 15
+     }
+    ]
+   },
+   "any": {
+    "sessions": 136,
+    "exact": 136,
+    "session_agree": 136,
+    "actual_detected": 5,
+    "sim_detected": 5,
+    "actual_fires": 6,
+    "sim_fires": 6,
+    "mismatches": []
+   }
+  }
+ },
+ "interaction": {
+  "events_with_2plus_sim_rules": 0
+ }
+}
