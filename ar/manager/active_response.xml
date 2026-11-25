@@ -1,0 +1,18 @@
+  <!-- Chặn tạm 180 giây bằng firewall-drop có sẵn của Wazuh, chạy trên agent (dùng chung mạng với apache-target).
+       110011 r401, 110020 web_scan: luật tương quan đã duyệt từ kết luận AI. 100250: tín hiệu chặn trực tiếp từ AI (ar-watch).
+       KHÔNG nối 110030 (any N=500): nguồn báo nhầm chính ở heavy_burst. -->
+  <active-response>
+    <disabled>no</disabled>
+    <command>firewall-drop</command>
+    <location>local</location>
+    <rules_id>110011,110020,100250</rules_id>
+    <timeout>180</timeout>
+  </active-response>
+  <!-- Luật chữ ký (level 8): chặn ngay từ request mang payload đầu tiên. -->
+  <active-response>
+    <disabled>no</disabled>
+    <command>firewall-drop</command>
+    <location>local</location>
+    <rules_group>siem10_sig</rules_group>
+    <timeout>180</timeout>
+  </active-response>

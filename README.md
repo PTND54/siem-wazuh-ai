@@ -10,7 +10,9 @@ mỗi request. Phía sau Wazuh có hai luồng:
   áp: 110011 (401), 110020 (403/404), 110030 (mọi mã).
 
 Thêm vào đó, thư mục `sig/` có bộ luật chữ ký cho payload trong URL (SQL injection, XSS, path traversal, command injection), chạy
-trên access_log song song với luồng trên (xem `sig/README.md`). Hệ thống không học trực tuyến, không tự áp luật và không chặn IP.
+trên access_log song song với luồng trên (xem `sig/README.md`). Thư mục `ar/` nối các luật đã duyệt và tín hiệu của AI với
+Active Response của Wazuh để chặn tạm thời IP nguồn; phần này mặc định tắt và chỉ chạy khi bật bằng `bash ar/ar.sh up`
+(mục 3.9). Hệ thống không học trực tuyến và không tự áp luật.
 
 Dữ liệu lớn (9 tập `dataset_*.csv`, nhật ký từng request, alert thô và log Apache) nằm trong gói dataset trên
 [Google Drive](https://drive.google.com/drive/folders/1Nn4eMfEv4XTgbARFiTwsBgAC2JMp4-Tv), xem mục 3.8.
@@ -27,6 +29,9 @@ Dữ liệu lớn (9 tập `dataset_*.csv`, nhật ký từng request, alert th�
 | `redis` | redis:7-alpine | trạng thái, checkpoint của ai-service | — |
 | `ai-service` (profile `ai`) | siem-ai-lab:local (build `Dockerfile`) | chấm điểm alert trực tuyến | — |
 | `lab` (profile `lab`, chạy theo lệnh) | siem-ai-lab:local | sinh traffic, dựng dataset, huấn luyện, kiểm thử | — |
+| `ar-watch` (khi bật `ar/`) | siem-ai-lab:local | ghi tín hiệu chặn khi một IP có nhiều alert bị AI gắn cờ | — |
+
+Khi bật `ar/`, `wazuh-agent` chạy image `siem-ai-agent-ar:local` (có iptables) và dùng chung mạng với `apache-target`.
 
 Mạng `siem10_net` 172.30.90.0/24; dịch vụ lấy địa chỉ .2–.14, phần còn lại dành cho IP nguồn của các phiên traffic. Mọi cổng
 chỉ mở trên 127.0.0.1. Mật khẩu trong `docker-compose.yml` (Dashboard: `admin` / `SecretPassword`) là mật khẩu mặc định của
@@ -47,6 +52,7 @@ models/full1/   mô hình dùng cho ai-service: model.joblib, metrics.json, repo
 proposals/  hồ sơ đề xuất luật (.json) và luật (.xml); ba hồ sơ AI-R110xxx ở trạng thái applied
 docs/       LOCKBOX_PREREG.md (kế hoạch đánh giá cuối), lockbox_manifest.json (bản kê khóa)
 sig/        luật chữ ký cho payload trong URL
+ar/         phản ứng tự động: Active Response (firewall-drop) theo luật đã duyệt và tín hiệu AI, mặc định tắt (mục 3.9)
 pinned/     Dockerfile ghim scikit-learn, numpy, pandas đúng phiên bản của máy gốc
 vendor/wazuh-docker/   cấu hình single-node của wazuh-docker v4.14.7 (wazuh_manager.conf đã chỉnh), chưa có chứng chỉ
 data/       nhật ký phiên (runs/*/sessions.jsonl) và kết quả đối chiếu độ phủ (dataset_*.audit.json) của 9 tập dữ liệu;
@@ -167,6 +173,23 @@ Trên Dashboard (https://localhost:8443, `admin` / `SecretPassword`): alert gố
   Repo chỉ chứa nhật ký phiên, kết quả đối chiếu và kết quả đánh giá. Các bước 3.4–3.7 không cần gói dataset; cách đặt
   các tệp của gói vào repo ghi trong README của gói, và mục 5 có ví dụ chạy lại một phép kiểm trên dữ liệu đó.
 
+### 3.9 Phản ứng tự động (tùy chọn)
+
+```bash
+bash ar/ar.sh up         # cài phần AR trên Manager, tạo lại agent có iptables dùng chung mạng với apache-target, chạy ar-watch
+bash ar/ar.sh selftest   # thử trọn đường đi với IP TEST-NET 192.0.2.99, không đụng IP của lab
+bash ar/ar.sh flush      # gỡ mọi lệnh chặn đang có
+bash ar/ar.sh status     # IP đang bị chặn, nhật ký ar-watch, phần AR trên Manager
+bash ar/ar.sh down       # gỡ hẳn: agent về cấu hình ở mục 3.6, Manager về cấu hình trước khi cài
+```
+
+Lệnh chặn là `firewall-drop` có sẵn của Wazuh, thời hạn 180 giây, kích hoạt bởi luật 110011, 110020, nhóm luật chữ ký
+`siem10_sig` và luật 100250. Luật 100250 khớp trên dòng do `ar-watch` ghi khi một IP có từ 10 alert `ai.flag=true` trong 60
+giây, nên ai-service không có quyền chặn và mọi lệnh chặn đều bắt đầu từ một alert. Luật 110030 không kích hoạt chặn. Danh sách
+loại trừ gồm 172.30.90.1–.8. Cài và gỡ đi theo trình tự an toàn của mục 3.5, thêm bước `wazuh-execd -t` và bước chờ agent kết nối
+lại sau khi Manager khởi động lại. Các kịch bản thử (dò thư mục nhanh, payload SQL injection, dò thư mục chậm, thời hạn chặn) và
+các lưu ý vận hành nằm trong `ar/HUONG_DAN.md`.
+
 ## 4. Vận hành
 
 - Khởi động lại tiến trình Wazuh trên Manager:
@@ -183,11 +206,16 @@ Trên Dashboard (https://localhost:8443, `admin` / `SecretPassword`): alert gố
 - Sau khi khởi động lại máy: chạy lại 3.3; Docker Desktop tự bật lại các container (restart policy).
 - Build lại image lab (ví dụ chạy lại `02_up.sh`) thì chạy lại lệnh `docker build … pinned/Dockerfile`, rồi tạo lại ai-service:
   `docker compose -p siem10 --profile ai up -d --force-recreate ai-service`.
+- Khi phản ứng tự động đang bật (mục 3.9), lệnh tạo lại agent ở mục 3.6 sẽ tắt phần AR phía agent; nếu `apache-target` hay
+  container Manager được tạo lại, chạy lại `bash ar/ar.sh up`.
 - Nếu log agent báo `Duplicate agent name`: xem ID cũ bằng
   `docker compose -p siem10 exec -T wazuh.manager /var/ossec/bin/agent_control -l`, xóa bằng `manage_agents -r <ID>` trong cùng
   container, rồi tạo lại agent.
 
 ## 5. Chạy lại thí nghiệm
+
+Trước khi sinh traffic, dựng dataset hay chạy công cụ thật, tắt phản ứng tự động bằng `bash ar/ar.sh down` nếu đang bật, vì nó
+chặn IP nguồn của các phiên và làm phiên mất phần request còn lại.
 
 **Trên dữ liệu có sẵn.** Chép nội dung thư mục `data/` của gói dataset vào `data/` của repo, rồi giải nén alert thô và log
 Apache vào `data/export/` (thư mục này nằm trong `.gitignore`). Trong các lệnh dưới, `<gói dataset>` là thư mục giải nén từ tệp
@@ -277,3 +305,5 @@ Luật canary chỉ khớp IP 192.0.2.0/24 nên không ảnh hưởng traffic th
   (giá trị tối đa) và `03_verify.sh` kiểm 5.000 request không mất dòng nào.
 - ai-service khởi động lại đúng lúc alerts.json vừa xoay vòng thì phần cuối tệp cũ chưa đọc bị bỏ qua (có cảnh báo trong log).
 - Luật chữ ký so mẫu trên URL nên không nhận ra payload mã hóa base64 hay lệnh ngoài danh sách (`sig/RESULTS.md`).
+- Phản ứng tự động chỉ chặn sau khi có alert, nên các request gửi trước đó vẫn tới máy chủ, và nó kế thừa báo nhầm của các luật
+  và tín hiệu AI mà nó dựa vào. Danh sách loại trừ chỉ gồm .1–.8 trong khi dịch vụ có thể nhận địa chỉ tới .14.

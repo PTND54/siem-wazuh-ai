@@ -1,0 +1,45 @@
+# siem10, Active Response — file compose PHỤ, luôn dùng CÙNG sig/docker-compose.sig.yml. Không sửa docker-compose.yml.
+# Bật / tắt / xem: bash ar/ar.sh up | down | status   (không tự gõ lệnh compose với file này)
+#
+# wazuh-agent: image có iptables, DÙNG CHUNG không gian mạng với apache-target, có NET_ADMIN -> firewall-drop do Manager
+#   gửi xuống chặn đúng nguồn đang gửi request tới Apache. Hệ quả: nếu apache-target khởi động lại, phải chạy lại
+#   `bash ar/ar.sh up` để tạo lại agent.
+# ar-watch: đọc ai-enriched-alerts-*, IP nào có >= AR_MIN_FLAGGED alert ai.flag=true trong AR_WINDOW_S giây thì ghi một
+#   dòng "SIEM10AI ..." vào ar_state; agent đọc dòng đó -> luật 100250 (level 10) -> Active Response.
+services:
+  wazuh-agent:
+    build: ./ar
+    image: siem-ai-agent-ar:local
+    hostname: !reset null
+    networks: !reset []
+    network_mode: "service:apache-target"
+    cap_add: [NET_ADMIN]
+    volumes:
+      - ./ar/agent/ossec.conf:/wazuh-config-mount/etc/ossec.conf
+      - ar_state:/var/log/ar-watch:ro
+
+  ar-watch:
+    image: siem-ai-lab:local
+    container_name: ar-watch
+    restart: unless-stopped
+    networks: [siem10_net]
+    working_dir: /workspace
+    depends_on: [wazuh.indexer]
+    environment:
+      - INDEXER_URL=https://wazuh.indexer:9200
+      - INDEXER_USERNAME=admin
+      - INDEXER_PASSWORD=SecretPassword
+      - INDEXER_CA=/certs/root-ca.pem
+      - AR_MIN_FLAGGED=10
+      - AR_WINDOW_S=60
+      - AR_COOLDOWN_S=180
+      - AR_POLL_S=3
+      - AR_WHITELIST=172.30.90.1,172.30.90.2,172.30.90.3,172.30.90.4,172.30.90.5,172.30.90.6,172.30.90.7,172.30.90.8
+    command: ["python3", "-u", "-I", "ar/tools/ar_watch.py"]
+    volumes:
+      - ./ar:/workspace/ar:ro
+      - ar_state:/var/log/ar-watch
+      - ./vendor/wazuh-docker/single-node/config/wazuh_indexer_ssl_certs/root-ca.pem:/certs/root-ca.pem:ro
+
+volumes:
+  ar_state:

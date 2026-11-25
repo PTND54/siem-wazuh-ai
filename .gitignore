@@ -17,3 +17,7 @@ data/.lockbox_seed
 
 # Alert thô và log Apache giải nén từ gói dataset
 data/export/
+
+# Phản ứng tự động: cấu hình agent do ar/ar.sh sinh, nhật ký và bản sao ossec.conf của mỗi lần cài, gỡ
+ar/agent/
+ar/runs/

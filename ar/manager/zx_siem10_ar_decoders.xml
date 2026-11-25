@@ -1,0 +1,11 @@
+<!-- siem10, Active Response: decoder cho dòng tín hiệu chặn do ar-watch ghi (ar/tools/ar_watch.py).
+     Dạng dòng: SIEM10AI srcip=172.30.90.253 flagged=12 window=60 maxscore=0.951 -->
+<decoder name="siem10-aiwatch">
+  <prematch>^SIEM10AI </prematch>
+</decoder>
+
+<decoder name="siem10-aiwatch-fields">
+  <parent>siem10-aiwatch</parent>
+  <regex>srcip=(\S+) flagged=(\d+) window=(\d+) maxscore=(\S+)</regex>
+  <order>srcip,flagged,window,maxscore</order>
+</decoder>

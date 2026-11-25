@@ -1,0 +1,9 @@
+# Không bao giờ chặn: gateway (request kiểm sức khỏe từ host đi qua đây) và các container hạ tầng của siem10.
+172.30.90.1
+172.30.90.2
+172.30.90.3
+172.30.90.4
+172.30.90.5
+172.30.90.6
+172.30.90.7
+172.30.90.8

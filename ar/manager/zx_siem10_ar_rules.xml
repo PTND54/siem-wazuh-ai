@@ -1,0 +1,9 @@
+<!-- siem10, Active Response: luật cho tín hiệu chặn sinh từ kết luận AI (ar-watch).
+     Mô tả viết không dấu như các luật khác của dự án. -->
+<group name="siem10_ar,">
+  <rule id="100250" level="10">
+    <decoded_as>siem10-aiwatch</decoded_as>
+    <description>AI: nguon $(srcip) co $(flagged) alert bi gan co trong $(window) giay - chan tam thoi</description>
+    <group>siem10_ai_block,</group>
+  </rule>
+</group>
